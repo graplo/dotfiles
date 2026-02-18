@@ -1,0 +1,38 @@
+{
+    "logo": {
+        "type": "auto"
+    },
+    "display": {
+        "separator": " "
+    },
+    "modules": [
+        // Sistema (Cyan)
+        { "type": "OS", "key": " OS", "keyColor": "#8be9fd" },
+        { "type": "Kernel", "key": "├ Kernel", "keyColor": "#8be9fd" },
+        { "type": "Packages", "key": "├󰏖 Packages", "keyColor": "#8be9fd" },
+        { "type": "Shell", "key": "├  Shell", "keyColor": "#8be9fd" },
+        { "type": "Uptime", "key": "└󰅐 Start Time", "keyColor": "#8be9fd" },
+        // Entorno gráfico (Purple)
+        "break",
+        { "type": "DE", "key": "󰊬 DE", "keyColor": "#bd93f9" },
+        { "type": "WM", "key": "├󰧨 Window Manager", "keyColor": "#bd93f9" },
+        { "type": "LM", "key": "├󰧨 Login Manager", "keyColor": "#bd93f9" },
+        { "type": "WMTheme", "key": "├󰉼 WM Theme", "keyColor": "#bd93f9" },
+        { "type": "Theme", "key": "├󰉼 Color Themes", "keyColor": "#bd93f9" },
+        { "type": "Icons", "key": "├󰸉 System Icons", "keyColor": "#bd93f9" },
+        { "type": "Font", "key": "├ System Fonts", "keyColor": "#bd93f9" },
+        { "type": "Terminal", "key": "└ Terminal", "keyColor": "#bd93f9" },
+        // Hardware (Green)
+        "break",
+        { "type": "Chassis", "key": "󰌢 PC", "keyColor": "#50fa7b" },
+        { "type": "Board", "key": "├ Board", "keyColor": "#50fa7b" },
+        { "type": "CPU", "key": "├󰻠 CPU", "keyColor": "#50fa7b", "temp": true },
+        { "type": "Memory", "key": "├󰑭 RAM", "keyColor": "#50fa7b" },
+        { "type": "Swap", "key": "├󰓡 Zram", "keyColor": "#50fa7b" },
+        { "type": "Disk", "key": "├ Disk", "keyColor": "#50fa7b" },
+        { "type": "GPU", "key": "├󰍛 GPU", "keyColor": "#50fa7b" },
+        { "type": "OpenGL", "key": "├󰍛 OpenGL", "keyColor": "#50fa7b" },
+        { "type": "Vulkan", "key": "├󰍛 Vulkan", "keyColor": "#50fa7b" },
+        { "type": "Display", "key": "└󰍹 Display(s)", "keyColor": "#50fa7b" }
+    ]
+}
