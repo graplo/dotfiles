@@ -1,0 +1,9 @@
+[[plugin.deps]]
+use = "gesellkammer/audio-preview"
+rev = "74dfea3"
+hash = "6f185a283a3756475272d147a3c1d29c"
+
+[[flavor.deps]]
+use = "yazi-rs/flavors:dracula"
+rev = "ca61658"
+hash = "8589ae0231756a9daf9c072f31b1fe0"

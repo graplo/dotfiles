@@ -1,0 +1,55 @@
+# --------------------------------------------------
+# Yazi – Openers configuration
+# --------------------------------------------------
+# - Helix for text files
+# - Zathura for PDFs
+# - mpv for audio/video
+# --------------------------------------------------
+
+[opener]
+edit = [
+  { run = 'hx "$@"', block = true, desc = "Helix" }
+]
+
+zathura = [
+  { run = 'zathura "$@"', orphan = true, desc = "Zathura" }
+]
+
+play = [
+  { run = 'mpv "$@"', orphan = true, desc = "Reproducir con mpv" }
+]
+
+# Nuevo: Visor de imágenes imv
+display = [ { run = 'imv "$@"', orphan = true, desc = "Ver imagen" }
+]
+
+set_wallpaper = [
+    { run = '''
+        gsettings set org.gnome.desktop.background picture-uri-dark "file://$1" && 
+        gsettings set org.gnome.desktop.background picture-uri "file://$1"
+    ''', desc = "Establecer como Fondo" }
+]
+
+[open]
+rules = [
+  # PDFs → Zathura
+  { mime = "application/pdf", use = "zathura" },
+
+  # Audio / Video → mpv
+  { mime = "audio/*", use = "play" },
+  { mime = "video/*", use = "play" },
+
+  # Logs → view mode
+  { name = "*.log", use = "view" },
+
+  # Text files → Helix
+  { mime = "text/*", use = "edit" },
+
+  # Regla para imágenes: 
+  # Al dar Enter, se abrirá con imv para que la veas.
+  # Si presionas 'o', podrás elegir entre verla o ponerla de fondo.
+  { mime = "image/*", use = [ "display", "set_wallpaper" ] } 
+  
+  ]
+
+
