@@ -1,0 +1,92 @@
+{
+  "id": "dracula",
+  "name": "Dracula",
+  "version": "1.0.0",
+  "author": "Graplo",
+  "description": "Dark theme with a combination of vibrant colors",
+  "dark": {
+    "surface": "#21222c",
+    "surfaceText": "#f8f8f2",
+    "surfaceVariant": "#282a36",
+    "surfaceVariantText": "#f8f8f2",
+    "background": "#282a36",
+    "backgroundText": "#f8f8f2",
+    "outline": "#6272a4",
+    "surfaceContainer": "#282a36",
+    "surfaceContainerHigh": "#313244",
+    "surfaceContainerHighest": "#44475a",
+    "error": "#ff5555",
+    "warning": "#f1fa8c",
+    "info": "#8be9fd"
+  },
+  "light": {},
+  "variants": {
+    "type": "single",
+    "accents": [
+      {
+        "id": "purple",
+        "name": "Purple",
+        "primary": "#bd93f9",
+        "primaryText": "#282a36",
+        "primaryContainer": "#7c5ac7",
+        "secondary": "#ff79c6",
+        "surfaceTint": "#3d2f43"
+      },
+      {
+        "id": "pink",
+        "name": "Pink",
+        "primary": "#ff79c6",
+        "primaryText": "#282a36",
+        "primaryContainer": "#cc5a9e",
+        "secondary": "#bd93f9",
+        "surfaceTint": "#42303d"
+      },
+      {
+        "id": "cyan",
+        "name": "Cyan",
+        "primary": "#8be9fd",
+        "primaryText": "#282a36",
+        "primaryContainer": "#5dbcd4",
+        "secondary": "#50fa7b",
+        "surfaceTint": "#2e3f44"
+      },
+      {
+        "id": "green",
+        "name": "Green",
+        "primary": "#50fa7b",
+        "primaryText": "#282a36",
+        "primaryContainer": "#3ac662",
+        "secondary": "#8be9fd",
+        "surfaceTint": "#2e3f34"
+      },
+      {
+        "id": "yellow",
+        "name": "Yellow",
+        "primary": "#f1fa8c",
+        "primaryText": "#282a36",
+        "primaryContainer": "#c4ca6f",
+        "secondary": "#ffb86c",
+        "surfaceTint": "#3f3f2e"
+      },
+      {
+        "id": "orange",
+        "name": "Orange",
+        "primary": "#ffb86c",
+        "primaryText": "#282a36",
+        "primaryContainer": "#d89554",
+        "secondary": "#f1fa8c",
+        "surfaceTint": "#3f362e"
+      },
+      {
+        "id": "red",
+        "name": "Red",
+        "primary": "#ff5555",
+        "primaryText": "#f8f8f2",
+        "primaryContainer": "#cc3333",
+        "secondary": "#ff79c6",
+        "surfaceTint": "#3f2e2e"
+      }
+    ]
+  },
+  "sourceDir": "dracula"
+}
