@@ -1,14 +1,19 @@
 {
   "currentThemeName": "custom",
   "currentThemeCategory": "custom",
-  "customThemeFile": "/home/graplo/.config/DankMaterialShell/themes/dracula/dracula-simple.json",
+  "customThemeFile": "/home/graplo/.config/DankMaterialShell/themes/dracula/theme.json",
   "registryThemeVariants": {
-    "rosePine": "moon"
+    "catppuccin": {
+      "dark": {
+        "flavor": "frappe",
+        "accent": "mauve"
+      }
+    }
   },
   "matugenScheme": "scheme-tonal-spot",
   "runUserMatugenTemplates": true,
   "matugenTargetMonitor": "",
-  "popupTransparency": 1,
+  "popupTransparency": 0.98,
   "dockTransparency": 1,
   "widgetBackgroundColor": "sch",
   "widgetColorMode": "default",
@@ -27,7 +32,7 @@
   "use24HourClock": true,
   "showSeconds": false,
   "padHours12Hour": false,
-  "useFahrenheit": true,
+  "useFahrenheit": false,
   "windSpeedUnit": "kmh",
   "nightModeEnabled": false,
   "animationSpeed": 1,
@@ -115,16 +120,6 @@
       "id": "darkMode",
       "enabled": true,
       "width": 50
-    },
-    {
-      "id": "idleInhibitor",
-      "enabled": true,
-      "width": 50
-    },
-    {
-      "id": "doNotDisturb",
-      "enabled": true,
-      "width": 50
     }
   ],
   "showWorkspaceIndex": false,
@@ -166,18 +161,24 @@
   "appsDockEnlargePercentage": 125,
   "appsDockIconSizePercentage": 100,
   "keyboardLayoutNameCompactMode": false,
-  "runningAppsCurrentWorkspace": false,
+  "runningAppsCurrentWorkspace": true,
   "runningAppsGroupByApp": false,
   "runningAppsCurrentMonitor": false,
   "appIdSubstitutions": [],
   "centeringMode": "index",
-  "clockDateFormat": "",
+  "clockDateFormat": "ddd d MMM yyyy",
   "lockDateFormat": "",
   "mediaSize": 1,
-  "appLauncherViewMode": "grid",
+  "appLauncherViewMode": "list",
   "spotlightModalViewMode": "list",
   "browserPickerViewMode": "grid",
-  "browserUsageHistory": {},
+  "browserUsageHistory": {
+    "firefox": {
+      "count": 7,
+      "lastUsed": 1773170598414,
+      "name": "Firefox"
+    }
+  },
   "appPickerViewMode": "grid",
   "filePickerUsageHistory": {},
   "sortAppsAlphabetically": false,
@@ -194,7 +195,7 @@
   "dankLauncherV2UnloadOnClose": false,
   "useAutoLocation": true,
   "weatherEnabled": true,
-  "networkPreference": "ethernet",
+  "networkPreference": "auto",
   "iconTheme": "Papirus-Dark",
   "cursorSettings": {
     "theme": "Dracula-cursors",
@@ -212,7 +213,7 @@
       "cursorHideTimeout": 0
     }
   },
-  "launcherLogoMode": "apps",
+  "launcherLogoMode": "dank",
   "launcherLogoCustomPath": "",
   "launcherLogoColorOverride": "",
   "launcherLogoColorInvertOnMode": false,
@@ -222,7 +223,7 @@
   "fontFamily": "Ubuntu",
   "monoFontFamily": "JetBrainsMono Nerd Font",
   "fontWeight": 400,
-  "fontScale": 1.12,
+  "fontScale": 1.08,
   "notepadUseMonospace": true,
   "notepadFontFamily": "",
   "notepadFontSize": 14,
@@ -292,7 +293,7 @@
   "dockSpacing": 4,
   "dockBottomGap": 0,
   "dockMargin": 0,
-  "dockIconSize": 60,
+  "dockIconSize": 40,
   "dockIndicatorStyle": "circle",
   "dockBorderEnabled": false,
   "dockBorderColor": "surfaceText",
@@ -346,7 +347,7 @@
   "osdPosition": 5,
   "osdVolumeEnabled": true,
   "osdMediaVolumeEnabled": true,
-  "osdMediaPlaybackEnabled": true,
+  "osdMediaPlaybackEnabled": false,
   "osdBrightnessEnabled": true,
   "osdIdleInhibitorEnabled": true,
   "osdMicMuteEnabled": true,
@@ -378,12 +379,7 @@
   "displayNameMode": "system",
   "screenPreferences": {},
   "showOnLastDisplay": {},
-  "niriOutputSettings": {
-    "DP-2": {
-      "hotCorners": null,
-      "layout": null
-    }
-  },
+  "niriOutputSettings": {},
   "hyprlandOutputSettings": {},
   "displayProfiles": {},
   "activeDisplayProfile": {},
@@ -403,11 +399,7 @@
       "leftWidgets": [
         "launcherButton",
         "workspaceSwitcher",
-        {
-          "id": "focusedWindow",
-          "enabled": true,
-          "focusedWindowCompactMode": false
-        }
+        "focusedWindow"
       ],
       "centerWidgets": [
         "music",
@@ -415,10 +407,7 @@
         "weather"
       ],
       "rightWidgets": [
-        {
-          "id": "systemTray",
-          "enabled": true
-        },
+        "systemTray",
         "clipboard",
         "cpuUsage",
         "memUsage",
@@ -427,14 +416,18 @@
         "controlCenterButton"
       ],
       "spacing": 4,
-      "innerPadding": 6,
+      "innerPadding": 4,
       "bottomGap": 0,
       "transparency": 1,
       "widgetTransparency": 1,
       "squareCorners": false,
       "noBackground": false,
+      "maximizeWidgetIcons": false,
+      "maximizeWidgetText": false,
+      "removeWidgetPadding": false,
+      "widgetPadding": 8,
       "gothCornersEnabled": false,
-      "gothCornerRadiusOverride": true,
+      "gothCornerRadiusOverride": false,
       "gothCornerRadiusValue": 12,
       "borderEnabled": false,
       "borderColor": "surfaceText",
@@ -444,7 +437,8 @@
       "widgetOutlineColor": "primary",
       "widgetOutlineOpacity": 1,
       "widgetOutlineThickness": 1,
-      "fontScale": 1,
+      "fontScale": 1.1,
+      "iconScale": 1.07,
       "autoHide": false,
       "autoHideDelay": 250,
       "showOnWindowsOpen": false,
@@ -457,9 +451,10 @@
       "scrollXBehavior": "column",
       "scrollYBehavior": "workspace",
       "shadowIntensity": 0,
-      "shadowOpacity": 60,
+      "shadowOpacity": 67,
       "shadowColorMode": "text",
-      "shadowCustomColor": "#000000"
+      "shadowCustomColor": "#000000",
+      "clickThrough": false
     }
   ],
   "desktopClockEnabled": false,

@@ -1,0 +1,15 @@
+# [language-server.ltex-ls-plus]
+# command = "ltex-ls-plus"
+
+# [[language]]
+# name = "markdown"
+# language-servers = ["marksman", "ltex-ls-plus"]
+
+# [language-server.ltex-ls-plus.config.ltex]
+# language = "es"
+# enabled = [ "markdown" ]
+# # Añade aquí tus palabras técnicas "a las malas"
+# dictionary = { "es" = [ "logseq", "CachyOS", "Niri", "Helix", "Graplo" ] }
+[[language]]
+name = "markdown"
+language-servers = ["marksman"]

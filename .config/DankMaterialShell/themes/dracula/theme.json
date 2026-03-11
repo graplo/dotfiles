@@ -1,0 +1,124 @@
+{
+  "id": "dracula",
+  "name": "Dracula",
+  "version": "1.0.0",
+  "author": "Dracula Theme",
+  "description": "Dark theme with vibrant colors",
+  "dark": {},
+  "light": {},
+  "variants": {
+    "type": "multi",
+    "defaults": {
+      "dark": {
+        "accent": "purple",
+        "flavor": "dracula"
+      },
+      "light": {
+        "accent": "purple",
+        "flavor": "dracula"
+      }
+    },
+    "flavors": [
+      {
+        "id": "dracula",
+        "name": "Dracula",
+        "dark": {
+          "surface": "#282a36",
+          "surfaceText": "#f8f8f2",
+          "surfaceVariant": "#282a36",
+          "surfaceVariantText": "#6272a4",
+          "background": "#282a36",
+          "backgroundText": "#f8f8f2",
+          "outline": "#6272a4",
+          "surfaceContainer": "#282a36",
+          "surfaceContainerHigh": "#343746",
+          "surfaceContainerHighest": "#44475a",
+          "error": "#ff5555",
+          "warning": "#ffb86c",
+          "info": "#8be9fd"
+        },
+        "light": {}
+      }
+    ],
+    "accents": [
+      {
+        "id": "purple",
+        "name": "Purple",
+        "dracula": {
+          "primary": "#bd93f9",
+          "primaryText": "#282a36",
+          "primaryContainer": "#44475a",
+          "secondary": "#ff79c6",
+          "surfaceTint": "#373844"
+        }
+      },
+      {
+        "id": "pink",
+        "name": "Pink",
+        "dracula": {
+          "primary": "#ff79c6",
+          "primaryText": "#282a36",
+          "primaryContainer": "#44475a",
+          "secondary": "#bd93f9",
+          "surfaceTint": "#373844"
+        }
+      },
+      {
+        "id": "cyan",
+        "name": "Cyan",
+        "dracula": {
+          "primary": "#8be9fd",
+          "primaryText": "#282a36",
+          "primaryContainer": "#44475a",
+          "secondary": "#bd93f9",
+          "surfaceTint": "#373844"
+        }
+      },
+      {
+        "id": "green",
+        "name": "Green",
+        "dracula": {
+          "primary": "#50fa7b",
+          "primaryText": "#282a36",
+          "primaryContainer": "#44475a",
+          "secondary": "#bd93f9",
+          "surfaceTint": "#373844"
+        }
+      },
+      {
+        "id": "orange",
+        "name": "Orange",
+        "dracula": {
+          "primary": "#ffb86c",
+          "primaryText": "#282a36",
+          "primaryContainer": "#44475a",
+          "secondary": "#bd93f9",
+          "surfaceTint": "#373844"
+        }
+      },
+      {
+        "id": "red",
+        "name": "Red",
+        "dracula": {
+          "primary": "#ff5555",
+          "primaryText": "#282a36",
+          "primaryContainer": "#44475a",
+          "secondary": "#bd93f9",
+          "surfaceTint": "#373844"
+        }
+      },
+      {
+        "id": "yellow",
+        "name": "Yellow",
+        "dracula": {
+          "primary": "#f1fa8c",
+          "primaryText": "#282a36",
+          "primaryContainer": "#44475a",
+          "secondary": "#bd93f9",
+          "surfaceTint": "#373844"
+        }
+      }
+    ]
+  },
+  "sourceDir": "dracula"
+}

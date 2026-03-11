@@ -1,0 +1,56 @@
+{
+  "id": "dracula",
+  "name": "Dracula",
+  "version": "1.0.0",
+  "author": "Graplo",
+  "description": "Dark theme with a combination of vibrant colors",
+  "dark": {
+    "primary": "#bd93f9",
+    "primaryContainer": "#44475a",
+    "secondary": "#ff79c6",
+    "surfaceText": "#f8f8f2",
+    "surfaceVariantText": "#f8f8f2",
+    "backgroundText": "#f8f8f2",
+    "outline": "#6272a4",
+    "error": "#ff5555",
+    "warning": "#f1fa8c",
+    "info": "#8be9fd"
+  },
+  "light": {},
+  "variants": {
+    "default": "dracula",
+    "options": [
+      {
+        "id": "dracula",
+        "name": "Dracula",
+        "dark": {
+          "primaryText": "#282a36",
+          "surface": "#21222c",
+          "surfaceVariant": "#282a36",
+          "surfaceTint": "#bd93f9",
+          "background": "#282a36",
+          "surfaceContainer": "#21222c",
+          "surfaceContainerHigh": "#313244",
+          "surfaceContainerHighest": "#44475a"
+        },
+        "light": {}
+      },
+      {
+        "id": "dracula-soft",
+        "name": "Dracula Soft",
+        "dark": {
+          "primaryText": "#282a36",
+          "surface": "#282a36",
+          "surfaceVariant": "#44475a",
+          "surfaceTint": "#bd93f9",
+          "background": "#21222c",
+          "surfaceContainer": "#282a36",
+          "surfaceContainerHigh": "#44475a",
+          "surfaceContainerHighest": "#6272a4"
+        },
+        "light": {}
+      }
+    ]
+  },
+  "sourceDir": "dracula"
+}

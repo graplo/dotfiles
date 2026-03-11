@@ -1,2 +1,16 @@
 theme = "dracula"
 
+[keys.normal.space]
+p = ":sh hx-preview %{buffer_name}"
+
+[editor]
+# Activa el ajuste de línea automático
+soft-wrap.enable = true
+
+# Define el carácter que aparece al inicio de la línea de continuación
+soft-wrap.wrap-indicator = "↪ "
+
+# Mantiene la sangría de la línea original en el salto
+soft-wrap.wrap-at-text-width = true
+
+text-width = 110
