@@ -1,13 +1,13 @@
 format = """
-[](current_line)\
+[](purple)\
 $os\
 $username\
-[](bg:purple fg:current_line)\
+[](bg:cyan fg:purple)\
 $directory\
-[](bg:orange fg:purple)\
+[](bg:pink fg:cyan)\
 $git_branch\
 $git_status\
-[](fg:orange bg:cyan)\
+[](fg:pink bg:green)\
 $c\
 $rust\
 $golang\
@@ -17,11 +17,11 @@ $java\
 $kotlin\
 $haskell\
 $python\
-[](fg:cyan bg:red)\
-$conda\
-[](fg:red bg:pink)\
+[](fg:green bg:orange)\
+$jobs\
+[](fg:orange bg:comment)\
 $time\
-[ ](fg:pink)\
+[ ](fg:comment)\
 $cmd_duration\
 $line_break\
 $character"""
@@ -30,7 +30,7 @@ palette = 'dracula'
 
 [os]
 disabled = false
-style = "bg:current_line fg:foreground"
+style = "bg:purple fg:background"
 
 [os.symbols]
 Windows = ""
@@ -58,95 +58,110 @@ CachyOS = "󰣇"
 
 [username]
 show_always = true
-style_user = "bg:current_line fg:foreground"
+style_user = "bg:purple fg:background"
 style_root = "bg:red fg:foreground"
 format = '[ $user]($style)'
 
 [directory]
-style = "bg:purple fg:background"
+style = "bg:cyan fg:background"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
 
 [directory.substitutions]
 "Documents" = "󰈙 "
+"Documentos" = "󰈙 "
 "Downloads" = " "
+"Descargas" = " "
 "Music" = "󰝚 "
+"Música" = "󰝚 "
 "Pictures" = " "
+"Imágenes" = " "
 "Developer" = "󰲋 "
+"git" = " "
+".config" = " "
 
 [git_branch]
 symbol = ""
-style = "bg:orange"
-format = '[[ $symbol $branch ](fg:background bg:orange)]($style)'
+style = "bg:pink"
+format = '[[ $symbol $branch ](fg:background bg:pink)]($style)'
 
 [git_status]
-style = "bg:orange"
-format = '[[($all_status$ahead_behind )](fg:background bg:orange)]($style)'
+style = "bg:pink"
+format = '[[($all_status$ahead_behind )](fg:background bg:pink)]($style)'
 
 # Lenguajes — bloque técnico unificado
 [nodejs]
 symbol = ""
-style = "bg:cyan"
-format = '[[ $symbol( $version) ](fg:background bg:cyan)]($style)'
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:background bg:green)]($style)'
 
 [c]
 symbol = " "
-style = "bg:cyan"
-format = '[[ $symbol( $version) ](fg:background bg:cyan)]($style)'
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:background bg:green)]($style)'
 
 [rust]
 symbol = ""
-style = "bg:cyan"
-format = '[[ $symbol( $version) ](fg:background bg:cyan)]($style)'
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:background bg:green)]($style)'
 
 [golang]
 symbol = ""
-style = "bg:cyan"
-format = '[[ $symbol( $version) ](fg:background bg:cyan)]($style)'
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:background bg:green)]($style)'
 
 [php]
 symbol = ""
-style = "bg:cyan"
-format = '[[ $symbol( $version) ](fg:background bg:cyan)]($style)'
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:background bg:green)]($style)'
 
 [java]
 symbol = " "
-style = "bg:cyan"
-format = '[[ $symbol( $version) ](fg:background bg:cyan)]($style)'
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:background bg:green)]($style)'
 
 [kotlin]
 symbol = ""
-style = "bg:cyan"
-format = '[[ $symbol( $version) ](fg:background bg:cyan)]($style)'
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:background bg:green)]($style)'
 
 [haskell]
 symbol = ""
-style = "bg:cyan"
-format = '[[ $symbol( $version) ](fg:background bg:cyan)]($style)'
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:background bg:green)]($style)'
 
 [python]
 symbol = ""
-style = "bg:cyan"
-format = '[[ $symbol( $version)(\(#$virtualenv\)) ](fg:background bg:cyan)]($style)'
+style = "bg:green"
+format = '[[ $symbol( $version)(\(#$virtualenv\)) ](fg:background bg:green)]($style)'
 
-[conda]
-symbol = "  "
-style = "fg:background bg:red"
-format = '[$symbol$environment ]($style)'
-ignore_base = false
+# [conda]
+# symbol = "  "
+# style = "fg:background bg:red"
+# format = '[$symbol$environment ]($style)'
+# ignore_base = false
+
+[jobs]
+symbol = "󰍦 "
+style = "fg:background bg:orange"
+format = '[[ $symbol$number jobs ](fg:background bg:orange)]($style)'
+threshold = 1
+number_threshold = 1
 
 [time]
 disabled = false
 time_format = "%R"
-style = "bg:pink"
-format = '[[  $time ](fg:background bg:pink)]($style)'
+style = "bg:comment"
+format = '[[  $time ](fg:background bg:comment)]($style)'
 
 [cmd_duration]
 show_milliseconds = true
-format = " $duration "
+format = "[ in $duration ]($style)"
 style = "fg:comment"
 disabled = false
+show_notifications = false
+min_time_to_notify = 45000
 
 [line_break]
 disabled = false

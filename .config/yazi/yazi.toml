@@ -8,7 +8,7 @@
 
 [opener]
 edit = [
-  { run = 'hx "$@"', block = true, desc = "Helix" }
+  { run = 'helix "$@"', block = true, desc = "Helix" }
 ]
 
 zathura = [
@@ -20,18 +20,27 @@ play = [
 ]
 
 # Nuevo: Visor de imágenes imv
-display = [ { run = 'imv "$@"', orphan = true, desc = "Ver imagen" }
+display = [
+  { run = 'imv "$@"', orphan = true, desc = "Ver imagen" }
 ]
 
 set_wallpaper = [
-    { run = '''
-        gsettings set org.gnome.desktop.background picture-uri-dark "file://$1" && 
-        gsettings set org.gnome.desktop.background picture-uri "file://$1"
-    ''', desc = "Establecer como Fondo" }
+  { run = 'dms ipc call wallpaper set "$1"', desc = "Establecer como Fondo" }
+]
+
+# Para usar Inkscape
+inkscape = [
+  { run = 'inkscape "$@"', orphan = true, desc = "Abrir con Inkscape" }
 ]
 
 [open]
+
 rules = [
+  # Archivos vacíos o markdown: yazi detecta inode/x-empty cuando el archivo
+  # no tiene contenido, por eso se necesitan ambas reglas
+  { url = "*.md", use = "edit" },
+  { mime = "inode/x-empty", use = "edit" },
+
   # PDFs → Zathura
   { mime = "application/pdf", use = "zathura" },
 
@@ -43,12 +52,13 @@ rules = [
   { name = "*.log", use = "view" },
 
   # Text files → Helix
+  { mime = "application/json", use = "edit" },
   { mime = "text/*", use = "edit" },
 
   # Regla para imágenes: 
   # Al dar Enter, se abrirá con imv para que la veas.
   # Si presionas 'o', podrás elegir entre verla o ponerla de fondo.
-  { mime = "image/*", use = [ "display", "set_wallpaper" ] } 
+  { mime = "image/*", use = [ "display", "inkscape", "set_wallpaper" ] } 
   
   ]
 

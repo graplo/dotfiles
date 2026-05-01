@@ -6,7 +6,7 @@ source /usr/share/cachyos-fish-config/cachyos-config.fish
 #    # smth smth
 #end
 # Rutas
-fish_add_path $HOME/.local/bin $HOME/.cargo/bin
+fish_add_path $HOME/.local/bin $HOME/.cargo/bin $HOME/.npm-global/bin $HOME/go/bin
 
 if status is-interactive
     fish_config theme choose Dracula
@@ -26,19 +26,30 @@ function y
 end
 
 starship init fish | source
-alias hx='helix'
 
 set -gx QT_QPA_PLATFORMTHEME gtk3
 
 set -x EDITOR helix
 set -x VISUAL helix
 
-# Servicio de busqueda q usa torrra para descargar torrents
-alias jack="sudo systemctl start jackett"
-alias jackoff="sudo systemctl stop jackett"
+set -gx BAT_THEME Dracula
 
-# para q torra se ejecute con rrr
-alias rrr="torrra"
+# Para q ollama use mu gpu al iniciar
+set -x OLLAMA_VULKAN true
 
-# Para hledger le asigno hl
-alias hl="hledger"
+# Para FZF
+set -Ux FZF_DEFAULT_OPTS "--color=fg:#f8f8f2,bg:#282a36,hl:#bd93f9 --color=fg+:#f8f8f2,bg+:#44475a,hl+:#bd93f9 --color=info:#ffb86c,prompt:#50fa7b,pointer:#ff79c6 --color=marker:#ff79c6,spinner:#ffb86c,header:#6272a4"
+# Para vivid environment variable that controls the colorized output of ls, tree, fd, bfs, dust and many other tools.
+set -x LS_COLORS (vivid generate dracula)
+
+# para q este numerado los terminales, y con echo el texto q quieras
+if status is-interactive
+    set_color bd93f9
+    set count (niri msg windows | grep "com.mitchellh.ghostty" | wc -l)
+    echo "# $count - fish" | figlet
+    set_color normal
+end
+
+# para q no salga el fastfech de cachyos al comienzo
+function fish_greeting
+end

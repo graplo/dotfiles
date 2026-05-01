@@ -1,0 +1,56 @@
+// DMS Window Rules - Managed by DankMaterialShell
+// Do not edit manually - changes may be overwritten
+
+// @id=wr_1772847061249546469 @name=qalculate-gtk
+window-rule {
+    match app-id="^qalculate-gtk$"
+    open-floating true
+    default-column-width { fixed 800; }
+    default-window-height { fixed 600; }
+}
+
+// @id=wr_1773630653272935587 @name=Nautillus
+window-rule {
+    match app-id="org.gnome.Nautilus"
+    open-floating true
+    default-column-width { fixed 1402; }
+    default-window-height { fixed 830; }
+}
+
+// @id=wr_1774465476238850109 @name=Elija el color
+window-rule {
+    match app-id="gradia"
+    open-floating true
+}
+
+// @id=wr_1774679110653434376 @name=Kitty Float
+window-rule {
+    match app-id="kitty"
+    open-floating true
+    default-column-width { fixed 1100; }
+    default-window-height { fixed 600; }
+}
+
+// @id=wr_1774763687061620386 @name=Betterbird
+window-rule {
+    match app-id="eu.betterbird.Betterbird"
+    open-maximized true
+}
+
+// @id=wr_1774837666257177035 @name=Firefox
+window-rule {
+    match app-id="firefox"
+    open-maximized true
+}
+
+// @id=wr_1775930402426592860 @name=OBS-studio
+window-rule {
+    match app-id="com.obsproject.Studio"
+    open-maximized true
+}
+
+// @id=wr_1776563265314788351 @name=kdenlive
+window-rule {
+    match app-id="org.kde.kdenlive"
+    open-maximized true
+}

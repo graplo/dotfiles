@@ -269,12 +269,6 @@ recent-windows {
     }
 }
 
-// Dim ventanas no enfocadas (efecto focus tipo Hyprland)
-window-rule {
-    match is-focused=false
-    opacity 0.95
-}
-
 // Include dms files
 include "dms/colors.kdl"
 include "dms/layout.kdl"
@@ -282,5 +276,3 @@ include "dms/alttab.kdl"
 include "dms/binds.kdl"
 include "dms/outputs.kdl"
 include "dms/cursor.kdl"
-
-include "dms/windowrules.kdl"
