@@ -1,0 +1,20 @@
+/*
+▄         ▜     ▄▖      ▜   
+▌▌▛▘▀▌▛▘▌▌▐ ▀▌  ▌ ▛▘▀▌▛▌▐ ▛▌
+▙▘▌ █▌▙▖▙▌▐▖█▌  ▙▌▌ █▌▙▌▐▖▙▌
+                      ▌     
+*/
+
+* {
+    /* Dracula palette */
+    gpl-background:  #282A36;
+    gpl-foreground:  #F8F8F2;
+    gpl-purple:      #BD93F9;
+    gpl-red:         #FF5555;
+    gpl-green:       #50FA7B;
+    gpl-yellow:      #F1FA8C;
+    gpl-cyan:        #8BE9FD;
+    gpl-pink:        #FF79C6;
+    gpl-comment:     #6272A4;
+    gpl-dark:        #44475A;
+}

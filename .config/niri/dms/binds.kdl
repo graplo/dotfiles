@@ -128,6 +128,10 @@ binds {
     XF86Launch1 { screenshot; }
     Mod+Shift+E { quit; }
     Mod+T hotkey-overlay-title="Open Terminal" { spawn "ghostty"; }
+    Shift+F1 hotkey-overlay-title="OBS: Full Camera" { spawn "sh" "-c" "gobs-cli sc sw \"1 Full camera\""; }
+    Shift+F2 hotkey-overlay-title="OBS: Escritorio y cam" { spawn "sh" "-c" "gobs-cli sc sw \"2 Escritorio y cam\""; }
+    Shift+F3 hotkey-overlay-title="OBS: Cam Circular" { spawn "sh" "-c" "gobs-cli sc sw \"3 Escena\""; }
+    Shift+F4 hotkey-overlay-title="OBS: haft and haft" { spawn "gobs-cli" "sc" "sw" "4 haft and haft"; }
     Super+B hotkey-overlay-title="Open WebBrowser" { spawn "firefox"; }
     Super+Return hotkey-overlay-title="Open Terminal" { spawn "ghostty"; }
     Super+Shift+O hotkey-overlay-title="open obs" { spawn "obs"; }

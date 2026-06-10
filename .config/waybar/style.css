@@ -1,0 +1,204 @@
+@import "./colors.css";
+
+* {
+  font-family: "JetBrainsMono Nerd Font Propo";
+  font-size: 16px;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+window#waybar {
+  background: @background;
+}
+
+#custom-cachy:hover,
+#cpu:hover,
+#network:hover,
+#bluetooth:hover,
+#pulseaudio:hover,
+#pulseaudio.microphone:hover,
+#pulseaudio.sink-muted:hover,
+#custom-powermenu:hover {
+  color: @foreground;
+  opacity: 0.5;
+}
+
+#custom-cachy,
+#cpu,
+#clock,
+#mpris,
+#custom-menu,
+#tray,
+#privacy,
+#network,
+#bluetooth,
+#pulseaudio,
+#pulseaudio.microphone,
+#backlight,
+#custom-ddc-brightness,
+#battery,
+#custom-powermenu {
+  color: @foreground;
+  padding: 6px 0;
+}
+
+#custom-separator {
+    color: @color8;
+    padding: 0;
+}
+
+#custom-rofi {
+    color: @color4;
+    font-size: 20px;
+    padding: 6px 0;
+}
+
+#clock.hora {
+    color: @foreground;
+}
+
+#clock.fecha {
+    color: @color4;
+}
+
+#custom-weather {
+    color: @foreground;
+    padding: 0;
+    font-size: 18px;
+    min-width: 34px;
+}
+
+/* 
+   Fantasmas de Pac-Man
+   Workspace 1 = Inky (rosa)
+   Workspace 2 = Pinky (cyan)
+   Workspace 3 = Blinky (rojo)
+   Workspace 4 = Clyde (amarillo)
+   cambia segun el escritorio virtual
+*/
+
+#workspaces button:nth-child(1) {
+  color: @color5;
+}
+
+#workspaces button:nth-child(2) {
+  color: @color6;
+}
+
+#workspaces button:nth-child(3) {
+  color: @color1;
+}
+
+#workspaces button:nth-child(4) {
+  color: @color3;
+}
+
+#workspaces button.active {
+  color: @color3;
+}
+#workspaces button.empty {
+    color: @color8;
+}
+
+@keyframes urgent-glow {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.4;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#workspaces button.urgent {
+    animation: urgent-glow 0.8s ease-in-out 4;
+    color: @color1;
+}
+
+#privacy {
+  margin: 4px;
+  color: @color3;
+}
+
+#clock {
+  color: @color4;
+}
+
+#mpris {
+  color: @color4;
+}
+
+#custom-cava-mini {
+    color: @color4;
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+}
+
+#network.disabled {
+  color: @color1;
+}
+#network.wifi {
+  color: @color2;
+}
+#network.ethernet {
+  color: @color4;
+}
+
+#bluetooth.disabled {
+  color: @color1;
+}
+#bluetooth.connected {
+  color: @color4;
+}
+
+#pulseaudio.sink-muted:not(.microphone) {
+  color: @color3;
+}
+#pulseaudio.microphone.source-muted {
+  color: @color1;
+}
+
+#battery.plugged {
+  color: @color4;
+}
+#battery.charging {
+  color: @color2;
+}
+#battery.critical {
+  color: @color3;
+}
+
+tooltip {
+  background: @background;
+  border: 1px solid @foreground;
+}
+tooltip * {
+  color: @foreground;
+  margin: 2px;
+  background: @background;
+}
+
+#pulseaudio-slider,
+#backlight-slider {
+  min-height: 80px;
+}
+
+#pulseaudio-slider slider,
+#backlight-slider slider {
+  background: transparent;
+}
+
+#pulseaudio-slider trough,
+#backlight-slider trough {
+  min-width: 8px;
+}
+
+#pulseaudio-slider highlight {
+  background: @color4;
+}
+#backlight-slider highlight {
+  background: @color3;
+}

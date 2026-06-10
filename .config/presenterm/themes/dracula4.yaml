@@ -1,0 +1,173 @@
+---
+default:
+  margin:
+    percent: 8
+  colors:
+    foreground: palette:foreground
+    background: palette:background
+
+
+slide_title:
+  alignment: center
+  padding_bottom: 1
+  padding_top: 1
+  colors:
+    foreground: palette:purple
+  bold: true
+  font_size: 2
+
+code:
+  alignment: center
+  minimum_size: 50
+  minimum_margin:
+    percent: 8
+  theme_name: Dracula
+  padding:
+    horizontal: 2
+    vertical: 1
+
+execution_output:
+  colors:
+    foreground: palette:foreground
+    background: palette:background
+  status:
+    running:
+      foreground: palette:cyan
+    success:
+      foreground: palette:green
+    failure:
+      foreground: palette:red
+    not_started:
+      foreground: palette:yellow
+  padding:
+    horizontal: 2
+    vertical: 1
+
+pty_output:
+  colors:
+    foreground: palette:foreground
+    background: palette:current_line
+  cursor:
+    highlight_colors:
+      foreground: palette:current_line
+      background: palette:foreground
+
+inline_code:
+  colors:
+    foreground: palette:comment
+
+intro_slide:
+  title:
+    alignment: center
+    colors:
+      foreground: palette:purple
+    font_size: 2
+  subtitle:
+    alignment: center
+    colors:
+      foreground: palette:green
+  event:
+    alignment: center
+    colors:
+      foreground: palette:pink
+  location:
+    alignment: center
+    colors:
+      foreground: palette:foreground
+  date:
+    alignment: center
+    colors:
+      foreground: palette:yellow
+  author:
+    alignment: center
+    colors:
+      foreground: palette:cyan
+    positioning: page_bottom
+  footer: false
+
+headings:
+  h1:
+    colors:
+      foreground: palette:yellow
+    prefix: "█"
+  h2:
+    colors:
+      foreground: palette:cyan
+    prefix: "██"
+  h3:
+    colors:
+      foreground: palette:green
+    prefix: "███"
+  h4:
+    colors:
+      foreground: palette:pink
+    prefix: "████"
+  h5:
+    colors:
+      foreground: palette:orange
+    prefix: "█████"
+  h6:
+    colors:
+      foreground: palette:foreground
+    prefix: "██████"
+
+block_quote:
+  prefix: "▍ "
+  colors:
+    foreground: palette:foreground
+    background: palette:current_line
+    prefix: palette:current_line
+
+alert:
+  prefix: "▍ "
+  base_colors:
+    foreground: palette:foreground
+    background: palette:background
+  styles:
+    note:
+      color: palette:cyan
+    tip:
+      color: palette:purple
+    important:
+      color: palette:pink
+    warning:
+      color: palette:orange
+    caution:
+      color: palette:red
+
+typst:
+  colors:
+    foreground: palette:foreground
+    background: palette:background
+
+footer:
+  style: template
+  right: "{current_slide} / {total_slides}"
+
+modals:
+  selection_colors:
+    foreground: palette:cyan
+
+mermaid:
+  background: transparent
+  theme: dark
+
+d2:
+  theme: 200
+
+layout_grid:
+  color: palette:purple
+
+palette:
+  colors:
+    background: "282a36"
+    current_line: "44475a"
+    foreground: "f8f8f2"
+    comment: "6272a4"
+    cyan: "8be9fd"
+    green: "50fa7b"
+    orange: "ffb86c"
+    pink: "ff79c6"
+    purple: "bd93f9"
+    red: "ff5555"
+    yellow: "f1fa8c"

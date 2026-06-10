@@ -1,0 +1,6 @@
+# PyRadio Playlist File Format:
+# name,url,encoding,icon,profile,buffering,force-http,volume,referer,player
+Doble Nueve,https://conectperu.com:7000/stream?icy=http,utf-8
+"Filarmonía (classical music,cultural programming)",https://c22.radioboss.fm:18100/live,utf-8
+Z Rock & Pop,https://radioz.egostreaming.pe/radio/3e4f6a1b2c3d4e567890abcd/
+Rock (Digitalis - SomaFM),http://somafm.com/digitalis.pls

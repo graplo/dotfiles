@@ -1,13 +1,18 @@
 {
     "logo": {
-        "type": "auto"
+         "type": "file",
+    "source": "/home/graplo/.config/fastfetch/graplo-ansii2.txt",
+    "color": {
+        "1": "#bd93f9",
+        "2": "#8be9fd"
+    }
     },
     "display": {
         "separator": " "
     },
     "modules": [
         // Sistema (Cyan)
-        { "type": "OS", "key": " OS", "keyColor": "#8be9fd" },
+        { "type": "OS", "key": "󰣇 OS", "keyColor": "#8be9fd" },
         { "type": "Kernel", "key": "├ Kernel", "keyColor": "#8be9fd" },
         { "type": "Packages", "key": "├󰏖 Packages", "keyColor": "#8be9fd" },
         { "type": "Shell", "key": "├  Shell", "keyColor": "#8be9fd" },
@@ -33,6 +38,10 @@
         { "type": "GPU", "key": "├󰍛 GPU", "keyColor": "#50fa7b" },
         { "type": "OpenGL", "key": "├󰍛 OpenGL", "keyColor": "#50fa7b" },
         { "type": "Vulkan", "key": "├󰍛 Vulkan", "keyColor": "#50fa7b" },
-        { "type": "Display", "key": "└󰍹 Display(s)", "keyColor": "#50fa7b" }
+        { "type": "Display", "key": "└󰍹 Display(s)", "keyColor": "#50fa7b" },
+        "break",
+        { "type": "Colors"}
     ]
+       
 }
+

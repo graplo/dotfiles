@@ -1,0 +1,41 @@
+# binary clock config
+# ▄▖      ▜     ▄▖      ▜     ▌ 
+# ▌ ▛▘▀▌▛▌▐ ▛▌  ▙▌█▌▀▌▛▘▐ ▛▌▛▘▙▘
+# ▙▌▌ █▌▙▌▐▖▙▌  ▌ ▙▖█▌▙▖▐▖▙▌▙▖▛▖
+#       ▌                       
+
+block 2 1
+padding 2 1
+margin 2 1
+ratio 2 1
+date-padding 1
+fill '󰘧GRAPLO󰘧'
+locale ''
+timezone 'America/Lima'
+date '%a %d %b - %H:%M:%S'
+mode clock
+view binary
+toggle padding
+rate-input 50
+rate-refresh 1000
+rate-status 5000
+
+set hour-24 on
+set seconds on
+set date on
+set auto-size on
+set auto-ratio on
+
+# Dracula colors
+style active-fg #8be9fd 	
+style inactive-fg #44475A
+style colon-fg #BD93F9
+style active-bg #BD93F9
+style inactive-bg #44475A
+style colon-bg #282A36
+style date #8BE9FD
+style background clear
+style text #F8F8F2
+style prompt #BD93F9
+style success #50FA7B
+style error #FF5555

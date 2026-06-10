@@ -28,7 +28,7 @@ window-rule {
     match app-id="kitty"
     open-floating true
     default-column-width { fixed 1100; }
-    default-window-height { fixed 600; }
+    default-window-height { fixed 880; }
 }
 
 // @id=wr_1774763687061620386 @name=Betterbird

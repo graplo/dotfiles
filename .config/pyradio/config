@@ -1,0 +1,6 @@
+# PyRadio User Configuration File
+# To get a full list of options execute: pyradio -pc
+# or examine the file: /usr/lib/python3.14/site-packages/pyradio/config
+#
+theme = hyprland_dracula
+enable_mouse = True

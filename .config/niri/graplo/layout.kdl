@@ -1,0 +1,44 @@
+//     ▌         ▄▖      ▜   
+// ▛▌▀▌▛▌▛▘  ▄▖  ▌ ▛▘▀▌▛▌▐ ▛▌
+// ▙▌█▌▙▌▄▌      ▙▌▌ █▌▙▌▐▖▙▌
+// ▄▌                  ▌     
+
+layout {
+    // La separación horizontal entre las ventanas de tu carrusel ahora es de 6
+    gaps 6 
+
+    struts {
+        // Restamos 2 píxeles arriba y abajo para que el espacio real sea de 4 (6 - 2 = 4)
+        top -2
+        bottom -2
+
+        left 0
+        right 0
+    }
+
+    border {
+        width 3
+    }
+
+    focus-ring {
+        width 3
+    }
+}
+
+window-rule {
+    match
+    
+    geometry-corner-radius 0
+    clip-to-geometry true
+    tiled-state true
+    draw-border-with-background false
+}
+
+// Turn on shadows for floating windows.
+window-rule {
+    match is-floating=true
+
+    shadow {
+        on
+    }
+}
