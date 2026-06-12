@@ -23,6 +23,13 @@ layout {
     focus-ring {
         width 3
     }
+    tab-indicator {
+        width 6
+        gap 5
+        length total-proportion=0.8
+        position "left"
+        place-within-column
+    }
 }
 
 window-rule {
