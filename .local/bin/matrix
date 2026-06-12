@@ -1,0 +1,17 @@
+#!/bin/bash
+# ╺┳┓┏━┓┏━┓┏━╸╻ ╻╻  ┏━┓   ┏┳┓┏━┓╺┳╸┏━┓╻╻ ╻
+#  ┃┃┣┳┛┣━┫┃  ┃ ┃┃  ┣━┫   ┃┃┃┣━┫ ┃ ┣┳┛┃┏╋┛
+# ╺┻┛╹┗╸╹ ╹┗━╸┗━┛┗━╸╹ ╹   ╹ ╹╹ ╹ ╹ ╹┗╸╹╹ ╹
+
+TMPFILE=$(mktemp)
+cat > "$TMPFILE" << 'EOF'
+neo_color_version 1
+0 0 0 0
+61 98 114 164
+141 189 147 249
+117 139 233 253
+231 248 248 242
+EOF
+neo-matrix -C "$TMPFILE" -D -m "Wake up, Graplo..." --rippct=0
+
+rm "$TMPFILE"

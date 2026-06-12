@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+#  .--""--.___________________________.._
+# (  <__>  ) Para no perder nada y no    `-.
+# |`--..--'| cagarme en todos.              <|
+# |       :|                      Graplo    /
+# |       :|---------------------------""-./
+# `.__  __;' o!O
+#     ""
+
+# set -e: muere si hay error / -u: muere si una variable no existe / -o pipefail: atrapa errores en tuberías
+set -euo pipefail
+
+BACKUP_PATH="/run/media/graplo/db2/backup"
+now=$(date +"%Y-%m-%d_%H-%M-%S")
+
+borg create --progress --stats --compression auto,zstd,3 "$BACKUP_PATH::home-${now}" \
+    --exclude "$HOME/.cache/" \
+    --exclude "$HOME/.local/share/Trash" \
+    --exclude "$HOME/.local/share/Steam" \
+    --exclude "$HOME/Descargas" \
+    --exclude "$HOME/.var/app/*/cache" \
+    --exclude "$HOME/.local/share/containers" \
+    --exclude "$HOME/.ollama" \
+    "$HOME"
+
+borg prune --stats --keep-last 7 --glob-archives "home-*" "$BACKUP_PATH"
+borg compact "$BACKUP_PATH"

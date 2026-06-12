@@ -1,0 +1,11 @@
+#!/bin/bash
+#        ___
+#      .:---:.         _ Es on-click para waybar y llama
+#     // #   \\_...--'' \ al .rasi que a su ves ejecuta
+#    || #     |_         | el motor (el script powerprofile)
+#     \\     // ```--.._/
+# GPL  ':===:'
+#        ```
+rofi -show powerprofile \
+    -modi "powerprofile:~/.local/bin/powerprofile" \
+    -theme ~/.config/rofi/themes/powerprofile.rasi
