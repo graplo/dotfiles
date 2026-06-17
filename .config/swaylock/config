@@ -1,0 +1,71 @@
+#          ▜     ▌   ▐▘▌     
+# ▛▘▌▌▌▀▌▌▌▐ ▛▌▛▘▙▘  ▜▘▙▘▛▘▛▘
+# ▄▌▚▚▘█▌▙▌▐▖▙▌▙▖▛▖  ▐ ▛▖▌ ▄▌
+#        ▄▌                  
+# ----------------------------
+# Background
+# ----------------------------
+
+# screenshots
+# effect-blur=20x2
+# effect-vignette=0.5:0.5
+fade-in=0.2
+
+# ----------------------------
+# Clock
+# ----------------------------
+
+clock
+timestr=%H:%M
+datestr=%a, %d %B %Y
+
+font=Ubuntu
+font-size=45
+
+# ----------------------------
+# Indicator
+# ----------------------------
+
+indicator
+indicator-radius=130
+indicator-thickness=10
+
+# ----------------------------
+# Dracula Theme
+# ----------------------------
+
+inside-color=282A36ff
+ring-color=BD93F9ff
+line-color=282A36ff
+separator-color=282A36ff
+
+text-color=F8F8F2ff
+
+# Verifying
+inside-ver-color=50FA7Bcc
+ring-ver-color=50FA7Bff
+text-ver-color=50FA7Bff
+line-ver-color=50FA7Bff
+
+# Wrong password
+inside-wrong-color=FF5555cc
+ring-wrong-color=FF5555ff
+text-wrong-color=FF5555ff
+line-wrong-color=FF5555ff
+
+# Caps Lock
+inside-caps-lock-color=FFB86Ccc
+ring-caps-lock-color=FFB86Cff
+text-caps-lock-color=FFB86Cff
+line-caps-lock-color=FFB86Cff
+
+# Key press highlight
+key-hl-color=50FA7Bff
+bs-hl-color=FF79C6ff
+
+# ----------------------------
+# Misc
+# ----------------------------
+
+# show-keyboard-layout
+indicator-idle-visible
