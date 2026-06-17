@@ -1,0 +1,26 @@
+@import "config" /* Importa primero todo tu diseño global */
+
+configuration {
+    show-icons:         true;          /* Fuerza a Rofi a renderizar iconos */
+    icon-theme:         "Papirus";     /* Asegura que use tu tema Papirus */
+}
+
+window {
+    width:            15%;             /* Tamaño compacto ideal para Niri */
+    location:         center;
+}
+
+listview {
+    lines:            6;               /* Ajustado al número de tus apps */
+    fixed-height:     true;
+}
+
+element {
+    orientation:      horizontal;      /* Coloca el icono a la izquierda y el texto a la derecha */
+    spacing:          10px;            /* Separación entre el icono y el texto */
+    padding:          5px;
+}
+
+element-icon {
+    size:             1.5em;           /* Tamaño del icono de Papirus */
+}

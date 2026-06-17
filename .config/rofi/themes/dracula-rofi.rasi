@@ -1,152 +1,274 @@
-/*Dracula theme based on the Purple official rofi theme
-
+/*
   / _ \
 \_\(_)/_/
  _//o\\_ Graplo
   /   \
-
 */
 
-@import "colors.rasi"
+@import "~/.config/rofi/themes/colors.rasi"
 
+
+/*****----- Configuration -----*****/
 configuration {
-    show-icons:      true;
-    display-drun:    "";
-    disable-history: false;
+    show-icons: true;
+    markup-rows: true;
 }
 
+
+/*****----- Global -----*****/
 * {
     font: "Ubuntu 12";
-    background-color:           @gpl-background;
-    foreground:                 @gpl-foreground;
-    active-background:          @gpl-purple;
-    urgent-background:          @gpl-red;
-    urgent-foreground:          @gpl-background;
-    selected-background:        @gpl-purple;
-    selected-urgent-background: @gpl-red;
-    selected-active-background: @gpl-purple;
-    separatorcolor:             @gpl-purple;
-    bordercolor:                @gpl-purple;
+
+    background-color: @gpl-background;
+    text-color: @gpl-foreground;
 }
 
-#window {
-    background-color: @gpl-background;
-    border:           2;
-    border-radius:    0;
-    border-color:     @gpl-purple;
-    padding:          15;
-    width:            720px;
-}
-#mainbox {
-    border:  0;
-    padding: 0;
-}
-#message {
-    border:       0px;
+
+/*****----- Main Window -----*****/
+window {
+
+    transparency: "real";
+
+    location: center;
+    anchor: center;
+
+    fullscreen: false;
+
+    width: 700px;
+
+    border: 3px;
+    border-radius: 0px;
     border-color: @gpl-purple;
-    padding:      1px;
-}
-#textbox {
-    text-color: @gpl-foreground;
-}
-#listview {
-    fixed-height: 0;
-    border:       0px;
-    border-color: @gpl-purple;
-    spacing:      2px ;
-    scrollbar:    false;
-    padding:      2px 0px 0px ;
-}
-#element {
-    border:  0;
-    padding: 3px ;
-}
-#element.normal.normal {
+
     background-color: @gpl-background;
-    text-color:       @gpl-foreground;
+
+    cursor: default;
 }
-#element.normal.urgent {
-    background-color: @gpl-red;
-    text-color:       @gpl-background;
+
+
+/*****----- Main Layout -----*****/
+mainbox {
+
+    spacing: 0px;
+
+    orientation: vertical;
+
+    background-color: transparent;
+
+    children: [
+        "inputbar",
+        "listbox"
+    ];
 }
-#element.normal.active {
+
+
+/*****----- Search + Image -----*****/
+inputbar {
+
+    spacing: 10px;
+
+    padding: 60px 40px;
+
+    background-color: transparent;
+
+    background-image: url("~/.config/rofi/images/drun2.png", width);
+
+    orientation: horizontal;
+
+    children: [
+        "textbox-prompt-colon",
+        "entry",
+        "dummy",
+        "mode-switcher"
+    ];
+}
+
+
+/*****----- Search Icon -----*****/
+textbox-prompt-colon {
+
+    expand: false;
+    font: "JetBrainsMono Nerd Font 12";
+    str: "";
+
+    padding: 12px 15px;
+
+    border-radius: 0%;
+
     background-color: @gpl-purple;
-    text-color:       @gpl-foreground;
-}
-#element.selected.normal {
-    background-color: @gpl-purple;
-    text-color:       @gpl-background;
-}
-#element.selected.urgent {
-    background-color: @gpl-red;
-    text-color:       @gpl-foreground;
-}
-#element.selected.active {
-    background-color: @gpl-purple;
-    text-color:       @gpl-foreground;
-}
-#element.alternate.normal {
-    background-color: @gpl-background;
-    text-color:       @gpl-foreground;
-}
-#element.alternate.urgent {
-    background-color: @gpl-red;
-    text-color:       @gpl-foreground;
-}
-#element.alternate.active {
-    background-color: @gpl-purple;
-    text-color:       @gpl-foreground;
-}
-#scrollbar {
-    width:        2px ;
-    border:       0;
-    handle-width: 8px ;
-    padding:      0;
-}
-#sidebar {
-    border:       2px dash 0px 0px ;
-    border-color: @gpl-purple;
-}
-#button.selected {
-    background-color: @gpl-purple;
-    text-color:       @gpl-foreground;
-}
-#inputbar {
-    spacing:    0;
-    text-color: @gpl-foreground;
-    padding:    1px ;
-}
-#case-indicator {
-    spacing:    0;
-    text-color: @gpl-foreground;
-}
-#entry {
-    spacing:    0;
-    text-color: @gpl-foreground;
+
+    text-color: @gpl-background;
+    horizontal-align: 0.5;
     vertical-align: 0.5;
 }
-#prompt {
-    spacing:    0;
+
+
+/*****----- Search Entry -----*****/
+entry {
+
+    expand: false;
+
+    width: 250px;
+
+    padding: 12px 16px;
+
+    border-radius: 0%;
+
+    background-color: @gpl-dark;
+
     text-color: @gpl-foreground;
+
+    placeholder: "Search";
+
+    placeholder-color: @gpl-comment;
+
+    cursor: text;
     vertical-align: 0.5;
+    border: 2px;
+    border-color: @gpl-purple;
+
 }
-#inputbar {
-    children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
+
+
+/*****----- Spacer -----*****/
+dummy {
+
+    expand: true;
+
+    background-color: transparent;
 }
-#textbox-prompt-colon {
-    expand:     false;
-    str:        "λ > ";
-    margin:     0px;
+
+
+/*****----- Modes -----*****/
+mode-switcher {
+
+    spacing: 10px;
+
+    background-color: transparent;
+}
+
+
+button {
+
+    width: 45px;
+
+    padding: 12px;
+
+    border-radius: 0%;
+
+    background-color: @gpl-dark;
+
     text-color: @gpl-foreground;
+
+    cursor: pointer;
+    horizontal-align: 0.5;
     vertical-align: 0.5;
+
 }
-element-text, element-icon {
-    background-color: inherit;
+
+
+button selected {
+
+    background-color: @gpl-purple;
+
+    text-color: @gpl-background;
+}
+
+
+/*****----- List Area -----*****/
+listbox {
+
+    spacing: 15px;
+
+    padding: 15px;
+
+    background-color: transparent;
+
+    orientation: vertical;
+
+    children: [
+        "listview"
+    ];
+}
+
+
+listview {
+
+    columns: 1;
+
+    lines: 7;
+
+    cycle: true;
+
+    dynamic: true;
+
+    scrollbar: false;
+
+    layout: vertical;
+
+    fixed-height: true;
+
+    fixed-columns: true;
+
+    spacing: 10px;
+
+    background-color: transparent;
+}
+
+
+/*****----- Applications -----*****/
+element {
+
+    spacing: 10px;
+
+    padding: 8px;
+
+    border-radius: 0px;
+
+    background-color: transparent;
+
+    text-color: @gpl-foreground;
+
+    cursor: pointer;
+}
+
+
+element selected.normal {
+
+    background-color: @gpl-purple;
+
+    text-color: @gpl-background;
+}
+
+
+element-icon {
+
+    size: 32px;
+
+    background-color: transparent;
+
     text-color: inherit;
 }
+
+
 element-text {
-    vertical-align: 0.5; /* Solo afecta al texto */
+
+    background-color: transparent;
+
+    text-color: inherit;
+
+    vertical-align: 0.5;
 }
-element-icon {
-    size:   32px;
+
+
+/*****----- Error -----*****/
+error-message {
+
+    padding: 12px;
+
+    border-radius: 10px;
+
+    background-color: @gpl-red;
+
+    text-color: @gpl-background;
 }

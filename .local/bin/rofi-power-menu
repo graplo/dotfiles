@@ -44,7 +44,7 @@ icons[cancel]="\Uf0156 "
 declare -A actions
 # actions[lockscreen]="loginctl lock-session ${XDG_SESSION_ID-}"
 #actions[switchuser]="???"
-actions[lockscreen]="swaylock"
+actions[lockscreen]="lock" #Es un scrip mio en $HOME/.local/bin/lock
 actions[logout]="loginctl terminate-session ${XDG_SESSION_ID-}"
 actions[suspend]="systemctl suspend"
 actions[hibernate]="systemctl hibernate"
@@ -230,6 +230,16 @@ else
         selection="${messages[$selectionID]}"
     fi
 fi
+
+# Muestra el tiempo q se usa la pc
+uptime_text=$(uptime -p \
+  | sed -e 's/^up //' \
+        -e 's/hours/h/' \
+        -e 's/hour/h/' \
+        -e 's/minutes/m/' \
+        -e 's/minute/m/') 
+
+echo -e "\0message\x1f󰔚  Up Time: $uptime_text"
 
 # Don't allow custom entries
 echo -e "\0no-custom\x1ftrue"

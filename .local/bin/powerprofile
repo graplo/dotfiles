@@ -11,9 +11,6 @@ performance_icon = "󰓅 "
 balanced_icon = "󰾅 "
 quiet_icon = "󰾆 "
 
-yes_icon = " "
-no_icon = " "
-
 config_dir = os.environ.get("XDG_CONFIG_HOME", "") + "/rofi"
 
 
@@ -34,7 +31,7 @@ def performance_profile_menu() -> None:
 
     current_profile = get_current_profile()
     print("\0prompt\x1fProfile")
-    print(f"\0message\x1fCurrent Profile: {current_profile}")
+    print(f"\0message\x1f⏻ {current_profile}")
 
     for mode, icon in opts:
         print(f"{icon} {mode}{chr(0)}info\x1f{mode.lower()}")

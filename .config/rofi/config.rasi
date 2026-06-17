@@ -8,7 +8,7 @@ GPL   `      "      `
 
 configuration {
     /* Modos activos en el sistema */
-    modes: [ drun, window, run, filebrowser, calc ]; 
+    modes: [ drun, window, filebrowser, calc ]; 
 
     /* Comportamiento general */
     show-icons:      true;
@@ -17,18 +17,19 @@ configuration {
     sorting-method:  "fzf";
 
     /* Nombres limpios para los modos */
-    display-drun:    "󰀻 ";
-    display-window:  "󱂬 ";
-    display-run:     "󰘳 ";
-    display-calc:    "󰪚 ";
-    display-filebrowser: "󰉋 ";
+    display-drun:    "󰀻";
+    display-window:  "󱂬";
+    //display-run:     "󰘳";
+    display-calc:    "󰪚";
+    display-filebrowser: "󰉋";
     
     /* Atajos rápidos estilo Walker */
     kb-select-1:     "F1";
     kb-select-2:     "F2";
     kb-select-3:     "F3";
     kb-select-4:     "F4";
-}
+	
+    }
 
 /* Importamos el tema desde su ubicación limpia separada */
 @theme "themes/dracula-rofi.rasi"

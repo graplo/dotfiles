@@ -1,4 +1,4 @@
-# include dracula.conf
+include dracula.conf
 
 # Fuente
 font_size 12.0
@@ -30,9 +30,3 @@ map escape close_window
 # con esto no pide condirmar al cerrar programas
 confirm_os_window_close 0
 
-
-
-# BEGIN_KITTY_THEME
-# Dracula
-include current-theme.conf
-# END_KITTY_THEME
