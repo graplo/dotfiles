@@ -83,7 +83,8 @@
     "interval": 1,
     "tooltip": true,
     "tooltip-format": "CPU Frequency: {avg_frequency} GHz",
-    "on-click": "kitty --title btop -e btop"
+    "on-click": "kitty --title btop -e btop",
+    "on-click-right": "kitty --title btop -e nvtop"
 
   },
   "clock#hora": {

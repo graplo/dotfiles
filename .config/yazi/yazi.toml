@@ -49,7 +49,7 @@ rules = [
   { mime = "video/*", use = "play" },
 
   # Logs → view mode
-  { name = "*.log", use = "view" },
+  { url = "*.log", use = "view" },
 
   # Text files → Helix
   { mime = "application/json", use = "edit" },

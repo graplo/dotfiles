@@ -18,7 +18,6 @@ configuration {
 /*****----- Global -----*****/
 * {
     font: "Ubuntu 12";
-
     background-color: @gpl-background;
     text-color: @gpl-foreground;
 }
@@ -28,20 +27,14 @@ configuration {
 window {
 
     transparency: "real";
-
     location: center;
     anchor: center;
-
     fullscreen: false;
-
     width: 700px;
-
     border: 3px;
     border-radius: 0px;
     border-color: @gpl-purple;
-
     background-color: @gpl-background;
-
     cursor: default;
 }
 
@@ -50,11 +43,8 @@ window {
 mainbox {
 
     spacing: 0px;
-
     orientation: vertical;
-
     background-color: transparent;
-
     children: [
         "inputbar",
         "listbox"
@@ -66,15 +56,10 @@ mainbox {
 inputbar {
 
     spacing: 10px;
-
     padding: 60px 40px;
-
     background-color: transparent;
-
     background-image: url("~/.config/rofi/images/drun2.png", width);
-
     orientation: horizontal;
-
     children: [
         "textbox-prompt-colon",
         "entry",
@@ -88,15 +73,11 @@ inputbar {
 textbox-prompt-colon {
 
     expand: false;
-    font: "JetBrainsMono Nerd Font 12";
-    str: "";
-
+    font: "JetBrainsMono Nerd Font 13";
+    str: "󰮯";
     padding: 12px 15px;
-
     border-radius: 0%;
-
     background-color: @gpl-purple;
-
     text-color: @gpl-background;
     horizontal-align: 0.5;
     vertical-align: 0.5;
@@ -107,21 +88,13 @@ textbox-prompt-colon {
 entry {
 
     expand: false;
-
     width: 250px;
-
     padding: 12px 16px;
-
     border-radius: 0%;
-
     background-color: @gpl-dark;
-
     text-color: @gpl-foreground;
-
     placeholder: "Search";
-
     placeholder-color: @gpl-comment;
-
     cursor: text;
     vertical-align: 0.5;
     border: 2px;
@@ -134,16 +107,13 @@ entry {
 dummy {
 
     expand: true;
-
     background-color: transparent;
 }
 
 
 /*****----- Modes -----*****/
 mode-switcher {
-
     spacing: 10px;
-
     background-color: transparent;
 }
 
@@ -151,15 +121,10 @@ mode-switcher {
 button {
 
     width: 45px;
-
     padding: 12px;
-
     border-radius: 0%;
-
     background-color: @gpl-dark;
-
     text-color: @gpl-foreground;
-
     cursor: pointer;
     horizontal-align: 0.5;
     vertical-align: 0.5;
@@ -170,7 +135,6 @@ button {
 button selected {
 
     background-color: @gpl-purple;
-
     text-color: @gpl-background;
 }
 
@@ -179,13 +143,9 @@ button selected {
 listbox {
 
     spacing: 15px;
-
     padding: 15px;
-
     background-color: transparent;
-
     orientation: vertical;
-
     children: [
         "listview"
     ];
@@ -195,23 +155,14 @@ listbox {
 listview {
 
     columns: 1;
-
     lines: 7;
-
     cycle: true;
-
     dynamic: true;
-
     scrollbar: false;
-
     layout: vertical;
-
     fixed-height: true;
-
     fixed-columns: true;
-
     spacing: 10px;
-
     background-color: transparent;
 }
 
@@ -220,15 +171,10 @@ listview {
 element {
 
     spacing: 10px;
-
     padding: 8px;
-
     border-radius: 0px;
-
     background-color: transparent;
-
     text-color: @gpl-foreground;
-
     cursor: pointer;
 }
 
@@ -236,7 +182,6 @@ element {
 element selected.normal {
 
     background-color: @gpl-purple;
-
     text-color: @gpl-background;
 }
 
@@ -244,9 +189,7 @@ element selected.normal {
 element-icon {
 
     size: 32px;
-
     background-color: transparent;
-
     text-color: inherit;
 }
 
@@ -254,9 +197,7 @@ element-icon {
 element-text {
 
     background-color: transparent;
-
     text-color: inherit;
-
     vertical-align: 0.5;
 }
 
@@ -265,10 +206,7 @@ element-text {
 error-message {
 
     padding: 12px;
-
     border-radius: 10px;
-
     background-color: @gpl-red;
-
     text-color: @gpl-background;
 }

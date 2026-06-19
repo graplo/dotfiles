@@ -13,7 +13,7 @@
   "margin-right": 0,
   "spacing": 0,
   "include": ["~/.config/waybar/modules.json"],
-  "modules-left": ["custom/rofi", "clock#hora", "custom/separator", "clock#fecha", "cpu", "custom/weather"],
+  "modules-left": ["custom/rofi", "clock#hora", "custom/separator", "clock#fecha","custom/cachy", "cpu", "custom/weather"],
   "modules-center": ["custom/cava-mini", "mpris", "niri/workspaces", "privacy"],
   "modules-right": [
     "group/extras",
@@ -25,7 +25,6 @@
     "custom/ddc-brightness",
     "custom/powerprofile",
     "battery",
-    "custom/cachy",
     "custom/powermenu"
   ]
 }

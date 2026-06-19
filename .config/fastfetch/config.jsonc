@@ -1,47 +1,85 @@
 {
     "logo": {
-         "type": "file",
-    "source": "/home/graplo/.config/fastfetch/graplo-ansii2.txt",
-    "color": {
-        "1": "#bd93f9",
-        "2": "#8be9fd"
-    }
+        "type": "file",
+        "source": "/home/graplo/.config/fastfetch/graplo-ansii3.txt",
+        "color": {
+            "1": "#bd93f9",
+            "2": "#b79efa",
+            "3": "#b0a8fa",
+            "4": "#aab3fa",
+            "5": "#a4befb",
+            "6": "#9ec9fc",
+            "7": "#98d4fc",
+            "8": "#91defc",
+            "9": "#8be9fd"
+        }
     },
     "display": {
-        "separator": " "
+        "separator": " ",
+"constants": [
+    "\u001b[38;2;139;233;253m\u001B[1m",   // {$1} = #8be9fd (cian Dracula)
+    "\u001b[38;2;146;215;253m\u001B[1m",   // {$2} = #92d7fd
+    "\u001b[38;2;154;196;253m\u001B[1m",   // {$3} = #9ac4fd
+    "\u001b[38;2;162;178;253m\u001B[1m",   // {$4} = #a2b2fd
+    "\u001b[38;2;169;160;253m\u001B[1m",   // {$5} = #a9a0fd (morado Dracula)
+    "\u001b[38;2;179;154;253m\u001B[1m",   // {$6} = #b39afd
+    "\u001b[38;2;186;153;253m\u001B[1m",   // {$7} = #ba99fd
+    "\u001b[38;2;192;163;253m\u001B[1m",   // {$8} = #c0a3fd
+    "\u001b[38;2;198;167;253m\u001B[1m",   // {$9} = #c6a7fd
+    "\u001b[38;2;205;173;252m\u001B[1m",   // {$10} = #cdadfc
+    "┌──────",                              // {$11}
+    "───────",                              // {$12}
+    "──────┐"                               // {$13}
+]
     },
     "modules": [
-        // Sistema (Cyan)
-        { "type": "OS", "key": "󰣇 OS", "keyColor": "#8be9fd" },
-        { "type": "Kernel", "key": "├ Kernel", "keyColor": "#8be9fd" },
-        { "type": "Packages", "key": "├󰏖 Packages", "keyColor": "#8be9fd" },
-        { "type": "Shell", "key": "├  Shell", "keyColor": "#8be9fd" },
-        { "type": "Uptime", "key": "└󰅐 Start Time", "keyColor": "#8be9fd" },
-        // Entorno gráfico (Purple)
         "break",
-        { "type": "DE", "key": "󰊬 DE", "keyColor": "#bd93f9" },
-        { "type": "WM", "key": "├󰧨 Window Manager", "keyColor": "#bd93f9" },
-        { "type": "LM", "key": "├󰧨 Login Manager", "keyColor": "#bd93f9" },
-        { "type": "WMTheme", "key": "├󰉼 WM Theme", "keyColor": "#bd93f9" },
-        { "type": "Theme", "key": "├󰉼 Color Themes", "keyColor": "#bd93f9" },
-        { "type": "Icons", "key": "├󰸉 System Icons", "keyColor": "#bd93f9" },
-        { "type": "Font", "key": "├ System Fonts", "keyColor": "#bd93f9" },
-        { "type": "Terminal", "key": "└ Terminal", "keyColor": "#bd93f9" },
-        // Hardware (Green)
+        {
+            "type": "custom",
+            "format": "{$1}{$11}{$2}{$12}{$3}{$12}{$4}{$12}{$5}{$6}{$12}{$7}{$12}{$8}{$12}{$9}{$12}{$10}{$13} Hardware"
+        },
+        { "type": "Chassis", "key": "{$4}├󰌢 PC        " },
+        { "type": "Board", "key": "{$5}├ Board     " },
+        { "type": "CPU", "key": "{$6}├󰻠 CPU       ", "temp": true },
+        { "type": "Memory", "key": "{$1}├󰑭 RAM       " },
+        { "type": "Swap", "key": "{$2}├󰓡 Zram      " },
+        { "type": "Disk", "key": "{$3}├󰋊 Disk      " },
+        { "type": "GPU", "key": "{$4}├󰍛 GPU       " },
+        { "type": "OpenGL", "key": "{$9}├󰍛 OpenGL    " },
+        { "type": "Vulkan", "key": "{$8}├󰍛 Vulkan    " },
+        { "type": "Display", "key": "{$7}└󰍹 Display(s)" },
+                {
+            "type": "custom",
+            "format": "{$10}{$11}{$9}{$12}{$8}{$12}{$7}{$12}{$6}{$5}{$12}{$4}{$12}{$3}{$12}{$2}{$12}{$1}{$13} Software"
+        },
+        { "type": "OS", "key": "{$4}├󰣇 OS        " },
+        { "type": "Kernel", "key": "{$5}├ Kernel    " },
+        { "type": "Packages", "key": "{$6}├󰏖 Packages  ",  },
+        { "type": "Shell", "key": "{$7}├ Shell     " },
+        { "type": "DE", "key": "{$8}├󰊬 DE        " },
+        { "type": "WM", "key": "{$9}├󰧨 WM        " },
+        { "type": "LM", "key": "{$10}├󰧨 LM        " },
+        { "type": "WMTheme", "key": "{$1}├󰉼 WM Theme  " },
+        { "type": "Theme", "key": "{$2}├󰉼 Theme     " },
+        { "type": "Icons", "key": "{$3}├󰸉 Icons     " },
+        { "type": "Font", "key": "{$4}├ Font      " },
+        { "type": "Terminal", "key": "{$5}└ Terminal  " },
+                {
+            "type": "custom",
+            "format": "{$1}{$11}{$2}{$12}{$3}{$12}{$4}{$12}{$5}{$6}{$12}{$7}{$12}{$8}{$12}{$9}{$12}{$10}{$13} Connect"
+        },
+        { "type": "LocalIP", "key": "{$6}├󰩟 Local IP  " },
+        { "type": "Wifi", "key": "{$7}└󰤨 Wifi      " },
+                {
+            "type": "custom",
+            "format": "{$10}{$11}{$9}{$12}{$8}{$12}{$7}{$12}{$6}{$5}{$12}{$4}{$12}{$3}{$12}{$2}{$12}{$1}{$13} Time"
+        },
+        { "type": "Uptime", "key": "{$10}├󰅐 Uptime    " },
+        { "type": "DateTime", "key": "{$8}└󰃭 Date      " },
         "break",
-        { "type": "Chassis", "key": "󰌢 PC", "keyColor": "#50fa7b" },
-        { "type": "Board", "key": "├ Board", "keyColor": "#50fa7b" },
-        { "type": "CPU", "key": "├󰻠 CPU", "keyColor": "#50fa7b", "temp": true },
-        { "type": "Memory", "key": "├󰑭 RAM", "keyColor": "#50fa7b" },
-        { "type": "Swap", "key": "├󰓡 Zram", "keyColor": "#50fa7b" },
-        { "type": "Disk", "key": "├ Disk", "keyColor": "#50fa7b" },
-        { "type": "GPU", "key": "├󰍛 GPU", "keyColor": "#50fa7b" },
-        { "type": "OpenGL", "key": "├󰍛 OpenGL", "keyColor": "#50fa7b" },
-        { "type": "Vulkan", "key": "├󰍛 Vulkan", "keyColor": "#50fa7b" },
-        { "type": "Display", "key": "└󰍹 Display(s)", "keyColor": "#50fa7b" },
-        "break",
-        { "type": "Colors"}
+        {
+          "type": "custom",
+          "format": "\u001b[38;2;241;250;140m󰮯 \u001b[38;2;189;147;249m󰊠 \u001b[38;2;139;233;253m󰊠 \u001b[38;2;255;121;198m󰊠 \u001b[38;2;255;184;108m󰊠 \u001b[38;2;80;250;123m󰊠 \u001b[38;2;98;114;164m󱙝"
+        }
     ]
-       
 }
-

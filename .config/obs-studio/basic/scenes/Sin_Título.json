@@ -8,7 +8,7 @@
             "id": "pipewire-screen-capture-source",
             "versioned_id": "pipewire-screen-capture-source",
             "settings": {
-                "RestoreToken": "09c0e7da-df8d-453e-bd08-19e13dca12a9"
+                "RestoreToken": "LbZARxOxs6Kv06szg3wbOg"
             },
             "mixers": 0,
             "sync": 0,
@@ -155,7 +155,7 @@
             "id": "pipewire-screen-capture-source",
             "versioned_id": "pipewire-screen-capture-source",
             "settings": {
-                "RestoreToken": "45307aee-39fd-4ddc-a84d-0bf1383dbbcd"
+                "RestoreToken": "0q_4_z7Cn7or9mBt9RRLbQ"
             },
             "mixers": 0,
             "sync": 0,
@@ -238,7 +238,7 @@
             "id": "pipewire-screen-capture-source",
             "versioned_id": "pipewire-screen-capture-source",
             "settings": {
-                "RestoreToken": "cffdaabe-73a8-4280-b52b-0f2c2f07ace9"
+                "RestoreToken": "CuBGqTpTv3t0j0q0uvUJ0g"
             },
             "mixers": 0,
             "sync": 0,
@@ -343,12 +343,12 @@
                         "id": 1,
                         "group_item_backup": true,
                         "pos": {
-                            "x": 1775.047119140625,
-                            "y": -22.9481201171875
+                            "x": 1651.094482421875,
+                            "y": -22.948078155517578
                         },
                         "pos_rel": {
-                            "x": 1.5093464851379395,
-                            "y": -1.0424965620040894
+                            "x": 1.2798045873641968,
+                            "y": -1.0424964427947998
                         },
                         "scale": {
                             "x": -0.7499998807907104,
@@ -398,11 +398,11 @@
                         "id": 3,
                         "group_item_backup": true,
                         "pos": {
-                            "x": 73.0,
+                            "x": -50.952667236328125,
                             "y": -268.00018310546875
                         },
                         "pos_rel": {
-                            "x": -1.6425925493240356,
+                            "x": -1.8721345663070679,
                             "y": -1.4962966442108154
                         },
                         "scale": {
@@ -453,11 +453,11 @@
                         "id": 2,
                         "group_item_backup": false,
                         "pos": {
-                            "x": -50.95257568359375,
+                            "x": -174.90516662597656,
                             "y": -268.00018310546875
                         },
                         "pos_rel": {
-                            "x": -1.8721344470977783,
+                            "x": -2.1016762256622314,
                             "y": -1.4962966442108154
                         },
                         "scale": {
@@ -544,11 +544,11 @@
                         "id": 2,
                         "group_item_backup": true,
                         "pos": {
-                            "x": 8.25,
-                            "y": 5.31109619140625
+                            "x": 8.249910354614258,
+                            "y": 5.311095714569092
                         },
                         "pos_rel": {
-                            "x": -1.7625000476837158,
+                            "x": -1.7625001668930054,
                             "y": -0.9901646375656128
                         },
                         "scale": {
@@ -599,8 +599,8 @@
                         "id": 1,
                         "group_item_backup": false,
                         "pos": {
-                            "x": 8.25,
-                            "y": 5.31109619140625
+                            "x": 8.249974250793457,
+                            "y": 5.311095714569092
                         },
                         "pos_rel": {
                             "x": -1.7625000476837158,
@@ -1389,12 +1389,12 @@
                         "id": 7,
                         "group_item_backup": false,
                         "pos": {
-                            "x": -60.5,
-                            "y": 639.0
+                            "x": -28.5,
+                            "y": 640.0
                         },
                         "pos_rel": {
-                            "x": -1.889814853668213,
-                            "y": 0.18333327770233154
+                            "x": -1.8305555582046509,
+                            "y": 0.18518519401550293
                         },
                         "scale": {
                             "x": 0.2671875059604645,
@@ -2097,7 +2097,7 @@
                         "group_item_backup": false,
                         "pos": {
                             "x": 1439.999755859375,
-                            "y": 193.24990844726562
+                            "y": 193.2499237060547
                         },
                         "pos_rel": {
                             "x": 0.8888884782791138,
@@ -2151,7 +2151,7 @@
                         "id": 3,
                         "group_item_backup": false,
                         "pos": {
-                            "x": 97.7501220703125,
+                            "x": 97.7500991821289,
                             "y": 0.0
                         },
                         "pos_rel": {
@@ -2271,7 +2271,7 @@
                         "id": 2,
                         "group_item_backup": false,
                         "pos": {
-                            "x": 0.0,
+                            "x": -7.152557373046875e-6,
                             "y": 0.0
                         },
                         "pos_rel": {
@@ -2377,8 +2377,8 @@
             "name": "Root2 9X16"
         }
     ],
-    "current_scene": "1 Full camera",
-    "current_program_scene": "1 Full camera",
+    "current_scene": "2 Escritorio y cam",
+    "current_program_scene": "2 Escritorio y cam",
     "canvases": [],
     "current_transition": "Desvanecimiento",
     "transition_duration": 300,
