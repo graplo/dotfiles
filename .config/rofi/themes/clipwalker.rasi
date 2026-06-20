@@ -144,8 +144,8 @@ listview {
 /*****----- Applications -----*****/
 element {
 
-    spacing: 10px;
-    padding: 8px;
+    spacing: 8px;
+    padding: 6px;
     border-radius: 0px;
     background-color: transparent;
     text-color: @gpl-foreground;
@@ -164,7 +164,7 @@ element selected.normal {
 
 element-icon {
 
-    size: 48px;
+    size: 42px;
     background-color: transparent;
     text-color: inherit;
 }

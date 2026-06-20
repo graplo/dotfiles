@@ -15,9 +15,10 @@ binds {
     // — rofi —
     Mod+Space hotkey-overlay-title="Application Launcher" { spawn "rofi" "-show" "drun"; }
     Mod+V hotkey-overlay-title="Clipboard" { spawn "sh" "-c" "~/.local/bin/cliphist-rofi"; }
-    Mod+slash hotkey-overlay-title="filebrowser" { spawn "rofi" "-show" "filebrowser"; }
-    Mod+Shift+C hotkey-overlay-title="filebrowser" { spawn "rofi" "-show" "calc"; }
-
+    Mod+slash hotkey-overlay-title="filebrowser" { spawn "rofi" "-show" "filebrowser" "-theme" "~/.config/rofi/themes/file.rasi"; }
+    Mod+Shift+C hotkey-overlay-title="calculator" { spawn "rofi" "-show" "calc" "-theme" "~/.config/rofi/themes/calc.rasi"; }
+    Mod+Alt+K hotkey-overlay-title="Bitwarden" { spawn "sh" "-c" "~/.local/bin/rofi-bw"; }
+    Mod+Semicolon hotkey-overlay-title="Emoji" { spawn "rofi" "-show" "emoji" "-theme" "~/.config/rofi/themes/emoji.rasi"; }
 
     // — Bluetooth y Wifi —
     Mod+Shift+B hotkey-overlay-title="Bluetooth" { spawn "sh" "-c" "rfkill unblock bluetooth && kitty --title bluetui -e bluetui"; }

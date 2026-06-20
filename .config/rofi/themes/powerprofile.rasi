@@ -1,3 +1,11 @@
+/*Dracula theme based on the Purple official rofi theme*/
+/*
+ ||  ||  
+ \\()// 
+//(__)\\
+||    ||  Graplo > Caja Power Profile
+*/
+
 @import "~/.config/rofi/themes/colors.rasi"
 
 /*****----- Configuration -----*****/

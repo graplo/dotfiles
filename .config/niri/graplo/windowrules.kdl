@@ -35,8 +35,8 @@ window-rule {
 // btop para kitty
 window-rule {
     match app-id="kitty" title="btop"
-    default-column-width { proportion 0.35; }
-    default-window-height { proportion 0.61; }
+    default-column-width { fixed 1259; }
+    default-window-height { fixed 871; }
 }
 
 // Weathr ancii de clima
