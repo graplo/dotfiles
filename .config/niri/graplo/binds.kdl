@@ -25,7 +25,7 @@ binds {
     Mod+Shift+W hotkey-overlay-title="WiFi" { spawn "sh" "-c" "rfkill unblock wifi && kitty --title impala -e impala"; }
 
     // — Power / Session —
-    Mod+Alt+L  hotkey-overlay-title="Lock Screen" { spawn "lock"; }
+    Mod+Alt+L  hotkey-overlay-title="Lock Screen" { spawn "hlock"; }
     Super+X    hotkey-overlay-title="Power Menu"  { spawn "sh" "-c" "~/.local/bin/powermenu.sh"; }
     Mod+P      hotkey-overlay-title="Power Profile" { spawn "~/.local/bin/rofi-powerprofile"; }
     Mod+Shift+E { quit; }
