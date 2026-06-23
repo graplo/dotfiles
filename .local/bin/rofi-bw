@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+rofi-rbw --selector-args="-theme ~/.config/rofi/themes/rbw.rasi"

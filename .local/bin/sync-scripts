@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+DRY_RUN=""
+if [[ "${1:-}" == "--dry-run" ]]; then
+    DRY_RUN="--dry-run"
+fi
+
+DOTFILES="$HOME/git/dotfiles/.local/bin"
+LOCAL_BIN="$HOME/.local/bin"
+
+[[ -d "$LOCAL_BIN" ]] || { gum style --foreground 212 "No existe: $LOCAL_BIN"; exit 1; }
+[[ -d "$DOTFILES" ]] || { gum style --foreground 212 "No existe: $DOTFILES"; exit 1; }
+
+gum style --border double --border-foreground 141 --padding "1 2" --foreground 212 "Sync scripts"
+
+gum spin --spinner dot --title "Sincronizando ~/.local/bin..." --title.foreground 117 -- \
+    rsync -avhP --delete-delay $DRY_RUN "$LOCAL_BIN/" "$DOTFILES/"
+
+gum style --foreground 84 --bold "Listo."

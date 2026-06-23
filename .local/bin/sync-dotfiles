@@ -1,0 +1,54 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+DRY_RUN=""
+if [[ "${1:-}" == "--dry-run" ]]; then
+    DRY_RUN="--dry-run"
+fi
+
+DOTFILES="$HOME/git/dotfiles/.config"
+CONFIG="$HOME/.config"
+
+[[ -d "$CONFIG" ]] || { gum style --foreground 212 "No existe: $CONFIG"; exit 1; }
+[[ -d "$DOTFILES" ]] || { gum style --foreground 212 "No existe: $DOTFILES"; exit 1; }
+
+gum style --border double --border-foreground 141 --padding "1 2" --foreground 212 "Sync dotfiles"
+
+dirs=(
+    cava
+    cliphist
+    DankMaterialShell
+    fastfetch
+    fish
+    ghostty
+    gtk-3.0
+    gtk-4.0
+    helix
+    kitty
+    mako
+    mpd
+    mpv
+    niri
+    obs-studio
+    peaclock
+    presenterm
+    pyradio
+    rmpc
+    rofi
+    swaylock
+    walker
+    waybar
+    wob
+    xdg-desktop-portal
+    yazi
+)
+
+for dir in "${dirs[@]}"; do
+    gum spin --spinner dot --title "Sincronizando $dir..." --title.foreground 117 -- \
+        rsync -avhP --delete-delay $DRY_RUN "$CONFIG/$dir/" "$DOTFILES/$dir/"
+done
+
+gum spin --spinner dot --title "Sincronizando starship..." --title.foreground 117 -- \
+    rsync -avhP $DRY_RUN "$HOME/.config/starship.toml" "$DOTFILES/starship.toml"
+
+gum style --foreground 84 --bold "Listo."
