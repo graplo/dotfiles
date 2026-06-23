@@ -1,0 +1,117 @@
+@author "Graplo"
+@description "Configuración Stasis para CachyOS + Niri"
+
+# ============================================================
+# CONFIGURACIÓN BASE
+#
+# En un PC de escritorio este bloque funciona como el plan activo.
+# En una laptop Stasis puede usar default.ac o default.battery.
+# ============================================================
+
+default:
+
+  # ============================================================
+  # OPCIONES GENERALES
+  # ============================================================
+
+  # No usamos integración directa con logind.
+  enable_loginctl false
+
+  # Respeta bloqueos de suspensión enviados por D-Bus.
+  # Ejemplo: reproductores multimedia, presentaciones, etc.
+  enable_dbus_inhibit true
+
+  # Detecta reproductores multimedia mediante MPRIS.
+  # Ejemplo: Haruna, mpv, etc.
+  monitor_media true
+
+  # Permite considerar también reproductores remotos.
+  ignore_remote_media false
+
+  # Evita falsos reinicios del contador por eventos rápidos.
+  debounce_seconds 5
+
+
+  # ============================================================
+  # NOTIFICACIONES
+  #
+  # Stasis usa Desktop Notifications por D-Bus.
+  # Como tienes mako, él será quien las muestre.
+  # No necesitas ejecutar notify-send manualmente.
+  # ============================================================
+
+  notify_on_unpause true
+  notify_before_action true
+
+
+  # ============================================================
+  # APLICACIONES QUE PUEDEN EVITAR EL BLOQUEO
+  #
+  # Estas son excepciones manuales.
+  # La multimedia normalmente se detecta con monitor_media.
+  # ============================================================
+
+  inhibit_apps [
+    "mpv"
+    "vlc"
+    r"kdenlive.*"
+  ]
+
+
+  # ============================================================
+  # DESKTOP PLAN
+  #
+  # Este es el plan usado en tu PC de escritorio.
+  #
+  # Flujo:
+  #   15 minutos sin actividad -> lock
+  #   30 minutos sin actividad -> suspensión
+  # ============================================================
+
+
+  lock_screen:
+    timeout 900
+
+    # Ejecuta tu script:
+    # ~/.local/bin/lock
+    command "lock"
+
+    # Aviso 10 segundos antes del bloqueo.
+    notification "Locking screen in 10 seconds"
+    notify_seconds_before 10
+  end
+
+
+  suspend:
+    timeout 1800
+    command "systemctl suspend"
+  end
+
+end
+
+
+# ============================================================
+# PERFIL GAMING
+#
+# NO ES UN PLAN.
+# Es un perfil que modifica temporalmente el plan base.
+#
+# Se activa con:
+#   stasis profile gaming
+#
+# Vuelve al normal con:
+#   stasis profile
+# ============================================================
+
+gaming:
+
+  mode "overlay"
+
+  # Juegos de Steam y binarios Linux.
+  # Mientras estén activos Stasis no actuará.
+  inhibit_apps [
+    r"steam_app_.*"
+    r".*\.x86_64"
+  ]
+
+end
