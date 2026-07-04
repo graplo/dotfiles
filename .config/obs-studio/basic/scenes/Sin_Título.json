@@ -8,7 +8,7 @@
             "id": "pipewire-screen-capture-source",
             "versioned_id": "pipewire-screen-capture-source",
             "settings": {
-                "RestoreToken": "LbZARxOxs6Kv06szg3wbOg"
+                "RestoreToken": "yCXam9vXR_Op8wv3R9jo4A"
             },
             "mixers": 0,
             "sync": 0,
@@ -70,6 +70,32 @@
                         "brightness": -0.0069,
                         "saturation": -0.03,
                         "color_multiply": 4294967295
+                    },
+                    "mixers": 0,
+                    "sync": 0,
+                    "flags": 0,
+                    "volume": 1.0,
+                    "balance": 0.5,
+                    "enabled": true,
+                    "muted": false,
+                    "push-to-mute": false,
+                    "push-to-mute-delay": 0,
+                    "push-to-talk": false,
+                    "push-to-talk-delay": 0,
+                    "hotkeys": {},
+                    "deinterlace_mode": 0,
+                    "deinterlace_field_order": 0,
+                    "monitoring_type": 0,
+                    "private_settings": {}
+                },
+                {
+                    "prev_ver": 536936450,
+                    "name": "Filtro de enfoque",
+                    "uuid": "5f021205-6f15-41cc-bc5f-a034cc819a08",
+                    "id": "sharpness_filter",
+                    "versioned_id": "sharpness_filter_v2",
+                    "settings": {
+                        "sharpness": 0.12
                     },
                     "mixers": 0,
                     "sync": 0,
@@ -155,7 +181,7 @@
             "id": "pipewire-screen-capture-source",
             "versioned_id": "pipewire-screen-capture-source",
             "settings": {
-                "RestoreToken": "0q_4_z7Cn7or9mBt9RRLbQ"
+                "RestoreToken": "f2yDVCJGXre2dkyW7nPORw"
             },
             "mixers": 0,
             "sync": 0,
@@ -238,7 +264,7 @@
             "id": "pipewire-screen-capture-source",
             "versioned_id": "pipewire-screen-capture-source",
             "settings": {
-                "RestoreToken": "CuBGqTpTv3t0j0q0uvUJ0g"
+                "RestoreToken": "F4jNXskJCFDh4dx2BQndjw"
             },
             "mixers": 0,
             "sync": 0,
@@ -343,20 +369,20 @@
                         "id": 1,
                         "group_item_backup": true,
                         "pos": {
-                            "x": 1651.094482421875,
-                            "y": -22.948078155517578
+                            "x": 1822.39404296875,
+                            "y": -30.72260093688965
                         },
                         "pos_rel": {
-                            "x": 1.2798045873641968,
-                            "y": -1.0424964427947998
+                            "x": 1.597025990486145,
+                            "y": -1.0568937063217163
                         },
                         "scale": {
                             "x": -0.7499998807907104,
                             "y": 0.7499998807907104
                         },
                         "scale_rel": {
-                            "x": -1.2680554389953613,
-                            "y": 1.2680577039718628
+                            "x": -1.3152776956558228,
+                            "y": 1.3154090642929077
                         },
                         "bounds": {
                             "x": 0.0,
@@ -398,20 +424,20 @@
                         "id": 3,
                         "group_item_backup": true,
                         "pos": {
-                            "x": -50.952667236328125,
-                            "y": -268.00018310546875
+                            "x": 58.00001525878906,
+                            "y": -287.0
                         },
                         "pos_rel": {
-                            "x": -1.8721345663070679,
-                            "y": -1.4962966442108154
+                            "x": -1.67037034034729,
+                            "y": -1.5314815044403076
                         },
                         "scale": {
                             "x": 0.6230000257492065,
                             "y": 0.6230000257492065
                         },
                         "scale_rel": {
-                            "x": 1.0533314943313599,
-                            "y": 1.0533334016799927
+                            "x": 1.0925575494766235,
+                            "y": 1.092666745185852
                         },
                         "bounds": {
                             "x": 0.0,
@@ -453,20 +479,20 @@
                         "id": 2,
                         "group_item_backup": false,
                         "pos": {
-                            "x": -174.90516662597656,
-                            "y": -268.00018310546875
+                            "x": -71.60572052001953,
+                            "y": -287.0
                         },
                         "pos_rel": {
-                            "x": -2.1016762256622314,
-                            "y": -1.4962966442108154
+                            "x": -1.9103809595108032,
+                            "y": -1.5314815044403076
                         },
                         "scale": {
-                            "x": 1.2680555582046509,
-                            "y": 1.2680578231811523
+                            "x": 1.3152778148651123,
+                            "y": 1.3154093027114868
                         },
                         "scale_rel": {
-                            "x": 1.2680555582046509,
-                            "y": 1.2680578231811523
+                            "x": 1.3152778148651123,
+                            "y": 1.3154093027114868
                         },
                         "bounds": {
                             "x": 0.0,
@@ -1371,7 +1397,7 @@
                     {
                         "name": "Root1 circular",
                         "source_uuid": "cc657f70-d542-4ff4-988a-7539d8f12d17",
-                        "visible": true,
+                        "visible": false,
                         "locked": false,
                         "rot": 0.0,
                         "scale_ref": {
@@ -1389,20 +1415,20 @@
                         "id": 7,
                         "group_item_backup": false,
                         "pos": {
-                            "x": -28.5,
-                            "y": 640.0
+                            "x": -71.0,
+                            "y": 661.0
                         },
                         "pos_rel": {
-                            "x": -1.8305555582046509,
-                            "y": 0.18518519401550293
+                            "x": -1.9092592000961304,
+                            "y": 0.224074125289917
                         },
                         "scale": {
-                            "x": 0.2671875059604645,
-                            "y": 0.2673611044883728
+                            "x": 0.26770833134651184,
+                            "y": 0.26759257912635803
                         },
                         "scale_rel": {
-                            "x": 0.2671875059604645,
-                            "y": 0.2673611044883728
+                            "x": 0.26770833134651184,
+                            "y": 0.26759257912635803
                         },
                         "bounds": {
                             "x": 0.0,
@@ -2097,11 +2123,11 @@
                         "group_item_backup": false,
                         "pos": {
                             "x": 1439.999755859375,
-                            "y": 193.2499237060547
+                            "y": 194.82711791992188
                         },
                         "pos_rel": {
-                            "x": 0.8888884782791138,
-                            "y": -0.6421297788619995
+                            "x": 0.8888885378837585,
+                            "y": -0.6392090320587158
                         },
                         "scale": {
                             "x": -0.7499998807907104,
@@ -2151,11 +2177,11 @@
                         "id": 3,
                         "group_item_backup": false,
                         "pos": {
-                            "x": 97.7500991821289,
+                            "x": 98.53866577148438,
                             "y": 0.0
                         },
                         "pos_rel": {
-                            "x": -1.5967590808868408,
+                            "x": -1.5952987670898438,
                             "y": -1.0
                         },
                         "scale": {
@@ -2217,7 +2243,8 @@
                     "id": "mask_filter",
                     "versioned_id": "mask_filter_v2",
                     "settings": {
-                        "image_path": "/home/graplo/Imágenes/OBS/circulo2.png"
+                        "image_path": "/home/graplo/Imágenes/OBS/circulo2.png",
+                        "type": "mask_color_filter.effect"
                     },
                     "mixers": 0,
                     "sync": 0,
@@ -2409,7 +2436,7 @@
     "saved_projectors": [],
     "preview_locked": false,
     "scaling_enabled": true,
-    "scaling_level": -6,
+    "scaling_level": -7,
     "scaling_off_x": 0.0,
     "scaling_off_y": 0.0,
     "virtual-camera": {

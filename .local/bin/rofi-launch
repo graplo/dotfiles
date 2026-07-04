@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+# ~/.local/bin/rofi-launch
+# Uso: rofi-launch <modo> [args extra de rofi...]
+# Ej:  rofi-launch drun
+#      rofi-launch calc -theme ~/.config/rofi/themes/calc.rasi
+#      rofi-launch powermenu -modi "powermenu:~/.local/bin/rofi-power-menu --choices=shutdown/reboot/suspend/logout/lockscreen" -theme ~/.config/rofi/themes/powermenu.rasi
+
+MODE="$1"; shift
+
+BASE="$HOME/.config/rofi/images"
+LINK="$BASE/$MODE/current"
+mkdir -p "$BASE/$MODE"
+
+# Si el modo tiene pool propio (formato de imagen distinto), usarlo.
+# Si no, cae al pool compartido panorámico.
+if [[ -d "$BASE/$MODE/pool" ]]; then
+    POOL="$BASE/$MODE/pool"
+else
+    POOL="$BASE/pool"
+fi
+
+IMG=$(find "$POOL" -maxdepth 1 -type f \
+    \( -iname '*.png' -o -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.webp' \) \
+    | shuf -n 1)
+[[ -n "$IMG" ]] && ln -sf "$IMG" "$LINK"
+
+exec rofi -show "$MODE" "$@"

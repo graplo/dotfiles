@@ -61,7 +61,7 @@ imagebox {
     width:                  260px;
 
     background-color:       transparent;
-    background-image:       url("/home/graplo/.config/rofi/images/power.jpg", height);
+    background-image:       url("~/.config/rofi/images/powermenu/current", height);
     children:               [ "dummy", "message"];
 }
 

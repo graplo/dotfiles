@@ -42,6 +42,28 @@ window#waybar {
   padding: 6px 0;
 }
 
+#custom-notification {
+  color: @foreground;
+  padding: 6px 0;
+  font-size: 18px;
+}
+
+/* Hay notificaciones */
+#custom-notification.notification {
+    color: @color4;
+}
+
+/* No molestar activado */
+#custom-notification.dnd-none,
+#custom-notification.dnd-notification {
+    color: @color1;
+}
+
+/* Si quieres diferenciar DND + mensajes */
+#custom-notification.dnd-notification {
+    color: @color9;
+}
+
 #custom-separator {
     color: @color8;
     padding: 0;

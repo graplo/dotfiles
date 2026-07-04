@@ -6,6 +6,6 @@
 #     \\     // ```--.._/
 # GPL  ':===:'
 #        ```
-rofi -show powerprofile \
+rofi-launch powerprofile \
     -modi "powerprofile:~/.local/bin/powerprofile" \
     -theme ~/.config/rofi/themes/powerprofile.rasi

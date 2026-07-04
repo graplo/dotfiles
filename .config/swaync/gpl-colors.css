@@ -1,0 +1,81 @@
+/* ~/.config/swaync/gpl-colors.css
+ *
+ * Graplo Dracula Design System
+ */
+
+/*──────────────────────────────────────────────
+  Dracula Palette (colores reales)
+──────────────────────────────────────────────*/
+
+@define-color background   #282A36;
+@define-color current      #44475A;
+@define-color foreground   #F8F8F2;
+@define-color comment      #6272A4;
+
+@define-color cyan         #8BE9FD;
+@define-color green        #50FA7B;
+@define-color orange       #FFB86C;
+@define-color pink         #FF79C6;
+@define-color purple       #BD93F9;
+@define-color red          #FF5555;
+@define-color yellow       #F1FA8C;
+
+/*──────────────────────────────────────────────
+  Material aliases
+  (compatibilidad con el CSS existente)
+──────────────────────────────────────────────*/
+
+@define-color on_background              @foreground;
+
+@define-color surface                    #21222C;
+@define-color on_surface                 @foreground;
+
+@define-color surface_variant            @background;
+@define-color on_surface_variant         @foreground;
+
+@define-color surface_container          @background;
+@define-color surface_container_high     #313244;
+@define-color surface_container_highest  @current;
+
+/* Primary */
+
+@define-color primary                    @purple;
+@define-color on_primary                 @background;
+@define-color primary_container          #7C5AC7;
+
+/* Secondary */
+
+@define-color secondary                  @pink;
+
+/* Outline */
+
+@define-color outline                    @comment;
+
+/* Semantic */
+
+@define-color error                      @red;
+@define-color warning                    @yellow;
+@define-color info                       @cyan;
+
+/*──────────────────────────────────────────────
+  Graplo aliases
+──────────────────────────────────────────────*/
+
+@define-color panel                      @background;
+@define-color panel_alt                  @surface_container_high;
+
+@define-color card                       @surface_container_highest;
+
+@define-color hover                      @outline;
+
+@define-color active                     @purple;
+
+@define-color text                       @foreground;
+
+@define-color border                     @primary;
+
+@define-color critical                   @error;
+
+@define-color caution                    @warning;
+
+@define-color accent_info                @info;

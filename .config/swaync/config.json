@@ -1,0 +1,226 @@
+{
+  "$schema": "/etc/xdg/swaync/configSchema.json",
+  "ignore-gtk-theme": true,
+  "positionX": "right",
+  "positionY": "top",
+  "layer": "overlay",
+  "control-center-layer": "top",
+  "layer-shell": true,
+  "layer-shell-cover-screen": true,
+  "cssPriority": "user",
+
+  "control-center-margin-top": 10,
+  "control-center-margin-bottom": 10,
+  "control-center-margin-right": 10,
+  "control-center-margin-left": 10,
+
+  "notification-2fa-action": true,
+  "notification-inline-replies": false,
+  "notification-body-image-height": 100,
+  "notification-body-image-width": 200,
+
+  "timeout": 10,
+  "timeout-low": 5,
+  "timeout-critical": 20,
+  "fit-to-screen": true,
+  "relative-timestamps": true,
+  "control-center-width": 500,
+  "control-center-height": 600,
+  "notification-window-width": 500,
+  "keyboard-shortcuts": true,
+  "notification-grouping": true,
+  "image-visibility": "when-available",
+  "transition-time": 200,
+  "hide-on-clear": false,
+  "hide-on-action": true,
+  "text-empty": "No Notifications",
+  "script-fail-notify": true,
+  "scripts": {
+    "example-script": {
+      "app-name": "example.app.id",
+      "exec": "echo 'Do something...'",
+      "urgency": "Normal"
+    },
+    "example-action-script": {
+      "app-name": "example.app.id",
+      "exec": "echo 'Do something actionable!'",
+      "urgency": "Normal",
+      "run-on": "action"
+    }
+  },
+
+  "notification-visibility": {
+    "example-name": {
+      "state": "muted",
+      "urgency": "Normal",
+      "app-name": "example.app.id"
+    }
+  },
+
+  "widgets": [
+    "menubar#label",
+    "mpris",
+    "volume",
+    "title",
+    "dnd",
+    "inhibitors",
+    "notifications",
+    "buttons-grid"
+  ],
+  "widget-config": {
+    "label": {
+      "max-lines": 1,
+      "text": "Graplo Panel"
+    },
+    "notifications": {
+      "vexpand": true
+    },
+
+    "inhibitors": {
+      "text": "Inhibitors",
+      "button-text": "Clear All",
+      "clear-all-button": true
+    },
+
+    "menubar#label": {
+      "menu#graplo": {
+  "label": " Graplo",
+  "position": "left",
+  "actions": [
+    {
+      "label": "󰖟   Blog",
+      "command": "swaync-client -t -sw && xdg-open https://graplo.github.io/"
+    },
+    {
+      "label": "󰊤   GitHub",
+      "command": "swaync-client -t -sw && xdg-open https://github.com/graplo"
+    },
+    {
+      "label": "󰗃   YouTube",
+      "command": "swaync-client -t -sw && xdg-open https://youtube.com/@Graplo"
+    },
+    {
+      "label": "󰋾   Instagram",
+      "command": "swaync-client -t -sw && xdg-open https://www.instagram.com/graplo_street/"
+    }
+  ]
+},
+
+  "menu#network": {
+    "label": "",
+    "position": "left",
+    "actions": [
+            {
+        "label": "   WiFi (Impala)",
+        "command": "swaync-client -t -sw && kitty --title impala -e impala"
+      },
+      {
+        "label": "󰂯  Bluetooth (Bluetui)",
+        "command": "swaync-client -t -sw && kitty --title bluetui -e bluetui"
+      },
+      {
+        "label": "   Aerc",
+        "command": "swaync-client -t -sw && kitty -e aerc"
+      }
+    ]
+  },
+
+  "menu#audio": {
+    "label": "󱀞",
+    "position": "left",
+    "actions": [
+      {
+        "label": "󰤽   Wiremix",
+        "command": "swaync-client -t -sw && kitty -e wiremix"
+      },
+      {
+        "label": "   Control de volumen",
+        "command": "swaync-client -t -sw && pavucontrol"
+      },
+      {
+        "label": "󱡬  Easy Effects",
+        "command": "swaync-client -t -sw && easyeffects"
+      }
+    ]
+  },
+
+  "menu#system": {
+    "label": "󰍛",
+    "position": "left",
+    "actions": [
+      {
+        "label": "   btop (Better TOP)",
+        "command": "swaync-client -t -sw && kitty --title btop -e btop"
+      },
+      {
+        "label": "   htop (Hisham's TOP)",
+        "command": "swaync-client -t -sw && kitty --title btop -e htop"
+      },
+      {
+        "label": "󰻠   nvtop (Neat Videocard TOP)",
+        "command": "swaync-client -t -sw && kitty --title btop -e nvtop"
+      }
+    ]
+  }
+
+},
+
+   "volume": {
+      "label": "󰕾",
+      "device": "default",
+      "slider": true,
+      "show-per-app": true,
+      "expand-button-label": "",
+      "collapse-button-label": ""
+    },
+  
+    "title": {
+      "text": "Notifications",
+      "clear-all-button": true,
+      "button-text": "  "
+    },
+
+    "dnd": {
+      "text": "Do Not Disturb"
+    },
+    
+    "mpris": {
+      "blacklist": [],
+      "autohide": false,
+      "show-album-art": "always",
+      "loop-carousel": false
+    },
+
+    "buttons-grid": {
+      "buttons-per-row": 4,
+      "actions": [
+
+        {
+         "label": "",
+      "type": "toggle",
+      "command": "pamixer -t",
+      "update-command": "pamixer --get-mute"
+           },
+
+        {
+             "label": "",
+      "type": "toggle",
+      "command": "pamixer --default-source -t",
+      "update-command": "pamixer --default-source --get-mute"
+           },
+
+        {
+          "label": "󰂯",
+          "type": "toggle",
+          "command": "rfkill toggle bluetooth",
+          "update-command": "bash -c 'if rfkill list bluetooth | grep -qi \"soft blocked: no\"; then echo true; else echo false; fi'"
+        },
+
+        {
+        "label": "󰌾",
+      "command": "stasis trigger lockscreen"
+        }
+      ]
+    }
+  }
+}

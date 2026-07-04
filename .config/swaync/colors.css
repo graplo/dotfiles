@@ -1,0 +1,21 @@
+/* ~/.config/matugen/colors.css
+   Plantilla de entrada para Matugen.
+   Contiene los 15 nombres MD3 que coinciden con el JSON Dracula
+   de Graplo (dank-colors / theme dracula), en modo oscuro.
+   Generará ~/.config/swaync/colors.css con valores hex reales. */
+
+@define-color primary #d6bbfb;
+@define-color on_primary #3b255b;
+@define-color primary_container #523c73;
+@define-color secondary #cec2da;
+@define-color surface #151218;
+@define-color on_surface #e7e0e8;
+@define-color surface_variant #4a454e;
+@define-color on_surface_variant #ccc4cf;
+@define-color background #151218;
+@define-color on_background #e7e0e8;
+@define-color outline #958e99;
+@define-color surface_container #211e24;
+@define-color surface_container_high #2c292f;
+@define-color surface_container_highest #37333a;
+@define-color error #ffb4ab;

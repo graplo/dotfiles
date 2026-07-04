@@ -1,0 +1,10 @@
+#!/bin/bash
+#         ,--.!,
+#      __/   -*- ▄        ▄     ▘▜ 
+#    ,d08b.  '|` ▙▘▛▌▛▛▌  ▌▌█▌▌▌▌▐ 
+#    0088MM      ▙▘▙▌▌▌▌  ▙▘▙▖▚▘▌▐▖
+#    `9MMP'     
+
+rofi-launch powermenu \
+    -modi "powermenu:~/.local/bin/rofi-power-menu --choices=shutdown/reboot/suspend/logout/lockscreen" \
+    -theme ~/.config/rofi/themes/powermenu.rasi

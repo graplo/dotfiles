@@ -36,21 +36,31 @@
         "break",
         {
             "type": "custom",
-            "format": "{$1}{$11}{$2}{$12}{$3}{$12}{$4}{$12}{$5}{$6}{$12}{$7}{$12}{$8}{$12}{$9}{$12}{$10}{$13} Hardware"
+            "format": "{$5}󰭿 Hardware"
         },
-        { "type": "Chassis", "key": "{$4}├󰌢 PC        " },
-        { "type": "Board", "key": "{$5}├ Board     " },
-        { "type": "CPU", "key": "{$6}├󰻠 CPU       ", "temp": true },
-        { "type": "Memory", "key": "{$1}├󰑭 RAM       " },
-        { "type": "Swap", "key": "{$2}├󰓡 Zram      " },
-        { "type": "Disk", "key": "{$3}├󰋊 Disk      " },
-        { "type": "GPU", "key": "{$4}├󰍛 GPU       " },
+        {
+            "type": "custom",
+            "format": "{$1}{$11}{$2}{$12}{$3}{$12}{$4}{$12}{$5}{$6}{$12}{$7}{$12}{$8}{$12}{$9}{$12}{$10}{$13}"
+        },
+        { "type": "Chassis", "key": "{$2}├󰌢 PC        " },
+        { "type": "Board", "key": "{$3}├ Board     " },
+        { "type": "CPU", "key": "{$4}├󰻠 CPU       ", "temp": true },
+        { "type": "Memory", "key": "{$5}├󰑭 RAM       " },
+        { "type": "Swap", "key": "{$6}├󰓡 Zram      " },
+        { "type": "Disk", "key": "{$7}├󰋊 Disk      " },
+        { "type": "GPU", "key": "{$8}├󰍛 GPU       " },
         { "type": "OpenGL", "key": "{$9}├󰍛 OpenGL    " },
-        { "type": "Vulkan", "key": "{$8}├󰍛 Vulkan    " },
+        { "type": "Vulkan", "key": "{$10}├󰍛 Vulkan    " },
         { "type": "Display", "key": "{$7}└󰍹 Display(s)" },
+
+        "break",
+        {
+            "type": "custom",
+            "format": "{$1}󰭿 Software"
+        },
                 {
             "type": "custom",
-            "format": "{$10}{$11}{$9}{$12}{$8}{$12}{$7}{$12}{$6}{$5}{$12}{$4}{$12}{$3}{$12}{$2}{$12}{$1}{$13} Software"
+            "format": "{$10}{$11}{$9}{$12}{$8}{$12}{$7}{$12}{$6}{$5}{$12}{$4}{$12}{$3}{$12}{$2}{$12}{$1}{$13}"
         },
         { "type": "OS", "key": "{$4}├󰣇 OS        " },
         { "type": "Kernel", "key": "{$5}├ Kernel    " },
@@ -64,18 +74,21 @@
         { "type": "Icons", "key": "{$3}├󰸉 Icons     " },
         { "type": "Font", "key": "{$4}├ Font      " },
         { "type": "Terminal", "key": "{$5}└ Terminal  " },
+
+        "break",
+        {
+            "type": "custom",
+            "format": "{$5}󰭿 Connection & 󰭿 Time"
+        },
                 {
             "type": "custom",
-            "format": "{$1}{$11}{$2}{$12}{$3}{$12}{$4}{$12}{$5}{$6}{$12}{$7}{$12}{$8}{$12}{$9}{$12}{$10}{$13} Connect"
+            "format": "{$1}{$11}{$2}{$12}{$3}{$12}{$4}{$12}{$5}{$6}{$12}{$7}{$12}{$8}{$12}{$9}{$12}{$10}{$13}"
         },
-        { "type": "LocalIP", "key": "{$6}├󰩟 Local IP  " },
-        { "type": "Wifi", "key": "{$7}└󰤨 Wifi      " },
-                {
-            "type": "custom",
-            "format": "{$10}{$11}{$9}{$12}{$8}{$12}{$7}{$12}{$6}{$5}{$12}{$4}{$12}{$3}{$12}{$2}{$12}{$1}{$13} Time"
-        },
-        { "type": "Uptime", "key": "{$10}├󰅐 Uptime    " },
-        { "type": "DateTime", "key": "{$8}└󰃭 Date      " },
+        { "type": "LocalIP", "key": "{$2}├󰩟 Local IP  " },
+        { "type": "Wifi", "key": "{$3}├󰤨 Wifi      " },
+        { "type": "Uptime", "key": "{$4}├󰅐 Uptime    " },
+        { "type": "DateTime", "key": "{$5}└󰃭 Date      " },
+
         "break",
         {
           "type": "custom",

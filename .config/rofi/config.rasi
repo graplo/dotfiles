@@ -28,6 +28,14 @@ configuration {
     kb-select-2:     "F2";
     kb-select-3:     "F3";
     kb-select-4:     "F4";
+
+	/* Para bajar y subir estilo vim usando la tecla ALT */
+    kb-row-up: "Alt+k";
+    kb-row-down: "Alt+j";
+
+	/* Para cambiar de modos dejando las flechas libres para el texto */
+    kb-mode-previous: "Alt+h";
+    kb-mode-next: "Alt+l";
 	
     }
 

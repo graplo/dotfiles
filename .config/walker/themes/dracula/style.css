@@ -1,16 +1,30 @@
-@define-color window_bg_color #282A36;
-@define-color accent_bg_color #BD93F9;
-@define-color theme_fg_color #F8F8F2;
-@define-color error_bg_color #FF5555;
-@define-color error_fg_color #F8F8F2;
+/* --- Paleta de Colores Dracula --- */
+@define-color background #282A36;
+@define-color current_line #44475A;
+@define-color foreground #F8F8F2;
+@define-color comment #6272A4;
+@define-color cyan #8BE9FD;
+@define-color green #50FA7B;
+@define-color orange #FFB86C;
+@define-color pink #FF79C6;
+@define-color purple #BD93F9;
+@define-color red #FF5555;
+@define-color yellow #F1FA8C;
+
+/* --- Variables Semánticas de GTK / Walker --- */
+@define-color window_bg_color @background;
+@define-color accent_bg_color @purple;
+@define-color theme_fg_color @foreground;
+@define-color error_bg_color @red;
+@define-color error_fg_color @foreground;
 
 * {
   all: unset;
 }
 
 popover {
-  background: lighter(@window_bg_color);
-  border: 2px solid alpha(@accent_bg_color, 0.9);
+  background: @background;
+  border: 3px solid @purple;
   border-radius: 0px; /* CUADRADO */
   padding: 10px;
 }
@@ -31,16 +45,16 @@ scrollbar {
   box-shadow:
     0 19px 38px rgba(0, 0, 0, 0.3),
     0 15px 12px rgba(0, 0, 0, 0.22);
-  background: @window_bg_color;
+  background: @background;
   padding: 20px;
   border-radius: 0px; /* CUADRADO */
-  border: 2px solid alpha(@accent_bg_color, 0.9);
+  border: 3px solid @purple;
 }
 
 .preview-box,
 .elephant-hint,
 .placeholder {
-  color: @theme_fg_color;
+  color: @foreground;
 }
 
 .box {
@@ -55,14 +69,14 @@ scrollbar {
 }
 
 .input selection {
-  background: lighter(lighter(lighter(@window_bg_color)));
+  background: lighter(lighter(lighter(@background)));
 }
 
 .input {
-  caret-color: @theme_fg_color;
-  background: lighter(@window_bg_color);
+  caret-color: @foreground;
+  background: lighter(@background);
   padding: 10px;
-  color: @theme_fg_color;
+  color: @foreground;
 }
 
 .input:focus,
@@ -79,7 +93,7 @@ scrollbar {
 }
 
 .list {
-  color: @theme_fg_color;
+  color: @foreground;
 }
 
 child {
@@ -91,15 +105,34 @@ child {
 }
 
 .item-quick-activation {
-  background: alpha(@accent_bg_color, 0.25);
+  background: alpha(@purple, 0.25);
   border-radius: 0px; /* CUADRADO */
   padding: 10px;
 }
 
-/* child:hover .item-box, */
+/* 1. Esto pinta el fondo de morado intenso */
 child:selected .item-box,
 row:selected .item-box {
-  background: alpha(@accent_bg_color, 0.25);
+  background: @purple;
+}
+
+/* 2. Cambia el color del nombre y descripción de la app */
+child:selected .item-text,
+row:selected .item-text,
+child:selected .item-subtext,
+row:selected .item-subtext {
+  color: @background;
+}
+
+/* 3. ¡LA CLAVE PARA EL F1, F2! Ataca la etiqueta del atajo rápido de la fila activa */
+child:selected .item-quick-activation,
+row:selected .item-quick-activation,
+child:selected .keybind-label,
+row:selected .keybind-label {
+  background: @background;        /* Color Gris Oscuro Dracula para la cajita */
+  border: 1px solid @background; /* Elimina cualquier borde brillante molesto */
+  color: @purple;   /* El texto "F1" vuelve a ser morado brillante para contrastar */
+  border-radius: 0px;        /* Mantiene tu estética totalmente cuadrada */
 }
 
 .item-text-box {
@@ -120,10 +153,10 @@ row:selected .item-box {
 }
 
 .preview {
-  border: 1px solid alpha(@accent_bg_color, 0.25);
+  border: 1px solid alpha(@purple, 0.25);
   /* padding: 10px; */
   border-radius: 0px; /* CUADRADO */
-  color: @theme_fg_color;
+  color: @foreground;
 }
 
 .calc .item-text {
@@ -159,9 +192,9 @@ row:selected .item-box {
 
 .keybinds {
   padding-top: 10px;
-  border-top: 1px solid lighter(@window_bg_color);
+  border-top: 1px solid lighter(@background);
   font-size: 12px;
-  color: @theme_fg_color;
+  color: @foreground;
 }
 
 .global-keybinds {
@@ -189,13 +222,13 @@ row:selected .item-box {
 .keybind-label {
   padding: 2px 4px;
   border-radius: 0px; /* CUADRADO */
-  border: 1px solid @theme_fg_color;
+  border: 1px solid @foreground;
 }
 
 .error {
   padding: 10px;
   background: @error_bg_color;
-  color: @error_fg_color;
+  color: @foreground;
 }
 
 :not(.calc).current {

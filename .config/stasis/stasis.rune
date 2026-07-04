@@ -26,7 +26,7 @@ default:
   monitor_media true
 
   # Permite considerar también reproductores remotos.
-  ignore_remote_media false
+  ignore_remote_media true
 
   # Evita falsos reinicios del contador por eventos rápidos.
   debounce_seconds 5
@@ -53,7 +53,6 @@ default:
 
   inhibit_apps [
     "mpv"
-    "vlc"
     r"kdenlive.*"
   ]
 
@@ -73,8 +72,8 @@ default:
     timeout 900
 
     # Ejecuta tu script:
-    # ~/.local/bin/lock
-    command "lock"
+    # ~/.local/bin/hlock
+    command "hlock"
 
     # Aviso 10 segundos antes del bloqueo.
     notification "Locking screen in 10 seconds"
