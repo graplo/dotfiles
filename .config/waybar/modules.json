@@ -308,7 +308,7 @@
 },
 "custom/powermenu": {
     "format": "<span size='13pt'>󰐥</span>",
-    "on-click": "~/.local/bin/powermenu.sh",
+    "on-click": "~/.local/bin/powermenu",
     "tooltip": false
 }
 }

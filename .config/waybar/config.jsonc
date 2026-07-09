@@ -24,7 +24,7 @@
     // "group/brightness",
     "custom/ddc-brightness",
     "custom/powerprofile",
-    "custom/cachy",
+    // "custom/cachy",
     "battery",
     "custom/powermenu"
   ]

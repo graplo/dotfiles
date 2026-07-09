@@ -8,7 +8,7 @@ GPL   `      "      `
 
 configuration {
     /* Modos activos en el sistema */
-    modes: [ drun, window, filebrowser, calc ]; 
+    modes: [ drun, emoji, filebrowser, calc ]; 
 
     /* Comportamiento general */
     show-icons:      true;
@@ -18,7 +18,8 @@ configuration {
 
     /* Nombres limpios para los modos */
     display-drun:    "󰀻";
-    display-window:  "󱂬";
+	display-emoji: "󰞅";
+    //display-window:  "󱂬";
     //display-run:     "󰘳";
     display-calc:    "󰪚";
     display-filebrowser: "󰉋";
@@ -30,8 +31,8 @@ configuration {
     kb-select-4:     "F4";
 
 	/* Para bajar y subir estilo vim usando la tecla ALT */
-    kb-row-up: "Alt+k";
-    kb-row-down: "Alt+j";
+	kb-row-up:   "Alt+k,Up";
+	kb-row-down: "Alt+j,Down";
 
 	/* Para cambiar de modos dejando las flechas libres para el texto */
     kb-mode-previous: "Alt+h";

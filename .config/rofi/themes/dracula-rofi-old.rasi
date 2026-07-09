@@ -8,11 +8,13 @@ mod+space
 
 @import "~/.config/rofi/themes/colors.rasi"
 
+
 /*****----- Configuration -----*****/
 configuration {
     show-icons: true;
     markup-rows: true;
 }
+
 
 /*****----- Global -----*****/
 * {
@@ -21,14 +23,15 @@ configuration {
     text-color: @gpl-foreground;
 }
 
+
 /*****----- Main Window -----*****/
 window {
+
     transparency: "real";
     location: center;
     anchor: center;
     fullscreen: false;
-    width: 750px;
-    height: 520px;
+    width: 700px;
     border: 3px;
     border-radius: 0px;
     border-color: @gpl-purple;
@@ -36,56 +39,40 @@ window {
     cursor: default;
 }
 
-/*****----- Main Layout: imagen + contenido lado a lado -----*****/
+
+/*****----- Main Layout -----*****/
 mainbox {
+
     spacing: 0px;
-    orientation: horizontal;
-    background-color: transparent;
-    children: [
-        "imagebox",
-        "contentbox"
-    ];
-}
-
-/*****----- Caja de imagen vertical -----*****/
-imagebox {
-    expand: false;
-    width: 300px;
     orientation: vertical;
-    background-color: transparent;
-    background-image: url("/home/graplo/.config/rofi/images/drun/current", height);
-    children: [
-        "dummy",
-        "mode-switcher"
-    ];
-
-}
-
-/*****----- Caja de contenido: búsqueda + lista -----*****/
-contentbox {
-    orientation: vertical;
-    spacing: 10px;
-    padding: 15px;
     background-color: transparent;
     children: [
         "inputbar",
-        "listview"
+        "listbox"
     ];
 }
 
-/*****----- Búsqueda -----*****/
+
+/*****----- Search + Image -----*****/
 inputbar {
+
     spacing: 10px;
-    padding: 10px 0px;
+    padding: 60px 40px;
     background-color: transparent;
+    background-image: url("~/.config/rofi/images/drun/current", width);
     orientation: horizontal;
     children: [
         "textbox-prompt-colon",
-        "entry"
+        "entry",
+        "dummy",
+        "mode-switcher"
     ];
 }
 
+
+/*****----- Search Icon -----*****/
 textbox-prompt-colon {
+
     expand: false;
     font: "JetBrainsMono Nerd Font 13";
     str: "󰮯";
@@ -97,8 +84,12 @@ textbox-prompt-colon {
     vertical-align: 0.5;
 }
 
+
+/*****----- Search Entry -----*****/
 entry {
-    expand: true;
+
+    expand: false;
+    width: 250px;
     padding: 12px 16px;
     border-radius: 0%;
     background-color: @gpl-dark;
@@ -109,20 +100,27 @@ entry {
     vertical-align: 0.5;
     border: 2px;
     border-color: @gpl-purple;
+
 }
 
+
+/*****----- Spacer -----*****/
 dummy {
+
     expand: true;
     background-color: transparent;
 }
 
+
+/*****----- Modes -----*****/
 mode-switcher {
     spacing: 10px;
-    padding: 0px 15px 20px 15px;
     background-color: transparent;
 }
 
+
 button {
+
     width: 45px;
     padding: 12px;
     border-radius: 0%;
@@ -131,15 +129,32 @@ button {
     cursor: pointer;
     horizontal-align: 0.5;
     vertical-align: 0.5;
+
 }
 
+
 button selected {
+
     background-color: @gpl-purple;
     text-color: @gpl-background;
 }
 
-/*****----- Lista -----*****/
+
+/*****----- List Area -----*****/
+listbox {
+
+    spacing: 15px;
+    padding: 15px;
+    background-color: transparent;
+    orientation: vertical;
+    children: [
+        "listview"
+    ];
+}
+
+
 listview {
+
     columns: 1;
     lines: 7;
     cycle: true;
@@ -152,7 +167,10 @@ listview {
     background-color: transparent;
 }
 
+
+/*****----- Applications -----*****/
 element {
+
     spacing: 10px;
     padding: 8px;
     border-radius: 0px;
@@ -161,25 +179,33 @@ element {
     cursor: pointer;
 }
 
+
 element selected.normal {
+
     background-color: @gpl-purple;
     text-color: @gpl-background;
 }
 
+
 element-icon {
+
     size: 32px;
     background-color: transparent;
     text-color: inherit;
 }
 
+
 element-text {
+
     background-color: transparent;
     text-color: inherit;
     vertical-align: 0.5;
 }
 
+
 /*****----- Error -----*****/
 error-message {
+
     padding: 12px;
     border-radius: 10px;
     background-color: @gpl-red;

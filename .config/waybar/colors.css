@@ -20,20 +20,20 @@ waybar = { src = "waybar.css", dst = "~/.config/waybar/colors.css" }
 @define-color background  #282A36;
 @define-color foreground  #F8F8F2;
 
-@define-color color0      #44475A;
-@define-color color1      #FF5555;
-@define-color color2      #50FA7B;
-@define-color color3      #F1FA8C;
-@define-color color4      #BD93F9;
-@define-color color5      #FF79C6;
-@define-color color6      #8BE9FD;
-@define-color color7      #F8F8F2;
+@define-color color0      #44475A; /* Black (Current Line) */
+@define-color color1      #FF5555; /* Red                  */
+@define-color color2      #50FA7B; /* Green                */
+@define-color color3      #F1FA8C; /* Yellow               */
+@define-color color4      #BD93F9; /* Purple / Blue        */
+@define-color color5      #FF79C6; /* Pink (Magenta)       */
+@define-color color6      #8BE9FD; /* Cyan                 */
+@define-color color7      #F8F8F2; /* White (Foreground)   */
 
-@define-color color8      #6272A4;
-@define-color color9      #FF6E6E;
-@define-color color10     #69FF94;
-@define-color color11     #FFFFA5;
-@define-color color12     #D6ACFF;
-@define-color color13     #FF92DF;
-@define-color color14     #A4FFFF;
-@define-color color15     #FFFFFF;
+@define-color color8      #6272A4; /* Bright Black (Comment) */
+@define-color color9      #FF6E6E; /* Bright Red             */
+@define-color color10     #69FF94; /* Bright Green           */
+@define-color color11     #FFFFA5; /* Bright Yellow          */
+@define-color color12     #D6ACFF; /* Bright Purple          */
+@define-color color13     #FF92DF; /* Bright Pink            */
+@define-color color14     #A4FFFF; /* Bright Cyan            */
+@define-color color15     #FFFFFF; /* Bright White           */

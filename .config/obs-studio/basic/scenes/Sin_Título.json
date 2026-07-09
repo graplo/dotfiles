@@ -1397,7 +1397,7 @@
                     {
                         "name": "Root1 circular",
                         "source_uuid": "cc657f70-d542-4ff4-988a-7539d8f12d17",
-                        "visible": false,
+                        "visible": true,
                         "locked": false,
                         "rot": 0.0,
                         "scale_ref": {
@@ -2404,8 +2404,8 @@
             "name": "Root2 9X16"
         }
     ],
-    "current_scene": "2 Escritorio y cam",
-    "current_program_scene": "2 Escritorio y cam",
+    "current_scene": "1 Full camera",
+    "current_program_scene": "1 Full camera",
     "canvases": [],
     "current_transition": "Desvanecimiento",
     "transition_duration": 300,

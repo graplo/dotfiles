@@ -35,9 +35,8 @@ EOF
     exit
 fi
 
-rofi \
+rofi-launch clipboard \
     -modi "clipboard:/home/graplo/.local/bin/cliphist-rofi" \
-    -show clipboard \
     -show-icons \
     -theme ~/.config/rofi/themes/clipwalker.rasi \
     -display-columns 2 \

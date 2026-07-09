@@ -308,7 +308,7 @@ notification-group.collapsed.not-expanded.notification-row .notification-backgro
 
 .floating-notifications .notification {
   box-shadow: none;
-  background-color: @background
+  background-color: @background;
 }
 
 /*** Widgets ***/
@@ -323,19 +323,63 @@ notification-group.collapsed.not-expanded.notification-row .notification-backgro
   font-size: 1.3rem;
 }
 
+
+/* =========================================
+   Clear All button
+   ========================================= */
+
+/* Estado normal (hay notificaciones) */
 .widget-title > button {
-  margin-left: 8px;
-  border-radius: var(--border-radius);
+    background: @purple;
+    color: @background;
+    border: 1px solid @purple;
+    border-radius: var(--border-radius);
+    transition: all 180ms ease;
 }
 
-/* DND widget */
+/* Hover */
+.widget-title > button:hover {
+    background: @red;
+    border-color: @red;
+    color: @foreground;
+}
+
+/* Mientras haces clic */
+.widget-title > button:active {
+    background: @red;
+    border-color: @red;
+    color: @foreground;
+}
+
+/* No hay notificaciones */
+.widget-title > button:disabled {
+    background: @current;
+    color: @comment;
+    border: 1px solid @comment;
+    opacity: 0.75;
+}
+
+/* =========================================
+   DND widget
+   ========================================= */
+
 .widget-dnd label {
   color: var(--text-color);
   margin-right: 8px;
   font-size: 1.1rem;
 }
 
+.widget-dnd {
+    background: alpha(@surface_container_highest, 0.35);
+    border: 1px solid alpha(@purple, 0.25);
+    /* box-shadow: var(--notification-shadow); */
+    border-radius: var(--border-radius);
+}
+
 .widget-dnd switch {
+  min-width: 48px;
+  min-height: 24px;
+  border: 2px solid @purple;
   border-radius: var(--border-radius);
   margin-left: 8px;
   background: @purple;
@@ -354,56 +398,54 @@ notification-group.collapsed.not-expanded.notification-row .notification-backgro
     background: @background;
 }
 
-.widget-label > label {
-  font-size: 1.1rem;
-}
 
+/* =========================================
+   MPRIS
+   ========================================= */
 
 .widget-mpris {
-  padding: 0;
+    padding: 0;
 }
 
 .widget-mpris .widget-mpris-player {
-  margin: 16px 20px;
-  border-radius: var(--border-radius);
-  box-shadow: var(--mpris-album-art-shadow);
+    margin: 16px 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--mpris-album-art-shadow);
 }
 
-.widget-mpris .widget-mpris-player .mpris-background {
-  filter: blur(10px);
+.widget-mpris .mpris-background {
+    filter: blur(10px);
 }
 
-.widget-mpris .widget-mpris-player .mpris-overlay {
-  padding: 16px;
-  background-color: var(--mpris-album-art-overlay);
+.widget-mpris .mpris-overlay {
+    padding: 16px;
+    background: var(--mpris-album-art-overlay);
 }
 
-.widget-mpris .widget-mpris-player .mpris-overlay button:hover {
-  background: var(--noti-bg-hover);
+.widget-mpris .widget-mpris-album-art {
+    border-radius: var(--border-radius);
+    box-shadow: var(--mpris-album-art-shadow);
+    -gtk-icon-size: var(--mpris-album-art-icon-size);
 }
 
-.widget-mpris .widget-mpris-player .mpris-overlay .widget-mpris-album-art {
-  border-radius: var(--border-radius);
-  box-shadow: var(--mpris-album-art-shadow);
-  -gtk-icon-size: var(--mpris-album-art-icon-size);
+.widget-mpris .widget-mpris-title {
+    font-size: 1.25rem;
+    font-weight: bold;
 }
 
-.widget-mpris .widget-mpris-player .mpris-overlay .widget-mpris-title {
-  font-weight: bold;
-  font-size: 1.25rem;
+.widget-mpris .widget-mpris-subtitle {
+    font-size: 1.1rem;
 }
 
-.widget-mpris .widget-mpris-player .mpris-overlay .widget-mpris-subtitle {
-  font-size: 1.1rem;
+/* Pinta la caja del los botones del mpris */
+/* .widget-mpris button { */
+    /* background: @red; */
+/* } */
+
+.widget-mpris button:hover {
+    background: @purple;
 }
 
-.widget-mpris .widget-mpris-player .mpris-overlay > box > button {}
-.widget-mpris .widget-mpris-player .mpris-overlay > box > button:hover {
-  background-color: var(--mpris-button-hover);
-}
-
-.widget-mpris > box > button {}
-.widget-mpris > box > button:disabled {}
 
 /* 1. Estilo para los botones del Menubar (Graplo, Network, Audio, System) */
 .widget-menubar > .menu-button-bar > .widget-menubar-container button {

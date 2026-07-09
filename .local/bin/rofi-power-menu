@@ -183,9 +183,9 @@ fi
 function write_message {
     if [ -z ${symbols_font+x} ];
     then
-        icon="<span font_size=\"medium\">$1</span>"
+        icon="<span font_size=\"large\">$1</span>" # cambiamos a large los icons
     else
-        icon="<span font=\"${symbols_font}\" font_size=\"medium\">$1</span>"
+        icon="<span font=\"${symbols_font}\" font_size=\"large\">$1</span>" # tmb hay x-lage y xx-large
     fi
     text="<span font_size=\"medium\">$2</span>"
     if [ "$showsymbols" = "true" ]

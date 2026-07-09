@@ -19,7 +19,7 @@ else
     POOL="$BASE/pool"
 fi
 
-IMG=$(find "$POOL" -maxdepth 1 -type f \
+IMG=$(find -L "$POOL" -maxdepth 1 -type f \
     \( -iname '*.png' -o -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.webp' \) \
     | shuf -n 1)
 [[ -n "$IMG" ]] && ln -sf "$IMG" "$LINK"

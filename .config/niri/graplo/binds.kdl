@@ -12,13 +12,20 @@ binds {
     Super+Shift+O      hotkey-overlay-title="Open OBS"      { spawn "obs"; }
     Mod+E              hotkey-overlay-title="Files"         { spawn "nautilus"; }
 
+    //Walker
+    Mod+Space     hotkey-overlay-title="Walker Launcher"  { spawn "walker"; }
+    Mod+V         hotkey-overlay-title="Walker Clipboard" { spawn "walker" "-m" "clipboard"; }
+    Mod+slash     hotkey-overlay-title="Walker Files"     { spawn "walker" "-m" "files"; }
+    Mod+Shift+C   hotkey-overlay-title="Walker Calc"      { spawn "walker" "-m" "calc"; }
+    Mod+semicolon hotkey-overlay-title="Walker Emoji"     { spawn "walker" "-m" "symbols"; }
+
     // — rofi —
-    Mod+Space     hotkey-overlay-title="Rofi Launcher" { spawn "rofi-launch" "drun"; }
-    Mod+V         hotkey-overlay-title="Clipboard"     { spawn "cliphist-rofi"; }
-    Mod+Shift+C   hotkey-overlay-title="calculator"    { spawn "rofi-launch" "calc" "-theme" "~/.config/rofi/themes/calc.rasi"; }
-    Mod+slash     hotkey-overlay-title="filebrowser"   { spawn "rofi-launch" "filebrowser" "-theme" "/home/graplo/.config/rofi/themes/file.rasi"; }
-    Mod+Alt+K     hotkey-overlay-title="Bitwarden"     { spawn "sh" "-c" "~/.local/bin/rofi-bw"; }
-    Mod+Semicolon hotkey-overlay-title="Emoji"         { spawn "rofi-launch" "emoji" "-theme" "~/.config/rofi/themes/emoji.rasi"; }
+    Mod+shift+space     hotkey-overlay-title="Rofi Launcher" { spawn "rofi-launch" "drun"; }
+    // Mod+V         hotkey-overlay-title="Clipboard"     { spawn "cliphist-rofi"; }
+    // Mod+Shift+C   hotkey-overlay-title="calculator"    { spawn "rofi-launch" "calc" "-theme" "~/.config/rofi/themes/calc.rasi"; }
+    // Mod+slash     hotkey-overlay-title="filebrowser"   { spawn "rofi-launch" "filebrowser" "-theme" "/home/graplo/.config/rofi/themes/file.rasi"; }
+    // Mod+Alt+K     hotkey-overlay-title="Bitwarden"     { spawn "sh" "-c" "~/.local/bin/rofi-bw"; }
+    // Mod+Semicolon hotkey-overlay-title="Emoji"         { spawn "rofi-launch" "emoji" "-theme" "~/.config/rofi/themes/emoji.rasi"; }
 
     // — Bluetooth y Wifi —
     Mod+Shift+B hotkey-overlay-title="Bluetooth" { spawn "kitty" "--title" "bluetui" "-e" "bluetui"; }

@@ -14,3 +14,9 @@ soft-wrap.wrap-indicator = "↪ "
 soft-wrap.wrap-at-text-width = true
 
 text-width = 110
+
+[editor.indent-guides]
+render = true
+character = "╎" # Puedes usar otros caracteres como "|" o "┆"
+skip-levels = 0
+

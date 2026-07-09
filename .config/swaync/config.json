@@ -60,23 +60,22 @@
   "widgets": [
     "menubar#label",
     "mpris",
-    "volume",
-    "title",
     "dnd",
+    "title",
     "inhibitors",
     "notifications",
     "buttons-grid"
   ],
+
   "widget-config": {
     "label": {
       "max-lines": 1,
       "text": "Graplo Panel"
     },
-    "notifications": {
+      "notifications": {
       "vexpand": true
     },
-
-    "inhibitors": {
+      "inhibitors": {
       "text": "Inhibitors",
       "button-text": "Clear All",
       "clear-all-button": true
@@ -84,9 +83,9 @@
 
     "menubar#label": {
       "menu#graplo": {
-  "label": " Graplo",
-  "position": "left",
-  "actions": [
+      "label": " Graplo",
+      "position": "left",
+      "actions": [
     {
       "label": "󰖟   Blog",
       "command": "swaync-client -t -sw && xdg-open https://graplo.github.io/"
@@ -134,7 +133,7 @@
         "command": "swaync-client -t -sw && kitty -e wiremix"
       },
       {
-        "label": "   Control de volumen",
+        "label": "󱄠   Control de volumen",
         "command": "swaync-client -t -sw && pavucontrol"
       },
       {
@@ -177,7 +176,7 @@
     "title": {
       "text": "Notifications",
       "clear-all-button": true,
-      "button-text": "  "
+      "button-text": " 󰃢 "
     },
 
     "dnd": {
@@ -196,7 +195,7 @@
       "actions": [
 
         {
-         "label": "",
+         "label": "󰋋",
       "type": "toggle",
       "command": "pamixer -t",
       "update-command": "pamixer --get-mute"
