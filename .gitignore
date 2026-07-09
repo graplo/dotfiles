@@ -1,1 +1,3 @@
 .local/bin/uv
+.config/obs-studio/logs/
+.config/obs-studio/profiler_data/
