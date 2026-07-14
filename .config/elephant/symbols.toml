@@ -1,0 +1,3 @@
+history = true
+history_when_empty = true
+command = "sh -c 'wl-copy -- \"%VALUE%\" && wtype -- \"%VALUE%\"'"

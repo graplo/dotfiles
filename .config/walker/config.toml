@@ -118,7 +118,7 @@ fallback = [
   { action = "menus:open", label = "open", after = "Nothing" },
   { action = "menus:default", label = "run", after = "Close" },
   { action = "menus:parent", label = "back", bind = "Escape", after = "Nothing" },
-  { action = "erase_history", label = "clear hist", bind = "ctrl h", after = "AsyncReload" },
+  { action = "erase_history", label = "clear hist", bind = "ctrl shift h", after = "AsyncReload" },
 ]
 
 dmenu = [{ action = "select", default = true, bind = "Return" }]

@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+POOL="$HOME/.config/walker/pool"
+TARGET="$HOME/.config/wlogout/pool"
+
+mkdir -p "$TARGET"
+
+mapfile -d '' images < <(
+    find "$POOL" -maxdepth 1 -type f \
+    \( \
+        -iname "*.png" -o \
+        -iname "*.jpg" -o \
+        -iname "*.jpeg" -o \
+        -iname "*.webp" -o \
+        -iname "*.avif" -o \
+        -iname "*.gif" \
+    \) -print0
+)
+
+if (( ${#images[@]} < 5 )); then
+    echo "Error: Se necesitan al menos 5 imágenes en $POOL"
+    exit 1
+fi
+
+mapfile -t selected < <(
+    printf '%s\n' "${images[@]}" | shuf | head -n 5
+)
+
+for i in {1..5}; do
+    ln -sf "${selected[$((i-1))]}" "$TARGET/current$i"
+done
+
+exec wlogout -b 5 -T 500 -B 500 -L 650 -R 650

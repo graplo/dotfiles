@@ -29,6 +29,14 @@ popover {
   padding: 10px;
 }
 
+/* esta es la imagen de al costado */
+.image-box {
+  background-image: url("/home/graplo/.config/walker/pool/vam.png");
+  background-size: cover;
+  background-position: center;
+  margin-right: 0px;
+}
+
 .normal-icons {
   -gtk-icon-size: 16px;
 }
@@ -46,7 +54,7 @@ scrollbar {
     0 19px 38px rgba(0, 0, 0, 0.3),
     0 15px 12px rgba(0, 0, 0, 0.22);
   background: @background;
-  padding: 20px;
+  padding: 0px;
   border-radius: 0px; /* CUADRADO */
   border: 3px solid @purple;
 }
@@ -58,6 +66,7 @@ scrollbar {
 }
 
 .box {
+  padding: 20px;
 }
 
 .search-container {
@@ -208,6 +217,7 @@ row:selected .keybind-label {
 
 .keybind-button {
   opacity: 0.5;
+  color: @cyan;
 }
 
 .keybind-button:hover {
@@ -216,13 +226,14 @@ row:selected .keybind-label {
 
 .keybind-bind {
   text-transform: lowercase;
+  color: @foreground;
   opacity: 0.35;
 }
 
 .keybind-label {
   padding: 2px 4px;
   border-radius: 0px; /* CUADRADO */
-  border: 1px solid @foreground;
+  border: 1px solid @cyan;
 }
 
 .error {

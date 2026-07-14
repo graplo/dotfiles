@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# ~/.local/bin/walker-launch
+POOL="$HOME/.config/walker/pool"
+CSS="$HOME/.config/walker/themes/dracula/style.css"
+
+IMG=$(find -L "$POOL" -maxdepth 1 -type f \
+    \( -iname '*.png' -o -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.webp' \) \
+    | shuf -n 1)
+
+if [[ -n "$IMG" ]]; then
+    sed -i "s|background-image: url(\".*\")|background-image: url(\"$IMG\")|" "$CSS"
+fi
+
+nc -U /run/user/$(id -u)/walker/walker.sock 2>/dev/null || walker
