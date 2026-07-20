@@ -24,14 +24,14 @@
 
 popover {
   background: @background;
-  border: 3px solid @purple;
+  border: 2px solid @purple;
   border-radius: 0px; /* CUADRADO */
   padding: 10px;
 }
 
 /* esta es la imagen de al costado */
 .image-box {
-  background-image: url("/home/graplo/.config/walker/pool/vam.png");
+  background-image: url("/home/graplo/.config/walker/pool/play.png");
   background-size: cover;
   background-position: center;
   margin-right: 0px;
@@ -56,7 +56,7 @@ scrollbar {
   background: @background;
   padding: 0px;
   border-radius: 0px; /* CUADRADO */
-  border: 3px solid @purple;
+  border: 2px solid @purple;
 }
 
 .preview-box,

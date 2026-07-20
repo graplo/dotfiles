@@ -35,11 +35,13 @@
       "pulseaudio/slider"
     ]
   },
-  "custom/rofi": {
-    "format": "",
+
+  "custom/logo": {
+    "format": " ",
     "tooltip": false,
-    "on-click": "rofi -show drun"
+    "on-click": "walker-launch"
   },
+
   "custom/cachy": {
     "format": "",
     "tooltip": false,

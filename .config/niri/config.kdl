@@ -93,7 +93,7 @@ debug {
     honor-xdg-activation-with-invalid-serial
 }
 
-// 1. Hace que el fondo de swaybg se quede estático en el backdrop
+// 1. Hace que el fondo de awww se quede estático en el backdrop
 // para ver el nombre del namespace es con: niri msg layers
 layer-rule {
     match namespace="^awww-daemon$"

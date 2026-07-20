@@ -36,8 +36,8 @@ anchor_right = true
 
 [keybinds]
 close = ["Escape"]
-next = ["Down", "ctrl j"]
-previous = ["Up", "ctrl k"]
+next = ["Down", "ctrl j", "Tab"]
+previous = ["Up", "ctrl k", "ctrl Tab"]
 left = ["Left", "ctrl h"]
 right = ["Right", "ctrl l"]
 down = ["Down", "ctrl j"]

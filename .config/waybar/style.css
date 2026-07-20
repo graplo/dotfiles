@@ -55,14 +55,18 @@ window#waybar {
   padding: 6px 0;
   font-size: 18px;
 }
+#custom-notification:hover {
+  opacity: 0.5;
+}
+
 /* Hay notificaciones */
 #custom-notification.notification {
-    color: @color4;
+  color: @color4;
 }
 /* No molestar activado */
 #custom-notification.dnd-none,
 #custom-notification.dnd-notification {
-    color: @color1;
+  color: @color1;
 }
 /* Si quieres diferenciar DND + mensajes */
 #custom-notification.dnd-notification {
@@ -74,10 +78,19 @@ window#waybar {
     padding: 0;
 }
 
-#custom-rofi {
-    color: @color4;
-    font-size: 20px;
-    padding: 6px 0;
+/* Boton de mi logo de Graplo */
+#custom-logo {
+    background-image: url("/home/graplo/.config/waybar/icons/favicon-32x32.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 24px;
+
+    min-width: 32px;
+    min-height: 32px;
+}
+
+#custom-logo:hover {
+  opacity: 0.5;
 }
 
 /* Modulo del reloj fecha y hora */

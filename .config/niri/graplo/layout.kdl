@@ -17,11 +17,11 @@ layout {
     }
 
     border {
-        width 3
+        width 2
     }
 
     focus-ring {
-        width 3
+        width 2
     }
     tab-indicator {
         width 6

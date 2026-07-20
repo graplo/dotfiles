@@ -15,7 +15,7 @@ default:
   # ============================================================
 
   # No usamos integración directa con logind.
-  enable_loginctl false
+  enable_loginctl_integration false
 
   # Respeta bloqueos de suspensión enviados por D-Bus.
   # Ejemplo: reproductores multimedia, presentaciones, etc.

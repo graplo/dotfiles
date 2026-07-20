@@ -43,6 +43,7 @@ dirs=(
     waybar
     wob
     xdg-desktop-portal
+    wlogout
     yazi
 )
 
