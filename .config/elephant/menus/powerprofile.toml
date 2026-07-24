@@ -1,0 +1,21 @@
+# ~/.config/elephant/menus/powerprofile.toml
+name = "powerprofile"
+name_pretty = "Power Profile"
+icon = "battery-symbolic"
+history = true
+history_when_empty = true
+
+[[entries]]
+text = "Performance"
+icon = "power-profile-performance-symbolic"
+actions = { "set_performance" = "powerprofilesctl set performance" }
+
+[[entries]]
+text = "Balanced"
+icon = "power-profile-balanced-symbolic"
+actions = { "set_balanced" = "powerprofilesctl set balanced" }
+
+[[entries]]
+text = "Power Saver"
+icon = "power-profile-power-saver-symbolic"
+actions = { "set_powersaver" = "powerprofilesctl set power-saver" }

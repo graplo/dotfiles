@@ -1,0 +1,398 @@
+{
+  // ============================================================
+  // GRUPOS (drawer): se despliegan al hacer click, ocultan/muestran
+  // sus módulos hijos con una animación de transición
+  // ============================================================
+
+  // Grupo tray: menú de apagado (custom/menu) + bandeja de iconos del sistema
+  "group/extras": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 400,
+      "children-class": "extras",
+      "transition-left-to-right": false
+    },
+    "modules": [
+      "custom/menu",
+      "tray"
+    ]
+  },
+
+  // Grupo brillo: icono + slider vertical de brillo de pantalla (backlight)
+  "group/brightness": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 400,
+      "children-class": "brightness",
+      "transition-left-to-right": false
+    },
+    "modules": [
+      "backlight",
+      "backlight/slider"
+    ]
+  },
+
+  // Grupo audio: icono + slider vertical de volumen (pulseaudio)
+  "group/audio": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 400,
+      "children-class": "audio",
+      "transition-left-to-right": false
+    },
+    "modules": [
+      "pulseaudio",
+      "pulseaudio/slider"
+    ]
+  },
+
+  // ============================================================
+  // LOGO / LAUNCHERS
+  // ============================================================
+
+  // Logo de Graplo (favicon), abre Walker al hacer click
+  "custom/logo": {
+    "format": " ",
+    "tooltip": false,
+    "on-click": "walker-launch"
+  },
+
+  // Icono CachyOS: abre terminal (click izq = ghostty, click der = kitty)
+  "custom/cachy": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "ghostty",
+    "on-click-right": "kitty"
+  },
+
+  // ============================================================
+  // WORKSPACES (niri) — los "fantasmas" Pac-Man, coloreados en style.css
+  // ============================================================
+
+  "niri/workspaces": {
+    "on-click": "activate",
+    "format": "{icon}",
+    "format-icons": {
+      "active": "󰮯",
+      "default": "󰊠",
+      "empty": "󱙝",
+      "urgent": "󰊠"
+    }
+  },
+
+  // Separador visual simple entre módulos (guion largo)
+  "custom/separator": {
+    "format": "—",
+    "tooltip": false
+  },
+
+  // ============================================================
+  // CLIMA / SISTEMA
+  // ============================================================
+
+  // Clima: script propio (weather.sh), abre app weathr al click
+  "custom/weather": {
+    "format": "{}",
+    "interval": 1800,
+    "exec": "~/.local/bin/weather.sh",
+    "tooltip": false,
+    "on-click": "kitty --title weathr -e weathr"
+  },
+
+  // CPU: animación de barras braille según carga, click abre btop/nvtop
+  "cpu": {
+    "format": "{icon}",
+    "format-icons": [
+      "<span size='14pt'>⠁</span>",
+      "<span size='14pt'>⠉</span>",
+      "<span size='14pt'>⠙</span>",
+      "<span size='14pt'>⠛</span>",
+      "<span size='14pt'>⠟</span>",
+      "<span size='14pt'>⠿</span>"
+    ],
+    "interval": 1,
+    "tooltip": true,
+    "tooltip-format": "CPU Frequency: {avg_frequency} GHz",
+    "on-click": "kitty --title btop -e btop",
+    "on-click-right": "kitty --title btop -e nvtop"
+  },
+
+  // ============================================================
+  // RELOJ / CALENDARIO
+  // ============================================================
+
+  // Hora: click abre peaclock (reloj visual de terminal)
+  "clock#hora": {
+    "interval": 1,
+    "format": "{:%H\n%M}",
+    "tooltip": false,
+    "on-click": "kitty --title peaclock -e peaclock --config-dir ~/.config/peaclock"
+  },
+
+  // Fecha: tooltip muestra mini-calendario, click izq ikhal, click der calcurse
+  "clock#fecha": {
+    "interval": 60,
+    "format": "{:%m\n%d}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "on-click": "kitty -e ikhal",
+    "on-click-right": "kitty -e calcurse"
+  },
+
+  // ============================================================
+  // MULTIMEDIA
+  // ============================================================
+
+  // Mini visualizador de audio (cava), script propio
+  "custom/cava-mini": {
+    "exec": "~/.local/bin/cava-mini.sh",
+    "return-type": "json",
+    "restart-interval": 1,
+    "tooltip": false,
+    "rotate": 0
+  },
+
+  // Control de reproducción vía MPRIS (play/pause/next/prev)
+  "mpris": {
+    "format": "<span size='14pt'>{status_icon}</span>",
+    "status-icons": {
+      "playing": "",
+      "paused": "",
+      "stopped": ""
+    },
+    "on-click": "playerctl play-pause",
+    "on-click-right": "playerctl next",
+    "on-click-middle": "playerctl previous",
+    "tooltip": true,
+    "tooltip-format": "{title}"
+  },
+
+  // ============================================================
+  // TRAY / MENU / PRIVACIDAD
+  // ============================================================
+
+  // Flecha que abre el grupo "extras" (menu + tray)
+  "custom/menu": {
+    "format": "<span size='16pt'>󰅃</span>",
+    "tooltip": false
+  },
+
+  // Bandeja de iconos del sistema (apps con tray icon activo)
+  "tray": {
+    "spacing": 16,
+    "reverse-direction": true,
+    "icon-size": 16,
+    "show-passive-items": false
+  },
+
+  // Indicador de privacidad: aparece solo si hay screenshare activo (ignora OBS)
+  "privacy": {
+    "icon-size": 14,
+    "transition-duration": 250,
+    "modules": [
+      {
+        "type": "screenshare",
+        "tooltip": false
+      }
+    ],
+    "ignore": [
+      {
+        "type": "screenshare",
+        "name": "obs"
+      }
+    ]
+  },
+
+  // ============================================================
+  // RED / BLUETOOTH
+  // ============================================================
+
+  // Red: click izq abre impala (wifi terminal), click der nm-connection-editor
+  "network": {
+    "format-icons": {
+      "wifi": [
+        "<span size='12pt'>󰤯</span>",
+        "<span size='12pt'>󰤟</span>",
+        "<span size='12pt'>󰤢</span>",
+        "<span size='12pt'>󰤥</span>",
+        "<span size='12pt'>󰤨</span>"
+      ],
+      "ethernet": "<span size='12pt'>󰈀</span>",
+      "disabled": "<span size='12pt'>󰤭</span>",
+      "disconnected": "<span size='12pt'>󰤩</span>"
+    },
+    "format-wifi": "{icon}",
+    "format-ethernet": "{icon}",
+    "format-disconnected": "{icon}",
+    "format-disabled": "{icon}",
+    "interval": 5,
+    "tooltip-format": "{essid}\t{gwaddr}",
+    "on-click": "sh -c 'rfkill unblock wifi && kitty --title impala -e impala'",
+    "on-click-right": "nm-connection-editor",
+    "tooltip": true,
+    "max-length": 20
+  },
+
+  // Bluetooth: click izq toggle rfkill, click der abre bluetui (terminal)
+  "bluetooth": {
+    "interval": 5,
+    "format-on": "<span size='14pt'>󰂯</span>",
+    "format-off": "<span size='14pt'>󰂲</span>",
+    "format-disabled": "<span size='14pt'>󰂲</span>",
+    "format-connected": "<span size='14pt'>󰂱</span>",
+    "format-no-controller": "<span size='14pt'>󰂯</span>",
+    "tooltip": true,
+    "tooltip-format": "{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_address}",
+    "tooltip-format-enumerate-connected-battery": "{device_address} | Battery: {device_battery_percentage}%",
+    "on-click": "rfkill toggle bluetooth",
+    "on-click-right": "sh -c 'rfkill unblock bluetooth && kitty --title bluetui -e bluetui'"
+  },
+
+  // ============================================================
+  // AUDIO (micrófono + salida)
+  // ============================================================
+
+  // Micrófono: click mutea, click der abre wiremix en modo grabación
+  "pulseaudio#microphone": {
+    "format": "{format_source}",
+    "format-source": "<span size='14pt'>󰍬</span>",
+    "format-source-muted": "<span size='14pt'>󰍭</span>",
+    "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+    "on-click-right": "kitty -e wiremix --tab recording",
+    "tooltip": false
+  },
+
+  // Slider vertical de volumen (usado dentro de group/audio)
+  "pulseaudio/slider": {
+    "min": 0,
+    "max": 100,
+    "orientation": "vertical"
+  },
+
+  // Volumen de salida: click mutea, click der abre wiremix (output)
+  // ignora el sink de EasyEffects para no mostrar volumen duplicado
+  "pulseaudio": {
+    "interval": 1,
+    "format": "{icon}",
+    "format-icons": [
+      "<span size='14pt'>󰕿</span>",
+      "<span size='14pt'>󰖀</span>",
+      "<span size='14pt'>󰕾</span>"
+    ],
+    "format-muted": "<span size='14pt'>󰝟</span>",
+    "on-click-right": "kitty -e wiremix --tab output",
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "reverse-scrolling": true,
+    "tooltip": true,
+    "tooltip-format": "Volume: {volume}%\n{desc}",
+    "ignored-sinks": [
+      "Easy Effects Sink"
+    ]
+  },
+
+  // ============================================================
+  // BRILLO (monitor externo vía DDC + panel interno backlight)
+  // ============================================================
+
+  // Brillo del monitor externo (DDC/CI vía ddcutil), scroll para ajustar
+  "custom/ddc-brightness": {
+    "format": "{}",
+    "exec": "~/.local/bin/brightness.sh",
+    "return-type": "json",
+    "on-scroll-up": "ddcutil --bus 7 setvcp 10 + 5",
+    "on-scroll-down": "ddcutil --bus 7 setvcp 10 - 5",
+    "interval": 10,
+    "tooltip": true
+  },
+
+  // Slider vertical de brillo del panel interno (usado dentro de group/brightness)
+  "backlight/slider": {
+    "min": 0,
+    "max": 100,
+    "orientation": "vertical",
+    "device": "intel_backlight"
+  },
+
+  // Brillo del panel interno (laptop), icono según nivel
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "{icon}",
+    "format-icons": [
+      "󰃚",
+      "󰃛",
+      "󰃜",
+      "󰃝",
+      "󰃞",
+      "󰃟",
+      "󰃠"
+    ],
+    "reverse-scrolling": true,
+    "smooth-scrolling-threshold": 0.2,
+    "tooltip": false
+  },
+
+  // ============================================================
+  // POWER PROFILE / NOTIFICACIONES / BATERÍA / POWER MENU
+  // ============================================================
+
+  // Perfil de energía activo (performance/balanced/power-saver)
+  // click abre el menú rofi-powerprofile (ver también: Walker menus:powerprofile)
+  "custom/powerprofile": {
+    "exec": "~/.local/bin/powerprofile-icon.sh",
+    "return-type": "json",
+    "interval": 5,
+    "format": "{}",
+    "on-click": "~/.local/bin/rofi-powerprofile",
+    "tooltip": false
+  },
+
+  // Estado de No Molestar (mako): click toggle dnd, click der restaura notifs
+  "custom/notification": {
+    "tooltip": true,
+    "format": "{icon}",
+    "format-icons": {
+      "active": "",
+      "disabled": "󰂛"
+    },
+    "return-type": "json",
+    "exec": "makoctl mode | grep -q 'dnd' && echo '{\"alt\": \"disabled\", \"class\": \"disabled\", \"tooltip\": \"No Molestar: Activado\"}' || echo '{\"alt\": \"active\", \"class\": \"active\", \"tooltip\": \"No Molestar: Desactivado\"}'",
+    "on-click": "makoctl mode | grep -q 'dnd' && makoctl mode -r dnd || makoctl mode -a dnd",
+    "on-click-right": "makoctl restore",
+    "interval": 2,
+    "escape": true
+  },
+
+  // Batería: icono según nivel, estados charging/plugged/critical
+  "battery": {
+    "interval": 5,
+    "states": {
+      "critical": 10
+    },
+    "format": "{icon}",
+    "format-icons": [
+      "<span size='14pt'>󰁺</span>",
+      "<span size='14pt'>󰁻</span>",
+      "<span size='14pt'>󰁼</span>",
+      "<span size='14pt'>󰁽</span>",
+      "<span size='14pt'>󰁾</span>",
+      "<span size='14pt'>󰁿</span>",
+      "<span size='14pt'>󰂀</span>",
+      "<span size='14pt'>󰂁</span>",
+      "<span size='14pt'>󰂂</span>",
+      "<span size='14pt'>󰁹</span>"
+    ],
+    "format-charging": "<span size='14pt'>󰂄</span>",
+    "format-plugged": "<span size='14pt'>󰚥</span>",
+    "format-critical": "<span size='14pt'>󰂃</span>",
+    "tooltip": true,
+    "tooltip-format": "Charge: {capacity}%",
+    "tooltip-format-charging": "Charging: {capacity}%"
+  },
+
+  // Botón de power menu (apagar/reiniciar/suspender), script propio
+  "custom/powermenu": {
+    "format": "<span size='13pt'>󰐥</span>",
+    "on-click": "~/.local/bin/powermenu",
+    "tooltip": false
+  }
+}

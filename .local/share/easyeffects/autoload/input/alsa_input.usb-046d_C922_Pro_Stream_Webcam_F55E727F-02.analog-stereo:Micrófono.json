@@ -1,0 +1,6 @@
+{
+    "device": "alsa_input.usb-046d_C922_Pro_Stream_Webcam_F55E727F-02.analog-stereo",
+    "device-description": "C922 Pro Stream Webcam Estéreo analógico",
+    "device-profile": "Micrófono",
+    "preset-name": "GraploRode3"
+}

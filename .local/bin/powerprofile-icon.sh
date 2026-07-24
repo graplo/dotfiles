@@ -7,7 +7,8 @@
 
 profile=$(powerprofilesctl get)
 case $profile in
-    performance) echo "󰓅" ;;
-    balanced)    echo "󰾅" ;;
-    power-saver) echo "󰾆" ;;
+    performance) icon="󰓅" ;;
+    balanced)    icon="󰾅" ;;
+    power-saver) icon="󰾆" ;;
 esac
+echo "{\"text\": \"$icon\", \"class\": \"$profile\"}"

@@ -28,6 +28,7 @@ waybar = { src = "waybar.css", dst = "~/.config/waybar/colors.css" }
 @define-color color5      #FF79C6; /* Pink (Magenta)       */
 @define-color color6      #8BE9FD; /* Cyan                 */
 @define-color color7      #F8F8F2; /* White (Foreground)   */
+@define-color color16     #ffb86c; /* Orange (Foreground)  */
 
 @define-color color8      #6272A4; /* Bright Black (Comment) */
 @define-color color9      #FF6E6E; /* Bright Red             */

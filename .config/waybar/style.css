@@ -2,7 +2,7 @@
 
 * {
   font-family: "JetBrainsMono Nerd Font Propo";
-  font-size: 16px;
+  font-size: 15px;
   border-radius: 0;
   box-shadow: none;
 }
@@ -39,6 +39,17 @@ window#waybar {
   padding: 6px 0;
 }
 
+/* Boton de power profile */
+#custom-powerprofile.performance {
+    color: @color1;
+}
+#custom-powerprofile.balanced {
+    color: @color16;
+}
+#custom-powerprofile.power-saver {
+    color: @color6;
+}
+
 /* Boton de Powrer Menu 󰐥 */
 #custom-powermenu {
   color: @color1;
@@ -49,33 +60,21 @@ window#waybar {
   opacity: 0.5;
 }
 
-/* Boton de Notificaciones 󱅫 */
 #custom-notification {
-  color: @foreground;
   padding: 6px 0;
   font-size: 18px;
 }
+
 #custom-notification:hover {
   opacity: 0.5;
 }
 
-/* Hay notificaciones */
-#custom-notification.notification {
+#custom-notification.active {
   color: @color4;
 }
-/* No molestar activado */
-#custom-notification.dnd-none,
-#custom-notification.dnd-notification {
-  color: @color1;
-}
-/* Si quieres diferenciar DND + mensajes */
-#custom-notification.dnd-notification {
-    color: @color9;
-}
 
-#custom-separator {
-    color: @color8;
-    padding: 0;
+#custom-notification.disabled {
+  color: @color1;
 }
 
 /* Boton de mi logo de Graplo */
@@ -85,7 +84,7 @@ window#waybar {
     background-position: center;
     background-size: 24px;
 
-    min-width: 32px;
+    min-width: 24px;
     min-height: 32px;
 }
 
@@ -111,8 +110,8 @@ window#waybar {
 #custom-weather {
     color: @color6;
     padding: 0;
-    font-size: 18px;
-    min-width: 34px;
+    font-size: 16px;
+    min-width: 16px;
 }
 
 #custom-weather:hover {

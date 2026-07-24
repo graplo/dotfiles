@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # ~/.local/bin/rofi-files
 
-fd --type f . "$HOME" \
-    --exclude Roms --exclude retroarch \
+fd . "$HOME" \
+    --exclude Roms --exclude retroarch --exclude go \
     | rofi-launch file-browser-extended \
         -file-browser-stdin \
         -file-browser-no-descend \

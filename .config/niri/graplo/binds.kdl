@@ -18,12 +18,13 @@ binds {
     Mod+slash     hotkey-overlay-title="Walker Files"     { spawn "walker" "-m" "files"; }
     Mod+Shift+C   hotkey-overlay-title="Walker Calc"      { spawn "walker" "-m" "calc"; }
     Mod+semicolon hotkey-overlay-title="Walker Emoji"     { spawn "walker" "-m" "symbols"; }
+    Mod+P         hotkey-overlay-title="Walker Emoji"     { spawn "walker-powerprofile"; }
 
     // — rofi —
-    Mod+shift+space     hotkey-overlay-title="Rofi Launcher" { spawn "rofi-launch" "drun"; }
+    Mod+shift+Space     hotkey-overlay-title="Rofi Launcher" { spawn "rofi-launch" "drun"; }
     // Mod+V         hotkey-overlay-title="Clipboard"     { spawn "cliphist-rofi"; }
     // Mod+Shift+C   hotkey-overlay-title="calculator"    { spawn "rofi-launch" "calc" "-theme" "~/.config/rofi/themes/calc.rasi"; }
-    // Mod+slash     hotkey-overlay-title="filebrowser"   { spawn "rofi-launch" "filebrowser" "-theme" "/home/graplo/.config/rofi/themes/file.rasi"; }
+    // Mod+slash     hotkey-overlay-title="filebrowser"   { spawn "rofi-files"; }
     // Mod+Alt+K     hotkey-overlay-title="Bitwarden"     { spawn "sh" "-c" "~/.local/bin/rofi-bw"; }
     // Mod+Semicolon hotkey-overlay-title="Emoji"         { spawn "rofi-launch" "emoji" "-theme" "~/.config/rofi/themes/emoji.rasi"; }
 
@@ -36,7 +37,7 @@ binds {
     Mod+Alt+L hotkey-overlay-title="Lock Screen"   { spawn "stasis" "trigger" "lockscreen"; }
     Super+X   hotkey-overlay-title="Power Menu"    { spawn "wlogout-launch"; }
     // Super+X   hotkey-overlay-title="Power Menu"    { spawn "powermenu"; }
-    Mod+P     hotkey-overlay-title="Power Profile" { spawn "~/.local/bin/rofi-powerprofile"; }
+    // Mod+P     hotkey-overlay-title="Power Profile" { spawn "~/.local/bin/rofi-powerprofile"; }
     Mod+Shift+E { quit; }
 
     // — Utilidades —
@@ -45,6 +46,7 @@ binds {
     Mod+N hotkey-overlay-title="Notificaciones" { spawn "swaync-client" "-t"; }
     
     // — Audio (wpctl nativo PipeWire) — Y tambien swayOSD
+    Mod+Alt+S hotkey-overlay-title="Wiremix" { spawn "kitty" "--title" "wiremix" "-e" "wiremix"; }
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ && wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print int($2*100)}' > /run/user/1000/wob.sock"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- && wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print int($2*100)}' > /run/user/1000/wob.sock"; }
     XF86AudioMute allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && (wpctl get-volume @DEFAULT_AUDIO_SINK@ | grep -q '\\[MUTED\\]' && echo 0 || wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print int($2*100)}') > /run/user/1000/wob.sock"; }

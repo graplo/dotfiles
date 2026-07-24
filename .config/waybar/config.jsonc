@@ -12,7 +12,7 @@
   "margin-left": 0,
   "margin-right": 0,
   "spacing": 0,
-  "include": ["~/.config/waybar/modules.json"],
+  "include": ["~/.config/waybar/modules.jsonc"],
   "modules-left": ["custom/logo", "clock#hora", "custom/separator", "clock#fecha", "custom/notification", "cpu", "custom/weather"],
   "modules-center": ["custom/cava-mini", "mpris", "niri/workspaces", "privacy"],
   "modules-right": [

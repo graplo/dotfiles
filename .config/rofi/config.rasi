@@ -8,7 +8,7 @@ GPL   `      "      `
 
 configuration {
     /* Modos activos en el sistema */
-    modes: [ drun, emoji, filebrowser, calc ]; 
+    modes: [ drun, emoji, file-browser-extended, calc, window ]; 
 
     /* Comportamiento general */
     show-icons:      true;
@@ -19,10 +19,10 @@ configuration {
     /* Nombres limpios para los modos */
     display-drun:    "󰀻";
 	display-emoji: "󰞅";
-    //display-window:  "󱂬";
+    display-window:  "󱂬";
     //display-run:     "󰘳";
     display-calc:    "󰪚";
-    display-filebrowser: "󰉋";
+    display-file-browser-extended: "󰉋";
     
     /* Atajos rápidos estilo Walker */
     kb-select-1:     "F1";

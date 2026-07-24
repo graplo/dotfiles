@@ -53,10 +53,11 @@ show_actions = ["alt j"]
 default = [
   "desktopapplications",
   "calc",
+  "menus",   # creado por Graplo
   # "runner",
   "websearch",
 ] # providers to be queried by default
-empty = ["desktopapplications"] # providers to be queried when query is empty
+empty = ["desktopapplications", "menus:powerprofile"] # providers to be queried when query is empty
 ignore_preview = [] # providers that should not show previews
 max_results = 50 # global max results
 
@@ -64,6 +65,11 @@ max_results = 50 # global max results
 # runner = " "
 
 [providers.sets] # define your own defaults/empty sets of providers
+
+[providers.sets.powerprofile]
+default = ["menus:powerprofile"]
+empty = ["menus:powerprofile"]
+
 [providers.max_results_provider] # define max results per provider in here
 
 [[providers.prefixes]]
