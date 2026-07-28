@@ -1,23 +1,12 @@
-# |\/| /\ /< ()     |) /? /\ ( |_| |_ /\ 
-#       __,_____
-# GPL  / __.==--"
-#     /#(-'
-#     `-'
-
 history=1
 max-history=20
-
 font=Ubuntu 11
-
 group-by=app-name
 max-visible=5
-
 background-color=#282a36
 text-color=#f8f8f2
 border-color=#bd93f9
-
 progress-color=#50fa7b
-
 default-timeout=5000
 height=100
 width=350
@@ -25,22 +14,16 @@ padding=12
 margin=10
 border-size=2
 border-radius=0
-
 format=<b>%a</b>\n%s\n%b
-
 icons=1
 max-icon-size=32
 icon-path=/usr/share/icons/Papirus-Dark:/usr/share/icons/Papirus:/usr/share/icons/hicolor
-
 [urgency=low]
 border-color=#50fa7b
-
 [urgency=normal]
 border-color=#bd93f9
-
 [urgency=high]
 border-color=#ff5555
 default-timeout=0
-
 [mode=dnd]
 invisible=1

@@ -41,13 +41,13 @@ window#waybar {
 
 /* Boton de power profile */
 #custom-powerprofile.performance {
-    color: @color1;
-}
-#custom-powerprofile.balanced {
     color: @color16;
 }
-#custom-powerprofile.power-saver {
+#custom-powerprofile.balanced {
     color: @color6;
+}
+#custom-powerprofile.power-saver {
+    color: @color2;
 }
 
 /* Boton de Powrer Menu 󰐥 */

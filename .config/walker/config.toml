@@ -133,6 +133,12 @@ providerlist = [
   { action = "activate", default = true, bind = "Return", after = "ClearReload" },
 ]
 
+"menus:powerprofile" = [
+  { action = "set_performance", label = "Performance", default = true, bind = "Return" },
+  { action = "set_balanced", label = "Balanced", default = true, bind = "Return" },
+  { action = "set_powersaver", label = "Power Saver", default = true, bind = "Return" },
+]
+
 bluetooth = [
   { action = "find", bind = "ctrl f", after = "AsyncClearReload" },
   { action = "remove", bind = "ctrl d", after = "AsyncReload" },
