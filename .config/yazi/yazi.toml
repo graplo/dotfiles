@@ -1,65 +1,51 @@
 # --------------------------------------------------
 # Yazi – Openers configuration
 # --------------------------------------------------
-# - Helix for text files
-# - Zathura for PDFs
-# - mpv for audio/video
+# - Neovim (default con Enter) / Helix (alternativa con 'o') para texto
+# - Zathura para PDFs
+# - mpv para audio/video
 # --------------------------------------------------
-
 [opener]
-edit = [
+neovim = [
+  { run = 'nvim "$@"', block = true, desc = "Neovim" }
+]
+helix = [
   { run = 'helix "$@"', block = true, desc = "Helix" }
 ]
-
 zathura = [
   { run = 'zathura "$@"', orphan = true, desc = "Zathura" }
 ]
-
 play = [
   { run = 'mpv "$@"', orphan = true, desc = "Reproducir con mpv" }
 ]
-
-# Nuevo: Visor de imágenes imv
+# Nuevo: cliamp para audio
+cliamp = [
+  { run = 'cliamp "$@"', block = true, desc = "Reproducir con cliamp" }
+]
 display = [
   { run = 'imv "$@"', orphan = true, desc = "Ver imagen" }
 ]
-
 set_wallpaper = [
-  { run = 'dms ipc call wallpaper set "$1"', desc = "Establecer como Fondo" }
+  { run = 'awww img "$1"', desc = "Establecer como Fondo" }
 ]
-
-# Para usar Inkscape
 inkscape = [
   { run = 'inkscape "$@"', orphan = true, desc = "Abrir con Inkscape" }
 ]
 
 [open]
+prepend_rules = [
+  { url = "*.md", use = ["helix", "neovim"] },
+  { mime = "inode/x-empty", use = ["helix", "neovim"] },
+  { mime = "application/json", use = ["helix", "neovim"] },
+  { mime = "text/*", use = ["helix", "neovim"] }
+]
 
 rules = [
-  # Archivos vacíos o markdown: yazi detecta inode/x-empty cuando el archivo
-  # no tiene contenido, por eso se necesitan ambas reglas
-  { url = "*.md", use = "edit" },
-  { mime = "inode/x-empty", use = "edit" },
-
-  # PDFs → Zathura
   { mime = "application/pdf", use = "zathura" },
-
-  # Audio / Video → mpv
-  { mime = "audio/*", use = "play" },
+  # Video → mpv por defecto, sin cambios
   { mime = "video/*", use = "play" },
-
-  # Logs → view mode
+  # Audio → cliamp por defecto (Enter), mpv como alternativa ('o')
+  { mime = "audio/*", use = ["cliamp", "play"] },
   { url = "*.log", use = "view" },
-
-  # Text files → Helix
-  { mime = "application/json", use = "edit" },
-  { mime = "text/*", use = "edit" },
-
-  # Regla para imágenes: 
-  # Al dar Enter, se abrirá con imv para que la veas.
-  # Si presionas 'o', podrás elegir entre verla o ponerla de fondo.
-  { mime = "image/*", use = [ "display", "inkscape", "set_wallpaper" ] } 
-  
-  ]
-
-
+  { mime = "image/*", use = [ "display", "inkscape", "set_wallpaper" ] }
+]

@@ -34,21 +34,18 @@ set -x VISUAL helix
 
 set -gx BAT_THEME Dracula
 
-# Para q ollama use mu gpu al iniciar
-set -x OLLAMA_VULKAN true
-
 # Para FZF
 set -Ux FZF_DEFAULT_OPTS_FILE ~/.config/fzf/fzf.conf
 # Para vivid environment variable that controls the colorized output of ls, tree, fd, bfs, dust and many other tools.
 set -x LS_COLORS (vivid generate dracula)
 
 # para q este numerado los terminales, y con echo el texto q quieras
-if status is-interactive
-    set_color bd93f9
-    set count (niri msg windows | grep "com.mitchellh.ghostty" | wc -l)
-    echo "# $count - fish" | figlet
-    set_color normal
-end
+# if status is-interactive
+#     set_color bd93f9
+#     set count (niri msg windows | grep "com.mitchellh.ghostty" | wc -l)
+#     echo "# $count - fish" | figlet
+#     set_color normal
+# end
 
 # para q no salga el fastfech de cachyos al comienzo
 function fish_greeting

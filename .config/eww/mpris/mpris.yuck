@@ -1,0 +1,71 @@
+;; ==========================================
+;; VARIABLES Y POLLS MPRIS
+;; ==========================================
+(defpoll mpris-art      :interval "2s" "~/.local/bin/eww-mpris-art")
+(deflisten mpris-cava   "~/.local/bin/eww-mpris-cava")
+(defpoll mpris-title    :interval "1s" "playerctl metadata title 2>/dev/null || echo 'Sin reproducción'")
+(defpoll mpris-artist   :interval "1s" "playerctl metadata artist 2>/dev/null || echo 'Desconocido'")
+(defpoll mpris-player   :interval "2s" "playerctl metadata --format '{{playerName}}' 2>/dev/null || echo 'none'")
+(defpoll mpris-status   :interval "1s" "playerctl status 2>/dev/null || echo 'Stopped'")
+(defpoll mpris-position :interval "1s" "playerctl metadata --format '{{duration(position)}}' 2>/dev/null || echo '0:00'")
+(defpoll mpris-length   :interval "2s" "playerctl metadata --format '{{duration(mpris:length)}}' 2>/dev/null || echo '0:00'")
+(defpoll mpris-progress :interval "1s" 
+  "playerctl metadata --format '{{position}} {{mpris:length}}' 2>/dev/null | awk '{if ($2>0) printf \"%.0f\", ($1/$2)*100; else print 0}'")
+
+;; ==========================================
+;; WIDGET PRINCIPAL MPRIS
+;; ==========================================
+(defwidget mpris-widget []
+  (box :orientation "v" :class "panel" :spacing 12 :space-evenly false
+    
+    ;; CABECERA
+(box :orientation "h" :space-evenly false :spacing 10
+  (label :text "󰷞" :class "main-audio-icon" :valign "center")
+  (box :orientation "v" :space-evenly false :valign "center" :spacing 0
+    (label :text "MPRIS" :class "title" :halign "start")
+    (label :text "GO ENJOY" :class "subtitle" :halign "start")))
+
+    ;; PORTADA + INFO
+    (box :orientation "h" :space-evenly false :spacing 14
+      (box :class "mpris-cover"
+        (image :path "${mpris-art}" :image-width 70 :image-height 70))
+
+      (box :orientation "v" :space-evenly false :spacing 4 :hexpand true :valign "center"
+        (label :text mpris-title :class "title" :limit-width 25 :halign "start" :tooltip mpris-title)
+        (label :text mpris-artist :class "section" :limit-width 20 :halign "start" :tooltip mpris-artist)
+        
+        (box :halign "end" :valign "bottom"
+          (label :text mpris-player :class "mpris-badge"))))
+
+    ;; VISUALIZADOR CAVA
+    (box :halign "center"
+      (label :text mpris-cava :class "mpris-cava"))
+
+    ;; BARRA DE TIEMPO
+    (box :orientation "v" :space-evenly false :spacing 2
+      (scale :value mpris-progress
+             :min 0
+             :max 100
+             :onchange "playerctl position {}%")
+      (box :orientation "h"
+        (label :text mpris-position :class "section" :halign "start")
+        (label :text mpris-length :class "section" :halign "end")))
+
+    ;; CONTROLES MULTIMEDIA (Botones separados con :spacing 10)
+    (box :orientation "h" :space-evenly true :spacing 20
+      (button :onclick "playerctl previous" "󰒮")
+      (button :onclick "playerctl play-pause" 
+              "${mpris-status == 'Playing' ? '' : ''}")
+      (button :onclick "playerctl next" "󰒭"))))
+
+;; VENTANA
+(defwindow mpris-panel
+  :monitor 0
+  :stacking "overlay"
+  :namespace "eww"
+  :geometry (geometry :anchor "center right"
+                      :x "10px"
+                      :y "150px"
+                      :width "460px"
+                      :height "260px")
+  (mpris-widget))

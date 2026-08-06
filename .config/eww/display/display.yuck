@@ -1,0 +1,62 @@
+;; ==========================================
+;; DISPLAY PANEL
+;; ==========================================
+
+(defpoll brightness :interval "2s"
+  "ddcutil --bus 7 getvcp 10 | grep -oP 'current value =\\s*\\K[0-9]+'")
+
+(defpoll brightness-text :interval "2s"
+  "ddcutil --bus 7 getvcp 10 | grep -oP 'current value =\\s*\\K[0-9]+' | awk '{
+    if ($1 >= 90) print \"SUN BLAST 󰖙\";
+    else if ($1 >= 70) print \"BLINDING LIGHT 󰊪\";
+    else if ($1 >= 40) print \"BALANCED MODE \";
+    else if ($1 >= 15) print \"NIGHT OWL 󰏒\";
+    else print \"STEALTH MODE 🥷\";
+  }'")
+
+(defpoll outputs-json :interval "3s"
+  "niri msg --json outputs | jq -c '[to_entries[] | {name: .key, model: .value.model}]'")
+
+(defwidget display-panel []
+  (box :orientation "v" :class "panel" :spacing 8
+    ;; Encabezado con icono principal y frase dinámica según brillo
+    (box :orientation "h" :space-evenly false :spacing 14 :class "header-box"
+      (label :text "󰍹" :class "main-audio-icon")
+      (box :orientation "v" :space-evenly false
+        (label :text "Display" :class "title" :halign "start")
+        (label :text brightness-text :class "subtitle" :halign "start")))
+
+    ;; Sección BRIGHTNESS
+    (box :orientation "h" :class "row"
+      (label :text "BRIGHTNESS" :class "section" :halign "start")
+      (label :text "${brightness}%" :class "percent" :halign "end" :hexpand true))
+    (scale :min 0 :max 100 :value brightness
+           :onchange "ddcutil --bus 7 setvcp 10 {}")
+
+    ;; Sección SCALE
+    (label :text "SCALE" :class "section" :halign "start")
+    (box :orientation "h" :spacing 5
+      (button :onclick "niri msg output DP-2 scale 1" "1x")
+      (button :onclick "niri msg output DP-2 scale 1.25" "1.25x")
+      (button :onclick "niri msg output DP-2 scale 1.6" "1.6x")
+      (button :onclick "niri msg output DP-2 scale 2" "2x"))
+
+    ;; Sección DISPLAYS
+    (label :text "DISPLAYS" :class "section" :halign "start")
+    (for output in outputs-json
+      (button :onclick "niri msg action focus-monitor ${output.name}"
+              :class "device-row"
+        (box :orientation "h" :space-evenly false :spacing 8 :class "device-box"
+          (label :text "󰍹" :class "device-icon")
+          (label :text "${output.name} · ${output.model}" :halign "start"))))))
+
+(defwindow display-panel
+  :monitor 0
+  :windowtype "normal"
+  :stacking "overlay"
+  :geometry (geometry :anchor "bottom right"
+                      :x "10px"
+                      :y "10px"
+                      :width "450px"
+                      :height "260px")
+  (display-panel))

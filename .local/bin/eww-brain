@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+FRAMES_DIR="$HOME/.config/eww/animations/brain/frames"
+LIST_CACHE="/tmp/eww_brain_list.txt"
+FRAME_CACHE="/tmp/eww_brain_frame"
+
+# ⚡ 1. Indexar los 898 archivos UNA SOLA VEZ en RAM para no saturar el disco/CPU
+if [ ! -f "$LIST_CACHE" ] || [ ! -s "$LIST_CACHE" ]; then
+    find "$FRAMES_DIR" -maxdepth 1 -type f | sort -V > "$LIST_CACHE"
+fi
+
+TOTAL_FRAMES=$(wc -l < "$LIST_CACHE")
+[ "$TOTAL_FRAMES" -eq 0 ] && exit 1
+
+# 🧠 2. Leer número de cuadro actual
+if [ -f "$FRAME_CACHE" ]; then
+    read -r CURRENT_FRAME < "$FRAME_CACHE"
+else
+    CURRENT_FRAME=1
+fi
+
+# Control de seguridad por si el contador se desborda
+if [ "$CURRENT_FRAME" -gt "$TOTAL_FRAMES" ] || [ "$CURRENT_FRAME" -lt 1 ]; then
+    CURRENT_FRAME=1
+fi
+
+# 🎨 3. Imprimir el cuadro correspondiente instantáneamente
+FRAME_FILE=$(sed -n "${CURRENT_FRAME}p" "$LIST_CACHE")
+[ -f "$FRAME_FILE" ] && cat "$FRAME_FILE"
+
+# 🔄 4. Guardar la posición del siguiente cuadro (1 a 898)
+NEXT_FRAME=$(( (CURRENT_FRAME % TOTAL_FRAMES) + 1 ))
+echo "$NEXT_FRAME" > "$FRAME_CACHE"

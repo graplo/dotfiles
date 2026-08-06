@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+CACHE_DIR="/tmp/eww-album-art"
+DEFAULT_ICON="$HOME/.config/eww/assets/default-album.png"
+
+mkdir -p "$CACHE_DIR"
+
+ART_URL=$(playerctl metadata mpris:artUrl 2>/dev/null)
+
+# 1. Si no hay reproductor o no hay portada, devolver imagen por defecto
+if [ -z "$ART_URL" ]; then
+    echo "$DEFAULT_ICON"
+    exit 0
+fi
+
+# 2. Si es una ruta local (file://), devolver la ruta directamente
+if [[ "$ART_URL" == file://* ]]; then
+    echo "${ART_URL#file://}"
+    exit 0
+fi
+
+# 3. Si es URL web (http/https), gestionar caché con hash MD5
+HASH=$(echo -n "$ART_URL" | md5sum | cut -d' ' -f1)
+IMAGE_PATH="$CACHE_DIR/$HASH.jpg"
+
+if [ -f "$IMAGE_PATH" ]; then
+    echo "$IMAGE_PATH"
+else
+    curl -s --max-time 2 -o "$IMAGE_PATH" "$ART_URL"
+    if [ -f "$IMAGE_PATH" ]; then
+        echo "$IMAGE_PATH"
+    else
+        echo "$DEFAULT_ICON"
+    fi
+fi

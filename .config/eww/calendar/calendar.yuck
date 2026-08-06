@@ -1,0 +1,42 @@
+;; ==========================================
+;; CALENDAR PANEL
+;; ==========================================
+
+(defpoll cal-month :interval "1h" "date '+%B'")
+(defpoll cal-day :interval "1h" "date '+%d'")
+(defpoll cal-year :interval "12h" "date '+%Y'")
+(defpoll year-progress :interval "12h"
+  "date +%j | awk '{print int($1 * 100 / 365)}'")
+
+(defwidget calendar-panel []
+  (box :orientation "v" :class "panel" :spacing 8 :space-evenly false
+    ;; Encabezado: Icono + Mes + Día pegados a la izquierda
+    (box :orientation "h" :space-evenly false :spacing 12 :class "header-box"
+      (label :text "󰸗" :class "main-audio-icon")
+      (box :orientation "h" :space-evenly false :spacing 10 :valign "center"
+        (label :text cal-month :class "cal-title-month")
+        (label :text cal-day :class "cal-title-day")))
+
+    ;; Barra del año ajustada horizontalmente
+    (box :orientation "h" :space-evenly false :spacing 10 :class "row"
+      (label :text cal-year :class "percent")
+      (scale :min 0 :max 100 :value year-progress :active false :hexpand true)
+      (label :text "${year-progress}%" :class "percent"))
+
+    ;; Calendario nativo
+    (box :class "calendar-box" :vexpand false
+      (calendar :class "cal-widget"
+                :show-details false
+                :show-heading true
+                :show-day-names true))))
+
+(defwindow calendar-panel
+  :monitor 0
+  :windowtype "normal"
+  :stacking "overlay"
+  :geometry (geometry :anchor "top right"
+                      :x "10px"
+                      :y "40px"
+                      :width "380px"
+                      :height "290px")
+  (calendar-panel))

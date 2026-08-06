@@ -13,3 +13,11 @@
 [[language]]
 name = "markdown"
 language-servers = ["marksman"]
+
+[[language]]
+name = "kdl"
+language-servers = [ "kdl-lsp" ]
+
+[language-server.kdl-lsp]
+command = "kdl-lsp"
+

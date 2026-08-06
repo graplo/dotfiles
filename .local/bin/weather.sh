@@ -5,11 +5,18 @@
 # ⠀⠀⠳⠴⠒⠶⠞⠁⠀⠀
 # omarchy:summary=Returns a weather condition icon, adjusted for live sunrise and sunset.
 
-weather_data=$(curl -fsS --max-time 3 "https://wttr.in?format=j1" 2>/dev/null | jq -er '[.current_condition[0].weatherCode, .weather[0].astronomy[0].sunrise, .weather[0].astronomy[0].sunset] | select(all(. != null and . != "")) | @tsv' 2>/dev/null) || exit 1
+CACHE="$HOME/.cache/weather-icon"
+weather_data=$(curl -fsS --max-time 3 "https://wttr.in?format=j1" 2>/dev/null | jq -er '[.current_condition[0].weatherCode, .weather[0].astronomy[0].sunrise, .weather[0].astronomy[0].sunset] | select(all(. != null and . != "")) | @tsv' 2>/dev/null)
+
+if [[ -z "$weather_data" ]]; then
+  [[ -f "$CACHE" ]] && cat "$CACHE"
+  exit 0
+fi
 
 IFS=$'\t' read -r weather_code sunrise sunset <<< "$weather_data"
 if [[ ! $weather_code =~ ^[0-9]+$ || ! $sunrise =~ ^[0-9]{1,2}:[0-9]{2}\ [AP]M$ || ! $sunset =~ ^[0-9]{1,2}:[0-9]{2}\ [AP]M$ ]]; then
-  exit 1
+  [[ -f "$CACHE" ]] && cat "$CACHE"
+  exit 0
 fi
 
 now_epoch=$(date +%s)
@@ -23,17 +30,18 @@ else
 fi
 
 case $weather_code in
-  113) [[ $night == "true" ]] && icon="" || icon="" ;;
-  116) [[ $night == "true" ]] && icon="" || icon="" ;;
-  119|122) icon="" ;;
-  143|248|260) icon="" ;;
-  176|263|353) [[ $night == "true" ]] && icon="" || icon="" ;;
-  179|227|230|323|326|368) [[ $night == "true" ]] && icon="" || icon="" ;;
-  182|185|281|284|311|314|317|320|350|362|365|374|377) icon="" ;;
-  200|386|389|392|395) icon="" ;;
-  266|293|296|299|302|305|308|356|359) icon="" ;;
-  329|332|335|338|371) icon="" ;;
-  *) icon="" ;;
+
+113) [[ $night == "true" ]] && icon="" || icon="" ;;
+116) [[ $night == "true" ]] && icon="" || icon="" ;;
+119 | 122) icon="" ;;
+143 | 248 | 260) icon="" ;;
+176 | 263 | 353) [[ $night == "true" ]] && icon="" || icon="" ;;
+179 | 227 | 230 | 323 | 326 | 368) [[ $night == "true" ]] && icon="" || icon="" ;;
+182 | 185 | 281 | 284 | 311 | 314 | 317 | 320 | 350 | 362 | 365 | 374 | 377) icon="" ;;
+200 | 386 | 389 | 392 | 395) icon="" ;;
+266 | 293 | 296 | 299 | 302 | 305 | 308 | 356 | 359) icon="" ;;
+329 | 332 | 335 | 338 | 371) icon="" ;;
+*) icon="" ;;
 esac
 
-printf '%s\n' "$icon"
+printf '%s\n' "$icon" | tee "$CACHE"

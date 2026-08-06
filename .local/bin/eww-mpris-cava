@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+# Si la música no está sonando, mostramos una línea estática y salimos
+STATUS=$(playerctl status 2>/dev/null)
+if [ "$STATUS" != "Playing" ]; then
+    echo "────────────"
+    exit 0
+fi
+
+# CAVA mapeado a caracteres Unicode Unicode (12 barras)
+cava -p <(cat <<EOF
+[general]
+bars = 12
+[output]
+method = raw
+raw_target = /dev/stdout
+data_format = ascii
+ascii_max_range = 6
+EOF
+) | sed -u 's/;//g;s/0/ /g;s/1/▂/g;s/2/▃/g;s/3/▄/g;s/4/▅/g;s/5/▆/g;s/6/█/g;'

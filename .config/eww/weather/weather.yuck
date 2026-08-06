@@ -1,0 +1,75 @@
+;; ==========================================
+;; WEATHER PANEL
+;; ==========================================
+
+(defpoll weather :interval "15m" "eww-weather-fetch")
+
+;; Sub-widget para cada día del pronóstico
+(defwidget weather-day [icon day max min]
+  (box :orientation "h" :space-evenly false :spacing 8 :halign "center"
+    (label :text icon :class "weather-mini-icon")
+    (box :orientation "v" :space-evenly false
+      (label :text day :class "weather-sub-label")
+      (label :text "${max}° ${min}°" :class "weather-stat-val"))))
+
+;; Widget Principal
+(defwidget weather-widget []
+  (box :orientation "v" :class "panel" :spacing 14 :space-evenly false
+    
+    ;; PARTE SUPERIOR
+    (box :orientation "h" :space-evenly false :spacing 24 :class "weather-top"
+      
+      ;; Izquierda: Icono Principal + Temp
+      (box :orientation "h" :space-evenly false :spacing 10 :valign "center"
+        (label :text "${weather.icon != '' ? weather.icon : ''}" :class "weather-main-icon")
+        (label :text "${weather.temp != '' ? weather.temp : '--'}°C" :class "weather-temp-text"))
+
+      ;; Derecha: Ciudad + Stats
+      (box :orientation "v" :space-evenly false :spacing 8 :hexpand true :valign "center"
+        (box :orientation "h" :space-evenly false :halign "start"
+          (label :text " ${weather.city != '' ? weather.city : 'CIUDAD'}" 
+                 :class "weather-city-text"))
+
+        (box :orientation "h" :space-evenly false :spacing 20 :class "weather-stats-grid"
+          (box :orientation "v" :space-evenly false :spacing 2 :halign "start"
+            (label :text "FEELS" :class "weather-sub-label")
+            (label :text "${weather.feels != '' ? weather.feels : '--'}°C" :class "weather-stat-val"))
+          
+          (box :orientation "v" :space-evenly false :spacing 2 :halign "start"
+            (label :text "WIND" :class "weather-sub-label")
+            (label :text "${weather.wind != '' ? weather.wind : '--'} km/h" :class "weather-stat-val"))
+          
+          (box :orientation "v" :space-evenly false :spacing 2 :halign "start"
+            (label :text "HUMID" :class "weather-sub-label")
+            (label :text "${weather.humidity != '' ? weather.humidity : '--'}%" :class "weather-stat-val")))))
+
+    ;; SEPARADOR HORIZONTAL
+    (box :class "weather-separator")
+
+    ;; PARTE INFERIOR: PRONÓSTICO DE 3 DÍAS
+    (box :orientation "h" :space-evenly true :class "weather-forecast-box"
+      (weather-day :icon "${weather.forecast[0].icon}" 
+                   :day "${weather.forecast[0].day}" 
+                   :max "${weather.forecast[0].max}" 
+                   :min "${weather.forecast[0].min}")
+      
+      (weather-day :icon "${weather.forecast[1].icon}" 
+                   :day "${weather.forecast[1].day}" 
+                   :max "${weather.forecast[1].max}" 
+                   :min "${weather.forecast[1].min}")
+      
+      (weather-day :icon "${weather.forecast[2].icon}" 
+                   :day "${weather.forecast[2].day}" 
+                   :max "${weather.forecast[2].max}" 
+                   :min "${weather.forecast[2].min}"))))
+
+(defwindow weather-panel
+  :monitor 0
+  :stacking "overlay"
+  :namespace "eww"
+  :geometry (geometry :anchor "top right"
+                      :x "10px"
+                      :y "150px"
+                      :width "460px"
+                      :height "190px")
+  (weather-widget))

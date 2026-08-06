@@ -1,0 +1,79 @@
+;; Polling de notificaciones en JSON
+(defpoll notifs :interval "2s" "~/.local/bin/get-mako-history.sh")
+
+;; WIDGET PRINCIPAL
+(defwidget notification-center []
+  (box :orientation "v" 
+       :class "panel" 
+       :spacing 10 
+       :space-evenly false
+
+    ;; Encabezado
+    (box :orientation "h" 
+         :space-evenly false 
+         :spacing 14 
+         :class "header-box" 
+         :vexpand false
+
+      (label :text "󰚢" :class "main-notif-icon")
+
+      (box :orientation "v" :space-evenly false :hexpand true
+        (label :text "Notifications" :class "title" :halign "start")
+        (label :text "MAKO CENTER" :class "subtitle" :halign "start"))
+
+      ;; Botón Limpiar Todo vía systemd
+      (button :class "clear-btn" 
+              :tooltip "Limpiar historial"
+              :valign "center"
+              :onclick "systemctl --user restart mako && eww update notifs='[]'"
+        (label :text "󰎟" :class "clear-icon")))
+
+    ;; Scroll
+    (scroll :height 380 
+            :vscroll true 
+            :hscroll false 
+            :vexpand true 
+            :hexpand true
+            :class "notif-scroll"
+      (box :orientation "v" 
+           :spacing 8 
+           :space-evenly false 
+           :valign "start"
+        
+        (label :text "${arraylength(notifs) == 0 ? 'Sin notificaciones' : ''}" 
+               :class "empty-msg" 
+               :visible "${arraylength(notifs) == 0}")
+               
+        (for notif in notifs
+          (box :orientation "h" 
+               :class "notif-card ${notif.urgency}" 
+               :spacing 10 
+               :space-evenly false 
+               :hexpand true
+
+            ;; ÍCONO PAPIRUS-DARK DINÁMICO
+            (box :class "notif-icon-box" 
+                 :valign "center"
+                 :visible "${notif.icon_path != ''}"
+              (image :path "${notif.icon_path}" 
+                     :image-width 32 
+                     :image-height 32))
+
+            ;; CONTENIDO DE LA NOTIFICACIÓN
+            (box :orientation "v" :spacing 4 :space-evenly false :hexpand true
+              (label :text "${notif.app}" :class "notif-app" :halign "start" :hexpand true)
+              (label :text "${notif.title}" :class "notif-title" :halign "start" :wrap true)
+              (label :text "${notif.body}" :class "notif-body" :halign "start" :wrap true :visible "${notif.body != ''}"))))))))
+
+;; VENTANA
+(defwindow notifications-panel
+  :monitor 0
+  :stacking "overlay"
+  :focusable false
+  :geometry (geometry :anchor "top right"
+                      :x "10px"
+                      :y "40px"
+                      :width "400px"
+                      :height "460px")
+  :namespace "eww"
+  (notification-center))

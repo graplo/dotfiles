@@ -1,0 +1,7 @@
+(include "./audio/audio.yuck")
+(include "./display/display.yuck")
+(include "./calendar/calendar.yuck")
+(include "./weather/weather.yuck")
+(include "./notifications/notifications.yuck")
+(include "./mpris/mpris.yuck")
+(include "./dashboard/dashboard.yuck")

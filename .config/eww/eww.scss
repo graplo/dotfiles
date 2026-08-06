@@ -1,0 +1,338 @@
+$bg: #282a36;
+$bg-alt: #44475a;
+$fg: #f8f8f2;
+$purple: #bd93f9;
+$comment: #6272a4;
+
+.panel {
+  background-color: $bg;
+  border: 2px solid $purple;
+  border-radius: 0px;
+  padding: 14px;
+  color: $fg;
+  font-family: "JetBrainsMono Nerd Font Propo";
+}
+
+/* Icono grande del encabezado */
+.main-audio-icon {
+  font-size: 32px;
+  color: $fg;
+  margin-right: 4px;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: bold;
+  color: $purple;
+}
+
+.section {
+  font-size: 12px;
+  color: $comment;
+  margin-top: 6px;
+}
+
+label.percent {
+  font-size: 12px;
+  color: $fg;
+}
+
+.device-name,
+.device-row label {
+  font-size: 12px;
+  color: $purple;
+}
+
+.device-box {
+  background-color: $bg-alt;
+  border-radius: 4px; // Esquinas redondeadas como en el ejemplo
+  padding: 8px 12px; // Espaciado interno (arriba/abajo e izquierda/derecha)
+  margin-top: 4px; // Margen superior opcional para separarlo del slider
+}
+
+button {
+  background-color: $bg-alt;
+  color: $fg;
+  border-radius: 4px;
+  padding: 4px 8px;
+}
+
+button:hover {
+  background-color: $purple;
+  color: $bg;
+}
+
+scale trough {
+  background-color: $bg-alt;
+  min-height: 6px;
+}
+
+scale trough highlight {
+  background-color: $purple;
+}
+
+/* ==========================================
+   CALENDAR STYLES (Sin tocar nodos complejos de GTK)
+   ========================================== */
+
+.cal-title-month {
+  font-size: 26px;
+  font-weight: bold;
+  color: $fg;
+}
+
+.cal-title-day {
+  font-size: 26px;
+  font-weight: bold;
+  color: $purple;
+}
+
+.calendar-box {
+  padding: 4px;
+}
+
+/* ==========================================
+   WEATHER STYLES (Seguro GTK / Dracula)
+   ========================================== */
+
+.weather-main-icon {
+  font-size: 42px;
+  color: $purple;
+}
+
+.weather-temp-text {
+  font-size: 38px;
+  font-weight: bold;
+  color: $fg;
+}
+
+.weather-city-text {
+  font-size: 12px;
+  font-weight: bold;
+  color: $fg;
+}
+
+.weather-sub-label {
+  font-size: 11px;
+  font-weight: bold;
+  color: $comment;
+}
+
+.weather-stat-val {
+  font-size: 11px;
+  color: $fg;
+}
+
+.weather-mini-icon {
+  font-size: 20px;
+  color: $purple;
+}
+
+.weather-separator {
+  background-color: $bg-alt;
+  min-height: 1px;
+  margin: 2px 0;
+}
+
+/* ==========================================
+   NOTIFICATIONS STYLES (Ultra Clean)
+   ========================================== */
+
+.main-notif-icon {
+  font-size: 32px;
+  color: $purple;
+}
+
+.subtitle {
+  font-size: 11px;
+  font-weight: bold;
+  color: $comment;
+}
+
+.clear-btn {
+  background-color: transparent;
+  border: none;
+  padding: 0px;
+}
+
+.clear-icon {
+  font-size: 14px;
+  color: $comment;
+}
+
+.notif-card {
+  background-color: $bg;
+  padding: 8px 10px;
+  border: 1px solid $purple;
+  border-radius: 0px;
+}
+
+.high {
+  background-color: #3b1f2b;
+  border: 1px solid #ff5555;
+}
+
+.low {
+  border: 1px solid #8be9fd;
+}
+
+.notif-app {
+  font-size: 11px;
+  color: $comment;
+  font-weight: bold;
+}
+
+.notif-title {
+  font-size: 12px;
+  font-weight: bold;
+  color: $fg;
+}
+
+.notif-body {
+  font-size: 11px;
+  color: $fg;
+}
+
+.empty-msg {
+  font-size: 12px;
+  color: $comment;
+  padding: 10px 0;
+}
+
+/* ==========================================
+   MPRIS SIMPLE STYLES
+   ========================================== */
+
+.mpris-cover {
+  min-width: 70px;
+  min-height: 70px;
+  border: 1px solid $purple;
+}
+
+.mpris-badge {
+  background-color: $bg-alt;
+  color: $purple;
+  font-size: 10px;
+  padding: 2px 6px;
+}
+
+.mpris-cava {
+  font-size: 15px;
+  color: #50fa7b;
+}
+
+/* ==========================================
+   CEREBRO ASCII
+   ========================================== */
+.brain {
+  border: 2px solid $comment;
+  background-color: $bg-alt;
+  padding: 10px;
+  min-width: 240px;
+}
+
+.brain-text {
+  color: $fg;
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 10px;
+  /* Reemplazado line-height por margen para compatibilidad GTK */
+  margin-top: -2px;
+  margin-bottom: -2px;
+}
+
+.brain-label {
+  color: #ff79c6;
+  font-size: 11px;
+  font-weight: bold;
+  margin-top: 6px;
+}
+
+/* ==========================================
+   BARRAS DE PROGRESO RETRO (PROGRESSBAR)
+   ========================================== */
+
+/* Fondo canaleta */
+progressbar trough {
+  background-color: $bg-alt;
+  min-height: 10px;
+  border-radius: 0px;
+  border: none;
+}
+
+/* Relleno de la barra (CPU Cores) */
+.cpu-progress progressbar progress {
+  background-color: #8be9fd;
+  border-radius: 0px;
+}
+
+/* Relleno RAM */
+.ram-progress progressbar progress {
+  background-color: #bd93f9;
+  border-radius: 0px;
+}
+
+/* Relleno Disco */
+.disk-progress progressbar progress {
+  background-color: #ff79c6;
+  border-radius: 0px;
+}
+
+/* Estilos de texto laterales */
+.cpu-idx {
+  min-width: 32px;
+  color: $comment;
+  font-size: 10px;
+}
+
+.cpu-per-usage {
+  min-width: 32px;
+  color: $fg;
+  font-size: 10px;
+  margin-left: 4px;
+}
+
+.mem-header {
+  background-color: #bd93f9;
+  color: $bg;
+  padding: 2px 6px;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.storage-header {
+  background-color: #ff79c6;
+  color: $bg;
+  padding: 2px 6px;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.mem-info,
+.storage-info {
+  color: $fg;
+  font-size: 11px;
+  font-weight: bold;
+  min-width: 35px;
+}
+
+/* PROMEDIO Y ETIQUETA CPU */
+.cpu-footer {
+  border-top: 1px dashed $comment;
+  margin-top: 6px;
+  padding-top: 4px;
+}
+
+.cpu-usage {
+  color: #50fa7b;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.cpu-name {
+  color: $bg;
+  background-color: #bd93f9;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 2px 4px;
+  margin-top: 4px;
+}

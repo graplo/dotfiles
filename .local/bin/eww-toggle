@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+TARGET="$1"
+STATE_FILE="/tmp/eww_current_panel"
+
+if [ -z "$TARGET" ]; then
+    echo "Uso: $0 <nombre-del-panel>"
+    exit 1
+fi
+
+# 1. Leemos qué panel estaba abierto
+CURRENT=""
+if [ -f "$STATE_FILE" ]; then
+    CURRENT=$(cat "$STATE_FILE")
+fi
+
+# 2. Si es el mismo panel que está abierto -> CERRAR (Toggle)
+if [ "$CURRENT" == "$TARGET" ]; then
+    eww close "$TARGET" 2>/dev/null
+    rm -f "$STATE_FILE"
+    exit 0
+fi
+
+# 3. Si es un panel nuevo -> Limpiamos cualquier panel abierto y abrimos el nuevo
+eww close-all 2>/dev/null
+echo "$TARGET" > "$STATE_FILE"
+eww open "$TARGET"

@@ -24,7 +24,6 @@ window#waybar {
 
 #custom-cachy,
 #cpu,
-#mpris,
 #custom-menu,
 #tray,
 #privacy,
@@ -36,7 +35,7 @@ window#waybar {
 #custom-ddc-brightness,
 #battery {
   color: @foreground;
-  padding: 6px 0;
+  padding: 5px 0;
 }
 
 /* Boton de power profile */
@@ -53,7 +52,7 @@ window#waybar {
 /* Boton de Powrer Menu 󰐥 */
 #custom-powermenu {
   color: @color1;
-  padding: 6px 0;
+  padding: 5px 0;
 }
 #custom-powermenu:hover {
   color: @color1;
@@ -61,8 +60,8 @@ window#waybar {
 }
 
 #custom-notification {
-  padding: 6px 0;
-  font-size: 18px;
+  padding: 4px 0;
+  font-size: 16px;
 }
 
 #custom-notification:hover {
@@ -84,6 +83,8 @@ window#waybar {
     background-position: center;
     background-size: 24px;
 
+    padding: 4px 0;
+
     min-width: 24px;
     min-height: 32px;
 }
@@ -95,7 +96,7 @@ window#waybar {
 /* Modulo del reloj fecha y hora */
 #clock {
   color: @color4;
-    padding: 2px 0;
+    padding: 1px 0;
 }
 #clock:hover {
     opacity: 0.5;
@@ -128,6 +129,11 @@ window#waybar {
    Workspace 4 = Clyde (amarillo)
    cambia segun el escritorio virtual
 */
+
+#workspaces button {
+    min-width: 0;
+    padding: 1px 0;
+}
 
 #workspaces button:nth-child(1) {
   color: @color5;
@@ -177,13 +183,14 @@ window#waybar {
 
 #mpris {
   color: @color4;
+  padding: 4px 0;
 }
 
 #custom-cava-mini {
-    color: @color4;
-    font-size: 14px;
-    padding: 0;
-    margin: 0;
+  color: @color4;
+  font-size: 14px;
+  padding: 0;
+  margin: 0;
 }
 
 #network.disabled {
@@ -228,6 +235,10 @@ tooltip * {
   color: @foreground;
   margin: 2px;
   background: @background;
+}
+
+#pulseaudio:not(.microphone) label {
+  font-size: 10px;
 }
 
 #pulseaudio-slider,

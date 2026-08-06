@@ -1,0 +1,68 @@
+;; ==========================================
+;; 1. VARIABLES Y POLLS
+;; ==========================================
+(defpoll brain-frame :interval "33ms" "eww-brain")
+
+;; ==========================================
+;; 2. WIDGET PRINCIPAL
+;; ==========================================
+(defwidget dashboard []
+  (box :class "panel" :orientation "v" :spacing 8 :space-evenly false
+
+    ;; ------------------------------------------
+    ;; FILA SUPERIOR: CEREBRO + NÚCLEOS CPU
+    ;; ------------------------------------------
+    (box :orientation "h" :spacing 8 :space-evenly false
+
+      ;; Lado Izquierdo: Cerebro ASCII
+      (box :class "brain" :orientation "v" :space-evenly false :halign "center" :valign "center"
+        (label :text brain-frame :class "brain-text" :vexpand true)
+        (label :text "─── [Prefrontal cortex] ───" :class "brain-label"))
+
+      ;; Lado Derecho: CPU con lista de cores
+      (box :class "cpu" :orientation "v" :space-evenly false :hexpand true
+        
+        ;; Mapeo de núcleos
+        (box :orientation "v" :spacing 3 :vexpand true
+          (for core in {EWW_CPU.cores}
+            (box :orientation "h" :spacing 6 :space-evenly false
+              (label :text "[${core.core}]" :class "cpu-idx")
+              ;; 👈 Usamos progress en lugar de scale para eliminar la perilla
+              (progress :class "cpu-progress" :value "${core.usage}" :orientation "h" :hexpand true)
+              (label :text "${round(core.usage, 0)}%" :class "cpu-per-usage"))))
+
+        ;; Promedio del procesador
+        (box :class "cpu-footer" :orientation "h" :space-evenly true
+          (label :text "[avg] ${round(EWW_CPU.avg, 0)}%" :class "cpu-usage"))
+
+        ;; Etiqueta del CPU
+        (label :text "CPU PROCESSOR" :class "cpu-name")))
+
+    ;; ------------------------------------------
+    ;; FILA INFERIOR 1: MEMORIA RAM
+    ;; ------------------------------------------
+    (box :class "mem" :orientation "h" :spacing 8 :space-evenly false :valign "center"
+      (label :text "[RAM]" :class "mem-header")
+      (progress :class "ram-progress" :value "${EWW_RAM.used_mem_perc}" :orientation "h" :hexpand true)
+      (label :text "${round(EWW_RAM.used_mem_perc, 0)}%" :class "mem-info"))
+
+    ;; ------------------------------------------
+    ;; FILA INFERIOR 2: ALMACENAMIENTO (DISCO)
+    ;; ------------------------------------------
+    (box :class "storage" :orientation "h" :spacing 8 :space-evenly false :valign "center"
+      (label :text "[DISCO]" :class "storage-header")
+      (progress :class "disk-progress" :value "${EWW_DISK["/"].used_perc}" :orientation "h" :hexpand true)
+      (label :text "${round(EWW_DISK["/"].used_perc, 0)}%" :class "storage-info"))))
+
+;; ==========================================
+;; 3. VENTANA
+;; ==========================================
+(defwindow dashboard-panel
+  :monitor 0
+  :stacking "overlay"
+  :geometry (geometry :anchor "top right"
+                      :x "10px"
+                      :y "50px"
+                      :width "560px"
+                      :height "360px")
+  (dashboard))
