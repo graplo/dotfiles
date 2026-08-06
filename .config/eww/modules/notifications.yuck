@@ -1,5 +1,5 @@
 ;; Polling de notificaciones en JSON
-(defpoll notifs :interval "2s" "~/.local/bin/get-mako-history.sh")
+(defpoll notifs :interval "2s" "~/.local/bin/eww-mako-history")
 
 ;; WIDGET PRINCIPAL
 (defwidget notification-center []
