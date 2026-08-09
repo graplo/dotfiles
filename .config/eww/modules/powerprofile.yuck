@@ -1,0 +1,43 @@
+;; ==========================================
+;; POWER PANEL (simplificado)
+;; ==========================================
+(defpoll powerprofile :interval "5s" "eww-powerprofile-fetch")
+(defpoll uptime :interval "1m" "uptime -p | sed 's/up //'")
+
+(defwidget power-widget []
+  (box :orientation "v" :class "panel" :spacing 14 :space-evenly false
+
+    ;; HEADER: icono + estado, cambia según el perfil activo
+    (box :orientation "h" :space-evenly false :spacing 10 :class "power-top"
+      (label :text "${powerprofile.icon}" :class "power-main-icon")
+      (box :orientation "v" :space-evenly false :hexpand true
+        (label :text "Power Profile" :class "title" :halign "start")
+        (label :text "${powerprofile.profile_label}" :class "power-state-text" :halign "start"))
+      (box :orientation "v" :space-evenly false :halign "end"
+        (label :text "UPTIME" :class "weather-sub-label" :halign "end")
+        (label :text "${uptime}" :class "weather-stat-val" :halign "end")))
+
+    (box :class "weather-separator")
+
+    ;; BOTONES DE PERFIL
+    (box :orientation "h" :space-evenly true :spacing 8 :class "power-buttons"
+      (button :onclick "eww-set-powerprofile power-saver"
+              :class "${powerprofile.profile == 'power-saver' ? 'power-btn-active' : ''}"
+        "Power-saver")
+      (button :onclick "eww-set-powerprofile balanced"
+              :class "${powerprofile.profile == 'balanced' ? 'power-btn-active' : ''}"
+        "Balanced")
+      (button :onclick "eww-set-powerprofile performance"
+              :class "${powerprofile.profile == 'performance' ? 'power-btn-active' : ''}"
+        "Performance"))))
+
+(defwindow powerprofile-panel
+  :monitor 0
+  :stacking "overlay"
+  :namespace "eww"
+  :geometry (geometry :anchor "bottom right"
+                      :x "10px"
+                      :y "10px"
+                      :width "460px"
+                      :height "150px")
+  (power-widget))

@@ -1,0 +1,62 @@
+#!/usr/bin/env bash
+
+STATE_FILE="/tmp/eww_pomodoro_state"
+TIME_FILE="/tmp/eww_pomodoro_time"
+WORK_TIME=1500  # 25 min
+
+[ ! -f "$STATE_FILE" ] && echo "STOPPED" > "$STATE_FILE"
+[ ! -f "$TIME_FILE" ] && echo "$WORK_TIME" > "$TIME_FILE"
+
+get_formatted() {
+    local seconds=$1
+    local min=$((seconds / 60))
+    local sec=$((seconds % 60))
+    printf "%02d:%02d" "$min" "$sec"
+}
+
+case "$1" in
+    toggle)
+        CURRENT_STATE=$(cat "$STATE_FILE" 2>/dev/null)
+        if [ "$CURRENT_STATE" = "WORK" ] || [ "$CURRENT_STATE" = "BREAK" ]; then
+            echo "STOPPED" > "$STATE_FILE"
+            echo "$WORK_TIME" > "$TIME_FILE"
+        else
+            echo "WORK" > "$STATE_FILE"
+            echo "$WORK_TIME" > "$TIME_FILE"
+            notify-send -a "Pomodoro" -i "dialog-information" "🍅 Pomodoro iniciado" "25 minutos de enfoque total."
+            
+            (
+                while [ "$(cat "$STATE_FILE" 2>/dev/null)" != "STOPPED" ]; do
+                    sleep 1
+                    TIME=$(cat "$TIME_FILE" 2>/dev/null || echo 0)
+                    STATE=$(cat "$STATE_FILE" 2>/dev/null)
+                    
+                    if [ "$TIME" -gt 0 ]; then
+                        echo $((TIME - 1)) > "$TIME_FILE"
+                    else
+                        if [ "$STATE" = "WORK" ]; then
+                            echo "BREAK" > "$STATE_FILE"
+                            echo "300" > "$TIME_FILE"
+                            notify-send -u critical -a "Pomodoro" "☕ ¡Tiempo de Descanso!" "Tómate 5 minutos de pausa."
+                        elif [ "$STATE" = "BREAK" ]; then
+                            echo "STOPPED" > "$STATE_FILE"
+                            echo "$WORK_TIME" > "$TIME_FILE"
+                            notify-send -a "Pomodoro" "🔔 Descanso Finalizado" "Listo para el siguiente ciclo."
+                        fi
+                    fi
+                done
+            ) &
+        fi
+        ;;
+    reset)
+        echo "STOPPED" > "$STATE_FILE"
+        echo "$WORK_TIME" > "$TIME_FILE"
+        ;;
+    get)
+        TIME_SEC=$(cat "$TIME_FILE" 2>/dev/null || echo "$WORK_TIME")
+        get_formatted "$TIME_SEC"
+        ;;
+    state)
+        cat "$STATE_FILE" 2>/dev/null || echo "STOPPED"
+        ;;
+esac

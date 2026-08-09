@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# eww-set-powerprofile <performance|balanced|power-saver>
+# Cambia el power profile y notifica, para usar desde los botones del widget eww.
+
+profile="$1"
+
+if [ -z "$profile" ]; then
+    echo "Uso: eww-set-powerprofile <performance|balanced|power-saver>" >&2
+    exit 1
+fi
+
+powerprofilesctl set "$profile"
+
+case "$profile" in
+    performance) label="Performance" ;;
+    balanced)    label="Balanced" ;;
+    power-saver) label="Power Saver" ;;
+    *)           label="$profile" ;;
+esac
+
+notify-send "⚡ Power Profile" "Set to: $label" --expire-time=2000 -u normal

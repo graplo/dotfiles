@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# eww-powerprofile-fetch
+# Expone el power profile actual como JSON para eww: {"profile": "...", "profile_label": "...", "icon": "..."}
+
+profile=$(powerprofilesctl get)
+profile_upper=$(echo "$profile" | tr '[:lower:]' '[:upper:]')
+
+case "$profile" in
+    performance) icon="󰓅" ;;
+    balanced)    icon="󰾅" ;;
+    power-saver) icon="󰾆" ;;
+    *)           icon="󰾅" ;;
+esac
+
+jq -n --arg profile "$profile" --arg profile_label "$profile_upper" --arg icon "$icon" \
+    '{profile: $profile, profile_label: $profile_label, icon: $icon}'

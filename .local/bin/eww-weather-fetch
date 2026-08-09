@@ -22,13 +22,36 @@ get_icon() {
     esac
 }
 
+# Mapea códigos WMO (Open-Meteo) al equivalente wttr.in más cercano,
+# para reusar get_icon() sin tener que definir glifos nuevos.
+wmo_to_wttr_code() {
+    local wmo="$1"
+    case $wmo in
+        0) echo 113 ;;                      # despejado
+        1|2) echo 116 ;;                    # parcialmente nublado
+        3) echo 119 ;;                      # nublado
+        45|48) echo 143 ;;                  # niebla
+        51|53|55) echo 266 ;;               # llovizna
+        56|57) echo 281 ;;                  # llovizna helada
+        61|63|65) echo 293 ;;               # lluvia
+        66|67) echo 281 ;;                  # lluvia helada
+        71|73|75) echo 332 ;;               # nieve
+        77) echo 350 ;;                     # granizo/aguanieve
+        80|81) echo 353 ;;                  # chubascos
+        82) echo 356 ;;                     # chubascos fuertes
+        85|86) echo 338 ;;                  # chubascos de nieve
+        95) echo 200 ;;                     # tormenta
+        96|99) echo 200 ;;                  # tormenta con granizo
+        *) echo 119 ;;
+    esac
+}
+
 # Nombre del día de la semana
 get_day_name() {
     date -d "$1" "+%a" 2>/dev/null | tr '[:lower:]' '[:upper:]'
 }
 
 RAW=$(curl -fsS --max-time 4 "https://wttr.in?format=j1" 2>/dev/null)
-
 if [ -z "$RAW" ]; then
     [ -f "$CACHE" ] && cat "$CACHE" || echo "{}"
     exit 0
@@ -44,6 +67,10 @@ code=$(echo "$RAW" | jq -r '.current_condition[0].weatherCode')
 sunrise=$(echo "$RAW" | jq -r '.weather[0].astronomy[0].sunrise')
 sunset=$(echo "$RAW" | jq -r '.weather[0].astronomy[0].sunset')
 
+# Lat/lon para consultar el día extra en Open-Meteo
+lat=$(echo "$RAW" | jq -r '.nearest_area[0].latitude')
+lon=$(echo "$RAW" | jq -r '.nearest_area[0].longitude')
+
 # Comprobar si es de noche
 now_epoch=$(date +%s)
 sunrise_epoch=$(date -d "today $sunrise" +%s 2>/dev/null || echo 0)
@@ -53,27 +80,51 @@ if (( sunrise_epoch > 0 && sunset_epoch > 0 && (now_epoch < sunrise_epoch || now
 else
     night=false
 fi
-
 icon=$(get_icon "$code" "$night")
 
-# Pronóstico de los próximos 3 días
-d0_name=$(get_day_name "$(echo "$RAW" | jq -r '.weather[0].date')")
-d0_max=$(echo "$RAW" | jq -r '.weather[0].maxtempC')
-d0_min=$(echo "$RAW" | jq -r '.weather[0].mintempC')
-d0_code=$(echo "$RAW" | jq -r '.weather[0].hourly[4].weatherCode')
-d0_icon=$(get_icon "$d0_code" "false")
+# Pronóstico: domingo, lunes, martes = índices 1, 2, 3 de Open-Meteo
+# (forecast_days=4 => hoy + 3 días futuros, todos reales, sin repetir hoy)
+OM_RAW=$(curl -fsS --max-time 4 "https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&daily=weather_code,temperature_2m_max,temperature_2m_min&timezone=auto&forecast_days=4" 2>/dev/null)
 
-d1_name=$(get_day_name "$(echo "$RAW" | jq -r '.weather[1].date')")
-d1_max=$(echo "$RAW" | jq -r '.weather[1].maxtempC')
-d1_min=$(echo "$RAW" | jq -r '.weather[1].mintempC')
-d1_code=$(echo "$RAW" | jq -r '.weather[1].hourly[4].weatherCode')
-d1_icon=$(get_icon "$d1_code" "false")
+build_day() {
+    local idx="$1"
+    local om_idx=$((idx + 1))  # +1 para saltar "hoy" en el array de Open-Meteo
+    local date_str max min wmo wttr_code
+    date_str=$(echo "$OM_RAW" | jq -r ".daily.time[$om_idx]")
+    max=$(echo "$OM_RAW" | jq -r ".daily.temperature_2m_max[$om_idx] | floor")
+    min=$(echo "$OM_RAW" | jq -r ".daily.temperature_2m_min[$om_idx] | floor")
+    wmo=$(echo "$OM_RAW" | jq -r ".daily.weather_code[$om_idx]")
+    wttr_code=$(wmo_to_wttr_code "$wmo")
+    local day_name day_icon
+    day_name=$(get_day_name "$date_str")
+    day_icon=$(get_icon "$wttr_code" "false")
+    jq -n --arg day "$day_name" --arg max "$max" --arg min "$min" --arg icon "$day_icon" \
+        '{day: $day, max: $max, min: $min, icon: $icon}'
+}
 
-d2_name=$(get_day_name "$(echo "$RAW" | jq -r '.weather[2].date')")
-d2_max=$(echo "$RAW" | jq -r '.weather[2].maxtempC')
-d2_min=$(echo "$RAW" | jq -r '.weather[2].mintempC')
-d2_code=$(echo "$RAW" | jq -r '.weather[2].hourly[4].weatherCode')
-d2_icon=$(get_icon "$d2_code" "false")
+if [ -n "$OM_RAW" ] && echo "$OM_RAW" | jq -e '.daily' >/dev/null 2>&1; then
+    d0=$(build_day 0)  # domingo
+    d1=$(build_day 1)  # lunes
+    d2=$(build_day 2)  # martes
+    forecast=$(jq -n --argjson d0 "$d0" --argjson d1 "$d1" --argjson d2 "$d2" '[$d0, $d1, $d2]')
+else
+    # Fallback: si Open-Meteo falla, usar los 2 días que sí da wttr.in (mañana y pasado)
+    d1_name=$(get_day_name "$(echo "$RAW" | jq -r '.weather[1].date')")
+    d1_max=$(echo "$RAW" | jq -r '.weather[1].maxtempC')
+    d1_min=$(echo "$RAW" | jq -r '.weather[1].mintempC')
+    d1_code=$(echo "$RAW" | jq -r '.weather[1].hourly[4].weatherCode')
+    d1_icon=$(get_icon "$d1_code" "false")
+    d2_name=$(get_day_name "$(echo "$RAW" | jq -r '.weather[2].date')")
+    d2_max=$(echo "$RAW" | jq -r '.weather[2].maxtempC')
+    d2_min=$(echo "$RAW" | jq -r '.weather[2].mintempC')
+    d2_code=$(echo "$RAW" | jq -r '.weather[2].hourly[4].weatherCode')
+    d2_icon=$(get_icon "$d2_code" "false")
+    forecast=$(jq -n \
+        --arg d1_name "$d1_name" --arg d1_max "$d1_max" --arg d1_min "$d1_min" --arg d1_icon "$d1_icon" \
+        --arg d2_name "$d2_name" --arg d2_max "$d2_max" --arg d2_min "$d2_min" --arg d2_icon "$d2_icon" \
+        '[{day: $d1_name, max: $d1_max, min: $d1_min, icon: $d1_icon},
+          {day: $d2_name, max: $d2_max, min: $d2_min, icon: $d2_icon}]')
+fi
 
 JSON=$(jq -n \
   --arg city "$city" \
@@ -82,9 +133,7 @@ JSON=$(jq -n \
   --arg wind "$wind" \
   --arg humidity "$humidity" \
   --arg icon "$icon" \
-  --arg d0_name "$d0_name" --arg d0_max "$d0_max" --arg d0_min "$d0_min" --arg d0_icon "$d0_icon" \
-  --arg d1_name "$d1_name" --arg d1_max "$d1_max" --arg d1_min "$d1_min" --arg d1_icon "$d1_icon" \
-  --arg d2_name "$d2_name" --arg d2_max "$d2_max" --arg d2_min "$d2_min" --arg d2_icon "$d2_icon" \
+  --argjson forecast "$forecast" \
   '{
     city: $city,
     temp: $temp,
@@ -92,11 +141,8 @@ JSON=$(jq -n \
     wind: $wind,
     humidity: $humidity,
     icon: $icon,
-    forecast: [
-      {day: $d0_name, max: $d0_max, min: $d0_min, icon: $d0_icon},
-      {day: $d1_name, max: $d1_max, min: $d1_min, icon: $d1_icon},
-      {day: $d2_name, max: $d2_max, min: $d2_min, icon: $d2_icon}
-    ]
+    forecast: $forecast
   }')
 
 echo "$JSON" | tee "$CACHE"
+

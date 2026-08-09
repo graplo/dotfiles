@@ -45,9 +45,9 @@ label.percent {
 
 .device-box {
   background-color: $bg-alt;
-  border-radius: 4px; // Esquinas redondeadas como en el ejemplo
-  padding: 8px 12px; // Espaciado interno (arriba/abajo e izquierda/derecha)
-  margin-top: 4px; // Margen superior opcional para separarlo del slider
+  border-radius: 4px;
+  padding: 8px 12px;
+  margin-top: 4px;
 }
 
 button {
@@ -72,7 +72,7 @@ scale trough highlight {
 }
 
 /* ==========================================
-   CALENDAR STYLES (Sin tocar nodos complejos de GTK)
+   CALENDAR STYLES
    ========================================== */
 
 .cal-title-month {
@@ -92,7 +92,7 @@ scale trough highlight {
 }
 
 /* ==========================================
-   WEATHER STYLES (Seguro GTK / Dracula)
+   WEATHER STYLES
    ========================================== */
 
 .weather-main-icon {
@@ -135,7 +135,7 @@ scale trough highlight {
 }
 
 /* ==========================================
-   NOTIFICATIONS STYLES (Ultra Clean)
+   NOTIFICATIONS STYLES
    ========================================== */
 
 .main-notif-icon {
@@ -235,7 +235,7 @@ scale trough highlight {
   color: $fg;
   font-family: "JetBrainsMono Nerd Font", monospace;
   font-size: 10px;
-  /* Reemplazado line-height por margen para compatibilidad GTK */
+  color: $purple;
   margin-top: -2px;
   margin-bottom: -2px;
 }
@@ -251,7 +251,6 @@ scale trough highlight {
    BARRAS DE PROGRESO RETRO (PROGRESSBAR)
    ========================================== */
 
-/* Fondo canaleta */
 progressbar trough {
   background-color: $bg-alt;
   min-height: 10px;
@@ -259,25 +258,21 @@ progressbar trough {
   border: none;
 }
 
-/* Relleno de la barra (CPU Cores) */
 .cpu-progress progressbar progress {
   background-color: #8be9fd;
   border-radius: 0px;
 }
 
-/* Relleno RAM */
 .ram-progress progressbar progress {
   background-color: #bd93f9;
   border-radius: 0px;
 }
 
-/* Relleno Disco */
 .disk-progress progressbar progress {
   background-color: #ff79c6;
   border-radius: 0px;
 }
 
-/* Estilos de texto laterales */
 .cpu-idx {
   min-width: 32px;
   color: $comment;
@@ -315,7 +310,6 @@ progressbar trough {
   min-width: 35px;
 }
 
-/* PROMEDIO Y ETIQUETA CPU */
 .cpu-footer {
   border-top: 1px dashed $comment;
   margin-top: 6px;
@@ -335,4 +329,100 @@ progressbar trough {
   font-weight: bold;
   padding: 2px 4px;
   margin-top: 4px;
+}
+
+/* ==========================================
+   ANIMACION ADN ASCII
+   ========================================== */
+.dna-box {
+  border: 1px solid $purple;
+  background-color: $bg;
+  padding: 10px;
+  min-width: 240px;
+}
+
+.dna-text {
+  color: #8be9fd;
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 10px;
+  margin-top: -2px;
+  margin-bottom: -2px;
+}
+
+.dna-label {
+  color: #ff79c6;
+  font-size: 11px;
+  font-weight: bold;
+  margin-top: 6px;
+}
+
+/* ==========================================
+   TARJETA POMODORO
+   ========================================== */
+.pomodoro-card {
+  background-color: $bg-alt;
+  border-radius: 4px;
+  padding: 10px;
+  margin-top: 4px;
+}
+
+.pomo-timer-text {
+  font-size: 28px;
+  font-weight: bold;
+  color: #ff79c6;
+  font-family: "JetBrainsMono Nerd Font Propo", monospace;
+}
+
+/* ==========================================
+   TIME OVERLAY BOX (CAJA FLOTANTE EN ADN)
+   ========================================== */
+.time-overlay-box {
+  background-color: $bg;
+  border: 1px solid $purple;
+  border-radius: 0px;
+  padding: 8px 16px;
+  /* Sombra para que destaque sobre el arte ASCII */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.6);
+}
+
+.overlay-clock-icon {
+  font-size: 24px;
+  color: #ff79c6;
+}
+
+.overlay-time-text {
+  font-size: 24px;
+  font-weight: bold;
+  color: $fg;
+  font-family: "JetBrainsMono Nerd Font Propo", monospace;
+}
+
+.overlay-date-text {
+  font-size: 11px;
+  font-weight: bold;
+  color: $comment;
+}
+
+/* ==========================================
+   POWER PROFILE STYLES
+   ========================================== */
+.power-main-icon {
+  font-size: 34px;
+  color: $purple;
+}
+
+.power-state-text {
+  font-size: 13px;
+  font-weight: bold;
+  color: $comment;
+}
+
+.power-btn-active {
+  background-color: $purple;
+  color: $bg;
+}
+
+.power-btn-active:hover {
+  background-color: $purple;
+  color: $bg;
 }

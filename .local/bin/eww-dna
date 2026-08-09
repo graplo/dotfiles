@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+FRAMES_DIR="$HOME/.config/eww/animations/dna/frames"
+LIST_CACHE="/tmp/eww_dna_list.txt"
+FRAME_CACHE="/tmp/eww_dna_frame"
+
+# 1. Indexar archivos en RAM una sola vez
+if [ ! -f "$LIST_CACHE" ] || [ ! -s "$LIST_CACHE" ]; then
+    find "$FRAMES_DIR" -maxdepth 1 -type f | sort -V > "$LIST_CACHE"
+fi
+
+TOTAL_FRAMES=$(wc -l < "$LIST_CACHE")
+[ "$TOTAL_FRAMES" -eq 0 ] && exit 1
+
+# 2. Leer cuadro actual
+if [ -f "$FRAME_CACHE" ]; then
+    read -r CURRENT_FRAME < "$FRAME_CACHE"
+else
+    CURRENT_FRAME=1
+fi
+
+if [ "$CURRENT_FRAME" -gt "$TOTAL_FRAMES" ] || [ "$CURRENT_FRAME" -lt 1 ]; then
+    CURRENT_FRAME=1
+fi
+
+# 3. Imprimir el cuadro directo
+FRAME_FILE=$(sed -n "${CURRENT_FRAME}p" "$LIST_CACHE")
+[ -f "$FRAME_FILE" ] && cat "$FRAME_FILE"
+
+# 4. Siguiente cuadro
+NEXT_FRAME=$(( (CURRENT_FRAME % TOTAL_FRAMES) + 1 ))
+echo "$NEXT_FRAME" > "$FRAME_CACHE"

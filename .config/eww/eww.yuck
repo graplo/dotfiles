@@ -5,3 +5,7 @@
 (include "./modules/notifications.yuck")
 (include "./modules/mpris.yuck")
 (include "./modules/dashboard.yuck")
+(include "./modules/time.yuck")
+(include "./modules/powerprofile.yuck")
+
+

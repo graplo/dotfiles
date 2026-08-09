@@ -21,6 +21,8 @@ borg create --progress --stats --compression auto,zstd,3 "$BACKUP_PATH::home-${n
     --exclude "$HOME/.var/app/*/cache" \
     --exclude "$HOME/.local/share/containers" \
     --exclude "$HOME/.ollama" \
+    --exclude "$HOME/go" \
+    --exclude "$HOME/Pictures" \
     "$HOME"
 
 borg prune --stats --keep-last 7 --glob-archives "home-*" "$BACKUP_PATH"

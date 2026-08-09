@@ -115,7 +115,8 @@
     "interval": 1,
     "format": "{:%H\n%M}",
     "tooltip": false,
-    "on-click": "kitty --title peaclock -e peaclock --config-dir ~/.config/peaclock"
+    "on-click": "eww-toggle time-panel",
+    "on-click-right": "kitty --title peaclock -e peaclock --config-dir ~/.config/peaclock"
   },
   // Fecha: tooltip muestra mini-calendario, click izq ikhal, click der calcurse
   "clock#fecha": {
@@ -309,7 +310,8 @@
     "return-type": "json",
     "interval": 5,
     "format": "{}",
-    "on-click": "~/.local/bin/walker-powerprofile",
+    "on-click": "eww-toggle powerprofile-panel",
+    "on-click-right": "~/.local/bin/walker-powerprofile",
     "tooltip": false
   },
   // Estado de No Molestar (mako): click toggle dnd, click der restaura notifs
