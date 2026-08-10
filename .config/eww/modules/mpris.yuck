@@ -1,8 +1,8 @@
 ;; ==========================================
 ;; VARIABLES Y POLLS MPRIS
 ;; ==========================================
-(defpoll mpris-art      :interval "2s" "~/.local/bin/eww-mpris-art")
-(deflisten mpris-cava   "~/.local/bin/eww-mpris-cava")
+(defpoll mpris-art      :interval "2s" "scripts/eww-mpris-art")
+(deflisten mpris-cava   "scripts/eww-mpris-cava")
 (defpoll mpris-title    :interval "1s" "playerctl metadata title 2>/dev/null || echo 'Sin reproducción'")
 (defpoll mpris-artist   :interval "1s" "playerctl metadata artist 2>/dev/null || echo 'Desconocido'")
 (defpoll mpris-player   :interval "2s" "playerctl metadata --format '{{playerName}}' 2>/dev/null || echo 'none'")

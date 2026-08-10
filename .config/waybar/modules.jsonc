@@ -85,7 +85,7 @@
     "interval": 1800,
     "exec": "~/.local/bin/weather.sh",
     "tooltip": false,
-    "on-click": "eww-toggle weather-panel",
+    "on-click": "~/.config/eww/scripts/eww-toggle weather-panel",
     "on-click-middle": "kitty --title weathr -e weathr",
     "on-click-right": "~/.local/bin/weather-notify.sh"
   },
@@ -103,7 +103,7 @@
     "interval": 1,
     "tooltip": true,
     "tooltip-format": "CPU Frequency: {avg_frequency} GHz",
-    "on-click": "eww-toggle dashboard-panel",
+    "on-click": "~/.config/eww/scripts/eww-toggle dashboard-panel",
     "on-click-middle": "kitty --title btop -e nvtop",
     "on-click-right": "kitty --title btop -e btop"
   },
@@ -115,7 +115,7 @@
     "interval": 1,
     "format": "{:%H\n%M}",
     "tooltip": false,
-    "on-click": "eww-toggle time-panel",
+    "on-click": "~/.config/eww/scripts/eww-toggle time-panel",
     "on-click-right": "kitty --title peaclock -e peaclock --config-dir ~/.config/peaclock"
   },
   // Fecha: tooltip muestra mini-calendario, click izq ikhal, click der calcurse
@@ -123,7 +123,7 @@
     "interval": 60,
     "format": "{:%m\n%d}",
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
-    "on-click": "eww-toggle calendar-panel",
+    "on-click": "~/.config/eww/scripts/eww-toggle calendar-panel",
     "on-click-right": "kitty -e ikhal"
   },
   // ============================================================
@@ -134,7 +134,7 @@
     "exec": "~/.local/bin/cava-mini.sh",
     "return-type": "json",
     "restart-interval": 1,
-    "on-click": "eww-toggle mpris-panel",
+    "on-click": "~/.config/eww/scripts/eww-toggle mpris-panel",
     "tooltip": false,
     "rotate": 0
   },
@@ -257,7 +257,7 @@
     ],
     "format-muted": "<span size='14pt'>󰝟</span>",
     "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-    "on-click": "eww-toggle audio-panel",
+    "on-click": "~/.config/eww/scripts/eww-toggle audio-panel",
     "reverse-scrolling": true,
     "tooltip": true,
     "tooltip-format": "Volume: {volume}%\n{desc}"
@@ -272,7 +272,7 @@
     "return-type": "json",
     "on-scroll-up": "ddcutil --bus 7 setvcp 10 + 5",
     "on-scroll-down": "ddcutil --bus 7 setvcp 10 - 5",
-    "on-click": "eww-toggle display-panel",
+    "on-click": "~/.config/eww/scripts/eww-toggle display-panel",
     "interval": 10,
     "tooltip": true
   },
@@ -310,7 +310,7 @@
     "return-type": "json",
     "interval": 5,
     "format": "{}",
-    "on-click": "eww-toggle powerprofile-panel",
+    "on-click": "~/.config/eww/scripts/eww-toggle powerprofile-panel",
     "on-click-right": "~/.local/bin/walker-powerprofile",
     "tooltip": false
   },
@@ -324,7 +324,7 @@
     },
     "return-type": "json",
     "exec": "makoctl mode | grep -q 'dnd' && echo '{\"alt\": \"disabled\", \"class\": \"disabled\", \"tooltip\": \"No Molestar: Activado\"}' || echo '{\"alt\": \"active\", \"class\": \"active\", \"tooltip\": \"No Molestar: Desactivado\"}'",
-    "on-click": "eww-toggle notifications-panel",
+    "on-click": "~/.config/eww/scripts/eww-toggle notifications-panel",
     "on-click-right": "makoctl mode | grep -q 'dnd' && makoctl mode -r dnd || makoctl mode -a dnd",
     "on-click-middle": "makoctl restore",
     "interval": 2,

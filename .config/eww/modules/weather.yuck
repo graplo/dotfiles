@@ -2,7 +2,7 @@
 ;; WEATHER PANEL
 ;; ==========================================
 
-(defpoll weather :interval "15m" "eww-weather-fetch")
+(defpoll weather :interval "15m" "scripts/eww-weather-fetch")
 
 ;; Sub-widget para cada día del pronóstico
 (defwidget weather-day [icon day max min]

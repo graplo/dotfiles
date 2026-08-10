@@ -2,11 +2,11 @@
 ;; TIME & POMODORO PANEL (OVERLAY CONCEPT)
 ;; ==========================================
 
-(defpoll dna-frame :interval "33ms" "$HOME/.local/bin/eww-dna")
+(defpoll dna-frame :interval "33ms" "scripts/eww-dna")
 (defpoll current_time :interval "1s" "date '+%H:%M'")
 (defpoll current_date :interval "60s" "date '+%A, %d %B'")
-(defpoll pomo_time :interval "1s" "$HOME/.local/bin/eww-pomodoro get")
-(defpoll pomo_state :interval "1s" "$HOME/.local/bin/eww-pomodoro state")
+(defpoll pomo_time :interval "1s" "scripts/eww-pomodoro get")
+(defpoll pomo_state :interval "1s" "scripts/eww-pomodoro state")
 
 (defwidget time-panel []
   (box :class "panel" :orientation "v" :spacing 10 :space-evenly false
@@ -40,8 +40,8 @@
       (label :text pomo_time :class "pomo-timer-text" :halign "center")
       
       (box :orientation "h" :spacing 8 :space-evenly true
-        (button :onclick "$HOME/.local/bin/eww-pomodoro toggle" "Iniciar / Pausa")
-        (button :onclick "$HOME/.local/bin/eww-pomodoro reset" "Reset")))))
+        (button :onclick "scripts/eww-pomodoro toggle" "Iniciar / Pausa")
+        (button :onclick "scripts/eww-pomodoro reset" "Reset")))))
 
 ;; Ventana
 (defwindow time-panel

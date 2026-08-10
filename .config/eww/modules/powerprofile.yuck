@@ -1,7 +1,7 @@
 ;; ==========================================
 ;; POWER PANEL (simplificado)
 ;; ==========================================
-(defpoll powerprofile :interval "5s" "eww-powerprofile-fetch")
+(defpoll powerprofile :interval "5s" "scripts/eww-powerprofile-fetch")
 (defpoll uptime :interval "1m" "uptime -p | sed 's/up //'")
 
 (defwidget power-widget []
@@ -21,13 +21,13 @@
 
     ;; BOTONES DE PERFIL
     (box :orientation "h" :space-evenly true :spacing 8 :class "power-buttons"
-      (button :onclick "eww-set-powerprofile power-saver"
+      (button :onclick "scripts/eww-set-powerprofile power-saver"
               :class "${powerprofile.profile == 'power-saver' ? 'power-btn-active' : ''}"
         "Power-saver")
-      (button :onclick "eww-set-powerprofile balanced"
+      (button :onclick "scripts/eww-set-powerprofile balanced"
               :class "${powerprofile.profile == 'balanced' ? 'power-btn-active' : ''}"
         "Balanced")
-      (button :onclick "eww-set-powerprofile performance"
+      (button :onclick "scripts/eww-set-powerprofile performance"
               :class "${powerprofile.profile == 'performance' ? 'power-btn-active' : ''}"
         "Performance"))))
 

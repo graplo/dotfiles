@@ -1,7 +1,7 @@
 ;; ==========================================
 ;; 1. VARIABLES Y POLLS
 ;; ==========================================
-(defpoll brain-frame :interval "33ms" "eww-brain")
+(defpoll brain-frame :interval "33ms" "scripts/eww-brain")
 
 ;; ==========================================
 ;; 2. WIDGET PRINCIPAL

@@ -11,7 +11,7 @@
     else if ($1 >= 70) print \"BLINDING LIGHT 󰊪\";
     else if ($1 >= 40) print \"BALANCED MODE \";
     else if ($1 >= 15) print \"NIGHT OWL 󰏒\";
-    else print \"STEALTH MODE 🥷\";
+    else print \"STEALTH MODE \";
   }'")
 
 (defpoll outputs-json :interval "3s"
