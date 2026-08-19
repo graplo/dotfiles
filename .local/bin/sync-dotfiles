@@ -22,6 +22,8 @@ dirs=(
     eww
     fastfetch
     fish
+    foot
+    fsel
     ghostty
     gtk-3.0
     gtk-4.0

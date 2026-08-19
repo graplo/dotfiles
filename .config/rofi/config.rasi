@@ -8,12 +8,12 @@ GPL   `      "      `
 
 configuration {
     /* Modos activos en el sistema */
-    modes: [ drun, emoji, file-browser-extended, calc, window ]; 
+    modes: [ drun, emoji, file-browser-extended, calc ]; 
 
     /* Comportamiento general */
     show-icons:      true;
     disable-history: false;
-    sort:            false;
+    sort:            true;
     sorting-method:  "fzf";
 
     /* Nombres limpios para los modos */

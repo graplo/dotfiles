@@ -204,9 +204,9 @@ scale trough highlight {
    ========================================== */
 
 .mpris-cover {
-  min-width: 70px;
-  min-height: 70px;
-  border: 1px solid $purple;
+  min-width: 100px;
+  min-height: 100px;
+  border: 0px solid $purple;
 }
 
 .mpris-badge {
@@ -214,6 +214,7 @@ scale trough highlight {
   color: $purple;
   font-size: 10px;
   padding: 2px 6px;
+  border-radius: 2px;
 }
 
 .mpris-cava {

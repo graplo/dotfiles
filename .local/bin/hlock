@@ -2,6 +2,8 @@
 
 WALL=$(awww query | sed -n 's/.*image: //p')
 
-ln -sf "$WALL" ~/.config/hypr/wallpaper/current
+if [[ -n "$WALL" ]]; then
+    ln -sf "$WALL" ~/.config/hypr/wallpaper/current
+fi
 
-hyprlock
+exec hyprlock

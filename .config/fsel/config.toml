@@ -1,0 +1,33 @@
+# Colors
+highlight_color = "LightBlue"
+cursor = "█"
+
+main_border_color = "#bd93f9"
+apps_border_color = "#bd93f9"
+input_border_color = "#bd93f9"
+
+main_text_color = "#f8f8f2"
+apps_text_color = "#f8f8f2"
+input_text_color = "#f8f8f2"
+
+header_title_color = "#ff79c6"
+
+# App launcher
+terminal_launcher = "foot -e"
+
+# Pin/favorite settings (root-level UI options)
+pin_color = "rgb(255,165,0)"       # Color for pin icon (orange)
+pin_icon = "󰐃"                     # Icon for pinned apps (use Ctrl+Space to pin/unpin)
+
+[app_launcher]
+filter_desktop = true              # Filter apps by desktop environment
+filter_actions = false            # Keep desktop actions visible; set true to hide them
+auto_hide_duplicates = false      # Opt in to deterministic duplicate suppression
+list_executables_in_path = false   # Show CLI tools from $PATH
+match_mode = "fuzzy"               # "fuzzy" or "exact"
+ranking_mode = "frecency"          # "frecency", "recency", or "frequency"
+pinned_order = "ranking"           # "ranking", "alphabetical", "oldest_pinned", "newest_pinned"
+
+[keybinds]
+down = ["down", { key = "j", modifiers = "alt" }]
+up = ["up", { key = "k", modifiers = "alt" }]

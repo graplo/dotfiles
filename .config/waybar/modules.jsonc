@@ -83,11 +83,11 @@
   "custom/weather": {
     "format": "{}",
     "interval": 1800,
-    "exec": "~/.local/bin/weather.sh",
+    "exec": "~/.config/waybar/scripts/weather.sh",
     "tooltip": false,
     "on-click": "~/.config/eww/scripts/eww-toggle weather-panel",
     "on-click-middle": "kitty --title weathr -e weathr",
-    "on-click-right": "~/.local/bin/weather-notify.sh"
+    "on-click-right": "~/.config/waybar/scripts/weather-notify.sh"
   },
   // CPU: animación de barras braille según carga, click abre btop/nvtop
   "cpu": {
@@ -131,7 +131,7 @@
   // ============================================================
   // Mini visualizador de audio (cava), script propio
   "custom/cava-mini": {
-    "exec": "~/.local/bin/cava-mini.sh",
+    "exec": "~/.config/waybar/scripts/cava-mini.sh",
     "return-type": "json",
     "restart-interval": 1,
     "on-click": "~/.config/eww/scripts/eww-toggle mpris-panel",
@@ -268,7 +268,7 @@
   // Brillo del monitor externo (DDC/CI vía ddcutil), scroll para ajustar
   "custom/ddc-brightness": {
     "format": "{}",
-    "exec": "~/.local/bin/brightness.sh",
+    "exec": "~/.config/waybar/scripts/brightness.sh",
     "return-type": "json",
     "on-scroll-up": "ddcutil --bus 7 setvcp 10 + 5",
     "on-scroll-down": "ddcutil --bus 7 setvcp 10 - 5",
@@ -306,7 +306,7 @@
   // Perfil de energía activo (performance/balanced/power-saver)
   // click abre el menú rofi-powerprofile (ver también: Walker menus:powerprofile)
   "custom/powerprofile": {
-    "exec": "~/.local/bin/powerprofile-icon.sh",
+    "exec": "~/.config/waybar/scripts/powerprofile-icon.sh",
     "return-type": "json",
     "interval": 5,
     "format": "{}",

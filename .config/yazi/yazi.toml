@@ -1,10 +1,6 @@
 # --------------------------------------------------
 # Yazi – Openers configuration
 # --------------------------------------------------
-# - Neovim (default con Enter) / Helix (alternativa con 'o') para texto
-# - Zathura para PDFs
-# - mpv para audio/video
-# --------------------------------------------------
 [opener]
 neovim = [
   { run = 'nvim "$@"', block = true, desc = "Neovim" }
@@ -18,9 +14,8 @@ zathura = [
 play = [
   { run = 'mpv "$@"', orphan = true, desc = "Reproducir con mpv" }
 ]
-# Nuevo: cliamp para audio
 cliamp = [
-  { run = 'cliamp "$@"', block = true, desc = "Reproducir con cliamp" }
+  { run = 'cliamp "$@"', block = true, for = "unix", desc = "Reproducir con cliamp" }
 ]
 display = [
   { run = 'imv "$@"', orphan = true, desc = "Ver imagen" }
@@ -34,18 +29,22 @@ inkscape = [
 
 [open]
 prepend_rules = [
-  { url = "*.md", use = ["helix", "neovim"] },
+  # Texto, código y archivos de configuración explícitos
+  { url = "*.{md,txt,conf,config,toml,yaml,yml,json,ini,sh,fish,env,log,desktop}", use = ["helix", "neovim"] },
+  { mime = "text/*", use = ["helix", "neovim"] },
   { mime = "inode/x-empty", use = ["helix", "neovim"] },
   { mime = "application/json", use = ["helix", "neovim"] },
-  { mime = "text/*", use = ["helix", "neovim"] }
-]
 
-rules = [
-  { mime = "application/pdf", use = "zathura" },
-  # Video → mpv por defecto, sin cambios
-  { mime = "video/*", use = "play" },
-  # Audio → cliamp por defecto (Enter), mpv como alternativa ('o')
+  # PDF
+  { mime = "application/pdf", use = ["zathura"] },
+
+  # Audio (revisar por extensiones explícitas PRIMERO para capturar .m4a)
+  { url = "*.{mp3,m4a,flac,wav,aac,ogg,opus}", use = ["cliamp", "play"] },
   { mime = "audio/*", use = ["cliamp", "play"] },
-  { url = "*.log", use = "view" },
-  { mime = "image/*", use = [ "display", "inkscape", "set_wallpaper" ] }
+
+  # Video
+  { mime = "video/*", use = ["play"] },
+
+  # Imágenes
+  { mime = "image/*", use = ["display", "inkscape", "set_wallpaper"] }
 ]

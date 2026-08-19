@@ -13,50 +13,45 @@
   "playerctl metadata --format '{{position}} {{mpris:length}}' 2>/dev/null | awk '{if ($2>0) printf \"%.0f\", ($1/$2)*100; else print 0}'")
 
 ;; ==========================================
-;; WIDGET PRINCIPAL MPRIS
+;; WIDGET PRINCIPAL MPRIS (HORIZONAL)
 ;; ==========================================
 (defwidget mpris-widget []
-  (box :orientation "v" :class "panel" :spacing 12 :space-evenly false
-    
-    ;; CABECERA
-(box :orientation "h" :space-evenly false :spacing 10
-  (label :text "󰷞" :class "main-audio-icon" :valign "center")
-  (box :orientation "v" :space-evenly false :valign "center" :spacing 0
-    (label :text "MPRIS" :class "title" :halign "start")
-    (label :text "GO ENJOY" :class "subtitle" :halign "start")))
+  (box :orientation "h" :class "panel" :spacing 16 :space-evenly false
 
-    ;; PORTADA + INFO
-    (box :orientation "h" :space-evenly false :spacing 14
-      (box :class "mpris-cover"
-        (image :path "${mpris-art}" :image-width 70 :image-height 70))
+    ;; COLUMNA IZQUIERDA: PORTADA GRANDE
+    (box :class "mpris-cover" :valign "center" :halign "center"
+      (image :path "${mpris-art}" :image-width 180 :image-height 180))
 
-      (box :orientation "v" :space-evenly false :spacing 4 :hexpand true :valign "center"
-        (label :text mpris-title :class "title" :limit-width 25 :halign "start" :tooltip mpris-title)
-        (label :text mpris-artist :class "section" :limit-width 20 :halign "start" :tooltip mpris-artist)
-        
-        (box :halign "end" :valign "bottom"
-          (label :text mpris-player :class "mpris-badge"))))
+    ;; COLUMNA DERECHA: INFO + CAVA + TIEMPO + CONTROLES
+    (box :orientation "v" :space-evenly false :spacing 6 :hexpand true :valign "fill"
 
-    ;; VISUALIZADOR CAVA
-    (box :halign "center"
-      (label :text mpris-cava :class "mpris-cava"))
+      ;; Título, Artista y Badge de la Fuente (ej. firefox)
+      (box :orientation "v" :space-evenly false :spacing 2
+        (box :orientation "h" :space-evenly false
+          (label :text mpris-title :class "title" :limit-width 22 :halign "start" :tooltip mpris-title :hexpand true)
+          (label :text mpris-player :class "mpris-badge" :halign "end" :valign "start"))
+        (label :text mpris-artist :class "section" :limit-width 26 :halign "start" :tooltip mpris-artist))
 
-    ;; BARRA DE TIEMPO
-    (box :orientation "v" :space-evenly false :spacing 2
-      (scale :value mpris-progress
-             :min 0
-             :max 100
-             :onchange "playerctl position {}%")
-      (box :orientation "h"
-        (label :text mpris-position :class "section" :halign "start")
-        (label :text mpris-length :class "section" :halign "end")))
+      ;; Visualizador CAVA (centrado verticalmente en el espacio restante)
+      (box :halign "center" :valign "center" :vexpand true
+        (label :text mpris-cava :class "mpris-cava"))
 
-    ;; CONTROLES MULTIMEDIA (Botones separados con :spacing 10)
-    (box :orientation "h" :space-evenly true :spacing 20
-      (button :onclick "playerctl previous" "󰒮")
-      (button :onclick "playerctl play-pause" 
-              "${mpris-status == 'Playing' ? '' : ''}")
-      (button :onclick "playerctl next" "󰒭"))))
+      ;; Barra de Tiempo + Números
+      (box :orientation "v" :space-evenly false :spacing 2 :valign "end"
+        (scale :value mpris-progress
+               :min 0
+               :max 100
+               :onchange "playerctl position {}%")
+        (box :orientation "h"
+          (label :text mpris-position :class "section" :halign "start")
+          (label :text mpris-length :class "section" :halign "end")))
+
+      ;; Controles Multimedia
+      (box :orientation "h" :space-evenly true :spacing 10 :valign "end"
+        (button :onclick "playerctl previous" "󰒮")
+        (button :onclick "playerctl play-pause" 
+                "${mpris-status == 'Playing' ? '' : ''}")
+        (button :onclick "playerctl next" "󰒭")))))
 
 ;; VENTANA
 (defwindow mpris-panel
@@ -66,6 +61,6 @@
   :geometry (geometry :anchor "center right"
                       :x "10px"
                       :y "150px"
-                      :width "460px"
-                      :height "260px")
+                      :width "520px"
+                      :height "220px")
   (mpris-widget))

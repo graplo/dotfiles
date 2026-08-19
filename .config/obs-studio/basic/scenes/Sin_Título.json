@@ -2,7 +2,7 @@
     "name": "Sin Título",
     "sources": [
         {
-            "prev_ver": 537001985,
+            "prev_ver": 537001986,
             "name": "Captura de pantalla (PipeWire)",
             "uuid": "91e245fc-e6f9-4dec-8fd3-c1933963342a",
             "id": "pipewire-screen-capture-source",
@@ -28,7 +28,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 537001985,
+            "prev_ver": 537001986,
             "name": "logi de video (V4L2)",
             "uuid": "b57ceb95-8156-40a6-9582-a489e5895870",
             "id": "v4l2_input",
@@ -59,7 +59,7 @@
             "private_settings": {},
             "filters": [
                 {
-                    "prev_ver": 537001985,
+                    "prev_ver": 537001986,
                     "name": "Corrección de color",
                     "uuid": "252acabd-f165-4417-861d-9d3b26c5f01c",
                     "id": "color_filter",
@@ -89,7 +89,7 @@
                     "private_settings": {}
                 },
                 {
-                    "prev_ver": 537001985,
+                    "prev_ver": 537001986,
                     "name": "Filtro de enfoque",
                     "uuid": "5f021205-6f15-41cc-bc5f-a034cc819a08",
                     "id": "sharpness_filter",
@@ -117,7 +117,7 @@
             ]
         },
         {
-            "prev_ver": 537001985,
+            "prev_ver": 537001986,
             "name": "circulo",
             "uuid": "69d4cd3d-be38-426e-9f4a-f045a0f456ca",
             "id": "image_source",
@@ -143,7 +143,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 537001985,
+            "prev_ver": 537001986,
             "name": "Captura de entrada de audio (PipeWire)",
             "uuid": "61f48c53-52f2-42c4-a5e5-45c4b2832a4c",
             "id": "pipewire_audio_input_capture",
@@ -175,7 +175,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 537001985,
+            "prev_ver": 537001986,
             "name": "Captura de pantalla (PipeWire) 2",
             "uuid": "59998ea1-4cab-40c5-8dcf-578bfe39e7c5",
             "id": "pipewire-screen-capture-source",
@@ -201,7 +201,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 537001985,
+            "prev_ver": 537001986,
             "name": "fondo",
             "uuid": "de1b8087-9c16-458e-b74f-aa78292885b3",
             "id": "image_source",
@@ -227,7 +227,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 537001985,
+            "prev_ver": 537001986,
             "name": "YT (PipeWire)",
             "uuid": "5ff14f60-df80-46ae-8275-485da56708b5",
             "id": "pipewire_audio_application_capture",
@@ -258,13 +258,13 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 537001985,
+            "prev_ver": 537001986,
             "name": "Captura de pantalla (PipeWire) 3",
             "uuid": "e34f708f-de51-4290-b891-c8c6826cf3a6",
             "id": "pipewire-screen-capture-source",
             "versioned_id": "pipewire-screen-capture-source",
             "settings": {
-                "RestoreToken": "Ys3t935Z7lfL_lnwh8sBTQ"
+                "RestoreToken": "5bdHhHlO_RDhD6NKTzQ4bQ"
             },
             "mixers": 0,
             "sync": 0,
@@ -284,7 +284,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 537001985,
+            "prev_ver": 537001986,
             "name": "logoGraplo",
             "uuid": "04bf2c08-147f-46e2-8960-e7ab077df21a",
             "id": "image_source",
@@ -310,7 +310,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 537001985,
+            "prev_ver": 537001986,
             "name": "Captura de salida de audio (PipeWire)",
             "uuid": "d9d99aa0-eebd-44cf-807f-1a005453dfb7",
             "id": "pipewire_audio_output_capture",
@@ -339,7 +339,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 537001985,
+            "prev_ver": 537001986,
             "name": "Root1 circular",
             "uuid": "cc657f70-d542-4ff4-988a-7539d8f12d17",
             "id": "scene",
@@ -369,12 +369,12 @@
                         "id": 1,
                         "group_item_backup": true,
                         "pos": {
-                            "x": 2084.243896484375,
-                            "y": -40.963470458984375
+                            "x": 2085.24365234375,
+                            "y": 4.291534423828125e-5
                         },
                         "pos_rel": {
-                            "x": 1.117005467414856,
-                            "y": -1.0568937063217163
+                            "x": 1.1183940172195435,
+                            "y": -0.9999999403953552
                         },
                         "scale": {
                             "x": -0.9999998807907104,
@@ -424,11 +424,11 @@
                         "id": 3,
                         "group_item_backup": true,
                         "pos": {
-                            "x": -268.2815856933594,
+                            "x": -268.28143310546875,
                             "y": -382.66668701171875
                         },
                         "pos_rel": {
-                            "x": -2.150391101837158,
+                            "x": -2.150390863418579,
                             "y": -1.5314815044403076
                         },
                         "scale": {
@@ -479,11 +479,11 @@
                         "id": 2,
                         "group_item_backup": false,
                         "pos": {
-                            "x": -441.0891418457031,
+                            "x": -440.0892333984375,
                             "y": -382.66668701171875
                         },
                         "pos_rel": {
-                            "x": -2.390401601791382,
+                            "x": -2.3890128135681152,
                             "y": -1.5314815044403076
                         },
                         "scale": {
@@ -540,7 +540,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 537001985,
+            "prev_ver": 537001986,
             "name": "Root2 9X16",
             "uuid": "537d20fd-68e7-4786-98fe-09d07c8893e1",
             "id": "scene",
@@ -686,7 +686,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 537001985,
+            "prev_ver": 537001986,
             "name": "1 Full camera",
             "uuid": "efdc845b-5484-45ae-9c71-b3b6bd79cbf4",
             "id": "scene",
@@ -951,7 +951,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 537001985,
+            "prev_ver": 537001986,
             "name": "3 Escena",
             "uuid": "ac6b5b25-e188-4c16-8350-82c45c427fc2",
             "id": "scene",
@@ -1330,7 +1330,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 537001985,
+            "prev_ver": 537001986,
             "name": "2 Escritorio y cam",
             "uuid": "0192ce1a-fd8b-4143-8a03-1ef324a88e92",
             "id": "scene",
@@ -1652,7 +1652,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 537001985,
+            "prev_ver": 537001986,
             "name": "4 haft and haft",
             "uuid": "d5989d6d-5d6f-4430-8194-4cb1e7e4698b",
             "id": "scene",
@@ -2090,7 +2090,7 @@
     ],
     "groups": [
         {
-            "prev_ver": 537001985,
+            "prev_ver": 537001986,
             "name": "Logi Circular",
             "uuid": "19c23d59-38f6-43fa-8a43-f0ec4db1b372",
             "id": "group",
@@ -2123,11 +2123,11 @@
                         "group_item_backup": false,
                         "pos": {
                             "x": 1919.999755859375,
-                            "y": 259.7695007324219
+                            "y": 290.9107666015625
                         },
                         "pos_rel": {
-                            "x": 0.8888885974884033,
-                            "y": -0.6392090320587158
+                            "x": 0.8888885378837585,
+                            "y": -0.5959572792053223
                         },
                         "scale": {
                             "x": -0.9999998807907104,
@@ -2177,11 +2177,11 @@
                         "id": 3,
                         "group_item_backup": false,
                         "pos": {
-                            "x": 131.38479614257812,
+                            "x": 130.6246795654297,
                             "y": 0.0
                         },
                         "pos_rel": {
-                            "x": -1.5952988862991333,
+                            "x": -1.596354603767395,
                             "y": -1.0
                         },
                         "scale": {
@@ -2237,7 +2237,7 @@
             "private_settings": {},
             "filters": [
                 {
-                    "prev_ver": 537001985,
+                    "prev_ver": 537001986,
                     "name": "Imagen máscara/mezcla",
                     "uuid": "61be1b89-dc60-4bf1-a4e2-05f772d867d6",
                     "id": "mask_filter",
@@ -2266,7 +2266,7 @@
             ]
         },
         {
-            "prev_ver": 537001985,
+            "prev_ver": 537001986,
             "name": "Camera 9x16",
             "uuid": "15165144-9dfd-4c70-8b4b-5f802313846e",
             "id": "group",
@@ -2356,7 +2356,7 @@
             "private_settings": {},
             "filters": [
                 {
-                    "prev_ver": 537001985,
+                    "prev_ver": 537001986,
                     "name": "Imagen máscara/mezcla",
                     "uuid": "4a078822-92d0-49e1-b663-17f95c404970",
                     "id": "mask_filter",

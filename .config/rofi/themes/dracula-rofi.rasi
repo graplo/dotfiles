@@ -27,7 +27,7 @@ window {
     location: center;
     anchor: center;
     fullscreen: false;
-    width: 820px;
+    width: 720px;
     height: 630px;
     border: 2px;
     border-radius: 0px;
@@ -50,7 +50,7 @@ mainbox {
 /*****----- Caja de imagen vertical -----*****/
 imagebox {
     expand: false;
-    width: 330px;
+    width: 230px;
     orientation: vertical;
     background-color: transparent;
     background-image: url("/home/graplo/.config/rofi/images/drun/current", height);

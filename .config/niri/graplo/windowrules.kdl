@@ -1,8 +1,8 @@
-// ▄▖▘▜ ▘         ▐▘▌     
-// ▐ ▌▐ ▌▛▌▛▌  ▛▛▌▜▘▙▘█▌▛▘
-// ▐ ▌▐▖▌▌▌▙▌  ▌▌▌▐ ▛▖▙▖▌ 
-//         ▄▌             Graplo
+// ┌──────────────────────────────────────────────────────────────┐
+// │                         APLICACIONES                         │
+// └──────────────────────────────────────────────────────────────┘
 
+// Qalculate
 window-rule {
     match app-id="^qalculate-gtk$"
     open-floating true
@@ -10,7 +10,7 @@ window-rule {
     default-window-height { fixed 600; }
 }
 
-// @id=wr_1773630653272935587 @name=Nautillus
+// Nautilus
 window-rule {
     match app-id="org.gnome.Nautilus"
     open-floating true
@@ -18,13 +18,18 @@ window-rule {
     default-window-height { fixed 830; }
 }
 
-// @id=wr_1774465476238850109 @name=Elija el color
+// Gradia — selector de color
 window-rule {
     match app-id="gradia"
     open-floating true
 }
 
-// @id=wr_1774679110653434376 @name=Kitty Float
+
+// ┌──────────────────────────────────────────────────────────────┐
+// │                            KITTY                             │
+// └──────────────────────────────────────────────────────────────┘
+
+// Todas las ventanas Kitty → flotantes
 window-rule {
     match app-id="kitty"
     open-floating true
@@ -32,76 +37,166 @@ window-rule {
     default-window-height { fixed 880; }
 }
 
-// btop para kitty
+// Btop
 window-rule {
     match app-id="kitty" title="btop"
     default-column-width { fixed 1259; }
     default-window-height { fixed 871; }
 }
 
-// Weathr ancii de clima
+// Weathr — clima
 window-rule {
     match app-id="kitty" title="weathr"
     default-column-width { fixed 1280; }
     default-window-height { fixed 720; }
 }
 
-// Peaclock Reloj de Terminal
+// Peaclock — reloj
 window-rule {
     match app-id="kitty" title="peaclock"
     default-column-width { proportion 0.30; }
     default-window-height { proportion 0.40; }
-    
 }
 
-// @id=wr_1774763687061620386 @name=Betterbird
-window-rule {
-    match app-id="eu.betterbird.Betterbird"
-    open-maximized true
-}
-
-// @id=wr_1774837666257177035 @name=Firefox
-window-rule {
-    match app-id="firefox"
-    open-maximized true
-}
-
-// @id=wr_1775930402426592860 @name=OBS-studio
-window-rule {
-    match app-id="com.obsproject.Studio"
-    open-maximized true
-}
-
-// @id=wr_1776563265314788351 @name=kdenlive
-window-rule {
-    match app-id="org.kde.kdenlive"
-    open-maximized true
-}
-
-// Para impala controlador de wifi
+// Impala — WiFi
 window-rule {
     match app-id="kitty" title="impala"
     default-column-width { fixed 850; }
     default-window-height { fixed 880; }
 }
 
-// Para bluitui controlador de bluetooth
+// Bluetui — Bluetooth
 window-rule {
     match app-id="kitty" title="bluetui"
     default-column-width { fixed 850; }
     default-window-height { fixed 780; }
 }
 
-
-// Para cambiar el fondo de escritorio
+// Wiremix — Audio
 window-rule {
-    match app-id="waypaper"
-    open-floating true    
+    match app-id="kitty" title="wiremix"
+    default-column-width { fixed 1000; }
+    default-window-height { fixed 700; }
 }
 
-// Dim ventanas no enfocadas (efecto focus tipo Hyprland)
+window-rule {
+    match app-id="kitty" title="fsel-cclip"
+    open-floating true
+    default-column-width { fixed 884; }
+    default-window-height { fixed 910; }
+}
+
+
+// ┌──────────────────────────────────────────────────────────────┐
+// │                            FOOT                              │
+// └──────────────────────────────────────────────────────────────┘
+
+// Todas las ventanas foot → flotantes
+window-rule {
+    match app-id="foot"
+    open-floating true
+    default-column-width { fixed 1100; }
+    default-window-height { fixed 880; }
+}
+
+// Btop
+window-rule {
+    match app-id="foot" title="btop"
+    default-column-width { fixed 1259; }
+    default-window-height { fixed 871; }
+}
+
+// Weathr — clima
+window-rule {
+    match app-id="foot" title="weathr"
+    default-column-width { fixed 1280; }
+    default-window-height { fixed 720; }
+}
+
+// Peaclock — reloj
+window-rule {
+    match app-id="foot" title="peaclock"
+    default-column-width { proportion 0.30; }
+    default-window-height { proportion 0.40; }
+}
+
+// Impala — WiFi
+window-rule {
+    match app-id="foot" title="impala"
+    default-column-width { fixed 850; }
+    default-window-height { fixed 880; }
+}
+
+// Bluetui — Bluetooth
+window-rule {
+    match app-id="foot" title="bluetui"
+    default-column-width { fixed 850; }
+    default-window-height { fixed 780; }
+}
+
+// Wiremix — Audio
+window-rule {
+    match app-id="foot" title="wiremix"
+    default-column-width { fixed 1000; }
+    default-window-height { fixed 700; }
+}
+
+
+window-rule {
+    match app-id="foot" title="fsel"
+    open-floating true
+    default-column-width { fixed 583; }
+    default-window-height { fixed 705; }
+}
+
+window-rule {
+    match app-id="foot" title="fsel-cclip"
+    open-floating true
+    default-column-width { fixed 630; }
+    default-window-height { fixed 775; }
+}
+
+// ┌──────────────────────────────────────────────────────────────┐
+// │                         MAXIMIZADAS                          │
+// └──────────────────────────────────────────────────────────────┘
+
+// Betterbird
+window-rule {
+    match app-id="eu.betterbird.Betterbird"
+    open-maximized true
+}
+
+// Firefox
+window-rule {
+    match app-id="firefox"
+    open-maximized true
+}
+
+// OBS Studio
+window-rule {
+    match app-id="com.obsproject.Studio"
+    open-maximized true
+}
+
+// Kdenlive
+window-rule {
+    match app-id="org.kde.kdenlive"
+    open-maximized true
+}
+
+
+// ┌──────────────────────────────────────────────────────────────┐
+// │                          UTILIDADES                          │
+// └──────────────────────────────────────────────────────────────┘
+
+// Waypaper — fondo de escritorio
+window-rule {
+    match app-id="waypaper"
+    open-floating true
+}
+
+// Dim ventanas no enfocadas
 window-rule {
     match is-focused=false
     opacity 0.95
 }
-

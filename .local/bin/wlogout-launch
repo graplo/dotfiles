@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-POOL="$HOME/.config/walker/pool"
+POOL="$HOME/.config/rofi/images/pool"
 TARGET="$HOME/.config/wlogout/pool"
 
 mkdir -p "$TARGET"
@@ -32,4 +32,4 @@ for i in {1..5}; do
     ln -sf "${selected[$((i-1))]}" "$TARGET/current$i"
 done
 
-exec wlogout -b 5 -T 500 -B 500 -L 650 -R 650
+exec wlogout -b 5 -T 480 -B 480 -L 800 -R 800

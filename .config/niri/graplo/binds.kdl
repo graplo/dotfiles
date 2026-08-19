@@ -13,24 +13,29 @@ binds {
     Mod+E              hotkey-overlay-title="Files"         { spawn "nautilus"; }
 
     //Walker
-    Mod+Space     hotkey-overlay-title="Walker Launcher"  { spawn "walker-launch"; }
-    Mod+V         hotkey-overlay-title="Walker Clipboard" { spawn "walker" "-m" "clipboard"; }
-    Mod+slash     hotkey-overlay-title="Walker Files"     { spawn "walker" "-m" "files"; }
-    Mod+Shift+C   hotkey-overlay-title="Walker Calc"      { spawn "walker" "-m" "calc"; }
-    Mod+semicolon hotkey-overlay-title="Walker Emoji"     { spawn "walker" "-m" "symbols"; }
-    Mod+P         hotkey-overlay-title="Walker Emoji"     { spawn "walker-powerprofile"; }
+    // Mod+Space     hotkey-overlay-title="Walker Launcher"  { spawn "walker-launch"; }
+    // Mod+V         hotkey-overlay-title="Walker Clipboard" { spawn "walker" "-m" "clipboard"; }
+    // Mod+slash     hotkey-overlay-title="Walker Files"     { spawn "walker" "-m" "files"; }
+    // Mod+Shift+C   hotkey-overlay-title="Walker Calc"      { spawn "walker" "-m" "calc"; }
+    // Mod+semicolon hotkey-overlay-title="Walker Emoji"     { spawn "walker" "-m" "symbols"; }
+    // Mod+P         hotkey-overlay-title="Walker Emoji"     { spawn "walker-powerprofile"; }
 
     // — rofi —
-    Mod+shift+Space     hotkey-overlay-title="Rofi Launcher" { spawn "rofi-launch" "drun"; }
+    Mod+space     hotkey-overlay-title="Rofi Launcher" { spawn "rofi-launch" "drun"; }
     // Mod+V         hotkey-overlay-title="Clipboard"     { spawn "cliphist-rofi"; }
-    // Mod+Shift+C   hotkey-overlay-title="calculator"    { spawn "rofi-launch" "calc" "-theme" "~/.config/rofi/themes/calc.rasi"; }
-    // Mod+slash     hotkey-overlay-title="filebrowser"   { spawn "rofi-files"; }
-    // Mod+Alt+K     hotkey-overlay-title="Bitwarden"     { spawn "sh" "-c" "~/.local/bin/rofi-bw"; }
-    // Mod+Semicolon hotkey-overlay-title="Emoji"         { spawn "rofi-launch" "emoji" "-theme" "~/.config/rofi/themes/emoji.rasi"; }
+    Mod+Shift+C   hotkey-overlay-title="calculator"    { spawn "rofi-launch" "calc" "-theme" "~/.config/rofi/themes/calc.rasi"; }
+    Mod+slash     hotkey-overlay-title="filebrowser"   { spawn "rofi-files"; }
+    Mod+Alt+K     hotkey-overlay-title="Bitwarden"     { spawn "sh" "-c" "~/.local/bin/rofi-bw"; }
+    Mod+Semicolon hotkey-overlay-title="Emoji"         { spawn "rofi-launch" "emoji" "-theme" "~/.config/rofi/themes/emoji.rasi"; }
+
+    // Foot app in terminal
+
+    Mod+V hotkey-overlay-title="Clipboard" { spawn "foot" "--title" "fsel-cclip" "-e" "fsel" "--cclip"; }
+    Super+Shift+Space hotkey-overlay-title="Fsel Launcher" { spawn "foot" "--title" "fsel-launcher" "-e" "fsel" "-d"; }
 
     // — Bluetooth y Wifi —
-    Mod+Shift+B hotkey-overlay-title="Bluetooth" { spawn "kitty" "--title" "bluetui" "-e" "bluetui"; }
-    Mod+Shift+W hotkey-overlay-title="WiFi"      { spawn "kitty" "--title" "impala" "-e" "impala"; }
+    Mod+Shift+B hotkey-overlay-title="Bluetooth" { spawn "foot" "--title" "bluetui" "-e" "bluetui"; }
+    Mod+Shift+W hotkey-overlay-title="WiFi"      { spawn "foot" "--title" "impala" "-e" "impala"; }
 
     // — Power / Session —
     // Para lock screen llama a stasis un programa como Swayidle
@@ -41,15 +46,15 @@ binds {
     Mod+Shift+E { quit; }
 
     // — Utilidades —
-    Mod+M hotkey-overlay-title="Task Manager"   { spawn "kitty" "--title" "btop" "-e" "btop"; }
+    Mod+M hotkey-overlay-title="Task Manager"   { spawn "foot" "--title" "btop" "-e" "btop"; }
     Mod+Y hotkey-overlay-title="Wallpapers"     { spawn "waypaper"; }
     Mod+N hotkey-overlay-title="Notificaciones" { spawn "swaync-client" "-t"; }
     
     // — Audio (wpctl nativo PipeWire) — Y tambien swayOSD
-    Mod+Alt+S hotkey-overlay-title="Wiremix" { spawn "kitty" "--title" "wiremix" "-e" "wiremix"; }
-    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ && wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print int($2*100)}' > /run/user/1000/wob.sock"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- && wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print int($2*100)}' > /run/user/1000/wob.sock"; }
-    XF86AudioMute allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && (wpctl get-volume @DEFAULT_AUDIO_SINK@ | grep -q '\\[MUTED\\]' && echo 0 || wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print int($2*100)}') > /run/user/1000/wob.sock"; }
+    Mod+Alt+S hotkey-overlay-title="Wiremix"         { spawn "foot" "--title" "wiremix" "-e" "wiremix"; }
+    XF86AudioRaiseVolume allow-when-locked=true      { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ && wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print int($2*100)}' > /run/user/1000/wob.sock"; }
+    XF86AudioLowerVolume allow-when-locked=true      { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- && wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print int($2*100)}' > /run/user/1000/wob.sock"; }
+    XF86AudioMute allow-when-locked=true             { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && (wpctl get-volume @DEFAULT_AUDIO_SINK@ | grep -q '\\[MUTED\\]' && echo 0 || wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print int($2*100)}') > /run/user/1000/wob.sock"; }
     XF86AudioMicMute allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
     Ctrl+XF86AudioRaiseVolume allow-when-locked=true { spawn "playerctl" "volume" "0.03+"; }
     Ctrl+XF86AudioLowerVolume allow-when-locked=true { spawn "playerctl" "volume" "0.03-"; }
