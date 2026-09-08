@@ -34,11 +34,13 @@ environment {
 }
 
 // — Autostart —
-spawn-at-startup "waypaper" "--restore"
+spawn-at-startup "noctalia"
+// spawn-at-startup "waypaper" "--restore"
+// spawn-at-startup "/usr/bin/cclipd" "-P" "50" "-s" "2" "-t" "image/png" "-t" "image/*" "-t" "text/plain;charset=utf-8" "-t" "text/*"
 // spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store"
 // spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
-spawn-at-startup "eww" "daemon"
-spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
+// spawn-at-startup "eww" "daemon"
+// spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 
 hotkey-overlay {
     skip-at-startup
@@ -94,15 +96,20 @@ debug {
 
 // 1. Hace que el fondo de awww se quede estático en el backdrop
 // para ver el nombre del namespace es con: niri msg layers
-layer-rule {
-    match namespace="^awww-daemon$"
-    place-within-backdrop true
-}
+// layer-rule {
+//     match namespace="^awww-daemon$"
+//     place-within-backdrop true
+// }
+
+// layer-rule {
+//   match namespace="^noctalia-backdrop"
+//   place-within-backdrop true
+// }
 
 // 2. Hace que los espacios de trabajo sean transparentes para ver el fondo fijo
-layout {
-    background-color "transparent"
-}
+// layout {
+//     background-color "transparent"
+// }
 
 // — Includes —
 include "graplo/colors.kdl"
@@ -112,3 +119,4 @@ include "graplo/binds.kdl"
 include "graplo/outputs.kdl"
 include "graplo/cursor.kdl"
 include "graplo/windowrules.kdl"
+include "graplo/wpblur.kdl"

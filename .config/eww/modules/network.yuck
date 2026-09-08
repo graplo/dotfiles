@@ -1,0 +1,109 @@
+;; ==========================================
+;; NETWORK PANEL
+;; ==========================================
+
+(defpoll net :interval "3s" "scripts/network-status")
+
+;; Componente de fila para Estadísticas (4 Filas x 2 Columnas)
+(defwidget net-stat [label value]
+  (box :orientation "h" :space-evenly true
+    (label :text label :class "section" :halign "start")
+    (label :text value :class "percent" :halign "end")))
+
+;; Fila para Redes Conocidas (Abre impala de forma persistente)
+(defwidget net-known-row [name connected]
+  (button :class "device-row"
+    :onclick "sh -c 'nohup foot --title impala -e impala >/dev/null 2>&1 &'"
+    (box :orientation "h" :space-evenly false :spacing 10
+      (label :text "${connected == 'true' ? '󰤨' : '󰤭'}" :class "device-icon")
+      (box :orientation "v" :space-evenly false :hexpand true
+        (label :text name :class "device-name" :halign "start")
+        (label :text "${connected == 'true' ? 'Connected' : ''}" 
+               :class "subtitle" 
+               :halign "start" 
+               :visible "${connected == 'true'}"))
+      (label :text "${connected == 'true' ? '󰌾' : ''}" :class "section"))))
+
+;; Fila para Otras Redes
+(defwidget net-nearby-row [ssid secured]
+  (button :class "device-row"
+    :onclick "sh -c 'nohup foot --title impala -e impala >/dev/null 2>&1 &'"
+    (box :orientation "h" :space-evenly false :spacing 10
+      (label :text "󰤨" :class "device-icon")
+      (label :text ssid :class "device-name" :halign "start" :hexpand true)
+      (label :text "${secured == 'true' ? '󰌾' : ''}" :class "section"))))
+
+;; Widget Principal
+(defwidget network-widget []
+  (box :orientation "v" :class "panel" :spacing 12 :space-evenly false
+
+    ;; ------------------------------------------
+    ;; HEADER: ICONO + SSID + FRASE + VELOCÍMETRO + TOGGLE
+    ;; ------------------------------------------
+    (box :orientation "h" :space-evenly false :spacing 12 :class "header-box"
+      
+      ;; Icono de Fuerza Wi-Fi
+      (label :text "${net.signal > 80 ? '󰤨' : net.signal > 60 ? '󰤥' : net.signal > 40 ? '󰤢' : net.signal > 20 ? '󰤟' : '󰤯'}" 
+             :class "main-audio-icon")
+
+      ;; Nombre de Red y Subtítulo Dinámico en Inglés
+      (box :orientation "v" :space-evenly false :hexpand true
+        (label :text "${net.ssid != '' ? net.ssid : 'Disconnected'}"
+               :class "title" :halign "start")
+        (label :text "${net.signal > 80 ? 'QUANTUM TETHER' : net.signal > 60 ? 'SYNCING FEELINGS' : net.signal > 40 ? 'BALANCED FREQUENCY' : net.signal > 20 ? 'LOW SIGNAL DRIFT' : 'SIGNAL LOST'}" 
+               :class "subtitle" :halign "start"))
+
+      ;; Velocímetro de Potencia
+      (label :text "${net.signal > 75 ? '󰓅' : net.signal > 35 ? '󰾅' : '󰾆'}"
+             :class "main-audio-icon"
+             :tooltip "Signal Quality Level")
+
+      ;; Switch Toggle
+      (checkbox :checked "${net.wifi_enabled == true}"
+                :visible "${net.has_wifi == true}"
+                :onchecked "rfkill unblock wifi"
+                :onunchecked "rfkill block wifi"))
+
+    ;; ------------------------------------------
+    ;; GRID DE ESTADÍSTICAS (4 FILAS × 2 COLUMNAS)
+    ;; ------------------------------------------
+    (box :orientation "v" :spacing 6 :space-evenly false
+      (box :orientation "h" :spacing 20 :space-evenly true
+        (net-stat :label "Ping" :value "${net.ping_ms != '' ? net.ping_ms + ' ms' : '--'}")
+        (net-stat :label "Packet Loss" :value "${net.loss}%"))
+      (box :orientation "h" :spacing 20 :space-evenly true
+        (net-stat :label "Receiving" :value "${net.rx_rate}/s")
+        (net-stat :label "Sending" :value "${net.tx_rate}/s"))
+      (box :orientation "h" :spacing 20 :space-evenly true
+        (net-stat :label "Downloaded" :value "${net.rx_total}")
+        (net-stat :label "Uploaded" :value "${net.tx_total}"))
+      (box :orientation "h" :spacing 20 :space-evenly true
+        (net-stat :label "IP Address" :value "${net.ip != '' ? net.ip : '--'}")
+        (net-stat :label "Gateway" :value "${net.gateway != '' ? net.gateway : '--'}")))
+
+    (box :class "weather-separator")
+
+    ;; ------------------------------------------
+    ;; KNOWN NETWORKS
+    ;; ------------------------------------------
+    (label :text "KNOWN NETWORKS" :class "section" :halign "start")
+    (box :orientation "v" :spacing 4 :space-evenly false
+      (for network in "${net.known}"
+        (net-known-row :name "${network.name}" :connected "${network.connected}")))
+
+    ;; ------------------------------------------
+    ;; OTHER NETWORKS
+    ;; ------------------------------------------
+    (label :text "OTHER NETWORKS" :class "section" :halign "start"
+           :visible "${arraylength(net.nearby) > 0}")
+    (box :orientation "v" :spacing 4 :space-evenly false
+      (for network in "${net.nearby}"
+        (net-nearby-row :ssid "${network.ssid}" :secured "${network.secured}")))))
+
+;; Ventana
+(defwindow network-panel
+  :monitor 0
+  :stacking "overlay"
+  :namespace "eww"
+  :geometry (geometry :anchor "top right" :x "10px" :y "40px" :width "420px" :height "560px")
+  (network-widget))

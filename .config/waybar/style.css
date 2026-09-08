@@ -35,18 +35,20 @@ window#waybar {
 #custom-ddc-brightness,
 #battery {
   color: @foreground;
-  padding: 5px 0;
+  padding: 4px 0;
 }
 
 /* Boton de power profile */
 #custom-powerprofile.performance {
-    color: @color16;
+  color: @color16;
 }
+
 #custom-powerprofile.balanced {
-    color: @color6;
+  color: @color6;
 }
+
 #custom-powerprofile.power-saver {
-    color: @color2;
+  color: @color2;
 }
 
 /* Boton de Powrer Menu 󰐥 */
@@ -54,39 +56,64 @@ window#waybar {
   color: @color1;
   padding: 5px 0;
 }
+
 #custom-powermenu:hover {
   color: @color1;
   opacity: 0.5;
 }
 
+/* Boton de notificaciones swaync */
+
 #custom-notification {
+  color: @foreground;
   padding: 4px 0;
-  font-size: 16px;
+  font-size: 15px;
+}
+
+/* Hay notificaciones */
+#custom-notification.notification,
+#custom-notification.dnd-notification {
+  color: @color4;
+}
+
+/* No molestar */
+#custom-notification.dnd-none,
+#custom-notification.dnd-notification {
+  color: @color1;
+}
+
+/* DND + notificaciones: rojo */
+#custom-notification.dnd-notification {
+  color: @color1;
+}
+
+/* Notificaciones inhibidas */
+#custom-notification.inhibited-none,
+#custom-notification.inhibited-notification {
+  color: @color3;
+}
+
+/* DND + inhibidas */
+#custom-notification.dnd-inhibited-none,
+#custom-notification.dnd-inhibited-notification {
+  color: @color1;
 }
 
 #custom-notification:hover {
   opacity: 0.5;
 }
 
-#custom-notification.active {
-  color: @color4;
-}
-
-#custom-notification.disabled {
-  color: @color1;
-}
-
 /* Boton de mi logo de Graplo */
 #custom-logo {
-    background-image: url("/home/graplo/.config/waybar/icons/favicon-32x32.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 24px;
+  background-image: url("/home/graplo/.config/waybar/icons/favicon-32x32.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 24px;
 
-    padding: 4px 0;
+  padding: 4px 0;
 
-    min-width: 24px;
-    min-height: 32px;
+  min-width: 24px;
+  min-height: 32px;
 }
 
 #custom-logo:hover {
@@ -96,28 +123,31 @@ window#waybar {
 /* Modulo del reloj fecha y hora */
 #clock {
   color: @color4;
-    padding: 1px 0;
+  padding: 1px 0;
 }
+
 #clock:hover {
-    opacity: 0.5;
+  opacity: 0.5;
 }
+
 #clock.hora {
-    color: @foreground;
+  color: @foreground;
 }
+
 #clock.fecha {
-    color: @color4;
+  color: @color4;
 }
 
 #custom-weather {
-    color: @color6;
-    padding: 0;
-    font-size: 16px;
-    min-width: 16px;
+  color: @color6;
+  padding: 0;
+  font-size: 15px;
+  /* min-width: 16px; */
 }
 
 #custom-weather:hover {
-    color: @color6;
-    opacity: 0.5;
+  color: @color6;
+  opacity: 0.5;
 }
 
 
@@ -131,8 +161,8 @@ window#waybar {
 */
 
 #workspaces button {
-    min-width: 0;
-    padding: 1px 0;
+  min-width: 0;
+  padding: 1px 0;
 }
 
 #workspaces button:nth-child(1) {
@@ -154,25 +184,28 @@ window#waybar {
 #workspaces button.active {
   color: @color3;
 }
+
 #workspaces button.empty {
-    color: @color8;
+  color: @color8;
 }
 
 @keyframes urgent-glow {
-    0% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0.4;
-    }
-    100% {
-        opacity: 1;
-    }
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.4;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 #workspaces button.urgent {
-    animation: urgent-glow 0.8s ease-in-out 4;
-    color: @color1;
+  animation: urgent-glow 0.8s ease-in-out 4;
+  color: @color1;
 }
 
 #privacy {
@@ -183,7 +216,7 @@ window#waybar {
 
 #mpris {
   color: @color4;
-  padding: 4px 0;
+  padding: 3px 0;
 }
 
 #custom-cava-mini {
@@ -196,9 +229,11 @@ window#waybar {
 #network.disabled {
   color: @color1;
 }
+
 #network.wifi {
   color: @color2;
 }
+
 #network.ethernet {
   color: @color4;
 }
@@ -206,6 +241,7 @@ window#waybar {
 #bluetooth.disabled {
   color: @color1;
 }
+
 #bluetooth.connected {
   color: @color4;
 }
@@ -213,6 +249,7 @@ window#waybar {
 #pulseaudio.sink-muted:not(.microphone) {
   color: @color3;
 }
+
 #pulseaudio.microphone.source-muted {
   color: @color1;
 }
@@ -220,9 +257,11 @@ window#waybar {
 #battery.plugged {
   color: @color4;
 }
+
 #battery.charging {
   color: @color2;
 }
+
 #battery.critical {
   color: @color3;
 }
@@ -231,6 +270,7 @@ tooltip {
   background: @background;
   border: 1px solid @foreground;
 }
+
 tooltip * {
   color: @foreground;
   margin: 2px;
@@ -238,7 +278,7 @@ tooltip * {
 }
 
 #pulseaudio:not(.microphone) label {
-  font-size: 10px;
+  font-size: 15px;
 }
 
 #pulseaudio-slider,
@@ -259,6 +299,7 @@ tooltip * {
 #pulseaudio-slider highlight {
   background: @color4;
 }
+
 #backlight-slider highlight {
   background: @color3;
 }

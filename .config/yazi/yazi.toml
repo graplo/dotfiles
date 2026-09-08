@@ -1,35 +1,47 @@
 # --------------------------------------------------
 # Yazi – Openers configuration
 # --------------------------------------------------
+
 [opener]
+
 neovim = [
-  { run = 'nvim "$@"', block = true, desc = "Neovim" }
-]
-helix = [
-  { run = 'helix "$@"', block = true, desc = "Helix" }
-]
-zathura = [
-  { run = 'zathura "$@"', orphan = true, desc = "Zathura" }
-]
-play = [
-  { run = 'mpv "$@"', orphan = true, desc = "Reproducir con mpv" }
-]
-cliamp = [
-  { run = 'cliamp "$@"', block = true, for = "unix", desc = "Reproducir con cliamp" }
-]
-display = [
-  { run = 'imv "$@"', orphan = true, desc = "Ver imagen" }
-]
-set_wallpaper = [
-  { run = 'awww img "$1"', desc = "Establecer como Fondo" }
-]
-inkscape = [
-  { run = 'inkscape "$@"', orphan = true, desc = "Abrir con Inkscape" }
+  { run = 'nvim %s', block = true, desc = "Neovim" }
 ]
 
+helix = [
+  { run = 'helix %s', block = true, desc = "Helix" }
+]
+
+zathura = [
+  { run = 'zathura %s', orphan = true, desc = "Zathura" }
+]
+
+play = [
+  { run = 'mpv %s', orphan = true, desc = "Reproducir con mpv" }
+]
+
+cliamp = [
+  { run = 'cliamp %s', block = true, for = "unix", desc = "Reproducir con cliamp" }
+]
+
+display = [
+  { run = 'imv %s', orphan = true, desc = "Ver imagen" }
+]
+
+set_wallpaper = [
+  { run = 'awww img %s1', desc = "Establecer como Fondo" }
+]
+
+inkscape = [
+  { run = 'inkscape %s', orphan = true, desc = "Abrir con Inkscape" }
+]
+
+
 [open]
+
 prepend_rules = [
-  # Texto, código y archivos de configuración explícitos
+
+  # Texto, código y archivos de configuración
   { url = "*.{md,txt,conf,config,toml,yaml,yml,json,ini,sh,fish,env,log,desktop}", use = ["helix", "neovim"] },
   { mime = "text/*", use = ["helix", "neovim"] },
   { mime = "inode/x-empty", use = ["helix", "neovim"] },
@@ -38,7 +50,7 @@ prepend_rules = [
   # PDF
   { mime = "application/pdf", use = ["zathura"] },
 
-  # Audio (revisar por extensiones explícitas PRIMERO para capturar .m4a)
+  # Audio
   { url = "*.{mp3,m4a,flac,wav,aac,ogg,opus}", use = ["cliamp", "play"] },
   { mime = "audio/*", use = ["cliamp", "play"] },
 

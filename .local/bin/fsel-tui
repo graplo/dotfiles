@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+SELECCION=$(printf "\
+󰓇 Rmpc;rmpc
+󰎈 Cliapm;cliapm
+󰎆 Cava;cava
+󰓃 Wiremix;wiremix
+󰉋 Yazi;yazi
+󰅍 Helix;hx
+󰨞 Neovim;nvim
+󰠮 Ekphos;ekphos
+󰓅 Htop;htop
+󰍛 Btop;btop
+󰢮 Btm (Bottom);btm
+󰢹 Nvtop;nvtop
+󰔛 Timr;timr
+󰸗 Ikhal;ikhal
+󰊢 Lazygit;lazygit
+󰛴 Torrra;torrra" | fsel --dmenu --delimiter=";" --with-nth=1 --accept-nth=2)
+
+APP=$(echo "$SELECCION" | xargs)
+
+if [ -n "$APP" ]; then
+  foot -e "$APP"
+fi

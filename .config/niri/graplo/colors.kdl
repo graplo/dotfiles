@@ -13,13 +13,16 @@ layout {
     background-color "transparent"
 
     focus-ring {
-        active-color   "#bd93f9"
-        inactive-color "#6272a4"
-        urgent-color   "#ff5555"
+        off
+        // active-color   "#bd93f9"
+        // inactive-color "#6272a4"
+        // urgent-color   "#ff5555"
     }
 
     border {
-        active-color   "#bd93f9"
+        on
+        // active-color   "#bd93f9"
+        active-gradient from="#bd93f9" to="#8be9fd" angle=135
         inactive-color "#6272a4"
         urgent-color   "#ff5555"
     }

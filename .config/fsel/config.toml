@@ -1,6 +1,7 @@
 # Colors
 highlight_color = "LightBlue"
 cursor = "█"
+rounded_borders = false
 
 main_border_color = "#bd93f9"
 apps_border_color = "#bd93f9"
@@ -31,3 +32,7 @@ pinned_order = "ranking"           # "ranking", "alphabetical", "oldest_pinned",
 [keybinds]
 down = ["down", { key = "j", modifiers = "alt" }]
 up = ["up", { key = "k", modifiers = "alt" }]
+
+# [dmenu]
+# title_panel_height_percent = 0
+# input_panel_height = 3

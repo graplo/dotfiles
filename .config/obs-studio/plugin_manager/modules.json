@@ -3,9 +3,9 @@
         "display_name": "",
         "enabled": true,
         "encoders": [
-            "obs-va-vah264enc",
+            "obs-va-vah265enc",
             "obs-va-vaav1enc",
-            "obs-va-vah265enc"
+            "obs-va-vah264enc"
         ],
         "id": "",
         "module_name": "obs-vaapi",
@@ -39,6 +39,24 @@
         "services": [],
         "sources": [
             "vkcapture-source"
+        ],
+        "version": ""
+    },
+    {
+        "display_name": "",
+        "enabled": true,
+        "encoders": [],
+        "id": "",
+        "module_name": "obs-stroke-glow-shadow",
+        "outputs": [],
+        "services": [],
+        "sources": [
+            "obs_stroke_filter",
+            "obs_glow_filter",
+            "obs_shadow_filter",
+            "obs_stroke_source",
+            "obs_glow_source",
+            "obs_shadow_source"
         ],
         "version": ""
     }

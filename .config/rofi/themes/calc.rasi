@@ -67,6 +67,7 @@ contentbox {
     background-color: transparent;
     children: [
         "inputbar",
+        "message",
         "listview"
     ];
 }
@@ -161,4 +162,19 @@ error-message {
     border-radius: 10px;
     background-color: @gpl-red;
     text-color: @gpl-background;
+}
+
+/*****----- Caja de Resultado (Message) -----*****/
+message {
+    padding: 10px;
+    border-radius: 0px;
+    background-color: @gpl-purple;
+    text-color: @gpl-background;
+}
+
+textbox {
+    background-color: transparent;
+    text-color: @gpl-background;
+    vertical-align: 0.5;
+    horizontal-align: 0.0;
 }

@@ -1,0 +1,191 @@
+#!/usr/bin/env bash
+
+set -u
+
+# ==================================================
+# OUTPUT / SINKS
+# ==================================================
+
+get_sinks() {
+    wpctl list audio sinks
+}
+
+current() {
+    get_sinks | awk '$4 == "*" { print $1; exit }'
+}
+
+name() {
+    local index="${1:-}"
+
+    get_sinks |
+        awk -v n="$index" 'NR == n { print $2; exit }'
+}
+
+id() {
+    local index="${1:-}"
+
+    get_sinks |
+        awk -v n="$index" 'NR == n { print $1; exit }'
+}
+
+list() {
+    get_sinks |
+        awk '{print $1 "|" $2}'
+}
+
+json() {
+    get_sinks |
+        awk '
+        BEGIN { print "[" }
+        {
+            gsub(/"/, "\\\"", $2)
+            printf "%s{\"id\":%s,\"name\":\"%s\",\"current\":%s}",
+                (NR > 1 ? "," : ""),
+                $1,
+                $2,
+                ($4 == "*" ? "true" : "false")
+        }
+        END { print "]" }'
+}
+
+set_default() {
+    local sink_id="${1:-}"
+
+    if [[ ! "$sink_id" =~ ^[0-9]+$ ]]; then
+        echo "ERROR: ID inválido: $sink_id" >&2
+        return 1
+    fi
+
+    wpctl set-default "$sink_id"
+}
+
+
+# ==================================================
+# INPUT / SOURCES
+# ==================================================
+
+get_sources() {
+    wpctl list audio sources
+}
+
+input-current() {
+    get_sources | awk '$4 == "*" { print $1; exit }'
+}
+
+input-name() {
+    local index="${1:-}"
+
+    get_sources |
+        awk -v n="$index" 'NR == n { print $2; exit }'
+}
+
+input-id() {
+    local index="${1:-}"
+
+    get_sources |
+        awk -v n="$index" 'NR == n { print $1; exit }'
+}
+
+input-list() {
+    get_sources |
+        awk '{print $1 "|" $2}'
+}
+
+input-json() {
+    get_sources |
+        awk '
+        BEGIN { print "[" }
+        {
+            gsub(/"/, "\\\"", $2)
+            printf "%s{\"id\":%s,\"name\":\"%s\",\"current\":%s}",
+                (NR > 1 ? "," : ""),
+                $1,
+                $2,
+                ($4 == "*" ? "true" : "false")
+        }
+        END { print "]" }'
+}
+
+input-set() {
+    local source_id="${1:-}"
+
+    if [[ ! "$source_id" =~ ^[0-9]+$ ]]; then
+        echo "ERROR: ID inválido: $source_id" >&2
+        return 1
+    fi
+
+    wpctl set-default "$source_id"
+}
+
+
+# ==================================================
+# COMMANDS
+# ==================================================
+
+case "${1:-list}" in
+
+    list)
+        list
+        ;;
+
+    current)
+        current
+        ;;
+
+    name)
+        name "${2:-}"
+        ;;
+
+    id)
+        id "${2:-}"
+        ;;
+
+    set)
+        set_default "${2:-}"
+        ;;
+
+    json)
+        json
+        ;;
+
+    input-list)
+        input-list
+        ;;
+
+    input-current)
+        input-current
+        ;;
+
+    input-name)
+        input-name "${2:-}"
+        ;;
+
+    input-id)
+        input-id "${2:-}"
+        ;;
+
+    input-set)
+        input-set "${2:-}"
+        ;;
+
+    input-json)
+        input-json
+        ;;
+
+    *)
+        echo "Uso:"
+        echo "  $0 list"
+        echo "  $0 current"
+        echo "  $0 name N"
+        echo "  $0 id N"
+        echo "  $0 set ID"
+        echo "  $0 json"
+        echo "  $0 input-list"
+        echo "  $0 input-current"
+        echo "  $0 input-name N"
+        echo "  $0 input-id N"
+        echo "  $0 input-set ID"
+        echo "  $0 input-json"
+        exit 1
+        ;;
+esac

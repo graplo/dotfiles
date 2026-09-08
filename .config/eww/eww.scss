@@ -2,6 +2,7 @@ $bg: #282a36;
 $bg-alt: #44475a;
 $fg: #f8f8f2;
 $purple: #bd93f9;
+$cyan: #8be9fd;
 $comment: #6272a4;
 
 .panel {
@@ -35,6 +36,11 @@ $comment: #6272a4;
 label.percent {
   font-size: 12px;
   color: $fg;
+}
+
+/* audio ya sea input o auput se colorea cuando selecionas */
+.audio-device-row.active label {
+  color: $cyan;
 }
 
 .device-name,
@@ -426,4 +432,26 @@ progressbar trough {
 .power-btn-active:hover {
   background-color: $purple;
   color: $bg;
+}
+
+/* ==========================================
+   Networks - Wifi
+   ========================================== */
+
+checkbox {
+  background: $comment;
+  border-radius: 20px;
+  min-width: 40px;
+  min-height: 20px;
+}
+
+checkbox:checked {
+  background: $purple;
+}
+
+checkbox check {
+  background: white;
+  border-radius: 50%;
+  min-width: 16px;
+  min-height: 16px;
 }

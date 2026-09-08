@@ -1,0 +1,101 @@
+#!/usr/bin/env bash
+
+# Forzar idioma inglés para fechas y formato
+export LC_ALL=C
+
+# 1. Obtener datos JSON
+DATA=$(curl -s "https://wttr.in/?format=j1")
+
+if [ -z "$DATA" ] || [ "$(echo "$DATA" | jq -r '.current_condition')" == "null" ]; then
+    echo "Error connecting to wttr.in"
+    exit 1
+fi
+
+# 2. Extraer el dibujo ASCII (primeros 14 caracteres)
+ASCII_ART=$(curl -s "https://wttr.in/?0&T" | head -n 6 | tail -n 5 | cut -c 1-14)
+
+# Paleta Dracula
+PURPLE="#bd93f9"
+CYAN="#8be9fd"
+GRAY="#6272a4"
+WHITE="#f8f8f2"
+
+# Mapeo de íconos Nerd Fonts
+get_day_icon() {
+    case "$1" in
+        113) echo "󰖙" ;; # Sunny / Clear
+        116) echo "󰼱" ;; # Partly cloudy
+        119|122) echo "󰅟" ;; # Cloudy / Overcast
+        176|263|266|281|284|293|296|299|302|305|308|311|314|353|356|359) echo "󰂕" ;; # Rain
+        200|386|389|392|395) echo "󰙾" ;; # Thunderstorm
+        179|182|185|227|230|320|323|326|329|332|335|338|350|368|371|374|377) echo "󰖘" ;; # Snow
+        143|248|260) echo "󰖑" ;; # Fog
+        *) echo "󰖐" ;;
+    esac
+}
+
+# --- DATOS ACTUALES (HOY) ---
+TEMP=$(echo "$DATA" | jq -r '.current_condition[0].temp_C')
+FEELS=$(echo "$DATA" | jq -r '.current_condition[0].FeelsLikeC')
+WIND=$(echo "$DATA" | jq -r '.current_condition[0].windspeedKmph')
+HUMID=$(echo "$DATA" | jq -r '.current_condition[0].humidity')
+CITY=$(echo "$DATA" | jq -r '.nearest_area[0].areaName[0].value' | tr '[:lower:]' '[:upper:]')
+
+# Renderizar temperatura con toilet
+BIG_TEMP=$(toilet -f smblock "$TEMP°C")
+
+# Componentes de la sección superior
+BLOCK_ASCII=$(gum style --foreground "$PURPLE" "$ASCII_ART")
+BLOCK_TEMP=$(gum style --foreground "$WHITE" --bold "$BIG_TEMP")
+
+INFO_HEADER=$(gum style --foreground "$CYAN" --bold "󰍎 $CITY")
+INFO_LABELS=$(gum style --foreground "$GRAY" "FEELS     WIND     HUMID")
+INFO_VALUES=$(gum style --foreground "$WHITE" "${FEELS}°C      ${WIND} km/h   ${HUMID}%")
+
+BLOCK_INFO=$(gum join --vertical "$INFO_HEADER" "" "$INFO_LABELS" "$INFO_VALUES")
+
+TOP_SECTION=$(gum join --horizontal --align center "$BLOCK_ASCII" "  " "$BLOCK_TEMP" "   " "$BLOCK_INFO")
+
+# --- PRONÓSTICO (3 COLUMNAS ALINEADAS DE 18 CHARS CADA UNA) ---
+parse_day() {
+    local idx="$1"
+    local date_str=$(echo "$DATA" | jq -r ".weather[$idx].date")
+    local name=$(date -d "$date_str" +%a | tr '[:lower:]' '[:upper:]')
+    local max=$(echo "$DATA" | jq -r ".weather[$idx].maxtempC")
+    local min=$(echo "$DATA" | jq -r ".weather[$idx].mintempC")
+    local code=$(echo "$DATA" | jq -r ".weather[$idx].hourly[4].weatherCode")
+    local icon=$(get_day_icon "$code")
+    
+    local d_name=$(gum style --foreground "$GRAY" --bold "$name")
+    local d_val=$(gum style --foreground "$PURPLE" "$icon ")$(gum style --foreground "$WHITE" "${max}° ${min}°")
+    
+    # Ancho de 18 caracteres centrado para las columnas laterales
+    gum join --vertical --align center "$d_name" "$d_val" | gum style --width 18 --align center
+}
+
+D1=$(parse_day 1)
+D2=$(parse_day 2)
+
+# --- BLOQUE CENTRAL: ASTRONOMY (SOLO FASE LUNAR) ---
+MOON_PHASE=$(echo "$DATA" | jq -r '.weather[0].astronomy[0].moon_phase')
+
+ASTRO_TITLE=$(gum style --foreground "$GRAY" --bold "ASTRONOMY")
+ASTRO_VAL1=$(gum style --foreground "$CYAN" "🌔 ")$(gum style --foreground "$WHITE" "$MOON_PHASE")
+
+# Ancho de 18 caracteres centrado
+CENTER_ASTRO=$(gum join --vertical --align center "$ASTRO_TITLE" "$ASTRO_VAL1" | gum style --width 18 --align center)
+
+# Unir las 3 columnas (18 + 18 + 18 = 54 caracteres en total)
+BOTTOM_SECTION=$(gum join --horizontal "$D1" "$CENTER_ASTRO" "$D2")
+
+# Separador de exactamente 54 caracteres para encajar borde a borde
+SEPARATOR=$(gum style --foreground "$GRAY" "──────────────────────────────────────────────────────")
+
+# Renderizado final
+echo ""
+gum join --vertical "$TOP_SECTION" "$SEPARATOR" "$BOTTOM_SECTION"
+echo ""
+# Ocultar cursor y esperar a que presiones cualquier tecla
+tput civis
+read -rsn 1
+tput cnorm

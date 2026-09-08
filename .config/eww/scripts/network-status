@@ -1,0 +1,112 @@
+#!/usr/bin/env bash
+
+STATE_FILE="/tmp/eww-net-stats"
+
+fmt_bytes() {
+  awk -v b="$1" 'BEGIN{
+    if (b < 1024) printf "%d B", b
+    else if (b < 1024*1024) printf "%.1f KB", b/1024
+    else if (b < 1024*1024*1024) printf "%.1f MB", b/1024/1024
+    else printf "%.2f GB", b/1024/1024/1024
+  }'
+}
+
+# 1. Forzar la búsqueda explícita de la interfaz Wi-Fi
+dev=$(ip link 2>/dev/null | awk -F': ' '/wlan|wlp/ {print $2; exit}')
+[ -z "$dev" ] && dev="wlan0"
+
+# 2. Consultar iwctl de forma segura sin colores ANSI
+iw_out=$(CLICOLOR_FORCE=0 iwctl station "$dev" show 2>/dev/null | sed -r 's/\x1B\[[0-9;]*[a-zA-Z]//g')
+
+state=$(echo "$iw_out" | grep 'State' | awk -F'State' '{print $2}' | xargs)
+active_ssid=$(echo "$iw_out" | grep 'Connected network' | awk -F'Connected network' '{print $2}' | xargs)
+
+# 3. Extraer el valor numérico exacto del RSSI (ej: -42)
+rssi_val=$(echo "$iw_out" | grep -iE 'AverageRSSI|RSSI' | grep -oP '\-\d+' | head -1)
+
+signal=0
+if [ -n "$rssi_val" ]; then
+  signal=$(( (rssi_val + 90) * 100 / 60 ))
+  [ "$signal" -gt 100 ] && signal=100
+  [ "$signal" -lt 0 ] && signal=0
+fi
+
+# 4. Redes Conocidas (JSON)
+known_json="[]"
+if [ -n "$active_ssid" ]; then
+  known_json=$(jq -n --arg n "$active_ssid" '[{name:$n, connected:true}]')
+fi
+
+# 5. Redes Cercanas Escaneadas (Filtrando caracteres inválidos)
+nearby_json="[]"
+while IFS= read -r net_ssid; do
+  [ -z "$net_ssid" ] && continue
+  [ "$net_ssid" = "$active_ssid" ] && continue
+  [ "$net_ssid" = ">" ] && continue
+  [[ "$net_ssid" =~ ^[^a-zA-Z0-9]+$ ]] && continue
+  
+  nearby_json=$(jq --arg s "$net_ssid" '. + [{ssid:$s, signal:50, secured:true}]' <<< "$nearby_json")
+done < <(CLICOLOR_FORCE=0 iwctl station "$dev" get-networks 2>/dev/null | sed -r 's/\x1B\[[0-9;]*[a-zA-Z]//g' | sed 's/\*/ /g' | awk 'NR>4 {print $1}' | grep -v '^\-\-' | grep -v '^[0-9;]' | sed '/^$/d' | head -5)
+
+# 6. Datos de IP e Interfaz Wi-Fi
+ip=$(ip -4 addr show "$dev" 2>/dev/null | awk '/inet / {print $2}' | cut -d/ -f1)
+gateway=$(ip route show dev "$dev" 2>/dev/null | awk '/default/ {print $3}')
+
+# Ping + Packet Loss a través de Wi-Fi
+ping_ms=""
+loss="0"
+if [ -n "$gateway" ]; then
+  ping_out=$(ping -I "$dev" -c 3 -W 1 -q "$gateway" 2>/dev/null)
+  ping_ms=$(grep -oP 'rtt min/avg/max.*= [0-9.]+/\K[0-9.]+' <<< "$ping_out")
+  loss=$(grep -oP '\K[0-9]+(?=% packet loss)' <<< "$ping_out")
+fi
+[ -z "$loss" ] && loss="0"
+
+# 7. Tráfico RX / TX
+rx_bytes=$(cat "/sys/class/net/$dev/statistics/rx_bytes" 2>/dev/null || echo 0)
+tx_bytes=$(cat "/sys/class/net/$dev/statistics/tx_bytes" 2>/dev/null || echo 0)
+now=$(date +%s.%N)
+
+rx_rate=0; tx_rate=0
+if [ -f "$STATE_FILE" ]; then
+  IFS=: read -r prev_dev prev_rx prev_tx prev_time < "$STATE_FILE"
+  if [ "$prev_dev" = "$dev" ]; then
+    rx_rate=$(awk -v a="$rx_bytes" -v b="$prev_rx" -v t="$now" -v pt="$prev_time" 'BEGIN{d=t-pt; print (d>0)?(a-b)/d:0}')
+    tx_rate=$(awk -v a="$tx_bytes" -v b="$prev_tx" -v t="$now" -v pt="$prev_time" 'BEGIN{d=t-pt; print (d>0)?(a-b)/d:0}')
+  fi
+fi
+echo "$dev:$rx_bytes:$tx_bytes:$now" > "$STATE_FILE"
+
+# 8. Asignación de Icono según señal
+idx=$(( (signal * 4) / 100 ))
+case $idx in
+  0) icon="󰤯" ;;
+  1) icon="󰤟" ;;
+  2) icon="󰤢" ;;
+  3) icon="󰤥" ;;
+  *) icon="󰤨" ;;
+esac
+
+# 9. JSON Final Garantizado
+jq -n \
+  --arg kind "wifi" \
+  --arg icon "$icon" \
+  --arg iface "$dev" \
+  --arg ssid "${active_ssid:-Disconnected}" \
+  --argjson signal "${signal:-0}" \
+  --arg ip "${ip:---}" \
+  --arg gateway "${gateway:---}" \
+  --arg ping "${ping_ms:-}" \
+  --argjson loss "${loss:-0}" \
+  --arg rx_rate "$(fmt_bytes "${rx_rate%.*}")" \
+  --arg tx_rate "$(fmt_bytes "${tx_rate%.*}")" \
+  --arg rx_total "$(fmt_bytes "$rx_bytes")" \
+  --arg tx_total "$(fmt_bytes "$tx_bytes")" \
+  --argjson known "$known_json" \
+  --argjson nearby "$nearby_json" \
+  --argjson has_wifi true \
+  --argjson wifi_enabled true \
+  '{kind:$kind, icon:$icon, iface:$iface, ssid:$ssid, signal:$signal,
+    ip:$ip, gateway:$gateway, ping_ms:$ping, loss:$loss,
+    rx_rate:$rx_rate, tx_rate:$tx_rate, rx_total:$rx_total, tx_total:$tx_total,
+    known:$known, nearby:$nearby, has_wifi:$has_wifi, wifi_enabled:$wifi_enabled}'

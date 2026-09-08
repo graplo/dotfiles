@@ -91,7 +91,7 @@ window-rule {
 // │                            FOOT                              │
 // └──────────────────────────────────────────────────────────────┘
 
-// Todas las ventanas foot → flotantes
+// Todas las ventanas Kitty → flotantes
 window-rule {
     match app-id="foot"
     open-floating true
@@ -102,6 +102,7 @@ window-rule {
 // Btop
 window-rule {
     match app-id="foot" title="btop"
+    open-floating true
     default-column-width { fixed 1259; }
     default-window-height { fixed 871; }
 }
@@ -145,16 +146,61 @@ window-rule {
 window-rule {
     match app-id="foot" title="fsel"
     open-floating true
-    default-column-width { fixed 583; }
-    default-window-height { fixed 705; }
+    default-column-width { fixed 556; }
+    default-window-height { fixed 687; }
 }
 
 window-rule {
     match app-id="foot" title="fsel-cclip"
     open-floating true
-    default-column-width { fixed 630; }
-    default-window-height { fixed 775; }
+    default-column-width { fixed 624; }
+    default-window-height { fixed 773; }
 }
+
+// En el waybar dando click en la hora aparece timr es pomodoro tmb
+window-rule {
+    match app-id="foot" title="timr"
+    open-floating true
+    default-column-width { fixed 1034; }
+    default-window-height { fixed 475; }
+    default-floating-position x=20 y=20 relative-to="top-right"
+}
+
+window-rule {
+    match app-id="foot" title="clima"
+    open-floating true
+    default-column-width { fixed 516; }
+    default-window-height { fixed 250; }
+    default-floating-position x=20 y=90 relative-to="top-right"
+}
+
+// En el waybar dando click en la fecha aparece lvsk-calendar
+window-rule {
+    match app-id="foot" title="calendar"
+    open-floating true
+    default-column-width { fixed 545; }
+    default-window-height { fixed 568; }
+    default-floating-position x=20 y=50 relative-to="top-right"
+}
+
+// En el waybar dando click en el mini-cava aparece el mpris fum
+window-rule {
+    match app-id="foot" title="mpris"
+    open-floating true
+    default-column-width { fixed 489; }
+    default-window-height { fixed 208; }
+    default-floating-position x=20 y=600 relative-to="top-right"
+}
+
+// Control de brillo para waybar
+window-rule {
+    match app-id="foot" title="brightctrl"
+    open-floating true
+    default-column-width { fixed 835; }
+    default-window-height { fixed 505; }
+    default-floating-position x=20 y=20 relative-to="bottom-right"
+}
+
 
 // ┌──────────────────────────────────────────────────────────────┐
 // │                         MAXIMIZADAS                          │
@@ -198,5 +244,5 @@ window-rule {
 // Dim ventanas no enfocadas
 window-rule {
     match is-focused=false
-    opacity 0.95
+    opacity 0.98
 }

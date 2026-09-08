@@ -7,5 +7,6 @@
 (include "./modules/dashboard.yuck")
 (include "./modules/time.yuck")
 (include "./modules/powerprofile.yuck")
+(include "./modules/network.yuck")
 
 

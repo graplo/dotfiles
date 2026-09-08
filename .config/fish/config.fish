@@ -47,6 +47,9 @@ set -x LS_COLORS (vivid generate dracula)
 #     set_color normal
 # end
 
+# Para tener VIM en la terminal
+# fish_vi_key_bindings
+
 # para q no salga el fastfech de cachyos al comienzo
 function fish_greeting
 end

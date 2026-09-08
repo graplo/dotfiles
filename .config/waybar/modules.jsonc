@@ -85,6 +85,7 @@
     "interval": 1800,
     "exec": "~/.config/waybar/scripts/weather.sh",
     "tooltip": false,
+    // "on-click": "foot --title clima -e clima",
     "on-click": "~/.config/eww/scripts/eww-toggle weather-panel",
     "on-click-middle": "kitty --title weathr -e weathr",
     "on-click-right": "~/.config/waybar/scripts/weather-notify.sh"
@@ -116,6 +117,7 @@
     "format": "{:%H\n%M}",
     "tooltip": false,
     "on-click": "~/.config/eww/scripts/eww-toggle time-panel",
+    // "on-click": "foot --title timr -e timr",
     "on-click-right": "kitty --title peaclock -e peaclock --config-dir ~/.config/peaclock"
   },
   // Fecha: tooltip muestra mini-calendario, click izq ikhal, click der calcurse
@@ -124,6 +126,7 @@
     "format": "{:%m\n%d}",
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "on-click": "~/.config/eww/scripts/eww-toggle calendar-panel",
+    // "on-click": "foot --title=calendar -e lvsk-calendar",
     "on-click-right": "kitty -e ikhal"
   },
   // ============================================================
@@ -135,6 +138,7 @@
     "return-type": "json",
     "restart-interval": 1,
     "on-click": "~/.config/eww/scripts/eww-toggle mpris-panel",
+    // "on-click": "foot --title=mpris -e sh -c 'fum -p $(playerctl metadata --format \"{{playerName}}\" 2>/dev/null || echo mpd)'",
     "tooltip": false,
     "rotate": 0
   },
@@ -272,7 +276,8 @@
     "return-type": "json",
     "on-scroll-up": "ddcutil --bus 7 setvcp 10 + 5",
     "on-scroll-down": "ddcutil --bus 7 setvcp 10 - 5",
-    "on-click": "~/.config/eww/scripts/eww-toggle display-panel",
+    // "on-click": "~/.config/eww/scripts/eww-toggle display-panel",
+    "on-click": "foot --title brightctrl -e brightctrl",
     "interval": 10,
     "tooltip": true
   },
@@ -314,20 +319,25 @@
     "on-click-right": "~/.local/bin/walker-powerprofile",
     "tooltip": false
   },
-  // Estado de No Molestar (mako): click toggle dnd, click der restaura notifs
+  // Estado de No Molestar swaync: click toggle dnd, click der restaura notifs
   "custom/notification": {
     "tooltip": true,
     "format": "{icon}",
     "format-icons": {
-      "active": "",
-      "disabled": "󰂛"
+      "none": "󰍥",
+      "notification": "󱥂",
+      "dnd-none": "󱅯",
+      "dnd-notification": "󱅮",
+      "inhibited-none": "󰍥",
+      "inhibited-notification": "󱥂",
+      "dnd-inhibited-none": "󰪓",
+      "dnd-inhibited-notification": "󰪑"
     },
     "return-type": "json",
-    "exec": "makoctl mode | grep -q 'dnd' && echo '{\"alt\": \"disabled\", \"class\": \"disabled\", \"tooltip\": \"No Molestar: Activado\"}' || echo '{\"alt\": \"active\", \"class\": \"active\", \"tooltip\": \"No Molestar: Desactivado\"}'",
-    "on-click": "~/.config/eww/scripts/eww-toggle notifications-panel",
-    "on-click-right": "makoctl mode | grep -q 'dnd' && makoctl mode -r dnd || makoctl mode -a dnd",
-    "on-click-middle": "makoctl restore",
-    "interval": 2,
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "on-click-middle": "swaync-client -C",
     "escape": true
   },
   // Batería: icono según nivel, estados charging/plugged/critical

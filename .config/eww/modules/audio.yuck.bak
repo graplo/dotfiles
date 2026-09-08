@@ -1,0 +1,79 @@
+;; ==========================================
+;; AUDIO PANEL (WirePlumber + Dynamic Icons)
+;; ==========================================
+
+;; VOLUMEN Y MUTE - SALIDA (OUTPUT)
+(defpoll audio-out-vol :interval "1s"
+  "wpctl get-volume @DEFAULT_AUDIO_SINK@ | grep -oP '[0-9]+\\.[0-9]+' | awk '{printf \"%d\", $1*100}'")
+
+(defpoll audio-out-muted :interval "1s"
+  "wpctl get-volume @DEFAULT_AUDIO_SINK@ | grep -q 'MUTED' && echo true || echo false")
+
+;; VOLUMEN Y MUTE - ENTRADA (INPUT / MIC)
+(defpoll audio-in-vol :interval "1s"
+  "wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | grep -oP '[0-9]+\\.[0-9]+' | awk '{printf \"%d\", $1*100}'")
+
+(defpoll audio-in-muted :interval "1s"
+  "wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | grep -q 'MUTED' && echo true || echo false")
+
+;; NOMBRES DE DISPOSITIVOS
+(defpoll audio-out-name :interval "3s"
+  "wpctl status | awk '/Sinks:/,/Sources:/' | grep '\\*' | sed -E 's/.*[0-9]+\\. //; s/ \\[.*//'")
+
+(defpoll audio-in-name :interval "3s"
+  "wpctl status | awk '/Default Configured Devices:/,0' | grep 'Audio/Source' | sed -E 's/.*Audio\\/Source *//; s/alsa_input\\.usb-//; s/_/ /g; s/00\\.HiFi.*//'")
+
+
+;; WIDGET PRINCIPAL
+(defwidget audio-panel []
+  (box :orientation "v" :class "panel" :spacing 8
+    
+    ;; Encabezado con Icono Dinámico según nivel de audio
+    (box :orientation "h" :space-evenly false :spacing 14 :class "header-box"
+      (label :text "${
+        audio-out-muted == 'true' ? '󰝟' : 
+        audio-out-vol < 33 ? '󰕿' : 
+        audio-out-vol < 66 ? '󰖀' : '󰕾'
+      }" :class "main-audio-icon")
+      
+      (box :orientation "v" :space-evenly false
+        (label :text "Audio" :class "title" :halign "start")
+        (label :text "EASY LISTENING" :class "subtitle" :halign "start")))
+
+    ;; Sección OUTPUT
+    (box :orientation "h" :class "row"
+      (label :text "OUTPUT" :class "section" :halign "start")
+      (label :text "${audio-out-muted == 'true' ? 'MUTED' : audio-out-vol + '%'}" 
+             :class "percent" :halign "end" :hexpand true))
+    
+    (scale :min 0 :max 100 :value audio-out-vol
+           :onchange "wpctl set-volume @DEFAULT_AUDIO_SINK@ {}%")
+           
+    (box :orientation "h" :space-evenly false :spacing 8 :class "device-box"
+      (label :text "${audio-out-muted == 'true' ? '󰝟' : '󰓃'}" :class "device-icon")
+      (label :text audio-out-name :class "device-name" :halign "start"))
+
+    ;; Sección INPUT (Micrófono)
+    (box :orientation "h" :class "row"
+      (label :text "INPUT" :class "section" :halign "start")
+      (label :text "${audio-in-muted == 'true' ? 'MUTED' : audio-in-vol + '%'}" 
+             :class "percent" :halign "end" :hexpand true))
+    
+    (scale :min 0 :max 100 :value audio-in-vol
+           :onchange "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ {}%")
+           
+    (box :orientation "h" :space-evenly false :spacing 8 :class "device-box"
+      (label :text "${audio-in-muted == 'true' ? '󰍭' : '󰍬'}" :class "device-icon")
+      (label :text audio-in-name :class "device-name" :halign "start"))))
+
+;; VENTANA
+(defwindow audio-panel
+  :monitor 0
+  :windowtype "normal"
+  :stacking "overlay"
+  :geometry (geometry :anchor "bottom right"
+                      :x "10px"
+                      :y "10px"
+                      :width "550px"
+                      :height "260px")
+  (audio-panel))
