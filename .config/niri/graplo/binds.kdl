@@ -89,12 +89,20 @@ binds {
     Shift+F4 hotkey-overlay-title="OBS: Half and half"    { spawn "gobs-cli" "sc" "sw" "4 haft and haft"; }
 
     // — Capturas de pantalla —
-    Print             { screenshot; }
-    Ctrl+Print        { screenshot-screen; }
-    Alt+Print         { screenshot-window; }
-    XF86Launch1       { screenshot; }
-    Ctrl+XF86Launch1  { screenshot-screen; }
-    Alt+XF86Launch1   { screenshot-window; }
+    // Print             { screenshot; }
+    // Ctrl+Print        { screenshot-screen; }
+    // Alt+Print         { screenshot-window; }
+    // XF86Launch1       { screenshot; }
+    // Ctrl+XF86Launch1  { screenshot-screen; }
+    // Alt+XF86Launch1   { screenshot-window; }
+
+    // — Capturas de pantalla con Noctalia —
+    Print             { spawn-sh "noctalia msg screenshot-region"; }
+    Ctrl+Print        { spawn-sh "noctalia msg screenshot-fullscreen"; }
+    Alt+Print         { spawn-sh "noctalia msg screenshot-fullscreen pick"; }
+    XF86Launch1       { spawn-sh "noctalia msg screenshot-region"; }
+    Ctrl+XF86Launch1  { spawn-sh "noctalia msg screenshot-fullscreen"; }
+    Alt+XF86Launch1   { spawn-sh "noctalia msg screenshot-fullscreen pick"; }
 
     // — Workspaces —
     Mod+1 { focus-workspace 1; }
