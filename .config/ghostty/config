@@ -69,5 +69,5 @@ gtk-single-instance = true
 
 # Dank color generation
 # theme = dankcolors
-theme = Dracula
+theme = noctalia
 # theme = Catppuccin Macchiato

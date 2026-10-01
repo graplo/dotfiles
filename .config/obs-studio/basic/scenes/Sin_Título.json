@@ -61,14 +61,13 @@
             "filters": [
                 {
                     "prev_ver": 537001986,
-                    "name": "kodak_dscs_3151",
-                    "uuid": "0db0cfe4-fe89-40df-af49-30367427c9bb",
+                    "name": "fiji",
+                    "uuid": "47b8043e-6b9b-472d-9e53-10aa1a4f70a8",
                     "id": "clut_filter",
                     "versioned_id": "clut_filter",
                     "settings": {
-                        "clut_amount": 1.0,
-                        "passthrough_alpha": false,
-                        "image_path": "/home/graplo/Imágenes/OBS/LUT_pack/Film Presets/kodak_dscs_3151.png"
+                        "image_path": "/home/graplo/Imágenes/OBS/LUT_pack/graplo_obs_luts/color/fujifilm/obs_Fuji 400H 1 -.png",
+                        "clut_amount": 0.8072
                     },
                     "mixers": 0,
                     "sync": 0,
@@ -89,12 +88,175 @@
                 },
                 {
                     "prev_ver": 537001986,
-                    "name": "fuji",
-                    "uuid": "2005fada-1c49-4ad9-a042-1e646a694d5e",
+                    "name": "kodak potra 160",
+                    "uuid": "f16efd4e-7dab-4d6d-9604-a9c2ba20ece2",
                     "id": "clut_filter",
                     "versioned_id": "clut_filter",
                     "settings": {
-                        "image_path": "/home/graplo/Imágenes/OBS/LUT_pack/graplo_luts/fuji400h_obs.png"
+                        "image_path": "/home/graplo/Imágenes/OBS/LUT_pack/graplo_obs_luts/color/kodak/obs_Kodak Portra 160 1 -.png",
+                        "clut_amount": 0.8705
+                    },
+                    "mixers": 0,
+                    "sync": 0,
+                    "flags": 0,
+                    "volume": 1.0,
+                    "balance": 0.5,
+                    "enabled": false,
+                    "muted": false,
+                    "push-to-mute": false,
+                    "push-to-mute-delay": 0,
+                    "push-to-talk": false,
+                    "push-to-talk-delay": 0,
+                    "hotkeys": {},
+                    "deinterlace_mode": 0,
+                    "deinterlace_field_order": 0,
+                    "monitoring_type": 0,
+                    "private_settings": {}
+                },
+                {
+                    "prev_ver": 537001986,
+                    "name": "afga vista 200",
+                    "uuid": "88dd492d-d6a0-4077-872e-99308c7b8a89",
+                    "id": "clut_filter",
+                    "versioned_id": "clut_filter",
+                    "settings": {
+                        "image_path": "/home/graplo/Imágenes/OBS/LUT_pack/graplo_obs_luts/color/agfa/obs_Agfa Vista 200.png"
+                    },
+                    "mixers": 0,
+                    "sync": 0,
+                    "flags": 0,
+                    "volume": 1.0,
+                    "balance": 0.5,
+                    "enabled": false,
+                    "muted": false,
+                    "push-to-mute": false,
+                    "push-to-mute-delay": 0,
+                    "push-to-talk": false,
+                    "push-to-talk-delay": 0,
+                    "hotkeys": {},
+                    "deinterlace_mode": 0,
+                    "deinterlace_field_order": 0,
+                    "monitoring_type": 0,
+                    "private_settings": {}
+                },
+                {
+                    "prev_ver": 537001986,
+                    "name": "polaroid px 70",
+                    "uuid": "9fdaebcb-2603-44c1-926a-9e0f6fdc2ae2",
+                    "id": "clut_filter",
+                    "versioned_id": "clut_filter",
+                    "settings": {
+                        "image_path": "/home/graplo/Imágenes/OBS/LUT_pack/graplo_obs_luts/color/polaroid/obs_Polaroid PX-70 Cold 3.png",
+                        "clut_amount": 0.4601
+                    },
+                    "mixers": 0,
+                    "sync": 0,
+                    "flags": 0,
+                    "volume": 1.0,
+                    "balance": 0.5,
+                    "enabled": false,
+                    "muted": false,
+                    "push-to-mute": false,
+                    "push-to-mute-delay": 0,
+                    "push-to-talk": false,
+                    "push-to-talk-delay": 0,
+                    "hotkeys": {},
+                    "deinterlace_mode": 0,
+                    "deinterlace_field_order": 0,
+                    "monitoring_type": 0,
+                    "private_settings": {}
+                },
+                {
+                    "prev_ver": 537001986,
+                    "name": "kodak 2",
+                    "uuid": "c27a8547-a7eb-4afc-9589-2e0557f5ff1f",
+                    "id": "clut_filter",
+                    "versioned_id": "clut_filter",
+                    "settings": {
+                        "image_path": "/home/graplo/Imágenes/OBS/LUT_pack/graplo_obs_luts/color/kodak/obs_Kodak Portra 400 NC 3 +.png"
+                    },
+                    "mixers": 0,
+                    "sync": 0,
+                    "flags": 0,
+                    "volume": 1.0,
+                    "balance": 0.5,
+                    "enabled": true,
+                    "muted": false,
+                    "push-to-mute": false,
+                    "push-to-mute-delay": 0,
+                    "push-to-talk": false,
+                    "push-to-talk-delay": 0,
+                    "hotkeys": {},
+                    "deinterlace_mode": 0,
+                    "deinterlace_field_order": 0,
+                    "monitoring_type": 0,
+                    "private_settings": {}
+                },
+                {
+                    "prev_ver": 537001986,
+                    "name": "polaroid px-680",
+                    "uuid": "e79e3506-ab1a-496a-a741-9eea2b33a8b2",
+                    "id": "clut_filter",
+                    "versioned_id": "clut_filter",
+                    "settings": {
+                        "image_path": "/home/graplo/Imágenes/OBS/LUT_pack/graplo_obs_luts/color/polaroid/obs_Polaroid PX-680 Cold 3.png",
+                        "clut_amount": 1.0
+                    },
+                    "mixers": 0,
+                    "sync": 0,
+                    "flags": 0,
+                    "volume": 1.0,
+                    "balance": 0.5,
+                    "enabled": false,
+                    "muted": false,
+                    "push-to-mute": false,
+                    "push-to-mute-delay": 0,
+                    "push-to-talk": false,
+                    "push-to-talk-delay": 0,
+                    "hotkeys": {},
+                    "deinterlace_mode": 0,
+                    "deinterlace_field_order": 0,
+                    "monitoring_type": 0,
+                    "private_settings": {}
+                },
+                {
+                    "prev_ver": 537001986,
+                    "name": "Corrección de color",
+                    "uuid": "c32d3fe9-da7f-445b-9180-fce92622712c",
+                    "id": "color_filter",
+                    "versioned_id": "color_filter_v2",
+                    "settings": {
+                        "gamma": 0.0,
+                        "contrast": -0.21,
+                        "brightness": -0.0086,
+                        "saturation": 0.01,
+                        "hue_shift": 0.0
+                    },
+                    "mixers": 0,
+                    "sync": 0,
+                    "flags": 0,
+                    "volume": 1.0,
+                    "balance": 0.5,
+                    "enabled": true,
+                    "muted": false,
+                    "push-to-mute": false,
+                    "push-to-mute-delay": 0,
+                    "push-to-talk": false,
+                    "push-to-talk-delay": 0,
+                    "hotkeys": {},
+                    "deinterlace_mode": 0,
+                    "deinterlace_field_order": 0,
+                    "monitoring_type": 0,
+                    "private_settings": {}
+                },
+                {
+                    "prev_ver": 537001986,
+                    "name": "Filtro de enfoque",
+                    "uuid": "a4df14d0-2444-435b-9c20-11556639b590",
+                    "id": "sharpness_filter",
+                    "versioned_id": "sharpness_filter_v2",
+                    "settings": {
+                        "sharpness": 0.1
                     },
                     "mixers": 0,
                     "sync": 0,
@@ -263,7 +425,7 @@
             "id": "pipewire-screen-capture-source",
             "versioned_id": "pipewire-screen-capture-source",
             "settings": {
-                "RestoreToken": "uUOuyi1J2tlY664Kmdew5w"
+                "RestoreToken": "aCpVsvtE_VxTUH_iir_h9g"
             },
             "mixers": 0,
             "sync": 0,
@@ -408,7 +570,7 @@
             "id": "pipewire-screen-capture-source",
             "versioned_id": "pipewire-screen-capture-source",
             "settings": {
-                "RestoreToken": "yQ3kFuamuWK0vcejjAbKlg"
+                "RestoreToken": "Hz6xJ2HEPnivTASXyt992A"
             },
             "mixers": 0,
             "sync": 0,
@@ -977,7 +1139,33 @@
             "deinterlace_field_order": 0,
             "monitoring_type": 0,
             "canvas_uuid": "6c69626f-6273-4c00-9d88-c5136d61696e",
-            "private_settings": {}
+            "private_settings": {},
+            "filters": [
+                {
+                    "prev_ver": 537001986,
+                    "name": "Aplicar LUT",
+                    "uuid": "cd05adba-d5b5-47bd-bee8-f56651455cfe",
+                    "id": "clut_filter",
+                    "versioned_id": "clut_filter",
+                    "settings": {},
+                    "mixers": 0,
+                    "sync": 0,
+                    "flags": 0,
+                    "volume": 1.0,
+                    "balance": 0.5,
+                    "enabled": true,
+                    "muted": false,
+                    "push-to-mute": false,
+                    "push-to-mute-delay": 0,
+                    "push-to-talk": false,
+                    "push-to-talk-delay": 0,
+                    "hotkeys": {},
+                    "deinterlace_mode": 0,
+                    "deinterlace_field_order": 0,
+                    "monitoring_type": 0,
+                    "private_settings": {}
+                }
+            ]
         },
         {
             "prev_ver": 537001986,
@@ -986,7 +1174,7 @@
             "id": "scene",
             "versioned_id": "scene",
             "settings": {
-                "id_counter": 11,
+                "id_counter": 12,
                 "custom_size": false,
                 "items": [
                     {
@@ -1320,6 +1508,61 @@
                         "private_settings": {}
                     },
                     {
+                        "name": "Captura de pantalla (PipeWire)",
+                        "source_uuid": "91e245fc-e6f9-4dec-8fd3-c1933963342a",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "scale_ref": {
+                            "x": 2560.0,
+                            "y": 1440.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds_crop": false,
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 12,
+                        "group_item_backup": false,
+                        "pos": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "pos_rel": {
+                            "x": -1.7777777910232544,
+                            "y": -1.0
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_rel": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_rel": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 0
+                        },
+                        "hide_transition": {
+                            "duration": 0
+                        },
+                        "private_settings": {}
+                    },
+                    {
                         "name": "logi de video (V4L2)",
                         "source_uuid": "b57ceb95-8156-40a6-9582-a489e5895870",
                         "visible": true,
@@ -1406,6 +1649,8 @@
                 "libobs.hide_scene_item.9": [],
                 "libobs.show_scene_item.10": [],
                 "libobs.hide_scene_item.10": [],
+                "libobs.show_scene_item.12": [],
+                "libobs.hide_scene_item.12": [],
                 "libobs.show_scene_item.11": [],
                 "libobs.hide_scene_item.11": []
             },
@@ -1862,7 +2107,7 @@
                     {
                         "name": "Root1 circular",
                         "source_uuid": "cc657f70-d542-4ff4-988a-7539d8f12d17",
-                        "visible": true,
+                        "visible": false,
                         "locked": false,
                         "rot": 0.0,
                         "scale_ref": {
@@ -1880,12 +2125,12 @@
                         "id": 7,
                         "group_item_backup": false,
                         "pos": {
-                            "x": -112.0,
-                            "y": 858.0
+                            "x": -110.0,
+                            "y": 857.0
                         },
                         "pos_rel": {
-                            "x": -1.9333332777023315,
-                            "y": 0.19166672229766846
+                            "x": -1.9305555820465088,
+                            "y": 0.1902778148651123
                         },
                         "scale": {
                             "x": 0.30859375,
@@ -2257,12 +2502,12 @@
                         "id": 9,
                         "group_item_backup": false,
                         "pos": {
-                            "x": -20.0,
-                            "y": -4.0
+                            "x": 0.0,
+                            "y": 0.0
                         },
                         "pos_rel": {
-                            "x": -1.8055555820465088,
-                            "y": -1.005555510520935
+                            "x": -1.7777777910232544,
+                            "y": -1.0
                         },
                         "scale": {
                             "x": 1.3778337240219116,
@@ -2305,27 +2550,27 @@
                         "bounds_type": 0,
                         "bounds_align": 0,
                         "bounds_crop": false,
-                        "crop_left": 459,
+                        "crop_left": 1354,
                         "crop_top": 0,
-                        "crop_right": 565,
+                        "crop_right": 680,
                         "crop_bottom": 0,
                         "id": 1,
                         "group_item_backup": false,
                         "pos": {
-                            "x": 1009.0,
-                            "y": 139.0
+                            "x": 1029.0,
+                            "y": 141.0
                         },
                         "pos_rel": {
-                            "x": -0.37638887763023376,
-                            "y": -0.8069444298744202
+                            "x": -0.34861111640930176,
+                            "y": -0.8041666746139526
                         },
                         "scale": {
-                            "x": -1.0669643878936768,
-                            "y": 1.066666841506958
+                            "x": -0.5305397510528564,
+                            "y": 0.5305556058883667
                         },
                         "scale_rel": {
-                            "x": -0.8002232909202576,
-                            "y": 0.8000001311302185
+                            "x": -0.39790481328964233,
+                            "y": 0.39791667461395264
                         },
                         "bounds": {
                             "x": 0.0,
@@ -2367,12 +2612,12 @@
                         "id": 2,
                         "group_item_backup": false,
                         "pos": {
-                            "x": 1100.0,
-                            "y": 25.0
+                            "x": 1094.0,
+                            "y": 74.0
                         },
                         "pos_rel": {
-                            "x": -0.25,
-                            "y": -0.9652777910232544
+                            "x": -0.25833332538604736,
+                            "y": -0.8972622156143188
                         },
                         "scale": {
                             "x": 0.9243028163909912,
@@ -2642,20 +2887,20 @@
                         "id": 8,
                         "group_item_backup": false,
                         "pos": {
-                            "x": 1104.0,
-                            "y": 1120.0
+                            "x": 1094.0,
+                            "y": 1203.0
                         },
                         "pos_rel": {
-                            "x": -0.24444444477558136,
-                            "y": 0.5555555820465088
+                            "x": -0.25833332538604736,
+                            "y": 0.6708333492279053
                         },
                         "scale": {
-                            "x": 0.920499324798584,
-                            "y": 0.9205607771873474
+                            "x": 0.9283837080001831,
+                            "y": 0.9298893213272095
                         },
                         "scale_rel": {
-                            "x": 0.920499324798584,
-                            "y": 0.9205607771873474
+                            "x": 0.9283837080001831,
+                            "y": 0.9298893213272095
                         },
                         "bounds": {
                             "x": 0.0,
@@ -3360,8 +3605,8 @@
             "name": "Root2 9X16"
         }
     ],
-    "current_scene": "1 Full camera",
-    "current_program_scene": "1 Full camera",
+    "current_scene": "2 Escritorio y cam",
+    "current_program_scene": "2 Escritorio y cam",
     "canvases": [],
     "current_transition": "Desvanecimiento",
     "transition_duration": 300,
@@ -3392,9 +3637,9 @@
     "saved_projectors": [],
     "preview_locked": false,
     "scaling_enabled": true,
-    "scaling_level": -9,
-    "scaling_off_x": 32.12139129638672,
-    "scaling_off_y": -26.843828201293945,
+    "scaling_level": -10,
+    "scaling_off_x": 30.100440979003906,
+    "scaling_off_y": -25.154918670654297,
     "virtual-camera": {
         "type2": 3
     },

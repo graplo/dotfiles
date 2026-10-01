@@ -1,0 +1,41 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+  "logo": {
+    "type": "command-raw",
+    "source": "krabby random --no-title"
+  },
+  "modules": [
+    "title",
+    "separator",
+    "os",
+    "host",
+    "kernel",
+    "uptime",
+    "packages",
+    "shell",
+    "display",
+    "de",
+    "wm",
+    "wmtheme",
+    "theme",
+    "icons",
+    "font",
+    "cursor",
+    "terminal",
+    "terminalfont",
+    "cpu",
+    "gpu",
+    "memory",
+    "swap",
+    "disk",
+    "battery",
+    "poweradapter",
+    "localip",
+    "locale",
+    "break",
+    {
+      "type": "custom",
+      "format": "\u001b[38;2;241;250;140m󰐝 \u001b[38;2;189;147;249m󰐝 \u001b[38;2;139;233;253m󰐝 \u001b[38;2;255;121;198m󰐝 \u001b[38;2;255;184;108m󰐝 \u001b[38;2;80;250;123m󰐝 \u001b[38;2;98;114;164m󰐝"
+    }
+  ]
+}

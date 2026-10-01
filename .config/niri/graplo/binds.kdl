@@ -21,16 +21,20 @@ binds {
     // Mod+P         hotkey-overlay-title="Walker powerp"    { spawn "walker-powerprofile"; }
 
     // Noctalia
-    Mod+Space     hotkey-overlay-title="Noctalia Launcher"      { spawn-sh "noctalia msg panel-toggle launcher"; }
-    Mod+V         hotkey-overlay-title="Noctalia Clipboard"     { spawn-sh "noctalia msg panel-toggle clipboard"; }
-    Mod+Shift+C   hotkey-overlay-title="Noctalia Calculator"    { spawn-sh "noctalia msg panel-toggle launcher /calc"; }
-    Mod+semicolon hotkey-overlay-title="Noctalia Emoji"         { spawn-sh "noctalia msg panel-toggle launcher /emo"; }
-    Mod+Y         hotkey-overlay-title="Noctalia Wallpapers"    { spawn-sh "noctalia msg panel-toggle wallpaper"; }
-    Super+X       hotkey-overlay-title="Noctalia Session"       { spawn-sh "noctalia msg panel-toggle session"; }
-    Mod+P         hotkey-overlay-title="Noctalia Power Profile" { spawn-sh "noctalia msg power-cycle"; }
-    Mod+Alt+L     hotkey-overlay-title="Lock Screen"            { spawn-sh "noctalia msg session lock"; }
-    Mod+Comma     hotkey-overlay-title="Noctalia Settings"      { spawn-sh "noctalia msg settings-toggle"; }
-    Mod+slash     hotkey-overlay-title="Noctalia File Search"   { spawn-sh "noctalia msg panel-toggle nightwatch75/file-search:panel"; }
+    Mod+Space     hotkey-overlay-title="Noctalia Launcher"      { spawn "noctalia" "msg" "panel-toggle" "launcher"; }
+    Mod+V         hotkey-overlay-title="Noctalia Clipboard"     { spawn "noctalia" "msg" "panel-toggle" "clipboard"; }
+    Mod+Shift+C   hotkey-overlay-title="Noctalia Calculator"    { spawn "noctalia" "msg" "panel-toggle" "launcher" "/calc"; }
+    Mod+semicolon hotkey-overlay-title="Noctalia Emoji"         { spawn "noctalia" "msg" "panel-toggle" "launcher" "/emo"; }
+    Mod+Y         hotkey-overlay-title="Noctalia Wallpapers"    { spawn "noctalia" "msg" "panel-toggle" "wallpaper"; }
+    Super+X       hotkey-overlay-title="Noctalia Session"       { spawn "noctalia" "msg" "panel-toggle" "session"; }
+    Mod+P         hotkey-overlay-title="Noctalia Power Profile" { spawn "noctalia" "msg" "power-cycle"; }
+    Mod+Alt+L     hotkey-overlay-title="Lock Screen"            { spawn "noctalia" "msg" "session" "lock"; }
+    Mod+Comma     hotkey-overlay-title="Noctalia Settings"      { spawn "noctalia" "msg" "settings-toggle"; }
+    Mod+slash     hotkey-overlay-title="Noctalia File Search"   { spawn "noctalia" "msg" "panel-toggle" "nightwatch75/file-search:panel"; }
+
+    // Scratchpad dinámico (cualquier ventana enfocada)
+    // Mod+S { spawn "niri-scratchpad" "create" "1" "--as-float"; }
+    // Mod+Shift+S { spawn "niri-scratchpad" "delete" "1"; }
 
     // — rofi —
     // Mod+space     hotkey-overlay-title="Rofi Launcher" { spawn "rofi-launch" "drun"; }
@@ -63,10 +67,10 @@ binds {
     // Mod+N hotkey-overlay-title="Notificaciones" { spawn "swaync-client" "-t"; }
 
     // — Audio — Noctalia —
-    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "noctalia msg volume-up"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "noctalia msg volume-down"; }
-    XF86AudioMute        allow-when-locked=true { spawn-sh "noctalia msg volume-mute"; }
-    
+    XF86AudioRaiseVolume allow-when-locked=true { spawn "noctalia" "msg" "volume-up"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn "noctalia" "msg" "volume-down"; }
+    XF86AudioMute        allow-when-locked=true { spawn "noctalia" "msg" "volume-mute"; }    
+
     // — Audio (wpctl nativo PipeWire) — Y tambien swayOSD
     Mod+Ctrl+A hotkey-overlay-title="Wiremix"        { spawn "foot" "--title" "wiremix" "-e" "wiremix"; }
     // XF86AudioRaiseVolume allow-when-locked=true      { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ && wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print int($2*100)}' > /run/user/1000/wob.sock"; }

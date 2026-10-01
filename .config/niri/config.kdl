@@ -94,6 +94,14 @@ debug {
     honor-xdg-activation-with-invalid-serial
 }
 
+// Escritorios estáticos ordenados del 1 al 5
+// workspace "1"
+// workspace "2"
+// workspace "3"
+
+// — Scratchpad Workspace —
+// workspace "stash" { }
+
 // 1. Hace que el fondo de awww se quede estático en el backdrop
 // para ver el nombre del namespace es con: niri msg layers
 // layer-rule {
