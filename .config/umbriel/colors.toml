@@ -1,0 +1,27 @@
+[appearance]
+corner_radius = 0
+
+# [colors.border]
+# focused = "#BD93F9"
+# unfocused = "#6272A4"
+
+# [colors.tab_bar]
+# background = "#21222C"
+# text = "#6272A4"
+# active = "#BD93F9"
+# active_text = "#282A36"
+# active_unfocused = "#44475A"
+# active_unfocused_text = "#F8F8F2"
+# urgent = "#FF5555"
+# urgent_text = "#282A36"
+#
+
+[colors.tab_bar]
+background = "#282A36"
+text = "#6272A4"
+active = "#BD93F9"
+active_text = "#282A36"
+active_unfocused = "#44475A"
+active_unfocused_text = "#F8F8F2"
+urgent = "#FF5555"
+urgent_text = "#282A36"

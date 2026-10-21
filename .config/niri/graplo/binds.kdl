@@ -8,7 +8,7 @@ binds {
     Mod+T              hotkey-overlay-title="Open Terminal" { spawn "ghostty"; }
     Super+Return       hotkey-overlay-title="Open Terminal" { spawn "ghostty"; }
     Super+Shift+Return hotkey-overlay-title="Kitty"         { spawn "kitty"; }
-    Super+B            hotkey-overlay-title="Open Browser"  { spawn "brave-origin"; }
+    Super+B            hotkey-overlay-title="Open Browser"  { spawn "firefox"; }
     Super+Shift+O      hotkey-overlay-title="Open OBS"      { spawn "obs"; }
     Mod+Alt+F          hotkey-overlay-title="Files"         { spawn "nautilus"; }
 
@@ -198,7 +198,7 @@ binds {
     Mod+Ctrl+Home { move-column-to-first; }
     Mod+Ctrl+End  { move-column-to-last; }
 
-    // — Floating / Tiling —
+    // — Floating / Tiling — posible cambio
     Mod+Shift+T { toggle-window-floating; }
     Mod+Shift+V { switch-focus-between-floating-and-tiling; }
 

@@ -7,6 +7,8 @@ SETUVAR --export JAVA_TOOL_OPTIONS:\x2dDjdk\x2exml\x2etotalEntitySizeLimit\x3d0\
 SETUVAR __done_min_cmd_duration:10000
 SETUVAR __done_notification_urgency_level:low
 SETUVAR __fish_initialized:4300
+SETUVAR _fisher_dracula_2F_fish_files:\x7e/\x2econfig/fish/themes/Dracula\x20Official\x2etheme\x1e\x7e/\x2econfig/fish/conf\x2ed/dracula\x2efish
+SETUVAR _fisher_plugins:dracula/fish
 SETUVAR _fisher_upgraded_to_4_4:\x1d
 SETUVAR fish_user_paths:/home/graplo/go/bin\x1e/home/graplo/\x2enpm\x2dglobal/bin\x1e/home/graplo/\x2ecargo/bin\x1e/home/graplo/\x2elocal/bin
 SETUVAR pure_begin_prompt_with_current_directory:true

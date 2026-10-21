@@ -3,43 +3,60 @@ blur_intensity = 0.30999999307096004
 enabled = true
 tint_intensity = 0.19999999552965164
 
-[bar.default]
-capsule_radius = 0
-center = [ "media", "clock", "weather", "cat" ]
-end = [
-    "tray",
-    "notifications",
-    "clipboard",
-    "caffeine",
-    "speedtest-widget",
-    "bluetooth",
-    "network",
-    "volume",
-    "brightness",
-    "battery",
-    "session"
-]
-margin_ends = 0
-radius = 0
-start = [
-    "control-center",
-    "widget",
-    "widget_3",
-    "widget_2",
-    "keybinds",
-    "wallpaper",
-    "launcher",
-    "workspaces",
-    "active_window"
-]
-thickness = 32
-widget_spacing = 10
+[bar]
+order = [ "default" ]
+
+    [bar.default]
+    background_opacity = 0.80999998189508915
+    capsule_border = "on_secondary"
+    capsule_fill = "on_primary"
+    capsule_radius = 0
+    center = [ "media", "clock", "wallpaper", "weather", "cat" ]
+    contact_shadow = true
+    end = [
+        "tray",
+        "notifications",
+        "clipboard",
+        "caffeine",
+        "speedtest-widget",
+        "bluetooth",
+        "network",
+        "volume",
+        "brightness",
+        "battery",
+        "bar",
+        "session"
+    ]
+    font_scale = 0.9499999862164259
+    margin_ends = 0
+    radius = 0
+    shadow = false
+    start = [ "control-center", "widget", "launcher", "workspaces", "active_window" ]
+    thickness = 32
+    widget_spacing = 10
+
+        [bar.default.monitor.HDMI-A-1]
+        font_scale = 0.89999998733401299
+        padding = 7
+        scale = 0.90000000596046448
+        thickness = 23
 
 [brightness]
 enable_ddcutil = true
 
 [calendar]
 enabled = true
+
+[desktop_widgets]
+schema_version = 2
+widget_order = []
+
+    [desktop_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [desktop_widgets.widget]
 
 [dock]
 launcher_position = "start"
@@ -77,7 +94,7 @@ auto_locate = true
 [lockscreen_widgets]
 enabled = false
 schema_version = 2
-widget_order = [ "lockscreen-login-box@DP-2" ]
+widget_order = [ "lockscreen-login-box@HDMI-A-1", "lockscreen-login-box@DP-2" ]
 
     [lockscreen_widgets.grid]
     cell_size = 16
@@ -111,6 +128,33 @@ widget_order = [ "lockscreen-login-box@DP-2" ]
         show_unlock_hint = true
         show_weather = true
 
+    [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 960.0
+    cy = 898.0
+    output = "HDMI-A-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
 [plugin_settings."nightwatch75/file-search"]
 panel_open_near_click = false
 panel_placement = "floating"
@@ -123,7 +167,8 @@ enabled = [
     "nightwatch75/file-search",
     "kenn/keybind-cheatsheet",
     "nilsonlinux/speedtest-meter",
-    "samuelskovbakke/calculator-plus"
+    "samuelskovbakke/calculator-plus",
+    "noctalia/umbriel-companion"
 ]
 
 [shell]
@@ -132,17 +177,22 @@ avatar_path = "/var/lib/AccountsService/icons/graplo"
 corner_radius_scale = 0.0
 font_family = "Ubuntu"
 polkit_agent = true
+umbriel_overview_type_to_launch_enabled = true
 
     [shell.animation]
-    speed = 2.7000000402331352
+    speed = 2.8500000424683094
 
     [shell.launcher]
     show_app_actions = true
+    width = 700
 
         [shell.launcher.providers.emoji]
         global = true
 
     [shell.panel]
+    border_color = "#bd93f9"
+    border_width = 2.0
+    borders = true
     wallpaper_position = "center"
 
     [shell.screenshot]
@@ -150,31 +200,35 @@ polkit_agent = true
     directory = "/home/graplo/Pictures/Screenshots"
 
 [theme]
-builtin = "Ayu"
+builtin = "Tokyo-Night"
 community_palette = "Rose Pine Alt"
 custom_palette = "Dracula-Graplo2"
 mode = "dark"
+shell_mode = "dark"
 source = "custom"
 wallpaper_scheme = "m3-content"
 
     [theme.templates]
-    builtin_ids = [ "ghostty" ]
-    community_ids = [ "brave" ]
+    builtin_ids = [ "ghostty", "umbriel" ]
+    community_ids = [ "brave-origin" ]
 
 [wallpaper]
 directory = "/home/graplo/Imágenes/wallpapers"
 
     [wallpaper.default]
-    path = "/home/graplo/Imágenes/wallpapers/2-night-hawks.webp"
+    path = "/home/graplo/Imágenes/wallpapers/a_road_with_trees_and_a_mountain_in_the_background.png"
 
     [wallpaper.last]
-    path = "/home/graplo/Imágenes/wallpapers/2-night-hawks.webp"
+    path = "/home/graplo/Imágenes/wallpapers/a_road_with_trees_and_a_mountain_in_the_background.png"
 
     [wallpaper.monitors.DP-2]
-    path = "/home/graplo/Imágenes/wallpapers/2-night-hawks.webp"
+    path = "/home/graplo/Imágenes/wallpapers/a_road_with_trees_and_a_mountain_in_the_background.png"
+
+    [wallpaper.monitors.HDMI-A-1]
+    path = "/home/graplo/Imágenes/wallpapers/a_road_with_trees_and_a_mountain_in_the_background.png"
 
     [[wallpaper.favorite]]
-    custom_palette = "Dracula-Graplo"
+    custom_palette = "Dracula-Graplo2"
     palette_source = "custom"
     path = "/home/graplo/Imágenes/wallpapers/a_close_up_of_a_flower.png"
     theme_mode = "dark"
@@ -186,7 +240,7 @@ directory = "/home/graplo/Imágenes/wallpapers"
     theme_mode = "dark"
 
     [[wallpaper.favorite]]
-    custom_palette = "Dracula-Graplo"
+    custom_palette = "Dracula-Graplo2"
     palette_source = "custom"
     path = "/home/graplo/Imágenes/wallpapers/1-eyes-wide.webp"
     theme_mode = "dark"
@@ -194,12 +248,23 @@ directory = "/home/graplo/Imágenes/wallpapers"
     [[wallpaper.favorite]]
     custom_palette = "Dracula-Graplo2"
     palette_source = "custom"
-    path = "/home/graplo/Imágenes/wallpapers/2-wreakage.webp"
+    path = "/home/graplo/Imágenes/wallpapers/a_group_of_white_flowers_01.jpg"
     theme_mode = "dark"
 
     [[wallpaper.favorite]]
-    path = "/home/graplo/Imágenes/wallpapers/a_group_of_white_flowers_01.jpg"
-    theme_mode = "auto"
+    custom_palette = "Dracula-Graplo2"
+    palette_source = "custom"
+    path = "/home/graplo/Imágenes/wallpapers/1-on-pole.webp"
+    theme_mode = "dark"
+
+    [[wallpaper.favorite]]
+    custom_palette = "Dracula-Graplo2"
+    palette_source = "custom"
+    path = "/home/graplo/Imágenes/wallpapers/a_sunset_over_a_body_of_water_with_Marfa_lights_in_the_background.png"
+    theme_mode = "dark"
+
+[widget.bar]
+type = "noctalia/umbriel-companion:bar"
 
 [widget.cat]
 audio_spectrum = true
@@ -240,7 +305,7 @@ icon_color = "secondary"
 type = "nilsonlinux/speedtest-meter:speedtest-widget"
 
 [widget.wallpaper]
-enabled = false
+enabled = true
 
 [widget.weather]
 icon_color = "tertiary"
@@ -248,12 +313,6 @@ show_condition = false
 
 [widget.widget]
 type = "thepunkoff/pomodoro:widget"
-
-[widget.widget_2]
-type = "alexander/screen-toolkit:widget"
-
-[widget.widget_3]
-type = "oldirtty/color_picker:widget"
 
 [widget.workspaces]
 empty_color = "outline"

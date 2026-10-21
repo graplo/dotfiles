@@ -237,7 +237,7 @@
                     "flags": 0,
                     "volume": 1.0,
                     "balance": 0.5,
-                    "enabled": true,
+                    "enabled": false,
                     "muted": false,
                     "push-to-mute": false,
                     "push-to-mute-delay": 0,
@@ -311,7 +311,7 @@
             "versioned_id": "pipewire_audio_input_capture",
             "settings": {
                 "TargetName": "alsa_input.usb-MOTU_M2_M2MA070DWT-00.HiFi__Mic1__source",
-                "TargetId": 0
+                "TargetId": 57
             },
             "mixers": 193,
             "sync": 0,
@@ -342,7 +342,7 @@
             "id": "pipewire-screen-capture-source",
             "versioned_id": "pipewire-screen-capture-source",
             "settings": {
-                "RestoreToken": "f2yDVCJGXre2dkyW7nPORw"
+                "RestoreToken": "E94s7HR8wM1ywwzXwrK4Jw"
             },
             "mixers": 0,
             "sync": 0,
@@ -396,7 +396,7 @@
             "settings": {
                 "TargetName": "firefox"
             },
-            "mixers": 194,
+            "mixers": 196,
             "sync": 0,
             "flags": 0,
             "volume": 1.0,
@@ -425,7 +425,7 @@
             "id": "pipewire-screen-capture-source",
             "versioned_id": "pipewire-screen-capture-source",
             "settings": {
-                "RestoreToken": "aCpVsvtE_VxTUH_iir_h9g"
+                "RestoreToken": "GFA4_iyHXw0GnLhJkPS5kg"
             },
             "mixers": 0,
             "sync": 0,
@@ -541,7 +541,7 @@
                 "TargetName": "alsa_output.usb-MOTU_M2_M2MA070DWT-00.HiFi__Line__sink",
                 "TargetId": 0
             },
-            "mixers": 196,
+            "mixers": 194,
             "sync": 0,
             "flags": 0,
             "volume": 1.0,
@@ -570,7 +570,7 @@
             "id": "pipewire-screen-capture-source",
             "versioned_id": "pipewire-screen-capture-source",
             "settings": {
-                "RestoreToken": "Hz6xJ2HEPnivTASXyt992A"
+                "RestoreToken": "WJwYYa0XTdoCLYSLWLSA_g"
             },
             "mixers": 0,
             "sync": 0,
@@ -825,11 +825,11 @@
                         "id": 1,
                         "group_item_backup": true,
                         "pos": {
-                            "x": 2343.0,
+                            "x": 1883.476806640625,
                             "y": 177.1359100341797
                         },
                         "pos_rel": {
-                            "x": 1.476388931274414,
+                            "x": 0.8381622433662415,
                             "y": -0.75397789478302
                         },
                         "scale": {
@@ -880,11 +880,11 @@
                         "id": 3,
                         "group_item_backup": true,
                         "pos": {
-                            "x": 251.17483520507812,
+                            "x": -208.34841918945312,
                             "y": -169.9547119140625
                         },
                         "pos_rel": {
-                            "x": -1.4289238452911377,
+                            "x": -2.067150592803955,
                             "y": -1.2360482215881348
                         },
                         "scale": {
@@ -935,11 +935,11 @@
                         "id": 2,
                         "group_item_backup": false,
                         "pos": {
-                            "x": 98.0002670288086,
+                            "x": -361.52288818359375,
                             "y": -169.9547119140625
                         },
                         "pos_rel": {
-                            "x": -1.641666293144226,
+                            "x": -2.279892921447754,
                             "y": -1.2360482215881348
                         },
                         "scale": {
@@ -1026,12 +1026,12 @@
                         "id": 2,
                         "group_item_backup": true,
                         "pos": {
-                            "x": 10.99996566772461,
-                            "y": -1.3190460205078125
+                            "x": 36.93688201904297,
+                            "y": 0.0
                         },
                         "pos_rel": {
-                            "x": -1.7625000476837158,
-                            "y": -1.0018320083618164
+                            "x": -1.7264765501022339,
+                            "y": -1.0
                         },
                         "scale": {
                             "x": 0.99609375,
@@ -1081,12 +1081,12 @@
                         "id": 1,
                         "group_item_backup": false,
                         "pos": {
-                            "x": 10.99996566772461,
-                            "y": -1.3190460205078125
+                            "x": 36.93688201904297,
+                            "y": 0.0
                         },
                         "pos_rel": {
-                            "x": -1.7625000476837158,
-                            "y": -1.0018320083618164
+                            "x": -1.7264765501022339,
+                            "y": -1.0
                         },
                         "scale": {
                             "x": 0.6596243977546692,
@@ -1667,7 +1667,7 @@
             "id": "scene",
             "versioned_id": "scene",
             "settings": {
-                "id_counter": 8,
+                "id_counter": 11,
                 "custom_size": false,
                 "items": [
                     {
@@ -1746,20 +1746,20 @@
                         "id": 2,
                         "group_item_backup": false,
                         "pos": {
-                            "x": 448.0,
-                            "y": 85.5
+                            "x": 301.0,
+                            "y": 72.0
                         },
                         "pos_rel": {
-                            "x": -1.1555556058883667,
-                            "y": -0.8812500238418579
+                            "x": -1.3597222566604614,
+                            "y": -0.8999999761581421
                         },
                         "scale": {
-                            "x": 0.824999988079071,
-                            "y": 0.824999988079071
+                            "x": 0.8514150977134705,
+                            "y": 0.8517192602157593
                         },
                         "scale_rel": {
-                            "x": 0.6187499761581421,
-                            "y": 0.6187499761581421
+                            "x": 0.6385613083839417,
+                            "y": 0.6387894153594971
                         },
                         "bounds": {
                             "x": 0.0,
@@ -1783,7 +1783,7 @@
                     {
                         "name": "Root2 9X16",
                         "source_uuid": "537d20fd-68e7-4786-98fe-09d07c8893e1",
-                        "visible": true,
+                        "visible": false,
                         "locked": false,
                         "rot": 0.0,
                         "scale_ref": {
@@ -1801,12 +1801,12 @@
                         "id": 4,
                         "group_item_backup": false,
                         "pos": {
-                            "x": -448.0,
-                            "y": 249.5
+                            "x": -444.0,
+                            "y": 253.5
                         },
                         "pos_rel": {
-                            "x": -2.4000000953674316,
-                            "y": -0.6534721851348877
+                            "x": -2.394444465637207,
+                            "y": -0.6479166746139526
                         },
                         "scale": {
                             "x": 0.5249999761581421,
@@ -1946,14 +1946,14 @@
                         "private_settings": {}
                     },
                     {
-                        "name": "Captura de salida de audio (PipeWire)",
-                        "source_uuid": "d9d99aa0-eebd-44cf-807f-1a005453dfb7",
+                        "name": "Audifonos audio",
+                        "source_uuid": "fbd676c6-109f-4812-bdf6-33d0ff893909",
                         "visible": true,
                         "locked": false,
                         "rot": 0.0,
                         "scale_ref": {
-                            "x": 1920.0,
-                            "y": 1080.0
+                            "x": 2560.0,
+                            "y": 1440.0
                         },
                         "align": 5,
                         "bounds_type": 0,
@@ -1963,7 +1963,7 @@
                         "crop_top": 0,
                         "crop_right": 0,
                         "crop_bottom": 0,
-                        "id": 8,
+                        "id": 11,
                         "group_item_backup": false,
                         "pos": {
                             "x": 0.0,
@@ -1974,8 +1974,8 @@
                             "y": -1.0
                         },
                         "scale": {
-                            "x": 1.3333333730697632,
-                            "y": 1.3333333730697632
+                            "x": 1.0,
+                            "y": 1.0
                         },
                         "scale_rel": {
                             "x": 1.0,
@@ -1990,6 +1990,61 @@
                             "y": 0.0
                         },
                         "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 300
+                        },
+                        "hide_transition": {
+                            "duration": 300
+                        },
+                        "private_settings": {}
+                    },
+                    {
+                        "name": "logi de video (V4L2)",
+                        "source_uuid": "b57ceb95-8156-40a6-9582-a489e5895870",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "scale_ref": {
+                            "x": 2560.0,
+                            "y": 1440.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds_crop": false,
+                        "crop_left": 529,
+                        "crop_top": 0,
+                        "crop_right": 850,
+                        "crop_bottom": 0,
+                        "id": 9,
+                        "group_item_backup": false,
+                        "pos": {
+                            "x": 554.0,
+                            "y": 896.0
+                        },
+                        "pos_rel": {
+                            "x": -1.0083333253860474,
+                            "y": 0.24444448947906494
+                        },
+                        "scale": {
+                            "x": -0.20234374701976776,
+                            "y": 0.2023148089647293
+                        },
+                        "scale_rel": {
+                            "x": -0.20234374701976776,
+                            "y": 0.2023148089647293
+                        },
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_rel": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "scale_filter": "lanczos",
                         "blend_method": "default",
                         "blend_type": "normal",
                         "show_transition": {
@@ -2030,8 +2085,10 @@
                 "libobs.hide_scene_item.6": [],
                 "libobs.show_scene_item.7": [],
                 "libobs.hide_scene_item.7": [],
-                "libobs.show_scene_item.8": [],
-                "libobs.hide_scene_item.8": []
+                "libobs.show_scene_item.11": [],
+                "libobs.hide_scene_item.11": [],
+                "libobs.show_scene_item.9": [],
+                "libobs.hide_scene_item.9": []
             },
             "deinterlace_mode": 0,
             "deinterlace_field_order": 0,
@@ -2125,12 +2182,12 @@
                         "id": 7,
                         "group_item_backup": false,
                         "pos": {
-                            "x": -110.0,
-                            "y": 857.0
+                            "x": 0.0,
+                            "y": 860.0
                         },
                         "pos_rel": {
-                            "x": -1.9305555820465088,
-                            "y": 0.1902778148651123
+                            "x": -1.7777777910232544,
+                            "y": 0.1944444179534912
                         },
                         "scale": {
                             "x": 0.30859375,
@@ -2392,12 +2449,12 @@
                         "id": 7,
                         "group_item_backup": false,
                         "pos": {
-                            "x": 0.0,
-                            "y": 0.0
+                            "x": 1559.0,
+                            "y": -119.0
                         },
                         "pos_rel": {
-                            "x": -1.7777777910232544,
-                            "y": -1.0
+                            "x": 0.38749998807907104,
+                            "y": -1.1652777194976807
                         },
                         "scale": {
                             "x": 0.6666666865348816,
@@ -2430,7 +2487,7 @@
                         "name": "Imagen 2",
                         "source_uuid": "4311b7bf-8805-431c-9cfb-c14e25f4c142",
                         "visible": true,
-                        "locked": false,
+                        "locked": true,
                         "rot": 0.0,
                         "scale_ref": {
                             "x": 2560.0,
@@ -2502,20 +2559,20 @@
                         "id": 9,
                         "group_item_backup": false,
                         "pos": {
-                            "x": 0.0,
-                            "y": 0.0
+                            "x": 1555.0,
+                            "y": 36.0
                         },
                         "pos_rel": {
-                            "x": -1.7777777910232544,
-                            "y": -1.0
+                            "x": 0.3819444477558136,
+                            "y": -0.949999988079071
                         },
                         "scale": {
-                            "x": 1.3778337240219116,
-                            "y": 1.3775601387023926
+                            "x": 1.2317380905151367,
+                            "y": 1.2315226793289185
                         },
                         "scale_rel": {
-                            "x": 1.3778337240219116,
-                            "y": 1.3775601387023926
+                            "x": 1.2317380905151367,
+                            "y": 1.2315226793289185
                         },
                         "bounds": {
                             "x": 0.0,
@@ -2557,20 +2614,20 @@
                         "id": 1,
                         "group_item_backup": false,
                         "pos": {
-                            "x": 1029.0,
-                            "y": 141.0
+                            "x": 2462.0,
+                            "y": 173.0
                         },
                         "pos_rel": {
-                            "x": -0.34861111640930176,
-                            "y": -0.8041666746139526
+                            "x": 1.6416666507720947,
+                            "y": -0.7597222328186035
                         },
                         "scale": {
-                            "x": -0.5305397510528564,
-                            "y": 0.5305556058883667
+                            "x": -0.4606866240501404,
+                            "y": 0.46064814925193787
                         },
                         "scale_rel": {
-                            "x": -0.39790481328964233,
-                            "y": 0.39791667461395264
+                            "x": -0.3455149531364441,
+                            "y": 0.3454861044883728
                         },
                         "bounds": {
                             "x": 0.0,
@@ -2612,20 +2669,20 @@
                         "id": 2,
                         "group_item_backup": false,
                         "pos": {
-                            "x": 1094.0,
-                            "y": 74.0
+                            "x": 24.0,
+                            "y": 34.0
                         },
                         "pos_rel": {
-                            "x": -0.25833332538604736,
-                            "y": -0.8972622156143188
+                            "x": -1.744444489479065,
+                            "y": -0.9527778029441833
                         },
                         "scale": {
-                            "x": 0.9243028163909912,
-                            "y": 0.9246894717216492
+                            "x": 0.9894667863845825,
+                            "y": 0.9896995425224304
                         },
                         "scale_rel": {
-                            "x": 0.6932271122932434,
-                            "y": 0.6935170888900757
+                            "x": 0.7421000599861145,
+                            "y": 0.7422746419906616
                         },
                         "bounds": {
                             "x": 0.0,
@@ -2667,12 +2724,12 @@
                         "id": 3,
                         "group_item_backup": false,
                         "pos": {
-                            "x": 472.0,
-                            "y": 1244.0
+                            "x": 2031.0,
+                            "y": 1125.0
                         },
                         "pos_rel": {
-                            "x": -1.1222221851348877,
-                            "y": 0.7277777194976807
+                            "x": 1.043055534362793,
+                            "y": 0.5625
                         },
                         "scale": {
                             "x": 0.220703125,
@@ -2887,20 +2944,20 @@
                         "id": 8,
                         "group_item_backup": false,
                         "pos": {
-                            "x": 1094.0,
+                            "x": 48.0,
                             "y": 1203.0
                         },
                         "pos_rel": {
-                            "x": -0.25833332538604736,
+                            "x": -1.711111068725586,
                             "y": 0.6708333492279053
                         },
                         "scale": {
-                            "x": 0.9283837080001831,
-                            "y": 0.9298893213272095
+                            "x": 0.9618169665336609,
+                            "y": 0.9622641801834106
                         },
                         "scale_rel": {
-                            "x": 0.9283837080001831,
-                            "y": 0.9298893213272095
+                            "x": 0.9618169665336609,
+                            "y": 0.9622641801834106
                         },
                         "bounds": {
                             "x": 0.0,
@@ -3375,11 +3432,11 @@
                         "id": 3,
                         "group_item_backup": false,
                         "pos": {
-                            "x": 261.9999694824219,
+                            "x": 261.9997863769531,
                             "y": 0.0
                         },
                         "pos_rel": {
-                            "x": -1.413888931274414,
+                            "x": -1.4138891696929932,
                             "y": -1.0
                         },
                         "scale": {
@@ -3605,8 +3662,8 @@
             "name": "Root2 9X16"
         }
     ],
-    "current_scene": "2 Escritorio y cam",
-    "current_program_scene": "2 Escritorio y cam",
+    "current_scene": "1 Full camera",
+    "current_program_scene": "1 Full camera",
     "canvases": [],
     "current_transition": "Desvanecimiento",
     "transition_duration": 300,
@@ -3637,9 +3694,9 @@
     "saved_projectors": [],
     "preview_locked": false,
     "scaling_enabled": true,
-    "scaling_level": -10,
-    "scaling_off_x": 30.100440979003906,
-    "scaling_off_y": -25.154918670654297,
+    "scaling_level": -11,
+    "scaling_off_x": 28.20662498474121,
+    "scaling_off_y": 0.0,
     "virtual-camera": {
         "type2": 3
     },

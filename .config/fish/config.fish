@@ -1,21 +1,20 @@
 source /usr/share/cachyos-fish-config/cachyos-config.fish
 
-# overwrite greeting
-# potentially disabling fastfetch
-#function fish_greeting
-#    # smth smth
-#end
 # Rutas
 fish_add_path $HOME/.local/bin $HOME/.cargo/bin $HOME/.npm-global/bin $HOME/go/bin
 
-if status is-interactive
-    fish_config theme choose Dracula
-    zoxide init fish | source
-    if set -q GHOSTTY_RESOURCES_DIR
-        source "$GHOSTTY_RESOURCES_DIR/shell-integration/fish/vendor_conf.d/ghostty-shell-integration.fish"
-    end
+# Variables de entorno
+set -gx EDITOR helix
+set -gx VISUAL helix
+set -gx QT_QPA_PLATFORMTHEME gtk3
+set -gx BAT_THEME Dracula
+set -Ux FZF_DEFAULT_OPTS_FILE ~/.config/fzf/fzf.conf
+
+# Desactivar el saludo/fastfetch de CachyOS
+function fish_greeting
 end
 
+# Función para Yazi (cambio de directorio al salir)
 function y
     set tmp (mktemp -t "yazi-cwd.XXXXXX")
     command yazi $argv --cwd-file="$tmp"
@@ -25,31 +24,13 @@ function y
     rm -f -- "$tmp"
 end
 
-starship init fish | source
+# Configuración interactiva
+if status is-interactive
+    # Aplica Dracula Official en cada nueva sesión interactiva,
+    # asegurando que CachyOS no restablezca sus propios colores.
+    fish_config theme choose "Dracula Official"
 
-set -gx QT_QPA_PLATFORMTHEME gtk3
-
-set -x EDITOR helix
-set -x VISUAL helix
-
-set -gx BAT_THEME Dracula
-
-# Para FZF
-set -Ux FZF_DEFAULT_OPTS_FILE ~/.config/fzf/fzf.conf
-# Para vivid environment variable that controls the colorized output of ls, tree, fd, bfs, dust and many other tools.
-set -x LS_COLORS (vivid generate dracula)
-
-# para q este numerado los terminales, y con echo el texto q quieras
-# if status is-interactive
-#     set_color bd93f9
-#     set count (niri msg windows | grep "com.mitchellh.ghostty" | wc -l)
-#     echo "# $count - fish" | figlet
-#     set_color normal
-# end
-
-# Para tener VIM en la terminal
-# fish_vi_key_bindings
-
-# para q no salga el fastfech de cachyos al comienzo
-function fish_greeting
+    set -gx LS_COLORS (vivid generate dracula)
+    zoxide init fish | source
+    starship init fish | source
 end
