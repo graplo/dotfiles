@@ -29,7 +29,22 @@ active_unfocused_text = "#f8f8f2FF"
 urgent = "#ff5555FF"
 urgent_text = "#f8f8f2FF"
 
+[colors.title_bar]
+background = "#333645FF"
+background_unfocused = "#282a36FF"
+text = "#f8f8f2FF"
+text_unfocused = "#f8f8f2FF"
+close = "#ff5555FF"
+close_glyph = "#f8f8f2FF"
+close_glyph_hover = "#f8f8f2FF"
+maximize = "#bd93f9FF"
+maximize_glyph = "#282a36FF"
+maximize_glyph_hover = "#282a36FF"
+minimize = "#ff79c6FF"
+minimize_glyph = "#44475aFF"
+minimize_glyph_hover = "#44475aFF"
+
 [[window_rule]]
 match.is_scratchpad = true
 border_color_focused = "#8be9fdFF"
-border_color_unfocused = "#03aed2FF"
+border_color_unfocused = "#456371FF"

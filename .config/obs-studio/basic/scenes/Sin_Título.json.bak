@@ -2,7 +2,7 @@
     "name": "Sin Título",
     "sources": [
         {
-            "prev_ver": 537001986,
+            "prev_ver": 553648128,
             "name": "Captura de pantalla (PipeWire)",
             "uuid": "91e245fc-e6f9-4dec-8fd3-c1933963342a",
             "id": "pipewire-screen-capture-source",
@@ -25,22 +25,23 @@
             "deinterlace_mode": 0,
             "deinterlace_field_order": 0,
             "monitoring_type": 0,
+            "monitoring_enabled": false,
             "private_settings": {}
         },
         {
-            "prev_ver": 537001986,
+            "prev_ver": 553648128,
             "name": "logi de video (V4L2)",
             "uuid": "b57ceb95-8156-40a6-9582-a489e5895870",
             "id": "v4l2_input",
             "versioned_id": "v4l2_input",
             "settings": {
                 "device_id": "/dev/video0",
-                "Power Line Frequency": 0,
                 "input": 0,
                 "pixelformat": 861030210,
                 "resolution": 16492674418800,
                 "framerate": 30,
-                "color_range": 2
+                "color_range": 2,
+                "Power Line Frequency": 0
             },
             "mixers": 0,
             "sync": 0,
@@ -57,10 +58,11 @@
             "deinterlace_mode": 0,
             "deinterlace_field_order": 0,
             "monitoring_type": 0,
+            "monitoring_enabled": false,
             "private_settings": {},
             "filters": [
                 {
-                    "prev_ver": 537001986,
+                    "prev_ver": 553648128,
                     "name": "fiji",
                     "uuid": "47b8043e-6b9b-472d-9e53-10aa1a4f70a8",
                     "id": "clut_filter",
@@ -84,24 +86,25 @@
                     "deinterlace_mode": 0,
                     "deinterlace_field_order": 0,
                     "monitoring_type": 0,
+                    "monitoring_enabled": false,
                     "private_settings": {}
                 },
                 {
-                    "prev_ver": 537001986,
+                    "prev_ver": 553648128,
                     "name": "kodak potra 160",
                     "uuid": "f16efd4e-7dab-4d6d-9604-a9c2ba20ece2",
                     "id": "clut_filter",
                     "versioned_id": "clut_filter",
                     "settings": {
                         "image_path": "/home/graplo/Imágenes/OBS/LUT_pack/graplo_obs_luts/color/kodak/obs_Kodak Portra 160 1 -.png",
-                        "clut_amount": 0.8705
+                        "clut_amount": 0.8111
                     },
                     "mixers": 0,
                     "sync": 0,
                     "flags": 0,
                     "volume": 1.0,
                     "balance": 0.5,
-                    "enabled": false,
+                    "enabled": true,
                     "muted": false,
                     "push-to-mute": false,
                     "push-to-mute-delay": 0,
@@ -111,10 +114,11 @@
                     "deinterlace_mode": 0,
                     "deinterlace_field_order": 0,
                     "monitoring_type": 0,
+                    "monitoring_enabled": false,
                     "private_settings": {}
                 },
                 {
-                    "prev_ver": 537001986,
+                    "prev_ver": 553648128,
                     "name": "afga vista 200",
                     "uuid": "88dd492d-d6a0-4077-872e-99308c7b8a89",
                     "id": "clut_filter",
@@ -137,10 +141,11 @@
                     "deinterlace_mode": 0,
                     "deinterlace_field_order": 0,
                     "monitoring_type": 0,
+                    "monitoring_enabled": false,
                     "private_settings": {}
                 },
                 {
-                    "prev_ver": 537001986,
+                    "prev_ver": 553648128,
                     "name": "polaroid px 70",
                     "uuid": "9fdaebcb-2603-44c1-926a-9e0f6fdc2ae2",
                     "id": "clut_filter",
@@ -164,10 +169,11 @@
                     "deinterlace_mode": 0,
                     "deinterlace_field_order": 0,
                     "monitoring_type": 0,
+                    "monitoring_enabled": false,
                     "private_settings": {}
                 },
                 {
-                    "prev_ver": 537001986,
+                    "prev_ver": 553648128,
                     "name": "kodak 2",
                     "uuid": "c27a8547-a7eb-4afc-9589-2e0557f5ff1f",
                     "id": "clut_filter",
@@ -180,7 +186,7 @@
                     "flags": 0,
                     "volume": 1.0,
                     "balance": 0.5,
-                    "enabled": true,
+                    "enabled": false,
                     "muted": false,
                     "push-to-mute": false,
                     "push-to-mute-delay": 0,
@@ -190,10 +196,11 @@
                     "deinterlace_mode": 0,
                     "deinterlace_field_order": 0,
                     "monitoring_type": 0,
+                    "monitoring_enabled": false,
                     "private_settings": {}
                 },
                 {
-                    "prev_ver": 537001986,
+                    "prev_ver": 553648128,
                     "name": "polaroid px-680",
                     "uuid": "e79e3506-ab1a-496a-a741-9eea2b33a8b2",
                     "id": "clut_filter",
@@ -217,10 +224,11 @@
                     "deinterlace_mode": 0,
                     "deinterlace_field_order": 0,
                     "monitoring_type": 0,
+                    "monitoring_enabled": false,
                     "private_settings": {}
                 },
                 {
-                    "prev_ver": 537001986,
+                    "prev_ver": 553648128,
                     "name": "Corrección de color",
                     "uuid": "c32d3fe9-da7f-445b-9180-fce92622712c",
                     "id": "color_filter",
@@ -247,10 +255,11 @@
                     "deinterlace_mode": 0,
                     "deinterlace_field_order": 0,
                     "monitoring_type": 0,
+                    "monitoring_enabled": false,
                     "private_settings": {}
                 },
                 {
-                    "prev_ver": 537001986,
+                    "prev_ver": 553648128,
                     "name": "Filtro de enfoque",
                     "uuid": "a4df14d0-2444-435b-9c20-11556639b590",
                     "id": "sharpness_filter",
@@ -273,12 +282,13 @@
                     "deinterlace_mode": 0,
                     "deinterlace_field_order": 0,
                     "monitoring_type": 0,
+                    "monitoring_enabled": false,
                     "private_settings": {}
                 }
             ]
         },
         {
-            "prev_ver": 537001986,
+            "prev_ver": 553648128,
             "name": "circulo",
             "uuid": "69d4cd3d-be38-426e-9f4a-f045a0f456ca",
             "id": "image_source",
@@ -301,17 +311,18 @@
             "deinterlace_mode": 0,
             "deinterlace_field_order": 0,
             "monitoring_type": 0,
+            "monitoring_enabled": false,
             "private_settings": {}
         },
         {
-            "prev_ver": 537001986,
+            "prev_ver": 553648128,
             "name": "Captura de entrada de audio (PipeWire)",
             "uuid": "61f48c53-52f2-42c4-a5e5-45c4b2832a4c",
             "id": "pipewire_audio_input_capture",
             "versioned_id": "pipewire_audio_input_capture",
             "settings": {
                 "TargetName": "alsa_input.usb-MOTU_M2_M2MA070DWT-00.HiFi__Mic1__source",
-                "TargetId": 57
+                "TargetId": 0
             },
             "mixers": 193,
             "sync": 0,
@@ -327,16 +338,73 @@
             "hotkeys": {
                 "libobs.mute": [],
                 "libobs.unmute": [],
+                "libobs.monitor-on": [],
+                "libobs.monitor-off": [],
                 "libobs.push-to-mute": [],
                 "libobs.push-to-talk": []
             },
             "deinterlace_mode": 0,
             "deinterlace_field_order": 0,
             "monitoring_type": 0,
-            "private_settings": {}
+            "monitoring_enabled": false,
+            "private_settings": {},
+            "filters": [
+                {
+                    "prev_ver": 553648128,
+                    "name": "Eliminación de ruido",
+                    "uuid": "a9782e73-3cd7-41c3-95ff-cfbe3b17ac4a",
+                    "id": "noise_suppress_filter",
+                    "versioned_id": "noise_suppress_filter_v2",
+                    "settings": {},
+                    "mixers": 255,
+                    "sync": 0,
+                    "flags": 0,
+                    "volume": 1.0,
+                    "balance": 0.5,
+                    "enabled": true,
+                    "muted": false,
+                    "push-to-mute": false,
+                    "push-to-mute-delay": 0,
+                    "push-to-talk": false,
+                    "push-to-talk-delay": 0,
+                    "hotkeys": {},
+                    "deinterlace_mode": 0,
+                    "deinterlace_field_order": 0,
+                    "monitoring_type": 0,
+                    "monitoring_enabled": false,
+                    "private_settings": {}
+                },
+                {
+                    "prev_ver": 553648128,
+                    "name": "Ganancia",
+                    "uuid": "ee6ced3e-5adb-47a5-b127-9da33d6fe977",
+                    "id": "gain_filter",
+                    "versioned_id": "gain_filter",
+                    "settings": {
+                        "db": 0.9
+                    },
+                    "mixers": 255,
+                    "sync": 0,
+                    "flags": 0,
+                    "volume": 1.0,
+                    "balance": 0.5,
+                    "enabled": true,
+                    "muted": false,
+                    "push-to-mute": false,
+                    "push-to-mute-delay": 0,
+                    "push-to-talk": false,
+                    "push-to-talk-delay": 0,
+                    "hotkeys": {},
+                    "deinterlace_mode": 0,
+                    "deinterlace_field_order": 0,
+                    "monitoring_type": 0,
+                    "monitoring_enabled": false,
+                    "private_settings": {}
+                }
+            ]
         },
         {
-            "prev_ver": 537001986,
+            "prev_ver": 553648128,
             "name": "Captura de pantalla (PipeWire) 2",
             "uuid": "59998ea1-4cab-40c5-8dcf-578bfe39e7c5",
             "id": "pipewire-screen-capture-source",
@@ -359,10 +427,11 @@
             "deinterlace_mode": 0,
             "deinterlace_field_order": 0,
             "monitoring_type": 0,
+            "monitoring_enabled": false,
             "private_settings": {}
         },
         {
-            "prev_ver": 537001986,
+            "prev_ver": 553648128,
             "name": "fondo",
             "uuid": "de1b8087-9c16-458e-b74f-aa78292885b3",
             "id": "image_source",
@@ -385,10 +454,11 @@
             "deinterlace_mode": 0,
             "deinterlace_field_order": 0,
             "monitoring_type": 0,
+            "monitoring_enabled": false,
             "private_settings": {}
         },
         {
-            "prev_ver": 537001986,
+            "prev_ver": 553648128,
             "name": "YT (PipeWire)",
             "uuid": "5ff14f60-df80-46ae-8275-485da56708b5",
             "id": "pipewire_audio_application_capture",
@@ -410,22 +480,25 @@
             "hotkeys": {
                 "libobs.mute": [],
                 "libobs.unmute": [],
+                "libobs.monitor-on": [],
+                "libobs.monitor-off": [],
                 "libobs.push-to-mute": [],
                 "libobs.push-to-talk": []
             },
             "deinterlace_mode": 0,
             "deinterlace_field_order": 0,
             "monitoring_type": 0,
+            "monitoring_enabled": false,
             "private_settings": {}
         },
         {
-            "prev_ver": 537001986,
+            "prev_ver": 553648128,
             "name": "Captura de pantalla (PipeWire) 3",
             "uuid": "e34f708f-de51-4290-b891-c8c6826cf3a6",
             "id": "pipewire-screen-capture-source",
             "versioned_id": "pipewire-screen-capture-source",
             "settings": {
-                "RestoreToken": "GFA4_iyHXw0GnLhJkPS5kg"
+                "RestoreToken": "oLZukVi8pF5oyHrGh0PV0A"
             },
             "mixers": 0,
             "sync": 0,
@@ -442,10 +515,11 @@
             "deinterlace_mode": 0,
             "deinterlace_field_order": 0,
             "monitoring_type": 0,
+            "monitoring_enabled": false,
             "private_settings": {},
             "filters": [
                 {
-                    "prev_ver": 537001986,
+                    "prev_ver": 553648128,
                     "name": "Sombra",
                     "uuid": "816cdaa0-3de7-4a3e-bf21-14d810cf8eb7",
                     "id": "obs_shadow_filter",
@@ -469,12 +543,13 @@
                     "deinterlace_mode": 0,
                     "deinterlace_field_order": 0,
                     "monitoring_type": 0,
+                    "monitoring_enabled": false,
                     "private_settings": {}
                 }
             ]
         },
         {
-            "prev_ver": 537001986,
+            "prev_ver": 553648128,
             "name": "logoGraplo",
             "uuid": "04bf2c08-147f-46e2-8960-e7ab077df21a",
             "id": "image_source",
@@ -497,10 +572,11 @@
             "deinterlace_mode": 0,
             "deinterlace_field_order": 0,
             "monitoring_type": 0,
+            "monitoring_enabled": false,
             "private_settings": {}
         },
         {
-            "prev_ver": 537001986,
+            "prev_ver": 553648128,
             "name": "Captura de salida de audio (PipeWire)",
             "uuid": "d9d99aa0-eebd-44cf-807f-1a005453dfb7",
             "id": "pipewire_audio_output_capture",
@@ -523,16 +599,19 @@
             "hotkeys": {
                 "libobs.mute": [],
                 "libobs.unmute": [],
+                "libobs.monitor-on": [],
+                "libobs.monitor-off": [],
                 "libobs.push-to-mute": [],
                 "libobs.push-to-talk": []
             },
             "deinterlace_mode": 0,
             "deinterlace_field_order": 0,
             "monitoring_type": 0,
+            "monitoring_enabled": false,
             "private_settings": {}
         },
         {
-            "prev_ver": 537001986,
+            "prev_ver": 553648128,
             "name": "Audifonos audio",
             "uuid": "fbd676c6-109f-4812-bdf6-33d0ff893909",
             "id": "pipewire_audio_output_capture",
@@ -555,22 +634,25 @@
             "hotkeys": {
                 "libobs.mute": [],
                 "libobs.unmute": [],
+                "libobs.monitor-on": [],
+                "libobs.monitor-off": [],
                 "libobs.push-to-mute": [],
                 "libobs.push-to-talk": []
             },
             "deinterlace_mode": 0,
             "deinterlace_field_order": 0,
             "monitoring_type": 0,
+            "monitoring_enabled": false,
             "private_settings": {}
         },
         {
-            "prev_ver": 537001986,
+            "prev_ver": 553648128,
             "name": "Captura de pantalla (PipeWire) 4",
             "uuid": "313d81ce-75b8-4fb1-bc9d-fae4e3bbdfe5",
             "id": "pipewire-screen-capture-source",
             "versioned_id": "pipewire-screen-capture-source",
             "settings": {
-                "RestoreToken": "WJwYYa0XTdoCLYSLWLSA_g"
+                "RestoreToken": "UfNv7s9EVPMv1Boq_iKmTg"
             },
             "mixers": 0,
             "sync": 0,
@@ -587,10 +669,11 @@
             "deinterlace_mode": 0,
             "deinterlace_field_order": 0,
             "monitoring_type": 0,
+            "monitoring_enabled": false,
             "private_settings": {}
         },
         {
-            "prev_ver": 537001986,
+            "prev_ver": 553648128,
             "name": "Imagen",
             "uuid": "ba2fae6d-6a97-4237-8485-bf134cd122a6",
             "id": "image_source",
@@ -613,10 +696,11 @@
             "deinterlace_mode": 0,
             "deinterlace_field_order": 0,
             "monitoring_type": 0,
+            "monitoring_enabled": false,
             "private_settings": {},
             "filters": [
                 {
-                    "prev_ver": 537001986,
+                    "prev_ver": 553648128,
                     "name": "Sombra",
                     "uuid": "4babac63-afa1-4a2f-9b05-4cfffd88a6f3",
                     "id": "obs_shadow_filter",
@@ -640,12 +724,13 @@
                     "deinterlace_mode": 0,
                     "deinterlace_field_order": 0,
                     "monitoring_type": 0,
+                    "monitoring_enabled": false,
                     "private_settings": {}
                 }
             ]
         },
         {
-            "prev_ver": 537001986,
+            "prev_ver": 553648128,
             "name": "Imagen 2",
             "uuid": "4311b7bf-8805-431c-9cfb-c14e25f4c142",
             "id": "image_source",
@@ -668,10 +753,11 @@
             "deinterlace_mode": 0,
             "deinterlace_field_order": 0,
             "monitoring_type": 0,
+            "monitoring_enabled": false,
             "private_settings": {}
         },
         {
-            "prev_ver": 537001986,
+            "prev_ver": 553648128,
             "name": "Dispositivo de captura de video (V4L2)",
             "uuid": "3bf0de07-9b96-4548-93fa-5b6999eee0c6",
             "id": "v4l2_input",
@@ -692,10 +778,11 @@
             "deinterlace_mode": 0,
             "deinterlace_field_order": 0,
             "monitoring_type": 0,
+            "monitoring_enabled": false,
             "private_settings": {}
         },
         {
-            "prev_ver": 537001986,
+            "prev_ver": 553648128,
             "name": "Dispositivo de captura de vídeo (PipeWire) (BETA)",
             "uuid": "545e3daf-9f98-4f01-9f6c-609d329f4f68",
             "id": "pipewire-camera-source",
@@ -716,10 +803,11 @@
             "deinterlace_mode": 0,
             "deinterlace_field_order": 0,
             "monitoring_type": 0,
+            "monitoring_enabled": false,
             "private_settings": {}
         },
         {
-            "prev_ver": 537001986,
+            "prev_ver": 553648128,
             "name": "Dispositivo de captura de vídeo (PipeWire) (BETA) 2",
             "uuid": "40ba68c8-9710-473c-a9f7-e3671d5832a8",
             "id": "pipewire-camera-source",
@@ -740,10 +828,11 @@
             "deinterlace_mode": 0,
             "deinterlace_field_order": 0,
             "monitoring_type": 0,
+            "monitoring_enabled": false,
             "private_settings": {}
         },
         {
-            "prev_ver": 537001986,
+            "prev_ver": 553648128,
             "name": "Captura de pantalla (PipeWire) 5",
             "uuid": "6c4548e1-7ce6-44ef-9dd3-9e33c6b2fc66",
             "id": "pipewire-screen-capture-source",
@@ -766,10 +855,11 @@
             "deinterlace_mode": 0,
             "deinterlace_field_order": 0,
             "monitoring_type": 0,
+            "monitoring_enabled": false,
             "private_settings": {},
             "filters": [
                 {
-                    "prev_ver": 537001986,
+                    "prev_ver": 553648128,
                     "name": "Fondo croma",
                     "uuid": "95511b3c-5aee-4f6d-8d08-14e31b4e7454",
                     "id": "chroma_key_filter",
@@ -790,12 +880,236 @@
                     "deinterlace_mode": 0,
                     "deinterlace_field_order": 0,
                     "monitoring_type": 0,
+                    "monitoring_enabled": false,
                     "private_settings": {}
                 }
             ]
         },
         {
-            "prev_ver": 537001986,
+            "prev_ver": 553648128,
+            "name": "Multimedia",
+            "uuid": "71559ecb-86ad-4079-82bf-93686beb7cfb",
+            "id": "ffmpeg_source",
+            "versioned_id": "ffmpeg_source",
+            "settings": {
+                "local_file": "/home/graplo/Imágenes/wallpapers/animated/the-watcher-moewalls-com.mp4",
+                "looping": true
+            },
+            "mixers": 255,
+            "sync": 0,
+            "flags": 0,
+            "volume": 1.0,
+            "balance": 0.5,
+            "enabled": true,
+            "muted": false,
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "hotkeys": {
+                "libobs.mute": [],
+                "libobs.unmute": [],
+                "libobs.monitor-on": [],
+                "libobs.monitor-off": [],
+                "libobs.push-to-mute": [],
+                "libobs.push-to-talk": [],
+                "MediaSource.Restart": [],
+                "MediaSource.Play": [],
+                "MediaSource.Pause": [],
+                "MediaSource.Stop": []
+            },
+            "deinterlace_mode": 0,
+            "deinterlace_field_order": 0,
+            "monitoring_type": 0,
+            "monitoring_enabled": false,
+            "private_settings": {}
+        },
+        {
+            "prev_ver": 553648128,
+            "name": "Multimedia 2",
+            "uuid": "f8f729b1-ecf5-4bdf-9fed-b178647b5199",
+            "id": "ffmpeg_source",
+            "versioned_id": "ffmpeg_source",
+            "settings": {},
+            "mixers": 255,
+            "sync": 0,
+            "flags": 0,
+            "volume": 1.0,
+            "balance": 0.5,
+            "enabled": true,
+            "muted": false,
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "hotkeys": {
+                "libobs.mute": [],
+                "libobs.unmute": [],
+                "libobs.monitor-on": [],
+                "libobs.monitor-off": [],
+                "libobs.push-to-mute": [],
+                "libobs.push-to-talk": [],
+                "MediaSource.Restart": [],
+                "MediaSource.Play": [],
+                "MediaSource.Pause": [],
+                "MediaSource.Stop": []
+            },
+            "deinterlace_mode": 0,
+            "deinterlace_field_order": 0,
+            "monitoring_type": 0,
+            "monitoring_enabled": false,
+            "private_settings": {}
+        },
+        {
+            "prev_ver": 553648128,
+            "name": "Navegador",
+            "uuid": "10148f91-9214-44c3-8b98-326b79e8af63",
+            "id": "browser_source",
+            "versioned_id": "browser_source",
+            "settings": {
+                "is_local_file": true,
+                "local_file": "/home/graplo/Vídeos/obs/Escenas/graplo_stream (5).html",
+                "width": 2560,
+                "height": 1440,
+                "shutdown": false
+            },
+            "mixers": 255,
+            "sync": 0,
+            "flags": 0,
+            "volume": 1.0,
+            "balance": 0.5,
+            "enabled": true,
+            "muted": false,
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "hotkeys": {
+                "libobs.mute": [],
+                "libobs.unmute": [],
+                "libobs.monitor-on": [],
+                "libobs.monitor-off": [],
+                "libobs.push-to-mute": [],
+                "libobs.push-to-talk": [],
+                "ObsBrowser.Refresh": []
+            },
+            "deinterlace_mode": 0,
+            "deinterlace_field_order": 0,
+            "monitoring_type": 0,
+            "monitoring_enabled": false,
+            "private_settings": {}
+        },
+        {
+            "prev_ver": 553648128,
+            "name": "Multimedia 3",
+            "uuid": "5c21f53a-ed8b-4930-ab5e-88114da4fde7",
+            "id": "ffmpeg_source",
+            "versioned_id": "ffmpeg_source",
+            "settings": {
+                "local_file": "/home/graplo/Imágenes/wallpapers/animated/dark-rain-desire.3840x2160.mp4",
+                "looping": true
+            },
+            "mixers": 255,
+            "sync": 0,
+            "flags": 0,
+            "volume": 1.0,
+            "balance": 0.5,
+            "enabled": true,
+            "muted": false,
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "hotkeys": {
+                "libobs.mute": [],
+                "libobs.unmute": [],
+                "libobs.monitor-on": [],
+                "libobs.monitor-off": [],
+                "libobs.push-to-mute": [],
+                "libobs.push-to-talk": [],
+                "MediaSource.Restart": [],
+                "MediaSource.Play": [],
+                "MediaSource.Pause": [],
+                "MediaSource.Stop": []
+            },
+            "deinterlace_mode": 0,
+            "deinterlace_field_order": 0,
+            "monitoring_type": 0,
+            "monitoring_enabled": false,
+            "private_settings": {}
+        },
+        {
+            "prev_ver": 553648128,
+            "name": "Captura de salida de audio (PipeWire) 2",
+            "uuid": "48e21633-0c59-438e-8d72-fdc16f236a97",
+            "id": "pipewire_audio_output_capture",
+            "versioned_id": "pipewire_audio_output_capture",
+            "settings": {
+                "TargetName": "alsa_output.usb-MOTU_M2_M2MA070DWT-00.HiFi__Line__sink",
+                "TargetId": 0
+            },
+            "mixers": 255,
+            "sync": 0,
+            "flags": 0,
+            "volume": 1.0,
+            "balance": 0.5,
+            "enabled": true,
+            "muted": false,
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "hotkeys": {
+                "libobs.mute": [],
+                "libobs.unmute": [],
+                "libobs.monitor-on": [],
+                "libobs.monitor-off": [],
+                "libobs.push-to-mute": [],
+                "libobs.push-to-talk": []
+            },
+            "deinterlace_mode": 0,
+            "deinterlace_field_order": 0,
+            "monitoring_type": 0,
+            "monitoring_enabled": false,
+            "private_settings": {}
+        },
+        {
+            "prev_ver": 553648128,
+            "name": "Captura de salida de audio (PipeWire) 3",
+            "uuid": "105ee799-478e-41fd-8049-19742f3a7994",
+            "id": "pipewire_audio_output_capture",
+            "versioned_id": "pipewire_audio_output_capture",
+            "settings": {
+                "TargetName": "alsa_output.usb-MOTU_M2_M2MA070DWT-00.HiFi__Line__sink",
+                "TargetId": 0
+            },
+            "mixers": 255,
+            "sync": 0,
+            "flags": 0,
+            "volume": 1.0,
+            "balance": 0.5,
+            "enabled": true,
+            "muted": false,
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "hotkeys": {
+                "libobs.mute": [],
+                "libobs.unmute": [],
+                "libobs.monitor-on": [],
+                "libobs.monitor-off": [],
+                "libobs.push-to-mute": [],
+                "libobs.push-to-talk": []
+            },
+            "deinterlace_mode": 0,
+            "deinterlace_field_order": 0,
+            "monitoring_type": 0,
+            "monitoring_enabled": false,
+            "private_settings": {}
+        },
+        {
+            "prev_ver": 553648128,
             "name": "Root1 circular",
             "uuid": "cc657f70-d542-4ff4-988a-7539d8f12d17",
             "id": "scene",
@@ -825,12 +1139,12 @@
                         "id": 1,
                         "group_item_backup": true,
                         "pos": {
-                            "x": 1883.476806640625,
-                            "y": 177.1359100341797
+                            "x": 2412.77978515625,
+                            "y": 102.13603210449219
                         },
                         "pos_rel": {
-                            "x": 0.8381622433662415,
-                            "y": -0.75397789478302
+                            "x": 1.5733052492141724,
+                            "y": -0.8581444025039673
                         },
                         "scale": {
                             "x": -0.9999998807907104,
@@ -880,12 +1194,12 @@
                         "id": 3,
                         "group_item_backup": true,
                         "pos": {
-                            "x": -208.34841918945312,
-                            "y": -169.9547119140625
+                            "x": 320.9543151855469,
+                            "y": -244.95460510253906
                         },
                         "pos_rel": {
-                            "x": -2.067150592803955,
-                            "y": -1.2360482215881348
+                            "x": -1.332007884979248,
+                            "y": -1.340214729309082
                         },
                         "scale": {
                             "x": 1.659999966621399,
@@ -935,12 +1249,12 @@
                         "id": 2,
                         "group_item_backup": false,
                         "pos": {
-                            "x": -361.52288818359375,
-                            "y": -169.9547119140625
+                            "x": 167.77993774414062,
+                            "y": -244.95460510253906
                         },
                         "pos_rel": {
-                            "x": -2.279892921447754,
-                            "y": -1.2360482215881348
+                            "x": -1.5447500944137573,
+                            "y": -1.340214729309082
                         },
                         "scale": {
                             "x": 0.5846354365348816,
@@ -992,11 +1306,12 @@
             "deinterlace_mode": 0,
             "deinterlace_field_order": 0,
             "monitoring_type": 0,
+            "monitoring_enabled": false,
             "canvas_uuid": "6c69626f-6273-4c00-9d88-c5136d61696e",
             "private_settings": {}
         },
         {
-            "prev_ver": 537001986,
+            "prev_ver": 553648128,
             "name": "Root2 9X16",
             "uuid": "537d20fd-68e7-4786-98fe-09d07c8893e1",
             "id": "scene",
@@ -1138,11 +1453,12 @@
             "deinterlace_mode": 0,
             "deinterlace_field_order": 0,
             "monitoring_type": 0,
+            "monitoring_enabled": false,
             "canvas_uuid": "6c69626f-6273-4c00-9d88-c5136d61696e",
             "private_settings": {},
             "filters": [
                 {
-                    "prev_ver": 537001986,
+                    "prev_ver": 553648128,
                     "name": "Aplicar LUT",
                     "uuid": "cd05adba-d5b5-47bd-bee8-f56651455cfe",
                     "id": "clut_filter",
@@ -1163,18 +1479,19 @@
                     "deinterlace_mode": 0,
                     "deinterlace_field_order": 0,
                     "monitoring_type": 0,
+                    "monitoring_enabled": false,
                     "private_settings": {}
                 }
             ]
         },
         {
-            "prev_ver": 537001986,
+            "prev_ver": 553648128,
             "name": "1 Full camera",
             "uuid": "efdc845b-5484-45ae-9c71-b3b6bd79cbf4",
             "id": "scene",
             "versioned_id": "scene",
             "settings": {
-                "id_counter": 12,
+                "id_counter": 17,
                 "custom_size": false,
                 "items": [
                     {
@@ -1508,8 +1825,8 @@
                         "private_settings": {}
                     },
                     {
-                        "name": "Captura de pantalla (PipeWire)",
-                        "source_uuid": "91e245fc-e6f9-4dec-8fd3-c1933963342a",
+                        "name": "Captura de salida de audio (PipeWire) 2",
+                        "source_uuid": "48e21633-0c59-438e-8d72-fdc16f236a97",
                         "visible": true,
                         "locked": false,
                         "rot": 0.0,
@@ -1525,7 +1842,7 @@
                         "crop_top": 0,
                         "crop_right": 0,
                         "crop_bottom": 0,
-                        "id": 12,
+                        "id": 17,
                         "group_item_backup": false,
                         "pos": {
                             "x": 0.0,
@@ -1555,10 +1872,65 @@
                         "blend_method": "default",
                         "blend_type": "normal",
                         "show_transition": {
-                            "duration": 0
+                            "duration": 300
                         },
                         "hide_transition": {
-                            "duration": 0
+                            "duration": 300
+                        },
+                        "private_settings": {}
+                    },
+                    {
+                        "name": "Multimedia",
+                        "source_uuid": "71559ecb-86ad-4079-82bf-93686beb7cfb",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "scale_ref": {
+                            "x": 2560.0,
+                            "y": 1440.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds_crop": false,
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 13,
+                        "group_item_backup": false,
+                        "pos": {
+                            "x": -377.0,
+                            "y": 0.0
+                        },
+                        "pos_rel": {
+                            "x": -2.30138897895813,
+                            "y": -1.0
+                        },
+                        "scale": {
+                            "x": 1.3332030773162842,
+                            "y": 1.3333333730697632
+                        },
+                        "scale_rel": {
+                            "x": 1.3332030773162842,
+                            "y": 1.3333333730697632
+                        },
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_rel": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 300
+                        },
+                        "hide_transition": {
+                            "duration": 300
                         },
                         "private_settings": {}
                     },
@@ -1583,20 +1955,20 @@
                         "id": 11,
                         "group_item_backup": false,
                         "pos": {
-                            "x": 2560.0,
+                            "x": 2564.0,
                             "y": 0.0
                         },
                         "pos_rel": {
-                            "x": 1.7777777910232544,
+                            "x": 1.7833333015441895,
                             "y": -1.0
                         },
                         "scale": {
-                            "x": -0.6666666865348816,
-                            "y": 0.6666666865348816
+                            "x": -0.6677083373069763,
+                            "y": 0.6675925850868225
                         },
                         "scale_rel": {
-                            "x": -0.6666666865348816,
-                            "y": 0.6666666865348816
+                            "x": -0.6677083373069763,
+                            "y": 0.6675925850868225
                         },
                         "bounds": {
                             "x": 0.0,
@@ -1607,6 +1979,171 @@
                             "y": 0.0
                         },
                         "scale_filter": "lanczos",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 300
+                        },
+                        "hide_transition": {
+                            "duration": 300
+                        },
+                        "private_settings": {}
+                    },
+                    {
+                        "name": "Multimedia 2",
+                        "source_uuid": "f8f729b1-ecf5-4bdf-9fed-b178647b5199",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "scale_ref": {
+                            "x": 2560.0,
+                            "y": 1440.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds_crop": false,
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 14,
+                        "group_item_backup": false,
+                        "pos": {
+                            "x": -285.0,
+                            "y": 1096.0
+                        },
+                        "pos_rel": {
+                            "x": -2.1736111640930176,
+                            "y": 0.5222222805023193
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_rel": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_rel": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 300
+                        },
+                        "hide_transition": {
+                            "duration": 300
+                        },
+                        "private_settings": {}
+                    },
+                    {
+                        "name": "Multimedia 3",
+                        "source_uuid": "5c21f53a-ed8b-4930-ab5e-88114da4fde7",
+                        "visible": false,
+                        "locked": false,
+                        "rot": 0.0,
+                        "scale_ref": {
+                            "x": 2560.0,
+                            "y": 1440.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds_crop": false,
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 16,
+                        "group_item_backup": false,
+                        "pos": {
+                            "x": -145.0,
+                            "y": -198.5
+                        },
+                        "pos_rel": {
+                            "x": -1.9791666269302368,
+                            "y": -1.2756943702697754
+                        },
+                        "scale": {
+                            "x": 0.8502604365348816,
+                            "y": 0.8504629731178284
+                        },
+                        "scale_rel": {
+                            "x": 0.8502604365348816,
+                            "y": 0.8504629731178284
+                        },
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_rel": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 300
+                        },
+                        "hide_transition": {
+                            "duration": 300
+                        },
+                        "private_settings": {}
+                    },
+                    {
+                        "name": "Navegador",
+                        "source_uuid": "10148f91-9214-44c3-8b98-326b79e8af63",
+                        "visible": false,
+                        "locked": true,
+                        "rot": 0.0,
+                        "scale_ref": {
+                            "x": 2560.0,
+                            "y": 1440.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds_crop": false,
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 15,
+                        "group_item_backup": false,
+                        "pos": {
+                            "x": -77.0,
+                            "y": -81.0
+                        },
+                        "pos_rel": {
+                            "x": -1.8847222328186035,
+                            "y": -1.1124999523162842
+                        },
+                        "scale": {
+                            "x": 1.056249976158142,
+                            "y": 1.056249976158142
+                        },
+                        "scale_rel": {
+                            "x": 1.056249976158142,
+                            "y": 1.056249976158142
+                        },
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_rel": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "scale_filter": "disable",
                         "blend_method": "default",
                         "blend_type": "normal",
                         "show_transition": {
@@ -1649,19 +2186,28 @@
                 "libobs.hide_scene_item.9": [],
                 "libobs.show_scene_item.10": [],
                 "libobs.hide_scene_item.10": [],
-                "libobs.show_scene_item.12": [],
-                "libobs.hide_scene_item.12": [],
+                "libobs.show_scene_item.17": [],
+                "libobs.hide_scene_item.17": [],
+                "libobs.show_scene_item.13": [],
+                "libobs.hide_scene_item.13": [],
                 "libobs.show_scene_item.11": [],
-                "libobs.hide_scene_item.11": []
+                "libobs.hide_scene_item.11": [],
+                "libobs.show_scene_item.14": [],
+                "libobs.hide_scene_item.14": [],
+                "libobs.show_scene_item.16": [],
+                "libobs.hide_scene_item.16": [],
+                "libobs.show_scene_item.15": [],
+                "libobs.hide_scene_item.15": []
             },
             "deinterlace_mode": 0,
             "deinterlace_field_order": 0,
             "monitoring_type": 0,
+            "monitoring_enabled": false,
             "canvas_uuid": "6c69626f-6273-4c00-9d88-c5136d61696e",
             "private_settings": {}
         },
         {
-            "prev_ver": 537001986,
+            "prev_ver": 553648128,
             "name": "3 Escena",
             "uuid": "ac6b5b25-e188-4c16-8350-82c45c427fc2",
             "id": "scene",
@@ -2093,24 +2639,25 @@
             "deinterlace_mode": 0,
             "deinterlace_field_order": 0,
             "monitoring_type": 0,
+            "monitoring_enabled": false,
             "canvas_uuid": "6c69626f-6273-4c00-9d88-c5136d61696e",
             "private_settings": {}
         },
         {
-            "prev_ver": 537001986,
+            "prev_ver": 553648128,
             "name": "2 Escritorio y cam",
             "uuid": "0192ce1a-fd8b-4143-8a03-1ef324a88e92",
             "id": "scene",
             "versioned_id": "scene",
             "settings": {
-                "id_counter": 16,
+                "id_counter": 17,
                 "custom_size": false,
                 "items": [
                     {
                         "name": "Captura de pantalla (PipeWire)",
                         "source_uuid": "91e245fc-e6f9-4dec-8fd3-c1933963342a",
                         "visible": true,
-                        "locked": false,
+                        "locked": true,
                         "rot": 0.0,
                         "scale_ref": {
                             "x": 2560.0,
@@ -2164,7 +2711,7 @@
                     {
                         "name": "Root1 circular",
                         "source_uuid": "cc657f70-d542-4ff4-988a-7539d8f12d17",
-                        "visible": false,
+                        "visible": true,
                         "locked": false,
                         "rot": 0.0,
                         "scale_ref": {
@@ -2182,12 +2729,12 @@
                         "id": 7,
                         "group_item_backup": false,
                         "pos": {
-                            "x": 0.0,
-                            "y": 860.0
+                            "x": -115.0,
+                            "y": 947.0
                         },
                         "pos_rel": {
-                            "x": -1.7777777910232544,
-                            "y": 0.1944444179534912
+                            "x": -1.9375,
+                            "y": 0.3152778148651123
                         },
                         "scale": {
                             "x": 0.30859375,
@@ -2380,6 +2927,61 @@
                             "duration": 300
                         },
                         "private_settings": {}
+                    },
+                    {
+                        "name": "Captura de salida de audio (PipeWire) 3",
+                        "source_uuid": "105ee799-478e-41fd-8049-19742f3a7994",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "scale_ref": {
+                            "x": 2560.0,
+                            "y": 1440.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds_crop": false,
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 17,
+                        "group_item_backup": false,
+                        "pos": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "pos_rel": {
+                            "x": -1.7777777910232544,
+                            "y": -1.0
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_rel": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_rel": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 300
+                        },
+                        "hide_transition": {
+                            "duration": 300
+                        },
+                        "private_settings": {}
                     }
                 ]
             },
@@ -2410,16 +3012,19 @@
                 "libobs.show_scene_item.14": [],
                 "libobs.hide_scene_item.14": [],
                 "libobs.show_scene_item.16": [],
-                "libobs.hide_scene_item.16": []
+                "libobs.hide_scene_item.16": [],
+                "libobs.show_scene_item.17": [],
+                "libobs.hide_scene_item.17": []
             },
             "deinterlace_mode": 0,
             "deinterlace_field_order": 0,
             "monitoring_type": 0,
+            "monitoring_enabled": false,
             "canvas_uuid": "6c69626f-6273-4c00-9d88-c5136d61696e",
             "private_settings": {}
         },
         {
-            "prev_ver": 537001986,
+            "prev_ver": 553648128,
             "name": "4 haft and haft",
             "uuid": "d5989d6d-5d6f-4430-8194-4cb1e7e4698b",
             "id": "scene",
@@ -2669,20 +3274,20 @@
                         "id": 2,
                         "group_item_backup": false,
                         "pos": {
-                            "x": 24.0,
-                            "y": 34.0
+                            "x": 48.0,
+                            "y": 35.0
                         },
                         "pos_rel": {
-                            "x": -1.744444489479065,
-                            "y": -0.9527778029441833
+                            "x": -1.711111068725586,
+                            "y": -0.9513888955116272
                         },
                         "scale": {
-                            "x": 0.9894667863845825,
-                            "y": 0.9896995425224304
+                            "x": 0.9578670263290405,
+                            "y": 0.9574999809265137
                         },
                         "scale_rel": {
-                            "x": 0.7421000599861145,
-                            "y": 0.7422746419906616
+                            "x": 0.718400239944458,
+                            "y": 0.7181249856948853
                         },
                         "bounds": {
                             "x": 0.0,
@@ -3022,11 +3627,12 @@
             "deinterlace_mode": 0,
             "deinterlace_field_order": 0,
             "monitoring_type": 0,
+            "monitoring_enabled": false,
             "canvas_uuid": "6c69626f-6273-4c00-9d88-c5136d61696e",
             "private_settings": {}
         },
         {
-            "prev_ver": 537001986,
+            "prev_ver": 553648128,
             "name": "5 Escritorio y veadotube",
             "uuid": "98645965-1605-4298-96be-6fb4f2e48a2b",
             "id": "scene",
@@ -3339,13 +3945,14 @@
             "deinterlace_mode": 0,
             "deinterlace_field_order": 0,
             "monitoring_type": 0,
+            "monitoring_enabled": false,
             "canvas_uuid": "6c69626f-6273-4c00-9d88-c5136d61696e",
             "private_settings": {}
         }
     ],
     "groups": [
         {
-            "prev_ver": 537001986,
+            "prev_ver": 553648128,
             "name": "Logi Circular",
             "uuid": "19c23d59-38f6-43fa-8a43-f0ec4db1b372",
             "id": "group",
@@ -3488,11 +4095,12 @@
             "deinterlace_mode": 0,
             "deinterlace_field_order": 0,
             "monitoring_type": 0,
+            "monitoring_enabled": false,
             "canvas_uuid": "6c69626f-6273-4c00-9d88-c5136d61696e",
             "private_settings": {},
             "filters": [
                 {
-                    "prev_ver": 537001986,
+                    "prev_ver": 553648128,
                     "name": "Imagen máscara/mezcla",
                     "uuid": "61be1b89-dc60-4bf1-a4e2-05f772d867d6",
                     "id": "mask_filter",
@@ -3516,12 +4124,13 @@
                     "deinterlace_mode": 0,
                     "deinterlace_field_order": 0,
                     "monitoring_type": 0,
+                    "monitoring_enabled": false,
                     "private_settings": {}
                 }
             ]
         },
         {
-            "prev_ver": 537001986,
+            "prev_ver": 553648128,
             "name": "Camera 9x16",
             "uuid": "15165144-9dfd-4c70-8b4b-5f802313846e",
             "id": "group",
@@ -3607,11 +4216,12 @@
             "deinterlace_mode": 0,
             "deinterlace_field_order": 0,
             "monitoring_type": 0,
+            "monitoring_enabled": false,
             "canvas_uuid": "6c69626f-6273-4c00-9d88-c5136d61696e",
             "private_settings": {},
             "filters": [
                 {
-                    "prev_ver": 537001986,
+                    "prev_ver": 553648128,
                     "name": "Imagen máscara/mezcla",
                     "uuid": "4a078822-92d0-49e1-b663-17f95c404970",
                     "id": "mask_filter",
@@ -3634,6 +4244,7 @@
                     "deinterlace_mode": 0,
                     "deinterlace_field_order": 0,
                     "monitoring_type": 0,
+                    "monitoring_enabled": false,
                     "private_settings": {}
                 }
             ]
@@ -3694,8 +4305,8 @@
     "saved_projectors": [],
     "preview_locked": false,
     "scaling_enabled": true,
-    "scaling_level": -11,
-    "scaling_off_x": 28.20662498474121,
+    "scaling_level": -15,
+    "scaling_off_x": 21.750268936157227,
     "scaling_off_y": 0.0,
     "virtual-camera": {
         "type2": 3

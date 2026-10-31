@@ -7,8 +7,11 @@ mode = "2560x1440@165"
 position = [0, 0]
 scale = 1.0
 workspaces = 5
+workspace_axis = "vertical"
 
 [output."TES TE-2415S 0x01010101"]
 mode = "1920x1080@100"
-position = [2560, 218]
+position = [2560, 280]
 scale = 1.0
+min_workspaces = 3
+workspace_axis = "vertical"

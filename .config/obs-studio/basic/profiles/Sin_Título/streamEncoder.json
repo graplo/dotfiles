@@ -1,1 +1,1 @@
-{"mbbrc":"disabled","rate-control":"cbr","ref-frames":4,"bitrate":18000}
+{"mbbrc":"disabled","rate-control":"cbr","key-int-max":120,"bitrate":15000}

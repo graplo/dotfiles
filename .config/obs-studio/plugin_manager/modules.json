@@ -3,9 +3,9 @@
         "display_name": "",
         "enabled": true,
         "encoders": [
-            "obs-va-vah264enc",
+            "obs-va-vah265enc",
             "obs-va-vaav1enc",
-            "obs-va-vah265enc"
+            "obs-va-vah264enc"
         ],
         "id": "",
         "module_name": "obs-vaapi",
@@ -43,10 +43,10 @@
         "version": ""
     },
     {
-        "display_name": "",
+        "display_name": "Stroke Glow Shadow",
         "enabled": true,
         "encoders": [],
-        "id": "",
+        "id": "9da250e8-8bee-46a1-9d79-d0c792478df9",
         "module_name": "obs-stroke-glow-shadow",
         "outputs": [],
         "services": [],
@@ -58,6 +58,6 @@
             "obs_glow_source",
             "obs_shadow_source"
         ],
-        "version": ""
+        "version": "1.6.1"
     }
 ]

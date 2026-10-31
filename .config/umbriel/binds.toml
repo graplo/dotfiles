@@ -8,44 +8,44 @@
 [keybinds]
 
 # Noctalia
-"Mod+space" = "spawn:noctalia msg panel-toggle launcher"
-"Mod+V" = "spawn:noctalia msg panel-toggle clipboard"
-"Mod+Y" = "spawn:noctalia msg panel-toggle wallpaper"
-"Mod+Shift+C"   = "spawn:noctalia msg panel-toggle launcher /calc"
-"Mod+semicolon" = "spawn:noctalia msg panel-toggle launcher /emo"
-"Mod+X"         = "spawn:noctalia msg panel-toggle session"
-"Mod+Ctrl+P"    = "spawn:noctalia msg power-cycle"
-"Mod+Alt+L"     = "spawn:noctalia msg session lock"
-"Mod+Alt+S"     = "spawn:noctalia msg settings-toggle"
-"Mod+slash"     = "spawn:noctalia msg panel-toggle nightwatch75/file-search:panel"
+"Mod+space" = "spawn noctalia msg panel-toggle launcher"
+"Mod+V" = "spawn noctalia msg panel-toggle clipboard"
+"Mod+Y" = "spawn noctalia msg panel-toggle wallpaper"
+"Mod+Shift+C"   = "spawn noctalia msg panel-toggle launcher /calc"
+"Mod+semicolon" = "spawn noctalia msg panel-toggle launcher /emo"
+"Mod+X"         = "spawn noctalia msg panel-toggle session"
+"Mod+Ctrl+P"    = "spawn noctalia msg power-cycle"
+"Mod+Alt+L"     = "spawn noctalia msg session lock"
+"Mod+Alt+S"     = "spawn noctalia msg settings-toggle"
+"Mod+slash"     = "spawn noctalia msg panel-toggle nightwatch75/file-search:panel"
 
 # rofi
-"Mod+Shift+Space" = { action = "spawn:rofi-launch drun", repeat = false }
+"Mod+Shift+Space" = { action = "spawn rofi-launch drun", repeat = false }
 
 # Capturas
-"Print"            = "spawn:noctalia msg screenshot-region"
-"Ctrl+Print"       = "spawn:noctalia msg screenshot-fullscreen"
-"Alt+Print"        = "spawn:noctalia msg screenshot-fullscreen pick"
-"XF86Launch1"      = "spawn:noctalia msg screenshot-region"
-"Ctrl+XF86Launch1" = "spawn:noctalia msg screenshot-fullscreen"
-"Alt+XF86Launch1"  = "spawn:noctalia msg screenshot-fullscreen pick"
+"Print"            = "spawn noctalia msg screenshot-region"
+"Ctrl+Print"       = "spawn noctalia msg screenshot-fullscreen"
+"Alt+Print"        = "spawn noctalia msg screenshot-fullscreen pick"
+"XF86Launch1"      = "spawn noctalia msg screenshot-region"
+"Ctrl+XF86Launch1" = "spawn noctalia msg screenshot-fullscreen"
+"Alt+XF86Launch1"  = "spawn noctalia msg screenshot-fullscreen pick"
 
 # Applications and session
-"Mod+Return" = { action = "spawn:ghostty", repeat = false }
+"Mod+Return" = { action = "spawn ghostty", repeat = false }
 "Mod+Q" = { action = "window-close", repeat = false }
 "Mod+BackSpace" = { action = "window-close", repeat = false }
 "Mod+Escape" = "session-quit"
 "Mod+Shift+Escape" = { action = "shortcuts-inhibit-toggle", allow_when_inhibited = true, repeat = false }
 
 # Apps
-"Mod+B"     = { action = "spawn:brave-origin", repeat = false }
-"Mod+Alt+F" = { action = "spawn:nautilus", repeat = false }
-"Mod+Alt+O" = { action = "spawn:obs", repeat = false }
-"Mod+Alt+B" = { action = "spawn:foot --app-id bluetui -e bluetui", repeat = false }
-"Mod+Alt+W" = { action = "spawn:foot --app-id impala -e impala", repeat = false }
-"Mod+Alt+M" = { action = "spawn:foot --app-id btop -e btop", repeat = false }
-"Mod+Alt+C" = { action = "spawn:hyprpicker -a -n", repeat = false }
-"Mod+Alt+A" = { action = "spawn:foot --app-id wiremix -e wiremix", repeat = false }
+"Mod+B"     = { action = "spawn brave-origin", repeat = false }
+"Mod+Alt+F" = { action = "spawn nautilus", repeat = false }
+"Mod+Alt+O" = { action = "spawn obs", repeat = false }
+"Mod+Alt+B" = { action = "spawn foot --app-id bluetui -e bluetui", repeat = false }
+"Mod+Alt+W" = { action = "spawn foot --app-id impala -e impala", repeat = false }
+"Mod+Alt+M" = { action = "spawn foot --app-id btop -e btop", repeat = false }
+"Mod+Alt+C" = { action = "spawn hyprpicker -a -n", repeat = false }
+"Mod+Alt+A" = { action = "spawn foot --app-id wiremix -e wiremix", repeat = false }
 
 
 # Focus and movement
@@ -105,33 +105,33 @@
 "Mod+BracketLeft" = "window-consume-or-expel-left"
 "Mod+BracketRight" = "window-consume-or-expel-right"
 
-"Mod+Equal"       = "window-modify-primary-extent:0.1"
-"Mod+Minus"       = "window-modify-primary-extent:-0.1"
-"Mod+Shift+Equal" = "window-modify-secondary-extent:0.1"
-"Mod+Shift+Minus" = "window-modify-secondary-extent:-0.1"
+"Mod+Equal"       = "window-modify-primary-extent 0.1"
+"Mod+Minus"       = "window-modify-primary-extent -0.1"
+"Mod+Shift+Equal" = "window-modify-secondary-extent 0.1"
+"Mod+Shift+Minus" = "window-modify-secondary-extent -0.1"
 
 # Workspaces
-"Mod+1" = "workspace-switch:1"
-"Mod+2" = "workspace-switch:2"
-"Mod+3" = "workspace-switch:3"
-"Mod+4" = "workspace-switch:4"
-"Mod+5" = "workspace-switch:5"
-"Mod+6" = "workspace-switch:6"
-"Mod+7" = "workspace-switch:7"
-"Mod+8" = "workspace-switch:8"
-"Mod+9" = "workspace-switch:9"
+"Mod+1" = "workspace-switch 1"
+"Mod+2" = "workspace-switch 2"
+"Mod+3" = "workspace-switch 3"
+"Mod+4" = "workspace-switch 4"
+"Mod+5" = "workspace-switch 5"
+"Mod+6" = "workspace-switch 6"
+"Mod+7" = "workspace-switch 7"
+"Mod+8" = "workspace-switch 8"
+"Mod+9" = "workspace-switch 9"
 "Mod+I" = "workspace-previous"
 "Mod+U" = "workspace-next"
 
-"Mod+Shift+1" = "window-move-to-workspace:1"
-"Mod+Shift+2" = "window-move-to-workspace:2"
-"Mod+Shift+3" = "window-move-to-workspace:3"
-"Mod+Shift+4" = "window-move-to-workspace:4"
-"Mod+Shift+5" = "window-move-to-workspace:5"
-"Mod+Shift+6" = "window-move-to-workspace:6"
-"Mod+Shift+7" = "window-move-to-workspace:7"
-"Mod+Shift+8" = "window-move-to-workspace:8"
-"Mod+Shift+9" = "window-move-to-workspace:9"
+"Mod+Shift+1" = "window-move-to-workspace 1"
+"Mod+Shift+2" = "window-move-to-workspace 2"
+"Mod+Shift+3" = "window-move-to-workspace 3"
+"Mod+Shift+4" = "window-move-to-workspace 4"
+"Mod+Shift+5" = "window-move-to-workspace 5"
+"Mod+Shift+6" = "window-move-to-workspace 6"
+"Mod+Shift+7" = "window-move-to-workspace 7"
+"Mod+Shift+8" = "window-move-to-workspace 8"
+"Mod+Shift+9" = "window-move-to-workspace 9"
 "Mod+Shift+I" = "window-move-to-workspace-previous"
 "Mod+Shift+U" = "window-move-to-workspace-next"
 
@@ -172,31 +172,31 @@
 "Mod+O" = "scratchpad-focus-next"
 
 # Layouts: Mod+N y luego 1/2/3
-"Mod+N" = { action = "submap:layout", repeat = false }
+"Mod+N" = { action = "submap layout", repeat = false }
 
-"submap[layout],1" = { action = "workspace-set-layout:scrolling", submap = "reset" }
-"submap[layout],2" = { action = "workspace-set-layout:dwindle",   submap = "reset" }
-"submap[layout],3" = { action = "workspace-set-layout:master",    submap = "reset" }
-"submap[layout],Space" = { action = "workspace-set-layout:toggle", submap = "reset" }
-"submap[layout],Escape" = "submap:reset"
+"submap[layout],1" = { action = "workspace-set-layout scrolling", submap = "reset" }
+"submap[layout],2" = { action = "workspace-set-layout dwindle",   submap = "reset" }
+"submap[layout],3" = { action = "workspace-set-layout master",    submap = "reset" }
+"submap[layout],Space" = { action = "workspace-set-layout toggle", submap = "reset" }
+"submap[layout],Escape" = "submap reset"
 
 # — OBS escenas (gobs-cli) —
-"Shift+F1" = { action = 'spawn:gobs-cli sc sw "1 Full camera"',      repeat = false }
-"Shift+F2" = { action = 'spawn:gobs-cli sc sw "2 Escritorio y cam"', repeat = false }
-"Shift+F3" = { action = 'spawn:gobs-cli sc sw "3 Escena"',           repeat = false }
-"Shift+F4" = { action = 'spawn:gobs-cli sc sw "4 haft and haft"',    repeat = false }
+"Shift+F1" = { action = 'spawn gobs-cli sc sw "1 Full camera"',      repeat = false }
+"Shift+F2" = { action = 'spawn gobs-cli sc sw "2 Escritorio y cam"', repeat = false }
+"Shift+F3" = { action = 'spawn gobs-cli sc sw "3 Escena"',           repeat = false }
+"Shift+F4" = { action = 'spawn gobs-cli sc sw "4 haft and haft"',    repeat = false }
 
 
 # — Audio — Noctalia —
-"XF86AudioRaiseVolume" = { action = "spawn:noctalia msg volume-up",   allow_when_locked = true }
-"XF86AudioLowerVolume" = { action = "spawn:noctalia msg volume-down", allow_when_locked = true }
-"XF86AudioMute"        = { action = "spawn:noctalia msg volume-mute", allow_when_locked = true }
+"XF86AudioRaiseVolume" = { action = "spawn noctalia msg volume-up",   allow_when_locked = true }
+"XF86AudioLowerVolume" = { action = "spawn noctalia msg volume-down", allow_when_locked = true }
+"XF86AudioMute"        = { action = "spawn noctalia msg volume-mute", allow_when_locked = true }
 
 # — Audio y reproducción —
-"XF86AudioMicMute"          = { action = "spawn:wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle", allow_when_locked = true, repeat = false }
-"Ctrl+XF86AudioRaiseVolume" = { action = "spawn:playerctl volume 0.03+", allow_when_locked = true }
-"Ctrl+XF86AudioLowerVolume" = { action = "spawn:playerctl volume 0.03-", allow_when_locked = true }
-"XF86AudioPlay"  = { action = "spawn:playerctl play-pause", allow_when_locked = true, repeat = false }
-"XF86AudioPause" = { action = "spawn:playerctl play-pause", allow_when_locked = true, repeat = false }
-"XF86AudioNext"  = { action = "spawn:playerctl next",        allow_when_locked = true, repeat = false }
-"XF86AudioPrev"  = { action = "spawn:playerctl previous",    allow_when_locked = true, repeat = false }
+"XF86AudioMicMute"          = { action = "spawn wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle", allow_when_locked = true, repeat = false }
+"Ctrl+XF86AudioRaiseVolume" = { action = "spawn playerctl volume 0.03+", allow_when_locked = true }
+"Ctrl+XF86AudioLowerVolume" = { action = "spawn playerctl volume 0.03-", allow_when_locked = true }
+"XF86AudioPlay"  = { action = "spawn playerctl play-pause", allow_when_locked = true, repeat = false }
+"XF86AudioPause" = { action = "spawn playerctl play-pause", allow_when_locked = true, repeat = false }
+"XF86AudioNext"  = { action = "spawn playerctl next",        allow_when_locked = true, repeat = false }
+"XF86AudioPrev"  = { action = "spawn playerctl previous",    allow_when_locked = true, repeat = false }
